@@ -3,25 +3,25 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Computer Use Cloud · The cloud browser for AI agents (Claude · Browser Use · Browserbase compatible)</title>
+    <title>Computer Use Cloud · A computer for AI agents</title>
     <meta
       name="description"
-      content="Computer Use Cloud is the cloud browser for AI agents. Drop-in compatible with Anthropic Computer Use, Browser Use, and Browserbase Session API. Per-active-second billing, ~10× cheaper for typical agent tasks. Free tier 100 hours per month."
+      content="A cloud sandbox with a browser and a desktop, driven by your choice of LLM. One SDK. Claude, GPT, or Gemini."
     />
-    <meta name="keywords" content="computer use, computer use api, claude computer use, browser use, browserbase alternative, anthropic computer use, browser-use cloud, ai agent cloud browser, playwright cloud, openai operator" />
+    <meta name="keywords" content="computer use, ai agent sandbox, cloud desktop for ai, agent browser, computer use api, claude computer use, openai computer use, gemini agent" />
     <link rel="canonical" href="https://computeruse.run/" />
     <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large" />
     <meta name="theme-color" content="#0a0a0a" />
 
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://computeruse.run/" />
-    <meta property="og:title" content="Computer Use Cloud · The cloud browser for AI agents" />
-    <meta property="og:description" content="Drop-in compatible with Claude Computer Use, Browser Use, and Browserbase. ~10× cheaper per agent task." />
+    <meta property="og:title" content="Computer Use Cloud · A computer for AI agents" />
+    <meta property="og:description" content="A cloud sandbox with a browser and a desktop. Your choice of LLM. One SDK." />
     <meta property="og:image" content="https://computeruse.run/og.png" />
     <meta property="og:site_name" content="Computer Use Cloud" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Computer Use Cloud" />
-    <meta name="twitter:description" content="The cloud browser for AI agents. Per-active-second billing. Free 100 hours/month." />
+    <meta name="twitter:description" content="A cloud sandbox with a browser and a desktop. Your choice of LLM. One SDK." />
     <meta name="twitter:image" content="https://computeruse.run/og.png" />
 
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%2310B981'/><path d='M9 11h14M9 16h14M9 21h9' stroke='%23000' stroke-width='2.4' stroke-linecap='round'/></svg>" />
@@ -37,25 +37,19 @@
     <script>
       tailwind.config = {
         darkMode: 'class',
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-              mono: ['"JetBrains Mono"', 'ui-monospace', 'Menlo', 'monospace'],
-            },
-            colors: {
-              ink: { 950: '#050505', 900: '#0a0a0a', 800: '#111111', 700: '#171717', 600: '#1f1f1f', 500: '#2a2a2a' },
-              accent: { DEFAULT: '#10B981', soft: 'rgba(16, 185, 129, 0.12)', strong: '#059669' },
-              warm: '#FB923C',
-              danger: '#EF4444',
-            },
-            keyframes: {
-              pulse: { '0%, 100%': { boxShadow: '0 0 0 0 rgba(16, 185, 129, 0.4)' }, '50%': { boxShadow: '0 0 0 7px rgba(16, 185, 129, 0)' } },
-              fadeUp: { from: { opacity: '0', transform: 'translateY(8px)' }, to: { opacity: '1', transform: 'translateY(0)' } },
-            },
-            animation: { pulse: 'pulse 1.8s ease-in-out infinite', fadeUp: 'fadeUp 600ms cubic-bezier(0.18, 0.9, 0.2, 1) both' },
+        theme: { extend: {
+          fontFamily: { sans: ['Inter', 'sans-serif'], mono: ['"JetBrains Mono"', 'monospace'] },
+          colors: {
+            ink: { 950: '#050505', 900: '#0a0a0a', 800: '#111111', 700: '#171717', 600: '#1f1f1f' },
+            accent: { DEFAULT: '#10B981', soft: 'rgba(16,185,129,0.12)', strong: '#059669' },
+            warm: '#FB923C',
           },
-        },
+          keyframes: {
+            pulse: { '0%, 100%': { boxShadow: '0 0 0 0 rgba(16,185,129,0.4)' }, '50%': { boxShadow: '0 0 0 7px rgba(16,185,129,0)' } },
+            fadeUp: { from: { opacity: '0', transform: 'translateY(8px)' }, to: { opacity: '1', transform: 'translateY(0)' } },
+          },
+          animation: { pulse: 'pulse 1.8s ease-in-out infinite', fadeUp: 'fadeUp 600ms cubic-bezier(0.18,0.9,0.2,1) both' },
+        } },
       };
     </script>
 
@@ -68,8 +62,7 @@
             "@id": "https://computeruse.run/#org",
             "name": "Computer Use Cloud",
             "url": "https://computeruse.run/",
-            "logo": "https://computeruse.run/og.png",
-            "description": "The cloud browser for AI agents. Drop-in compatible with Anthropic Computer Use, Browser Use SDK, and Browserbase Session API."
+            "logo": "https://computeruse.run/og.png"
           },
           {
             "@type": "WebSite",
@@ -80,33 +73,25 @@
           },
           {
             "@type": "SoftwareApplication",
-            "@id": "https://computeruse.run/#app",
             "name": "Computer Use Cloud",
-            "alternateName": ["computeruse.run", "ComputerUse"],
             "applicationCategory": "DeveloperApplication",
-            "applicationSubCategory": "Cloud browser for AI agents",
             "operatingSystem": "Cloud",
             "url": "https://computeruse.run/",
             "publisher": { "@id": "https://computeruse.run/#org" },
-            "description": "Cloud browser for AI agents. Compatible with Anthropic Computer Use, Browser Use SDK, Playwright/CDP, and Browserbase Session API. Per-active-second billing.",
-            "offers": [
-              { "@type": "Offer", "name": "Free", "price": "0", "priceCurrency": "USD", "description": "100 active hours per month, community support, suited for hackathons and individual developers." },
-              { "@type": "Offer", "name": "Pro", "price": "20", "priceCurrency": "USD", "description": "500 active hours per month, $0.01 per additional active hour, email support." },
-              { "@type": "Offer", "name": "Team", "price": "200", "priceCurrency": "USD", "description": "5,000 active hours per month, self-host Docker license, Slack support, priority residential IP pool." }
-            ]
+            "description": "A cloud sandbox with a browser and a desktop, driven by your choice of LLM. One SDK. Claude, GPT, or Gemini.",
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
           },
           {
             "@type": "FAQPage",
-            "@id": "https://computeruse.run/#faq",
             "mainEntity": [
-              { "@type": "Question", "name": "What is the relationship between Computer Use Cloud and Anthropic Computer Use?", "acceptedAnswer": { "@type": "Answer", "text": "Anthropic provides the Computer Use model (the brain). Computer Use Cloud provides the browser environment it acts on (the body). You keep your Anthropic API key and your existing tool schema; we replace the self-hosted Docker container that Anthropic's reference implementation expects you to build and operate yourself." } },
-              { "@type": "Question", "name": "I already use the Browser Use SDK. How much code do I have to change to migrate?", "acceptedAnswer": { "@type": "Answer", "text": "One line. Browser Use SDK reads a CDP endpoint URL from configuration; change it to point at wss://connect.computeruse.run and the rest of your agent script keeps working. No SDK swap, no rewrite." } },
-              { "@type": "Question", "name": "Where exactly is Computer Use Cloud cheaper than Browserbase?", "acceptedAnswer": { "@type": "Answer", "text": "Browserbase bills per browser-hour, so the meter runs while the model is thinking. We bill per active second, so model-thinking idle is free. For a standard agent task (10 minutes of browser uptime, 30 LLM decision steps, 1 CAPTCHA), the bill is roughly $0.10 on Browserbase versus $0.01 on us. For pure CDP scraping with no model loop, the gap shrinks to about 15%." } },
-              { "@type": "Question", "name": "Is my data secure? Can I self-host?", "acceptedAnswer": { "@type": "Answer", "text": "Yes to both. Sandboxes are isolated per tenant and per session; nothing is shared across customers. The runtime is open source under Apache 2.0 — Team plan customers get a Docker self-host license, run the same sandbox image inside their own VPC, and point the SDK at their endpoint. Data never leaves the customer's infrastructure." } },
-              { "@type": "Question", "name": "How are CAPTCHA, residential IP, and concurrency limits handled?", "acceptedAnswer": { "@type": "Answer", "text": "CAPTCHA solving and residential proxy are included by default on every plan, not metered as add-ons. Concurrency: Free 5 sandboxes simultaneously, Pro 25, Team unlimited within fair use. Residential IP rotates per session by default, sticky on request." } },
-              { "@type": "Question", "name": "What LLMs are supported? Is it Claude-only?", "acceptedAnswer": { "@type": "Answer", "text": "Not Claude-only. Three first-class providers: Anthropic Claude Computer Use, OpenAI Operator (computer-use-preview), and Google Gemini agent. Any LLM with a vision input and tool-calling can drive the browser via the unified Sandbox API. Browser Use SDK users get all the LLMs Browser Use already supports (15+ providers)." } },
-              { "@type": "Question", "name": "Can I replay a failed run? Is there session recording?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Every session has a live view URL while running and a recorded video + transcript afterward (Pro and Team plans, retained 7 days Pro / 30 days Team). The full action timeline plus model decisions are downloadable as JSON for debugging or training data." } },
-              { "@type": "Question", "name": "What does the free tier include? Is a credit card required?", "acceptedAnswer": { "@type": "Answer", "text": "100 active hours per month, free forever, no credit card. Enough to run a hackathon over a weekend or a side project for the month. After 100 hours the sandbox stops; no surprise overage on Free." } }
+              { "@type": "Question", "name": "What is Computer Use Cloud?", "acceptedAnswer": { "@type": "Answer", "text": "Computer Use Cloud is a managed cloud sandbox built for AI agents. Each sandbox is a Linux desktop with a browser open inside. Your AI agent — Claude, GPT, or Gemini, your pick — drives it through one SDK." } },
+              { "@type": "Question", "name": "Why both a browser and a computer?", "acceptedAnswer": { "@type": "Answer", "text": "Most agent tasks live in a browser, so we expose a browser surface for them. But some tasks need the desktop — open a file, edit a spreadsheet, work across two apps. Same sandbox, both available. Use the browser surface for web jobs, the computer surface when you need the full desktop." } },
+              { "@type": "Question", "name": "Which LLMs are supported?", "acceptedAnswer": { "@type": "Answer", "text": "Anthropic Claude, OpenAI GPT, and Google Gemini are first-class. The model is a kwarg on Sandbox(). Bring your own API key for the model provider; the sandbox itself is what we host." } },
+              { "@type": "Question", "name": "How is this different from Browserbase or Browser Use Cloud?", "acceptedAnswer": { "@type": "Answer", "text": "Browserbase and Browser Use Cloud give you a browser in the cloud. We give you a desktop with a browser inside. If your agent ever needs to open a file outside the browser, edit a document, or use anything that is not a web page, you need the desktop surface they don't have." } },
+              { "@type": "Question", "name": "How is this different from E2B Desktop?", "acceptedAnswer": { "@type": "Answer", "text": "E2B Desktop is a general-purpose code-interpreter sandbox that happens to expose a desktop. We are focused specifically on AI agents driving browser plus desktop tasks. Same primitive, narrower product surface, different SDK ergonomics — one unified Sandbox with browser and computer namespaces." } },
+              { "@type": "Question", "name": "What does the SDK look like?", "acceptedAnswer": { "@type": "Answer", "text": "One class. with Sandbox(model='claude-sonnet-4-6') as s, then s.browser.run('...') or s.computer.run('...'). The browser and computer share the same desktop — a file downloaded by the browser is visible to the computer." } },
+              { "@type": "Question", "name": "Is the runtime open source?", "acceptedAnswer": { "@type": "Answer", "text": "Planned. The runtime drops as Apache-2.0 at milestone M5 in the public roadmap. Self-host the same sandbox image inside your VPC, point the SDK at your endpoint, and skip the cloud entirely if you'd rather." } },
+              { "@type": "Question", "name": "Can I really watch the agent run live?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Every sandbox exposes a public live view URL. Embed it in your own app via iframe, share it with a teammate for debugging, or watch from your dashboard." } }
             ]
           }
         ]
@@ -116,783 +101,267 @@
 
   <body class="bg-ink-900 text-white font-sans antialiased">
 
-    <!-- ============================ NAV ============================ -->
+    <!-- NAV -->
     <header class="fixed top-0 inset-x-0 z-50 border-b border-white/5 bg-ink-900/70 backdrop-blur-xl">
       <div class="max-w-[1280px] mx-auto px-6 h-14 flex items-center justify-between gap-6">
-        <a href="/" class="flex items-center gap-2.5 font-bold text-[15px] tracking-tight">
-          <span class="inline-block w-7 h-7 rounded-md bg-accent grid place-items-center text-black font-extrabold text-[13px]">≡</span>
+        <a href="/" class="flex items-center gap-2.5 font-bold text-[15px]">
+          <span class="w-7 h-7 rounded-md bg-accent grid place-items-center text-black font-extrabold text-[13px]">≡</span>
           Computer Use <span class="text-white/45 font-medium">Cloud</span>
         </a>
         <nav class="hidden md:flex items-center gap-7 text-[13.5px] font-medium text-white/70">
-          <a href="#usecases" class="hover:text-white">Use cases</a>
-          <a href="#modes" class="hover:text-white">Modes</a>
-          <a href="#compare" class="hover:text-white">Compare</a>
+          <a href="#sandbox" class="hover:text-white">Sandbox</a>
           <a href="#pricing" class="hover:text-white">Pricing</a>
+          <a href="#faq" class="hover:text-white">FAQ</a>
           <a href="https://github.com/computeruse-run" class="hover:text-white">GitHub</a>
         </nav>
-        <div class="flex items-center gap-2.5">
-          <a href="#signin" class="hidden sm:inline-flex text-[13px] font-semibold text-white/70 hover:text-white px-3 py-1.5">Sign in</a>
-          <a href="#signup" class="inline-flex items-center gap-1.5 bg-accent text-black hover:bg-emerald-400 transition rounded-md px-3.5 py-1.5 text-[13px] font-semibold">
-            Start free
-            <svg viewBox="0 0 16 16" class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 4l4 4-4 4"/></svg>
-          </a>
-        </div>
+        <a href="#signup" class="inline-flex items-center gap-1.5 bg-accent text-black hover:bg-emerald-400 transition rounded-md px-3.5 py-1.5 text-[13px] font-semibold">
+          Start free
+          <svg viewBox="0 0 16 16" class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 4l4 4-4 4"/></svg>
+        </a>
       </div>
     </header>
 
-    <!-- =========================== HERO ============================ -->
-    <section class="relative pt-32 pb-20 px-6 overflow-hidden">
-      <div class="absolute inset-0 -z-10 opacity-[0.16]" style="background-image: radial-gradient(640px 420px at 18% 0%, #10B981, transparent 65%), radial-gradient(720px 520px at 88% 28%, #FB923C, transparent 60%);"></div>
-      <div class="absolute inset-0 -z-10" style="background-image: linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px); background-size: 48px 48px; mask-image: radial-gradient(ellipse 70% 60% at 50% 25%, #000 30%, transparent 75%);"></div>
+    <!-- HERO -->
+    <section class="relative min-h-screen flex items-center px-6 pt-20 pb-12 overflow-hidden">
+      <div class="absolute inset-0 -z-10 opacity-[0.18]" style="background-image: radial-gradient(640px 420px at 18% 0%, #10B981, transparent 65%), radial-gradient(720px 520px at 88% 28%, #FB923C, transparent 60%);"></div>
+      <div class="absolute inset-0 -z-10" style="background-image: linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px); background-size: 48px 48px; mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, #000 30%, transparent 75%);"></div>
 
-      <div class="max-w-[1100px] mx-auto text-center animate-fadeUp">
-        <span class="inline-flex items-center gap-2 text-[11.5px] font-bold uppercase tracking-[0.16em] text-white/55 mb-7">
-          <span class="w-1.5 h-1.5 rounded-full bg-accent animate-pulse"></span>
-          The cloud browser for AI agents
-        </span>
+      <div class="max-w-[1280px] mx-auto w-full grid lg:grid-cols-[5fr_7fr] gap-12 items-center animate-fadeUp">
 
-        <h1 class="font-sans font-bold text-[clamp(40px,6vw,80px)] leading-[0.98] tracking-[-0.024em] text-white">
-          One browser cloud for<br />
-          every AI agent stack.
-        </h1>
-
-        <p class="mt-7 mx-auto max-w-[680px] text-[clamp(16px,1.35vw,19px)] leading-[1.55] text-white/65">
-          Compatible with <strong class="text-white">Anthropic Computer Use</strong>,
-          <strong class="text-white">Browser Use SDK</strong>, and
-          <strong class="text-white">Browserbase Session API</strong> out of the box.
-          Don't swap your agent framework. Don't learn a new API. Point the browser at us — your bill drops to about a tenth.
-        </p>
-
-        <div class="mt-9 flex items-center gap-4 flex-wrap justify-center">
-          <a href="#usecases" class="inline-flex items-center gap-2 bg-white text-black hover:bg-white/90 transition rounded-lg px-5 py-3 text-[14.5px] font-semibold">
-            Find your use case
-            <svg viewBox="0 0 16 16" class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 4l4 4-4 4"/></svg>
-          </a>
-          <a href="#pricing" class="inline-flex items-center gap-2 text-white/70 hover:text-white text-[14px] font-semibold border-b border-white/15 hover:border-white/40 pb-px">
-            See pricing
-          </a>
-        </div>
-
-        <!-- compatibility row -->
-        <div class="mt-14 flex items-center justify-center gap-x-8 gap-y-3 flex-wrap text-[11.5px] font-mono uppercase tracking-[0.14em] text-white/35">
-          <span class="text-white/55 font-sans font-semibold tracking-[0.16em]">Compatible with</span>
-          <span>Anthropic Claude</span>
-          <span class="text-white/15">·</span>
-          <span>Browser Use</span>
-          <span class="text-white/15">·</span>
-          <span>Playwright</span>
-          <span class="text-white/15">·</span>
-          <span>CDP</span>
-          <span class="text-white/15">·</span>
-          <span>Browserbase Sessions</span>
-          <span class="text-white/15">·</span>
-          <span>OpenAI Operator</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- ======================= USE CASE SELECTOR ====================== -->
-    <section class="px-6 py-24 bg-ink-950" id="usecases">
-      <div class="max-w-[1180px] mx-auto">
-        <div class="mb-14 max-w-[760px]">
-          <span class="inline-block text-[12px] font-bold uppercase tracking-[0.16em] text-white/45 mb-4">Find yourself</span>
-          <h2 class="font-sans font-bold text-[clamp(28px,3.8vw,46px)] leading-[1.05] tracking-[-0.018em] text-white">
-            Five ways developers run AI agents today.<br />
-            <span class="text-white/45">Pick the one that's yours.</span>
-          </h2>
-        </div>
-
-        <div class="space-y-4">
-
-          <!-- CARD D: Agent product cloud backend (top — highest paying) -->
-          <article class="rounded-2xl border border-white/10 bg-ink-800 overflow-hidden hover:border-accent/30 transition">
-            <div class="grid lg:grid-cols-[1.3fr_1.5fr_1fr] gap-0">
-              <div class="p-7 border-b lg:border-b-0 lg:border-r border-white/5">
-                <div class="flex items-center gap-3 mb-3">
-                  <span class="inline-grid place-items-center w-7 h-7 rounded-md bg-accent text-black font-extrabold text-[12px]">D</span>
-                  <span class="text-[10.5px] font-bold uppercase tracking-[0.14em] text-accent">Agent product · cloud backend</span>
-                </div>
-                <h3 class="font-sans font-bold text-[22px] leading-[1.2] text-white mb-3">You ship an AI product that drives a browser for users.</h3>
-                <p class="text-[13.5px] text-white/55 font-mono">Today you use <span class="text-white">Browserbase</span> or run your own cluster.</p>
-                <div class="mt-4 space-y-1.5 text-[13.5px] text-white/65 leading-[1.5]">
-                  <p class="flex gap-2"><span class="text-warm font-mono mt-0.5">!</span> Browserbase Scale pricing is "Contact Us" — hard to plan a budget.</p>
-                  <p class="flex gap-2"><span class="text-warm font-mono mt-0.5">!</span> Running your own cluster splits the team's focus from product to infra.</p>
-                  <p class="flex gap-2"><span class="text-warm font-mono mt-0.5">!</span> Enterprise customers want data-residency guarantees.</p>
-                </div>
-              </div>
-              <div class="p-7 border-b lg:border-b-0 lg:border-r border-white/5 bg-ink-800/40">
-                <span class="text-[10.5px] font-bold uppercase tracking-[0.14em] text-white/45 mb-3 block">What you get</span>
-                <ul class="space-y-2 text-[13.5px] text-white/80 leading-[1.5]">
-                  <li class="flex gap-2"><span class="text-accent mt-0.5">✓</span> Transparent pricing all the way up; no Contact Us wall.</li>
-                  <li class="flex gap-2"><span class="text-accent mt-0.5">✓</span> Self-host Docker license — run the same sandbox in your own VPC, data never leaves.</li>
-                  <li class="flex gap-2"><span class="text-accent mt-0.5">✓</span> Browserbase Session API compatible — migrate your existing code by changing one base URL.</li>
-                  <li class="flex gap-2"><span class="text-accent mt-0.5">✓</span> Per-active-second billing; idle (model thinking) is free.</li>
-                </ul>
-              </div>
-              <div class="p-7 flex flex-col justify-between gap-4 bg-ink-900/60">
-                <div>
-                  <span class="text-[10.5px] font-bold uppercase tracking-[0.14em] text-white/45 mb-3 block">Typical monthly bill</span>
-                  <div class="font-mono text-[13px] leading-[1.6] text-white/55">
-                    Browserbase Scale<br />
-                    <span class="text-warm text-[19px] font-bold tracking-tight">~$3,000+</span>
-                  </div>
-                  <div class="my-2 text-white/30 font-mono text-[14px]">↓</div>
-                  <div class="font-mono text-[13px] leading-[1.6] text-white/55">
-                    Computer Use Cloud<br />
-                    <span class="text-accent text-[22px] font-extrabold tracking-tight">~$500</span>
-                  </div>
-                </div>
-                <a href="/vs/browserbase.html" class="inline-flex items-center justify-center gap-2 bg-white/5 hover:bg-accent hover:text-black transition border border-white/10 hover:border-accent rounded-lg px-3 py-2 text-[13px] font-semibold text-white">
-                  That's me — compare
-                  <svg viewBox="0 0 16 16" class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 4l4 4-4 4"/></svg>
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <!-- CARD A: RPA / internal systems -->
-          <article class="rounded-2xl border border-white/10 bg-ink-800 overflow-hidden hover:border-accent/30 transition">
-            <div class="grid lg:grid-cols-[1.3fr_1.5fr_1fr]">
-              <div class="p-7 border-b lg:border-b-0 lg:border-r border-white/5">
-                <div class="flex items-center gap-3 mb-3">
-                  <span class="inline-grid place-items-center w-7 h-7 rounded-md bg-white/10 text-white font-extrabold text-[12px]">A</span>
-                  <span class="text-[10.5px] font-bold uppercase tracking-[0.14em] text-white/65">AI Agent · RPA · internal systems</span>
-                </div>
-                <h3 class="font-sans font-bold text-[22px] leading-[1.2] text-white mb-3">Claude fills your team's HR system, SAP, or insurance forms.</h3>
-                <p class="text-[13.5px] text-white/55 font-mono">Today you use <span class="text-white">Anthropic Computer Use API + self-built Docker</span>.</p>
-                <div class="mt-4 space-y-1.5 text-[13.5px] text-white/65 leading-[1.5]">
-                  <p class="flex gap-2"><span class="text-warm font-mono mt-0.5">!</span> Running your own browser fleet means full-time ops cost.</p>
-                  <p class="flex gap-2"><span class="text-warm font-mono mt-0.5">!</span> A single Docker can't run many tasks in parallel; concurrency = more VMs = more ops.</p>
-                  <p class="flex gap-2"><span class="text-warm font-mono mt-0.5">!</span> Datacenter IPs get rate-limited and blocked; r/AI_Agents has called the Anthropic path "45× more expensive" once you add it up.</p>
-                </div>
-              </div>
-              <div class="p-7 border-b lg:border-b-0 lg:border-r border-white/5 bg-ink-800/40">
-                <span class="text-[10.5px] font-bold uppercase tracking-[0.14em] text-white/45 mb-3 block">What you get</span>
-                <ul class="space-y-2 text-[13.5px] text-white/80 leading-[1.5]">
-                  <li class="flex gap-2"><span class="text-accent mt-0.5">✓</span> Pre-warmed Chromium pool — 1.8s p95 cold start.</li>
-                  <li class="flex gap-2"><span class="text-accent mt-0.5">✓</span> Residential IP rotation included on every plan.</li>
-                  <li class="flex gap-2"><span class="text-accent mt-0.5">✓</span> Per-active-second metering — idle (model thinking) is free.</li>
-                  <li class="flex gap-2"><span class="text-accent mt-0.5">✓</span> Anthropic tool schema unchanged. Same Claude code, swap the execution backend.</li>
-                </ul>
-              </div>
-              <div class="p-7 flex flex-col justify-between gap-4 bg-ink-900/60">
-                <div>
-                  <span class="text-[10.5px] font-bold uppercase tracking-[0.14em] text-white/45 mb-3 block">Typical monthly bill</span>
-                  <div class="font-mono text-[13px] leading-[1.6] text-white/55">
-                    Self-built (servers+IPs+ops)<br />
-                    <span class="text-warm text-[19px] font-bold tracking-tight">~$800</span>
-                  </div>
-                  <div class="my-2 text-white/30 font-mono text-[14px]">↓</div>
-                  <div class="font-mono text-[13px] leading-[1.6] text-white/55">
-                    Computer Use Cloud<br />
-                    <span class="text-accent text-[22px] font-extrabold tracking-tight">~$80</span>
-                  </div>
-                </div>
-                <a href="/vs/anthropic-computer-use.html" class="inline-flex items-center justify-center gap-2 bg-white/5 hover:bg-accent hover:text-black transition border border-white/10 hover:border-accent rounded-lg px-3 py-2 text-[13px] font-semibold text-white">
-                  That's me — compare
-                  <svg viewBox="0 0 16 16" class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 4l4 4-4 4"/></svg>
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <!-- CARD B: Scraping -->
-          <article class="rounded-2xl border border-white/10 bg-ink-800 overflow-hidden hover:border-accent/30 transition">
-            <div class="grid lg:grid-cols-[1.3fr_1.5fr_1fr]">
-              <div class="p-7 border-b lg:border-b-0 lg:border-r border-white/5">
-                <div class="flex items-center gap-3 mb-3">
-                  <span class="inline-grid place-items-center w-7 h-7 rounded-md bg-white/10 text-white font-extrabold text-[12px]">B</span>
-                  <span class="text-[10.5px] font-bold uppercase tracking-[0.14em] text-white/65">Data collection · Web scraping</span>
-                </div>
-                <h3 class="font-sans font-bold text-[22px] leading-[1.2] text-white mb-3">Pull prices, listings, or SaaS public data — at agent speed.</h3>
-                <p class="text-[13.5px] text-white/55 font-mono">Today you use <span class="text-white">Browser Use SDK + Browser Use Cloud</span> or self-hosted Playwright.</p>
-                <div class="mt-4 space-y-1.5 text-[13.5px] text-white/65 leading-[1.5]">
-                  <p class="flex gap-2"><span class="text-warm font-mono mt-0.5">!</span> Browser Use Cloud stacks three meters: browser-time + LLM-step + per-task fee — long jobs explode the bill.</p>
-                  <p class="flex gap-2"><span class="text-warm font-mono mt-0.5">!</span> Self-hosted Playwright has no built-in CAPTCHA solver or residential IP pool.</p>
-                  <p class="flex gap-2"><span class="text-warm font-mono mt-0.5">!</span> Cold-start time on your own infra kills throughput when you fan out.</p>
-                </div>
-              </div>
-              <div class="p-7 border-b lg:border-b-0 lg:border-r border-white/5 bg-ink-800/40">
-                <span class="text-[10.5px] font-bold uppercase tracking-[0.14em] text-white/45 mb-3 block">What you get</span>
-                <ul class="space-y-2 text-[13.5px] text-white/80 leading-[1.5]">
-                  <li class="flex gap-2"><span class="text-accent mt-0.5">✓</span> Browser Use SDK works unchanged — point the CDP URL at us, that's it.</li>
-                  <li class="flex gap-2"><span class="text-accent mt-0.5">✓</span> Single meter: per-active-second. No browser-time, no per-step, no per-task surcharge.</li>
-                  <li class="flex gap-2"><span class="text-accent mt-0.5">✓</span> CAPTCHA solving + residential proxy included.</li>
-                  <li class="flex gap-2"><span class="text-accent mt-0.5">✓</span> Fan out to 25 concurrent sandboxes on Pro, unlimited on Team.</li>
-                </ul>
-              </div>
-              <div class="p-7 flex flex-col justify-between gap-4 bg-ink-900/60">
-                <div>
-                  <span class="text-[10.5px] font-bold uppercase tracking-[0.14em] text-white/45 mb-3 block">Typical monthly bill</span>
-                  <div class="font-mono text-[13px] leading-[1.6] text-white/55">
-                    Browser Use Cloud (3-layer)<br />
-                    <span class="text-warm text-[19px] font-bold tracking-tight">~$250</span>
-                  </div>
-                  <div class="my-2 text-white/30 font-mono text-[14px]">↓</div>
-                  <div class="font-mono text-[13px] leading-[1.6] text-white/55">
-                    Computer Use Cloud<br />
-                    <span class="text-accent text-[22px] font-extrabold tracking-tight">~$35</span>
-                  </div>
-                </div>
-                <a href="/vs/browser-use.html" class="inline-flex items-center justify-center gap-2 bg-white/5 hover:bg-accent hover:text-black transition border border-white/10 hover:border-accent rounded-lg px-3 py-2 text-[13px] font-semibold text-white">
-                  That's me — compare
-                  <svg viewBox="0 0 16 16" class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 4l4 4-4 4"/></svg>
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <!-- CARD C: AI QA -->
-          <article class="rounded-2xl border border-white/10 bg-ink-800 overflow-hidden hover:border-accent/30 transition">
-            <div class="grid lg:grid-cols-[1.3fr_1.5fr_1fr]">
-              <div class="p-7 border-b lg:border-b-0 lg:border-r border-white/5">
-                <div class="flex items-center gap-3 mb-3">
-                  <span class="inline-grid place-items-center w-7 h-7 rounded-md bg-white/10 text-white font-extrabold text-[12px]">C</span>
-                  <span class="text-[10.5px] font-bold uppercase tracking-[0.14em] text-white/65">AI QA · UI test automation</span>
-                </div>
-                <h3 class="font-sans font-bold text-[22px] leading-[1.2] text-white mb-3">Let an agent run your regression suite like a human would.</h3>
-                <p class="text-[13.5px] text-white/55 font-mono">Today you use <span class="text-white">Playwright + self-hosted CI runner</span> or Browserbase.</p>
-                <div class="mt-4 space-y-1.5 text-[13.5px] text-white/65 leading-[1.5]">
-                  <p class="flex gap-2"><span class="text-warm font-mono mt-0.5">!</span> Plain Playwright has no AI decision layer — the suite breaks the moment the UI shifts.</p>
-                  <p class="flex gap-2"><span class="text-warm font-mono mt-0.5">!</span> Browserbase Startup's 200 included hours run out fast; overage is $0.30 per minute.</p>
-                  <p class="flex gap-2"><span class="text-warm font-mono mt-0.5">!</span> CI runners idle most of the day but you pay for them all month.</p>
-                </div>
-              </div>
-              <div class="p-7 border-b lg:border-b-0 lg:border-r border-white/5 bg-ink-800/40">
-                <span class="text-[10.5px] font-bold uppercase tracking-[0.14em] text-white/45 mb-3 block">What you get</span>
-                <ul class="space-y-2 text-[13.5px] text-white/80 leading-[1.5]">
-                  <li class="flex gap-2"><span class="text-accent mt-0.5">✓</span> Plain Playwright works as-is — same CDP endpoint shape.</li>
-                  <li class="flex gap-2"><span class="text-accent mt-0.5">✓</span> Add Computer Use mode on top for self-healing tests — the agent re-finds the button when the selector breaks.</li>
-                  <li class="flex gap-2"><span class="text-accent mt-0.5">✓</span> Per-active-second billing — no plan ceiling, no surprise overage.</li>
-                  <li class="flex gap-2"><span class="text-accent mt-0.5">✓</span> Video recording + transcript on every failed run.</li>
-                </ul>
-              </div>
-              <div class="p-7 flex flex-col justify-between gap-4 bg-ink-900/60">
-                <div>
-                  <span class="text-[10.5px] font-bold uppercase tracking-[0.14em] text-white/45 mb-3 block">Typical monthly bill</span>
-                  <div class="font-mono text-[13px] leading-[1.6] text-white/55">
-                    Browserbase Startup + overage<br />
-                    <span class="text-warm text-[19px] font-bold tracking-tight">~$299</span>
-                  </div>
-                  <div class="my-2 text-white/30 font-mono text-[14px]">↓</div>
-                  <div class="font-mono text-[13px] leading-[1.6] text-white/55">
-                    Computer Use Cloud<br />
-                    <span class="text-accent text-[22px] font-extrabold tracking-tight">~$60</span>
-                  </div>
-                </div>
-                <a href="/vs/browserbase.html" class="inline-flex items-center justify-center gap-2 bg-white/5 hover:bg-accent hover:text-black transition border border-white/10 hover:border-accent rounded-lg px-3 py-2 text-[13px] font-semibold text-white">
-                  That's me — compare
-                  <svg viewBox="0 0 16 16" class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 4l4 4-4 4"/></svg>
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <!-- CARD E: Individual developer / Hackathon -->
-          <article class="rounded-2xl border border-white/10 bg-ink-800 overflow-hidden hover:border-accent/30 transition">
-            <div class="grid lg:grid-cols-[1.3fr_1.5fr_1fr]">
-              <div class="p-7 border-b lg:border-b-0 lg:border-r border-white/5">
-                <div class="flex items-center gap-3 mb-3">
-                  <span class="inline-grid place-items-center w-7 h-7 rounded-md bg-white/10 text-white font-extrabold text-[12px]">E</span>
-                  <span class="text-[10.5px] font-bold uppercase tracking-[0.14em] text-white/65">Individual dev · Hackathon · Side project</span>
-                </div>
-                <h3 class="font-sans font-bold text-[22px] leading-[1.2] text-white mb-3">Just want to hack on agents over a weekend.</h3>
-                <p class="text-[13.5px] text-white/55 font-mono">Today you run <span class="text-white">local Chrome + Browser Use SDK</span> on your laptop.</p>
-                <div class="mt-4 space-y-1.5 text-[13.5px] text-white/65 leading-[1.5]">
-                  <p class="flex gap-2"><span class="text-warm font-mono mt-0.5">!</span> Can't run sessions in parallel on one machine.</p>
-                  <p class="flex gap-2"><span class="text-warm font-mono mt-0.5">!</span> Laptop fans run hot all weekend.</p>
-                  <p class="flex gap-2"><span class="text-warm font-mono mt-0.5">!</span> No public URL to share the live view with judges or friends.</p>
-                </div>
-              </div>
-              <div class="p-7 border-b lg:border-b-0 lg:border-r border-white/5 bg-ink-800/40">
-                <span class="text-[10.5px] font-bold uppercase tracking-[0.14em] text-white/45 mb-3 block">What you get</span>
-                <ul class="space-y-2 text-[13.5px] text-white/80 leading-[1.5]">
-                  <li class="flex gap-2"><span class="text-accent mt-0.5">✓</span> 100 active hours per month free, no credit card.</li>
-                  <li class="flex gap-2"><span class="text-accent mt-0.5">✓</span> Public live view URL on every sandbox — share with anyone.</li>
-                  <li class="flex gap-2"><span class="text-accent mt-0.5">✓</span> Laptop stays cool. Battery lasts.</li>
-                  <li class="flex gap-2"><span class="text-accent mt-0.5">✓</span> Same SDK as production — graduate to Pro when you ship.</li>
-                </ul>
-              </div>
-              <div class="p-7 flex flex-col justify-between gap-4 bg-ink-900/60">
-                <div>
-                  <span class="text-[10.5px] font-bold uppercase tracking-[0.14em] text-white/45 mb-3 block">Typical monthly bill</span>
-                  <div class="font-mono text-[13px] leading-[1.6] text-white/55">
-                    Local Chrome on your laptop<br />
-                    <span class="text-warm text-[19px] font-bold tracking-tight">$0</span>
-                  </div>
-                  <div class="my-2 text-white/30 font-mono text-[14px]">↓</div>
-                  <div class="font-mono text-[13px] leading-[1.6] text-white/55">
-                    Computer Use Cloud (Free)<br />
-                    <span class="text-accent text-[22px] font-extrabold tracking-tight">$0</span>
-                  </div>
-                </div>
-                <a href="#signup" class="inline-flex items-center justify-center gap-2 bg-white/5 hover:bg-accent hover:text-black transition border border-white/10 hover:border-accent rounded-lg px-3 py-2 text-[13px] font-semibold text-white">
-                  Start free
-                  <svg viewBox="0 0 16 16" class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 4l4 4-4 4"/></svg>
-                </a>
-              </div>
-            </div>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ===================== THREE COMPAT MODES ====================== -->
-    <section class="px-6 py-24 bg-ink-900" id="modes">
-      <div class="max-w-[1180px] mx-auto">
-        <div class="max-w-[820px] mb-14">
-          <span class="inline-block text-[12px] font-bold uppercase tracking-[0.16em] text-white/45 mb-4">Three compatibility modes</span>
-          <h2 class="font-sans font-bold text-[clamp(28px,3.6vw,44px)] leading-[1.05] tracking-[-0.018em] text-white">
-            Whatever your agent already speaks, we already listen.
-          </h2>
-          <p class="mt-5 text-[16px] leading-[1.6] text-white/65 max-w-[680px]">
-            Computer Use Cloud is not yet another SDK to learn. Pick the mode that matches your existing
-            code; the sandbox runs the same underneath.
+        <div>
+          <h1 class="font-bold text-[clamp(44px,5.6vw,84px)] leading-[0.96] tracking-[-0.024em]">
+            Give your AI agent<br />a <em class="not-italic text-accent">computer.</em>
+          </h1>
+          <p class="mt-7 text-[clamp(16px,1.3vw,19px)] leading-[1.55] text-white/65 max-w-[420px]">
+            A cloud sandbox with a browser and a desktop. Claude, GPT, or Gemini drives it. One SDK.
           </p>
+          <div class="mt-8 flex items-center gap-4 flex-wrap">
+            <a href="#signup" class="inline-flex items-center gap-2 bg-white text-black hover:bg-white/90 transition rounded-lg px-5 py-3 text-[14.5px] font-semibold">
+              Start free
+              <svg viewBox="0 0 16 16" class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 4l4 4-4 4"/></svg>
+            </a>
+            <a href="https://github.com/computeruse-run/sdk" class="text-white/70 hover:text-white text-[14px] font-semibold border-b border-white/15 hover:border-white/40 pb-px">
+              Read the SDK
+            </a>
+          </div>
         </div>
 
-        <div class="space-y-4">
+        <div class="rounded-2xl border border-white/10 bg-ink-800/80 backdrop-blur-xl shadow-[0_30px_80px_rgba(0,0,0,0.5)] overflow-hidden">
+          <div class="flex items-center gap-1.5 px-4 py-3 border-b border-white/5">
+            <span class="w-2.5 h-2.5 rounded-full bg-white/15"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-white/15"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-white/15"></span>
+            <span class="ml-3 font-mono text-[11px] text-white/40">agent.py</span>
+          </div>
+          <pre class="font-mono text-[13.5px] leading-[1.7] p-6 text-white/90 overflow-x-auto whitespace-pre"><span class="text-warm">from</span> computeruse <span class="text-warm">import</span> Sandbox
 
-          <!-- Mode 1 -->
-          <article class="rounded-2xl border border-white/10 bg-ink-800 p-8">
-            <div class="grid lg:grid-cols-[1fr_1.4fr] gap-8 items-center">
-              <div>
-                <div class="flex items-center gap-3 mb-4">
-                  <span class="inline-grid place-items-center w-9 h-9 rounded-lg bg-accent/15 text-accent font-mono font-bold text-[13px]">01</span>
-                  <h3 class="font-bold text-[19px] text-white">Claude Computer Use mode</h3>
-                </div>
-                <p class="text-[14.5px] leading-[1.6] text-white/65 mb-3">
-                  Your Claude still receives screenshots and emits coordinate-based actions. The Anthropic
-                  tool schema is unchanged. The only thing that moves is the execution backend — from a
-                  self-hosted Docker container on your box to a pre-configured sandbox in our cloud.
-                </p>
-                <p class="text-[13px] leading-[1.5] text-white/45 font-mono">
-                  No code change in the Claude call. Set <span class="text-white">CU_BACKEND=cloud</span> and run.
-                </p>
-              </div>
-              <!-- info flow diagram -->
-              <div class="rounded-xl border border-white/10 bg-ink-900 p-6">
-                <div class="grid grid-cols-[1fr_auto_1fr] items-center gap-3 text-center">
-                  <div class="rounded-lg border border-white/15 bg-ink-700 px-4 py-5">
-                    <div class="font-mono text-[11px] uppercase tracking-[0.12em] text-white/45 mb-1">Your code</div>
-                    <div class="text-[14px] font-semibold text-white">Anthropic Claude API</div>
-                    <div class="font-mono text-[11px] text-white/40 mt-1">computer_20241022 tool</div>
-                  </div>
-                  <div class="text-accent font-mono text-[18px]">↔</div>
-                  <div class="rounded-lg border border-accent/40 bg-accent/[0.06] px-4 py-5">
-                    <div class="font-mono text-[11px] uppercase tracking-[0.12em] text-accent mb-1">Us</div>
-                    <div class="text-[14px] font-semibold text-white">Cloud Chromium sandbox</div>
-                    <div class="font-mono text-[11px] text-white/40 mt-1">screenshot + action loop</div>
-                  </div>
-                </div>
-              </div>
+<span class="text-warm">with</span> Sandbox(model=<span class="text-accent">"claude-sonnet-4-6"</span>) <span class="text-warm">as</span> s:
+    s.browser.goto(<span class="text-accent">"https://google.com/flights"</span>)
+    flight = s.browser.run(<span class="text-accent">"Cheapest SFO→LIS next Tuesday."</span>)
+
+    s.computer.run(<span class="text-accent">"Open Calendar, add flight on departure day."</span>)</pre>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION: ONE SANDBOX, TWO SURFACES -->
+    <section class="px-6 py-28 border-t border-white/5" id="sandbox">
+      <div class="max-w-[1080px] mx-auto">
+        <h2 class="font-bold text-[clamp(28px,3.6vw,44px)] leading-[1.05] tracking-[-0.018em] max-w-[720px]">
+          One sandbox.<br />
+          <span class="text-white/45">A browser and a desktop, sharing one machine.</span>
+        </h2>
+
+        <div class="mt-16 grid md:grid-cols-2 gap-6">
+          <div class="rounded-2xl border border-white/10 bg-ink-800 p-7">
+            <div class="flex items-center gap-2 text-accent font-mono text-[12px] uppercase tracking-[0.12em] font-bold mb-4">
+              <svg viewBox="0 0 16 16" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="3" width="12" height="10" rx="1.2"/><path d="M2 6h12"/></svg>
+              s.browser
             </div>
-          </article>
-
-          <!-- Mode 2 -->
-          <article class="rounded-2xl border border-white/10 bg-ink-800 p-8">
-            <div class="grid lg:grid-cols-[1fr_1.4fr] gap-8 items-center">
-              <div>
-                <div class="flex items-center gap-3 mb-4">
-                  <span class="inline-grid place-items-center w-9 h-9 rounded-lg bg-accent/15 text-accent font-mono font-bold text-[13px]">02</span>
-                  <h3 class="font-bold text-[19px] text-white">Browser Use / Playwright / CDP mode</h3>
-                </div>
-                <p class="text-[14.5px] leading-[1.6] text-white/65 mb-3">
-                  Any client that speaks Chrome DevTools Protocol works out of the box: Browser Use SDK,
-                  Playwright, Puppeteer, Selenium-CDP, Stagehand. Point the connection URL at us and the rest
-                  of your script is unchanged.
-                </p>
-                <p class="text-[13px] leading-[1.5] text-white/45 font-mono">
-                  Connection string: <span class="text-white">wss://connect.computeruse.run?apiKey=…</span>
-                </p>
-              </div>
-              <div class="rounded-xl border border-white/10 bg-ink-900 p-6">
-                <div class="grid grid-cols-[1fr_auto_1fr] items-center gap-3 text-center">
-                  <div class="rounded-lg border border-white/15 bg-ink-700 px-4 py-5">
-                    <div class="font-mono text-[11px] uppercase tracking-[0.12em] text-white/45 mb-1">Your code</div>
-                    <div class="text-[14px] font-semibold text-white">Any CDP client</div>
-                    <div class="font-mono text-[11px] text-white/40 mt-1">Browser Use · Playwright · Puppeteer</div>
-                  </div>
-                  <div class="text-accent font-mono text-[18px]">↔</div>
-                  <div class="rounded-lg border border-accent/40 bg-accent/[0.06] px-4 py-5">
-                    <div class="font-mono text-[11px] uppercase tracking-[0.12em] text-accent mb-1">Us</div>
-                    <div class="text-[14px] font-semibold text-white">CDP gateway</div>
-                    <div class="font-mono text-[11px] text-white/40 mt-1">drop-in WebSocket replacement</div>
-                  </div>
-                </div>
-              </div>
+            <h3 class="font-bold text-[20px] mb-2">When the job is on a web page.</h3>
+            <p class="text-[14.5px] leading-[1.55] text-white/60">Navigate, click, type, scrape, fill forms. Full CDP underneath; the agent decides the actions.</p>
+          </div>
+          <div class="rounded-2xl border border-white/10 bg-ink-800 p-7">
+            <div class="flex items-center gap-2 text-accent font-mono text-[12px] uppercase tracking-[0.12em] font-bold mb-4">
+              <svg viewBox="0 0 16 16" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="2" width="12" height="10" rx="1.2"/><path d="M5 14h6M8 12v2"/></svg>
+              s.computer
             </div>
-          </article>
-
-          <!-- Mode 3 -->
-          <article class="rounded-2xl border border-white/10 bg-ink-800 p-8">
-            <div class="grid lg:grid-cols-[1fr_1.4fr] gap-8 items-center">
-              <div>
-                <div class="flex items-center gap-3 mb-4">
-                  <span class="inline-grid place-items-center w-9 h-9 rounded-lg bg-accent/15 text-accent font-mono font-bold text-[13px]">03</span>
-                  <h3 class="font-bold text-[19px] text-white">Browserbase Session API mode</h3>
-                </div>
-                <p class="text-[14.5px] leading-[1.6] text-white/65 mb-3">
-                  If you already use Browserbase's <span class="font-mono text-white">sessions.create()</span>
-                  surface, swap one base URL. Session lifecycle, recording, and live view all behave
-                  the same way.
-                </p>
-                <p class="text-[13px] leading-[1.5] text-white/45 font-mono">
-                  Migration: change <span class="text-white">api.browserbase.com</span> →
-                  <span class="text-white">api.computeruse.run</span>
-                </p>
-              </div>
-              <div class="rounded-xl border border-white/10 bg-ink-900 p-6">
-                <div class="grid grid-cols-[1fr_auto_1fr] items-center gap-3 text-center">
-                  <div class="rounded-lg border border-white/15 bg-ink-700 px-4 py-5">
-                    <div class="font-mono text-[11px] uppercase tracking-[0.12em] text-white/45 mb-1">Your code</div>
-                    <div class="text-[14px] font-semibold text-white">Browserbase SDK call</div>
-                    <div class="font-mono text-[11px] text-white/40 mt-1">bb.sessions.create()</div>
-                  </div>
-                  <div class="text-accent font-mono text-[18px]">↔</div>
-                  <div class="rounded-lg border border-accent/40 bg-accent/[0.06] px-4 py-5">
-                    <div class="font-mono text-[11px] uppercase tracking-[0.12em] text-accent mb-1">Us</div>
-                    <div class="text-[14px] font-semibold text-white">Compatible Session API</div>
-                    <div class="font-mono text-[11px] text-white/40 mt-1">same payload shape</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </article>
-
+            <h3 class="font-bold text-[20px] mb-2">When the job needs the desktop.</h3>
+            <p class="text-[14.5px] leading-[1.55] text-white/60">Open files, run a CLI, edit a document, jump between two apps. The browser is just one window.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- ====================== COMPARISON TABLE ======================== -->
-    <section class="px-6 py-24 bg-ink-950 border-y border-white/5" id="compare">
-      <div class="max-w-[1200px] mx-auto">
-        <div class="max-w-[760px] mb-12">
-          <span class="inline-block text-[12px] font-bold uppercase tracking-[0.16em] text-white/45 mb-4">Honest comparison</span>
-          <h2 class="font-sans font-bold text-[clamp(28px,3.6vw,44px)] leading-[1.05] tracking-[-0.018em] text-white">
-            Pick what you want to do.<br />
-            <span class="text-white/45">See who can do it, and what it costs.</span>
-          </h2>
+    <!-- SECTION: ANY MODEL -->
+    <section class="px-6 py-28 bg-ink-800 border-y border-white/5">
+      <div class="max-w-[1080px] mx-auto">
+        <h2 class="font-bold text-[clamp(28px,3.6vw,44px)] leading-[1.05] tracking-[-0.018em] max-w-[720px]">
+          Any model. <span class="text-white/45">Yours to pick.</span>
+        </h2>
+
+        <div class="mt-12 flex flex-wrap gap-3">
+          <span class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-ink-900 px-4 py-2 text-[13.5px] font-mono">
+            <span class="w-2 h-2 rounded-full bg-accent"></span> claude-sonnet-4-6
+          </span>
+          <span class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-ink-900 px-4 py-2 text-[13.5px] font-mono">
+            <span class="w-2 h-2 rounded-full bg-accent"></span> gpt-5
+          </span>
+          <span class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-ink-900 px-4 py-2 text-[13.5px] font-mono">
+            <span class="w-2 h-2 rounded-full bg-accent"></span> gemini-3-pro
+          </span>
         </div>
 
-        <div class="overflow-x-auto rounded-2xl border border-white/10 bg-ink-800">
-          <table class="w-full min-w-[920px] text-[13.5px]">
-            <thead class="text-[11px] uppercase tracking-[0.1em] font-bold text-white/45 bg-ink-700 border-b border-white/5">
-              <tr>
-                <th class="px-5 py-4 text-left font-bold">What I want to do</th>
-                <th class="px-3 py-4 font-bold">Self-built Playwright</th>
-                <th class="px-3 py-4 font-bold">Anthropic API</th>
-                <th class="px-3 py-4 font-bold">Browser Use Cloud</th>
-                <th class="px-3 py-4 font-bold">Browserbase</th>
-                <th class="px-3 py-4 font-bold bg-accent/10 text-accent">computeruse.run</th>
-              </tr>
-            </thead>
-            <tbody class="divide-y divide-white/5 text-center text-white/70">
-              <tr>
-                <td class="px-5 py-3.5 text-left text-white/85 font-medium">Run Claude Computer Use agent</td>
-                <td class="px-3 py-3.5">Hard <span class="text-white/35 font-mono text-[11px]">(roll your own VNC)</span></td>
-                <td class="px-3 py-3.5">API only, browser is on you</td>
-                <td class="px-3 py-3.5 text-white/35">—</td>
-                <td class="px-3 py-3.5 text-white/35">—</td>
-                <td class="px-3 py-3.5 bg-accent/[0.04] text-accent font-bold">✓ Native</td>
-              </tr>
-              <tr>
-                <td class="px-5 py-3.5 text-left text-white/85 font-medium">Run Browser Use agent</td>
-                <td class="px-3 py-3.5">✓ but DIY infra</td>
-                <td class="px-3 py-3.5 text-white/35">—</td>
-                <td class="px-3 py-3.5 text-accent">✓ Native</td>
-                <td class="px-3 py-3.5 text-warm">⚠ change cdp_url</td>
-                <td class="px-3 py-3.5 bg-accent/[0.04] text-accent font-bold">✓ Drop-in</td>
-              </tr>
-              <tr>
-                <td class="px-5 py-3.5 text-left text-white/85 font-medium">Run plain Playwright script</td>
-                <td class="px-3 py-3.5 text-accent">✓</td>
-                <td class="px-3 py-3.5 text-white/35">—</td>
-                <td class="px-3 py-3.5 text-accent">✓</td>
-                <td class="px-3 py-3.5 text-accent">✓</td>
-                <td class="px-3 py-3.5 bg-accent/[0.04] text-accent font-bold">✓</td>
-              </tr>
-              <tr>
-                <td class="px-5 py-3.5 text-left text-white/85 font-medium">Run OpenAI Operator</td>
-                <td class="px-3 py-3.5 text-white/35">—</td>
-                <td class="px-3 py-3.5 text-white/35">—</td>
-                <td class="px-3 py-3.5 text-white/35">—</td>
-                <td class="px-3 py-3.5 text-warm">⚠ partial</td>
-                <td class="px-3 py-3.5 bg-accent/[0.04] text-accent font-bold">✓</td>
-              </tr>
-              <tr>
-                <td class="px-5 py-3.5 text-left text-white/85 font-medium">Handle CAPTCHA</td>
-                <td class="px-3 py-3.5">DIY third-party</td>
-                <td class="px-3 py-3.5 text-white/35">Not their job</td>
-                <td class="px-3 py-3.5 text-accent">Built-in</td>
-                <td class="px-3 py-3.5 text-accent">Built-in</td>
-                <td class="px-3 py-3.5 bg-accent/[0.04] text-accent font-bold">Built-in</td>
-              </tr>
-              <tr>
-                <td class="px-5 py-3.5 text-left text-white/85 font-medium">Residential IP rotation</td>
-                <td class="px-3 py-3.5">Buy your own</td>
-                <td class="px-3 py-3.5 text-white/35">Not their job</td>
-                <td class="px-3 py-3.5 text-accent">Built-in</td>
-                <td class="px-3 py-3.5 text-accent">Built-in</td>
-                <td class="px-3 py-3.5 bg-accent/[0.04] text-accent font-bold">Built-in</td>
-              </tr>
-              <tr>
-                <td class="px-5 py-3.5 text-left text-white/85 font-medium">24/7 with 100+ concurrent sandboxes</td>
-                <td class="px-3 py-3.5">Run a cluster</td>
-                <td class="px-3 py-3.5 text-white/35">Not feasible</td>
-                <td class="px-3 py-3.5 text-warm">Plan-capped</td>
-                <td class="px-3 py-3.5 text-warm">Plan-capped</td>
-                <td class="px-3 py-3.5 bg-accent/[0.04] text-accent font-bold">No hard ceiling</td>
-              </tr>
-              <tr>
-                <td class="px-5 py-3.5 text-left text-white/85 font-medium">Data never leaves your VPC (self-host)</td>
-                <td class="px-3 py-3.5 text-accent">✓</td>
-                <td class="px-3 py-3.5 text-white/35">—</td>
-                <td class="px-3 py-3.5">SDK yes, Cloud no</td>
-                <td class="px-3 py-3.5 text-white/35">—</td>
-                <td class="px-3 py-3.5 bg-accent/[0.04] text-accent font-bold">✓ Docker</td>
-              </tr>
-              <tr>
-                <td class="px-5 py-3.5 text-left text-white/85 font-medium">Open-source runtime</td>
-                <td class="px-3 py-3.5 text-white/35">N/A</td>
-                <td class="px-3 py-3.5 text-white/35">No</td>
-                <td class="px-3 py-3.5 text-accent">SDK yes</td>
-                <td class="px-3 py-3.5 text-white/35">No</td>
-                <td class="px-3 py-3.5 bg-accent/[0.04] text-accent font-bold">Apache-2.0</td>
-              </tr>
-              <tr class="bg-white/[0.02]">
-                <td class="px-5 py-4 text-left text-white font-bold">Cost per standard agent task<sup class="text-warm">*</sup></td>
-                <td class="px-3 py-4 font-mono text-white/70">$0.05<span class="text-white/35 text-[11px]"> +ops</span></td>
-                <td class="px-3 py-4 font-mono text-warm">$0.20+</td>
-                <td class="px-3 py-4 font-mono text-warm">$0.15</td>
-                <td class="px-3 py-4 font-mono text-warm">$0.10</td>
-                <td class="px-3 py-4 font-mono bg-accent/[0.06] text-accent font-extrabold text-[16px]">$0.01</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <p class="mt-5 text-[12.5px] text-white/45 font-mono leading-[1.5]">
-          <sup class="text-warm">*</sup> <strong class="text-white/70">Standard agent task</strong> =
-          10 minutes of browser uptime · 30 LLM decision steps · 1 CAPTCHA solve. Snapshot taken May 25, 2026.
-          Self-built cost excludes engineering time to build and operate the cluster.
+        <p class="mt-8 text-[15px] text-white/55 max-w-[560px]">
+          Model is a kwarg on <code class="font-mono text-[13.5px] bg-white/5 rounded px-1.5 py-0.5 text-white">Sandbox()</code>. Bring your own provider key. We handle everything else.
         </p>
       </div>
     </section>
 
-    <!-- ============================ PRICING =========================== -->
-    <section class="px-6 py-24" id="pricing">
-      <div class="max-w-[1180px] mx-auto">
-        <div class="text-center mb-14">
-          <span class="inline-block text-[12px] font-bold uppercase tracking-[0.16em] text-white/45 mb-4">Pricing</span>
-          <h2 class="font-sans font-bold text-[clamp(28px,3.6vw,44px)] leading-[1.05] tracking-[-0.018em] text-white">
-            Three plans. One meter.
-          </h2>
-          <p class="mt-5 text-[16px] leading-[1.6] text-white/65 max-w-[560px] mx-auto">
-            Every plan bills per active second. Idle (model thinking) is always free.
-            Pick the tier that matches your use case.
-          </p>
+    <!-- SECTION: PRICING -->
+    <section class="px-6 py-28" id="pricing">
+      <div class="max-w-[1080px] mx-auto">
+        <div class="flex items-baseline gap-3 mb-12">
+          <h2 class="font-bold text-[clamp(28px,3.6vw,44px)] leading-[1.05] tracking-[-0.018em]">Pricing.</h2>
+          <span class="text-[11px] uppercase tracking-[0.14em] font-bold text-warm">Preview</span>
         </div>
 
-        <div class="grid md:grid-cols-3 gap-4 max-w-[1080px] mx-auto">
-          <!-- Free -->
+        <div class="grid md:grid-cols-3 gap-4">
           <div class="rounded-2xl border border-white/10 bg-ink-800 p-7 flex flex-col">
-            <h3 class="font-bold text-[18px] text-white">Free</h3>
-            <p class="mt-1 text-[13px] text-white/50">Use case <span class="text-white/80 font-mono">E</span> · individual dev · hackathon</p>
-            <div class="mt-6 flex items-baseline gap-1.5">
-              <span class="text-[42px] font-bold tracking-tight text-white">$0</span>
-              <span class="text-[13px] text-white/50">/ month</span>
-            </div>
-            <a href="#signup" class="mt-6 block text-center bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg py-2.5 text-[13.5px] font-semibold text-white">Start free</a>
+            <h3 class="font-bold text-[18px]">Free</h3>
+            <div class="mt-5 flex items-baseline gap-1.5"><span class="text-[42px] font-bold tracking-tight">$0</span><span class="text-[13px] text-white/50">/ mo</span></div>
+            <a href="#signup" class="mt-6 block text-center bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg py-2.5 text-[13.5px] font-semibold">Start free</a>
             <ul class="mt-7 space-y-2.5 text-[13.5px] text-white/65 flex-1">
-              <li class="flex gap-2"><span class="text-accent mt-0.5">✓</span> <strong class="text-white">100 active hours</strong> / month</li>
-              <li class="flex gap-2"><span class="text-accent mt-0.5">✓</span> 5 concurrent sandboxes</li>
-              <li class="flex gap-2"><span class="text-accent mt-0.5">✓</span> Live view URL on every session</li>
-              <li class="flex gap-2"><span class="text-accent mt-0.5">✓</span> Residential IP rotation</li>
-              <li class="flex gap-2"><span class="text-accent mt-0.5">✓</span> Community support (GitHub Discussions)</li>
+              <li class="flex gap-2"><span class="text-accent">✓</span> 100 active hours / mo</li>
+              <li class="flex gap-2"><span class="text-accent">✓</span> Live view URL</li>
               <li class="flex gap-2"><span class="text-white/30">—</span> No credit card</li>
             </ul>
           </div>
-
-          <!-- Pro -->
           <div class="rounded-2xl border-2 border-accent bg-accent/[0.04] p-7 relative shadow-[0_30px_60px_rgba(16,185,129,0.18)] flex flex-col">
             <span class="absolute -top-3 left-7 bg-accent text-black text-[10.5px] font-extrabold uppercase tracking-[0.1em] px-2 py-0.5 rounded">Most popular</span>
-            <h3 class="font-bold text-[18px] text-white">Pro</h3>
-            <p class="mt-1 text-[13px] text-white/55">Use cases <span class="text-white/85 font-mono">A · B · C</span> · single team</p>
-            <div class="mt-6 flex items-baseline gap-1.5">
-              <span class="text-[42px] font-bold tracking-tight text-white">$20</span>
-              <span class="text-[13px] text-white/55">/ month</span>
-            </div>
+            <h3 class="font-bold text-[18px]">Pro</h3>
+            <div class="mt-5 flex items-baseline gap-1.5"><span class="text-[42px] font-bold tracking-tight">$20</span><span class="text-[13px] text-white/55">/ mo</span></div>
             <a href="#signup" class="mt-6 block text-center bg-accent hover:bg-emerald-400 transition text-black rounded-lg py-2.5 text-[13.5px] font-extrabold">Start Pro</a>
             <ul class="mt-7 space-y-2.5 text-[13.5px] text-white/80 flex-1">
-              <li class="flex gap-2"><span class="text-accent mt-0.5">✓</span> <strong class="text-white">500 active hours</strong> / month included</li>
-              <li class="flex gap-2"><span class="text-accent mt-0.5">✓</span> $0.01 per additional active hour</li>
-              <li class="flex gap-2"><span class="text-accent mt-0.5">✓</span> 25 concurrent sandboxes</li>
-              <li class="flex gap-2"><span class="text-accent mt-0.5">✓</span> CAPTCHA solving + sticky residential IP</li>
-              <li class="flex gap-2"><span class="text-accent mt-0.5">✓</span> Session recording (7-day retention)</li>
-              <li class="flex gap-2"><span class="text-accent mt-0.5">✓</span> Email support (1-day SLA)</li>
+              <li class="flex gap-2"><span class="text-accent">✓</span> 500 active hours / mo</li>
+              <li class="flex gap-2"><span class="text-accent">✓</span> Session recording</li>
+              <li class="flex gap-2"><span class="text-accent">✓</span> Email support</li>
             </ul>
           </div>
-
-          <!-- Team -->
           <div class="rounded-2xl border border-white/10 bg-ink-800 p-7 flex flex-col">
-            <h3 class="font-bold text-[18px] text-white">Team</h3>
-            <p class="mt-1 text-[13px] text-white/50">Use case <span class="text-white/80 font-mono">D</span> · product backend</p>
-            <div class="mt-6 flex items-baseline gap-1.5">
-              <span class="text-[42px] font-bold tracking-tight text-white">$200</span>
-              <span class="text-[13px] text-white/50">/ month</span>
-            </div>
-            <a href="#contact" class="mt-6 block text-center bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg py-2.5 text-[13.5px] font-semibold text-white">Contact sales</a>
+            <h3 class="font-bold text-[18px]">Team</h3>
+            <div class="mt-5 flex items-baseline gap-1.5"><span class="text-[42px] font-bold tracking-tight">$200</span><span class="text-[13px] text-white/50">/ mo</span></div>
+            <a href="#contact" class="mt-6 block text-center bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg py-2.5 text-[13.5px] font-semibold">Contact</a>
             <ul class="mt-7 space-y-2.5 text-[13.5px] text-white/65 flex-1">
-              <li class="flex gap-2"><span class="text-accent mt-0.5">✓</span> <strong class="text-white">5,000 active hours</strong> / month included</li>
-              <li class="flex gap-2"><span class="text-accent mt-0.5">✓</span> Self-host Docker license — run in your own VPC</li>
-              <li class="flex gap-2"><span class="text-accent mt-0.5">✓</span> Unlimited concurrent sandboxes (fair use)</li>
-              <li class="flex gap-2"><span class="text-accent mt-0.5">✓</span> Priority residential IP pool</li>
-              <li class="flex gap-2"><span class="text-accent mt-0.5">✓</span> Session recording (30-day retention)</li>
-              <li class="flex gap-2"><span class="text-accent mt-0.5">✓</span> Shared Slack channel + 1-hour SLA</li>
+              <li class="flex gap-2"><span class="text-accent">✓</span> 5,000 active hours / mo</li>
+              <li class="flex gap-2"><span class="text-accent">✓</span> Self-host license</li>
+              <li class="flex gap-2"><span class="text-accent">✓</span> Slack support</li>
             </ul>
           </div>
         </div>
-
-        <p class="text-center mt-10 text-[12.5px] text-white/45 font-mono">
-          One meter across every plan: per active second. No browser-hour billing, no per-task fee, no per-LLM-step surcharge.
-        </p>
       </div>
     </section>
 
-    <!-- ============================= FAQ ============================ -->
-    <section class="px-6 py-24 bg-ink-800 border-y border-white/5" id="faq">
+    <!-- FAQ (where the AEO copy lives) -->
+    <section class="px-6 py-28 bg-ink-800 border-y border-white/5" id="faq">
       <div class="max-w-[760px] mx-auto">
-        <span class="inline-block text-[12px] font-bold uppercase tracking-[0.16em] text-white/45 mb-4">Frequently asked</span>
-        <h2 class="font-sans font-bold text-[clamp(28px,3.6vw,40px)] leading-[1.05] tracking-[-0.018em] text-white mb-10">
-          What developers ask before they sign up.
-        </h2>
+        <h2 class="font-bold text-[clamp(28px,3.6vw,40px)] leading-[1.05] tracking-[-0.018em] mb-10">FAQ.</h2>
 
         <div class="divide-y divide-white/10 border-t border-b border-white/10">
           <details class="group py-5">
             <summary class="flex justify-between items-start gap-4 cursor-pointer list-none">
-              <span class="text-[16.5px] font-semibold text-white">What is the relationship between Computer Use Cloud and Anthropic Computer Use?</span>
+              <span class="text-[16.5px] font-semibold">What is Computer Use Cloud?</span>
               <span class="text-white/40 text-[20px] leading-none mt-0.5 group-open:rotate-45 transition">+</span>
             </summary>
-            <div class="mt-3 text-[14.5px] leading-[1.6] text-white/65">Anthropic provides the Computer Use model — the brain. Computer Use Cloud provides the browser it acts on — the body. You keep your Anthropic API key and your existing tool schema; we replace the self-hosted Docker container that Anthropic's reference implementation expects you to build and operate yourself.</div>
+            <div class="mt-3 text-[14.5px] leading-[1.6] text-white/65">A managed cloud sandbox built for AI agents. Each sandbox is a Linux desktop with a browser open inside. Your AI agent — Claude, GPT, or Gemini, your pick — drives it through one SDK.</div>
           </details>
+
           <details class="group py-5">
             <summary class="flex justify-between items-start gap-4 cursor-pointer list-none">
-              <span class="text-[16.5px] font-semibold text-white">I already use the Browser Use SDK. How much code do I have to change?</span>
+              <span class="text-[16.5px] font-semibold">Why both a browser and a computer?</span>
               <span class="text-white/40 text-[20px] leading-none mt-0.5 group-open:rotate-45 transition">+</span>
             </summary>
-            <div class="mt-3 text-[14.5px] leading-[1.6] text-white/65">One line. Browser Use SDK reads a CDP endpoint URL from configuration; change it to <code class="font-mono text-[13px] bg-white/5 rounded px-1.5 py-0.5">wss://connect.computeruse.run</code> and the rest of your agent script keeps working. No SDK swap, no rewrite.</div>
+            <div class="mt-3 text-[14.5px] leading-[1.6] text-white/65">Most agent tasks live in a browser, so we expose a browser surface for them. But some tasks need the desktop — open a file, edit a spreadsheet, work across two apps. Same sandbox, both available. Use the browser surface for web jobs, the computer surface when you need the full desktop.</div>
           </details>
+
           <details class="group py-5">
             <summary class="flex justify-between items-start gap-4 cursor-pointer list-none">
-              <span class="text-[16.5px] font-semibold text-white">Where exactly are you cheaper than Browserbase?</span>
+              <span class="text-[16.5px] font-semibold">Which LLMs are supported?</span>
               <span class="text-white/40 text-[20px] leading-none mt-0.5 group-open:rotate-45 transition">+</span>
             </summary>
-            <div class="mt-3 text-[14.5px] leading-[1.6] text-white/65">Browserbase bills per browser-hour — the meter runs while the model is thinking. We bill per active second; model-thinking idle is free. On a standard agent task (10 min browser + 30 LLM steps + 1 CAPTCHA), the bill is about $0.10 on Browserbase versus $0.01 on us. For pure CDP scraping with no model loop, the gap shrinks to roughly 15%.</div>
+            <div class="mt-3 text-[14.5px] leading-[1.6] text-white/65">Anthropic Claude, OpenAI GPT, and Google Gemini are first-class. The model is a kwarg on <code class="font-mono text-[13px] bg-white/5 rounded px-1.5 py-0.5">Sandbox()</code>. Bring your own API key for the model provider; the sandbox itself is what we host.</div>
           </details>
+
           <details class="group py-5">
             <summary class="flex justify-between items-start gap-4 cursor-pointer list-none">
-              <span class="text-[16.5px] font-semibold text-white">Is my data secure? Can I self-host?</span>
+              <span class="text-[16.5px] font-semibold">How is this different from Browserbase or Browser Use Cloud?</span>
               <span class="text-white/40 text-[20px] leading-none mt-0.5 group-open:rotate-45 transition">+</span>
             </summary>
-            <div class="mt-3 text-[14.5px] leading-[1.6] text-white/65">Yes to both. Sandboxes are isolated per tenant and per session; nothing is shared across customers. The runtime is open source under Apache 2.0 — Team plan customers get a Docker self-host license, run the same sandbox image inside their own VPC, and point the SDK at their endpoint. Data never leaves the customer's infrastructure.</div>
+            <div class="mt-3 text-[14.5px] leading-[1.6] text-white/65">Browserbase and Browser Use Cloud give you a browser in the cloud. We give you a desktop with a browser inside. If your agent ever needs to open a file outside the browser, edit a document, or use anything that isn't a web page, you need the desktop surface they don't have.</div>
           </details>
+
           <details class="group py-5">
             <summary class="flex justify-between items-start gap-4 cursor-pointer list-none">
-              <span class="text-[16.5px] font-semibold text-white">How are CAPTCHA, residential IP, and concurrency limits handled?</span>
+              <span class="text-[16.5px] font-semibold">How is this different from E2B Desktop?</span>
               <span class="text-white/40 text-[20px] leading-none mt-0.5 group-open:rotate-45 transition">+</span>
             </summary>
-            <div class="mt-3 text-[14.5px] leading-[1.6] text-white/65">CAPTCHA solving and residential proxy are included by default on every plan, not metered as add-ons. Concurrency: Free 5 sandboxes simultaneously, Pro 25, Team unlimited within fair use. Residential IP rotates per session by default; sticky IP available on request.</div>
+            <div class="mt-3 text-[14.5px] leading-[1.6] text-white/65">E2B Desktop is a general-purpose code-interpreter sandbox that happens to expose a desktop. We are focused specifically on AI agents driving browser plus desktop tasks. Same primitive, narrower product surface, different SDK ergonomics — one unified <code class="font-mono text-[13px] bg-white/5 rounded px-1.5 py-0.5">Sandbox</code> with browser and computer namespaces.</div>
           </details>
+
           <details class="group py-5">
             <summary class="flex justify-between items-start gap-4 cursor-pointer list-none">
-              <span class="text-[16.5px] font-semibold text-white">What LLMs are supported? Is it Claude-only?</span>
+              <span class="text-[16.5px] font-semibold">What does the SDK look like?</span>
               <span class="text-white/40 text-[20px] leading-none mt-0.5 group-open:rotate-45 transition">+</span>
             </summary>
-            <div class="mt-3 text-[14.5px] leading-[1.6] text-white/65">Not Claude-only. Three first-class providers — Anthropic Claude Computer Use, OpenAI Operator (computer-use-preview), and Google Gemini agent. Any LLM with vision input and tool calling can drive the browser via the unified Sandbox API. Browser Use SDK users get all the LLMs Browser Use already supports (15+ providers).</div>
+            <div class="mt-3 text-[14.5px] leading-[1.6] text-white/65">One class. <code class="font-mono text-[13px] bg-white/5 rounded px-1.5 py-0.5">with Sandbox(model="claude-sonnet-4-6") as s</code>, then <code class="font-mono text-[13px] bg-white/5 rounded px-1.5 py-0.5">s.browser.run("...")</code> or <code class="font-mono text-[13px] bg-white/5 rounded px-1.5 py-0.5">s.computer.run("...")</code>. The browser and computer share the same desktop — a file downloaded by the browser is visible to the computer.</div>
           </details>
+
           <details class="group py-5">
             <summary class="flex justify-between items-start gap-4 cursor-pointer list-none">
-              <span class="text-[16.5px] font-semibold text-white">Can I replay a failed run? Is there session recording?</span>
+              <span class="text-[16.5px] font-semibold">Is the runtime open source?</span>
               <span class="text-white/40 text-[20px] leading-none mt-0.5 group-open:rotate-45 transition">+</span>
             </summary>
-            <div class="mt-3 text-[14.5px] leading-[1.6] text-white/65">Yes. Every session has a live view URL while running and a recorded video plus transcript afterward (Pro 7-day retention, Team 30-day). The full action timeline and model decisions download as JSON for debugging or training data.</div>
+            <div class="mt-3 text-[14.5px] leading-[1.6] text-white/65">Planned. The runtime drops as Apache-2.0 at milestone M5 in the public <a href="https://github.com/computeruse-run/specs/blob/main/ROADMAP.md" class="text-accent hover:underline">roadmap</a>. Self-host the same sandbox image inside your VPC, point the SDK at your endpoint, and skip the cloud entirely if you'd rather.</div>
           </details>
+
           <details class="group py-5">
             <summary class="flex justify-between items-start gap-4 cursor-pointer list-none">
-              <span class="text-[16.5px] font-semibold text-white">What's in the free tier? Is a credit card required?</span>
+              <span class="text-[16.5px] font-semibold">Can I watch the agent run live?</span>
               <span class="text-white/40 text-[20px] leading-none mt-0.5 group-open:rotate-45 transition">+</span>
             </summary>
-            <div class="mt-3 text-[14.5px] leading-[1.6] text-white/65">100 active hours per month, free forever, no credit card. Enough to run a hackathon over a weekend or a side project for the month. After 100 hours the sandbox stops; no surprise overage on Free.</div>
+            <div class="mt-3 text-[14.5px] leading-[1.6] text-white/65">Yes. Every sandbox exposes a public live view URL. Embed it in your own app via iframe, share it with a teammate for debugging, or watch from your dashboard.</div>
           </details>
         </div>
       </div>
     </section>
 
-    <!-- =========================== CTA ============================== -->
-    <section class="px-6 py-28 text-center relative overflow-hidden">
-      <div class="absolute inset-0 -z-10" style="background-image: radial-gradient(800px 420px at 50% 50%, rgba(16,185,129,0.18), transparent 60%);"></div>
-      <div class="max-w-[760px] mx-auto">
-        <h2 class="font-sans font-bold text-[clamp(36px,5vw,64px)] leading-[1.02] tracking-[-0.022em] text-white">
-          Start in 60 seconds.
-        </h2>
-        <p class="mt-5 text-[16px] leading-[1.6] text-white/65 max-w-[520px] mx-auto">
-          <code class="font-mono text-[14px] bg-white/5 border border-white/10 rounded px-2 py-1 text-white">pip install computeruse</code> — 100 active hours per month, free forever, no card.
-        </p>
-        <div class="mt-9 flex items-center gap-4 justify-center flex-wrap">
-          <a href="#signup" class="inline-flex items-center gap-2 bg-accent text-black hover:bg-emerald-400 transition rounded-lg px-6 py-3.5 text-[15px] font-extrabold">
-            Start free
-            <svg viewBox="0 0 16 16" class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 4l4 4-4 4"/></svg>
-          </a>
-          <a href="https://github.com/computeruse-run" class="inline-flex items-center gap-2 text-white/80 hover:text-white text-[14.5px] font-semibold border border-white/15 hover:border-white/30 rounded-lg px-5 py-3.5">
-            <svg viewBox="0 0 24 24" class="w-4 h-4" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12c0 5.3 3.4 9.8 8.2 11.4.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.6.1-3.3 0 0 1-.3 3.3 1.2.9-.3 2-.4 3-.4s2 .1 3 .4c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 3 .1 3.3.8.8 1.2 1.9 1.2 3.2 0 4.7-2.8 5.7-5.5 6 .4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6C20.6 21.8 24 17.3 24 12c0-6.6-5.4-12-12-12z"/></svg>
-            Star on GitHub
-          </a>
-        </div>
-      </div>
+    <!-- CTA -->
+    <section class="px-6 py-32 text-center relative overflow-hidden">
+      <div class="absolute inset-0 -z-10" style="background-image: radial-gradient(800px 400px at 50% 50%, rgba(16,185,129,0.18), transparent 60%);"></div>
+      <h2 class="font-bold text-[clamp(36px,5vw,64px)] leading-[1.02] tracking-[-0.022em] max-w-[680px] mx-auto">
+        Give your agent a computer.
+      </h2>
+      <a href="#signup" class="mt-9 inline-flex items-center gap-2 bg-accent text-black hover:bg-emerald-400 transition rounded-lg px-6 py-3.5 text-[15px] font-extrabold">
+        Start free
+        <svg viewBox="0 0 16 16" class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 4l4 4-4 4"/></svg>
+      </a>
     </section>
 
-    <!-- =========================== FOOTER =========================== -->
-    <footer class="px-6 py-14 border-t border-white/5 bg-ink-950">
-      <div class="max-w-[1180px] mx-auto grid md:grid-cols-[2fr_1fr_1fr_1fr] gap-10">
-        <div>
-          <a href="/" class="flex items-center gap-2.5 font-bold text-[15px]">
-            <span class="inline-block w-7 h-7 rounded-md bg-accent grid place-items-center text-black font-extrabold text-[13px]">≡</span>
-            Computer Use <span class="text-white/45 font-medium">Cloud</span>
-          </a>
-          <p class="mt-3 text-[13.5px] leading-[1.55] text-white/45 max-w-[340px]">
-            The cloud browser for AI agents. Drop-in compatible with Claude Computer Use, Browser Use, and Browserbase. Per-active-second pricing.
-          </p>
+    <!-- FOOTER -->
+    <footer class="px-6 py-12 border-t border-white/5 bg-ink-950">
+      <div class="max-w-[1180px] mx-auto flex items-center justify-between gap-6 flex-wrap font-mono text-[11.5px] text-white/35">
+        <a href="/" class="flex items-center gap-2 text-white/65 hover:text-white">
+          <span class="w-5 h-5 rounded bg-accent grid place-items-center text-black font-extrabold text-[10px]">≡</span>
+          computeruse.run
+        </a>
+        <div class="flex items-center gap-5">
+          <a href="https://github.com/computeruse-run" class="hover:text-white">GitHub</a>
+          <a href="https://github.com/computeruse-run/sdk" class="hover:text-white">SDK</a>
+          <a href="https://github.com/computeruse-run/specs" class="hover:text-white">Specs</a>
+          <a href="#faq" class="hover:text-white">FAQ</a>
         </div>
-        <div>
-          <h5 class="text-[10.5px] font-extrabold uppercase tracking-[0.16em] text-white/35 mb-3">Compare</h5>
-          <ul class="space-y-2 text-[13.5px] text-white/65">
-            <li><a href="/vs/anthropic-computer-use.html" class="hover:text-white">vs Anthropic Computer Use</a></li>
-            <li><a href="/vs/browser-use.html" class="hover:text-white">vs Browser Use Cloud</a></li>
-            <li><a href="/vs/browserbase.html" class="hover:text-white">vs Browserbase</a></li>
-          </ul>
-        </div>
-        <div>
-          <h5 class="text-[10.5px] font-extrabold uppercase tracking-[0.16em] text-white/35 mb-3">Open source</h5>
-          <ul class="space-y-2 text-[13.5px] text-white/65">
-            <li><a href="https://github.com/computeruse-run" class="hover:text-white">GitHub org</a></li>
-            <li><a href="https://github.com/computeruse-run/sdk" class="hover:text-white">Python SDK</a></li>
-            <li><a href="https://github.com/computeruse-run/sdk/blob/main/SPEC.md" class="hover:text-white">Engineering spec</a></li>
-          </ul>
-        </div>
-        <div>
-          <h5 class="text-[10.5px] font-extrabold uppercase tracking-[0.16em] text-white/35 mb-3">Company</h5>
-          <ul class="space-y-2 text-[13.5px] text-white/65">
-            <li><a href="#contact" class="hover:text-white">Contact</a></li>
-            <li><a href="/privacy" class="hover:text-white">Privacy</a></li>
-            <li><a href="/terms" class="hover:text-white">Terms</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="max-w-[1180px] mx-auto mt-10 pt-6 border-t border-white/5 flex items-center justify-between gap-4 flex-wrap font-mono text-[11.5px] text-white/35">
-        <span>computeruse.run · © 2026</span>
-        <span>Not affiliated with Anthropic, OpenAI, Google, Browserbase, or Browser Use.</span>
+        <span>© 2026</span>
       </div>
     </footer>
   </body>
