@@ -81,7 +81,7 @@ I'm here in the thread.
 
 ### If someone says "OSS license question"
 
-> Runtime is Apache 2.0 (M5 milestone). SDK is Apache 2.0 (already shipped at github.com/computeruse-dev/sdk). The cloud orchestration / billing layer is closed (standard OSI-friendly OSS-meets-cloud split). Self-hosting the runtime gets you sandbox + agent loop + screenshot capture; you bring your own object storage and your own metering.
+> Runtime is Apache 2.0 (M5 milestone). SDK is Apache 2.0 (already shipped at github.com/computeruse-run/sdk). The cloud orchestration / billing layer is closed (standard OSI-friendly OSS-meets-cloud split). Self-hosting the runtime gets you sandbox + agent loop + screenshot capture; you bring your own object storage and your own metering.
 
 ## Launch timing
 

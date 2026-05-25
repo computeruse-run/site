@@ -5,12 +5,12 @@
 Drop-in compatible with Anthropic Computer Use, Browser Use SDK, and Browserbase Session API. Per-active-second billing, ~10× cheaper for typical agent tasks. Free tier — 100 hours/month.
 
 → Live site (eventually): [computeruse.run](https://computeruse.run/)
-→ GitHub org: [`github.com/computeruse-dev`](https://github.com/computeruse-dev)
-→ SDK + spec: [`github.com/computeruse-dev/sdk`](https://github.com/computeruse-dev/sdk)
+→ GitHub org: [`github.com/computeruse-run`](https://github.com/computeruse-run)
+→ SDK + spec: [`github.com/computeruse-run/sdk`](https://github.com/computeruse-run/sdk)
 
 ## Status
 
-**This repo currently hosts the marketing site for computeruse.run.** The SDK + runtime + engineering spec live in their own repo at `github.com/computeruse-dev/sdk`. This repo ships:
+**This repo currently hosts the marketing site for computeruse.run.** The SDK + runtime + engineering spec live in their own repo at `github.com/computeruse-run/sdk`. This repo ships:
 
 | File | What |
 |---|---|
@@ -89,8 +89,8 @@ Roll-up:
 
 ## Roadmap (marketing-side)
 
-- [x] Register `github.com/computeruse-dev` org
-- [x] Push SDK stub to `github.com/computeruse-dev/sdk`
+- [x] Register `github.com/computeruse-run` org
+- [x] Push SDK stub to `github.com/computeruse-run/sdk`
 - [x] Engineering spec inside SDK repo (`SPEC.md`)
 - [ ] Publish `computeruse` to PyPI (run `twine upload` per `~/git/sdk/PUBLISHING.md`)
 - [ ] Wire `computeruse.run` DNS at static host
@@ -98,11 +98,11 @@ Roll-up:
 - [ ] Add `sitemap.xml` + `robots.txt`
 - [ ] Publish HN Show post (see `marketing/hn-post.md`)
 - [ ] Set up `cloudbrowser.live → 301 → computeruse.run` redirect
-- [ ] Create stub `github.com/computeruse-dev/runtime` repo (referenced in homepage footer)
+- [ ] Create stub `github.com/computeruse-run/runtime` repo (referenced in homepage footer)
 - [ ] Set up Semrush position tracking for the keywords above
 - [ ] Resolve the 5 marketing-vs-spec inconsistencies in `~/git/sdk/SPEC.md` Appendix A
 
 ## See also
 
-- Engineering spec: [`~/git/sdk/SPEC.md`](https://github.com/computeruse-dev/sdk/blob/main/SPEC.md) — the contract for everything claimed on this site
-- SDK publish flow: [`~/git/sdk/PUBLISHING.md`](https://github.com/computeruse-dev/sdk/blob/main/PUBLISHING.md)
+- Engineering spec: [`~/git/sdk/SPEC.md`](https://github.com/computeruse-run/sdk/blob/main/SPEC.md) — the contract for everything claimed on this site
+- SDK publish flow: [`~/git/sdk/PUBLISHING.md`](https://github.com/computeruse-run/sdk/blob/main/PUBLISHING.md)
