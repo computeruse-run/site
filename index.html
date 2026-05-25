@@ -3,24 +3,25 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Cloud Browser Live · One AI browser. The internet watching.</title>
+    <title>Cloud Browser Live · The public agentic browser. Watch one AI browse the web.</title>
     <meta
       name="description"
-      content="A public AI browser session that never stops. Anonymous suggestions. Real moves on a real browser. Watch one agent browse the web with the whole room steering."
+      content="Cloud Browser Live is a public agentic browser — a live, shared session where one AI agent browses the web in real time and anyone can suggest the next move. Like Twitch Plays Pokémon, but the player is a Claude- or GPT-class agent and the game is the open web."
     />
+    <meta name="keywords" content="agentic browser, public AI browser, watch AI browse the web, AI browser, browser agent, live AI browser, AI agent demo, multiplayer AI agent, Perplexity Comet, ChatGPT Atlas, Dia browser, Browserbase, browser-use" />
     <link rel="canonical" href="https://cloudbrowser.live/" />
     <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large" />
     <meta name="theme-color" content="#f4f1e7" />
 
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://cloudbrowser.live/" />
-    <meta property="og:title" content="Cloud Browser Live · One AI browser. The internet watching." />
-    <meta property="og:description" content="A public AI browser session. One agent. Anonymous suggestions. Always on." />
+    <meta property="og:title" content="Cloud Browser Live · The public agentic browser" />
+    <meta property="og:description" content="One AI agent. One window. The whole internet steering. Anonymous, always on — Twitch Plays Pokémon for the open web." />
     <meta property="og:image" content="https://cloudbrowser.live/og.png" />
     <meta property="og:site_name" content="Cloud Browser Live" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Cloud Browser Live" />
-    <meta name="twitter:description" content="One public AI browser. Watch it. Steer it. Anonymous and always on." />
+    <meta name="twitter:title" content="Cloud Browser Live · The public agentic browser" />
+    <meta name="twitter:description" content="Watch one AI browse the open web. Send anonymous suggestions. Always on." />
     <meta name="twitter:image" content="https://cloudbrowser.live/og.png" />
 
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='7' fill='%230f7a5c'/><circle cx='16' cy='16' r='13' fill='none' stroke='%230f7a5c' stroke-opacity='.25' stroke-width='2'/></svg>" />
@@ -42,29 +43,86 @@
             "name": "Cloud Browser Live",
             "url": "https://cloudbrowser.live/",
             "logo": "https://cloudbrowser.live/og.png",
-            "description": "Operator of the public AI browser at cloudbrowser.live."
+            "description": "Operator of the public agentic browser at cloudbrowser.live."
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://cloudbrowser.live/#website",
+            "url": "https://cloudbrowser.live/",
+            "name": "Cloud Browser Live",
+            "publisher": { "@id": "https://cloudbrowser.live/#org" }
           },
           {
             "@type": "WebApplication",
             "@id": "https://cloudbrowser.live/#app",
             "name": "Cloud Browser Live",
-            "applicationCategory": "CollaborationApplication",
+            "alternateName": ["Public agentic browser", "Public AI browser"],
+            "applicationCategory": "BrowserApplication",
+            "applicationSubCategory": "Agentic browser",
+            "operatingSystem": "Web",
+            "browserRequirements": "Requires a modern web browser.",
+            "url": "https://cloudbrowser.live/",
+            "publisher": { "@id": "https://cloudbrowser.live/#org" },
+            "description": "A public agentic browser — a live, shared web session where one AI agent browses the open internet and anyone can watch or steer it with anonymous suggestions.",
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+          },
+          {
+            "@type": "SoftwareApplication",
+            "@id": "https://cloudbrowser.live/#software",
+            "name": "Cloud Browser Live",
+            "applicationCategory": "BrowserApplication",
             "operatingSystem": "Web",
             "url": "https://cloudbrowser.live/",
             "publisher": { "@id": "https://cloudbrowser.live/#org" },
-            "description": "A public AI browser session anyone can watch and steer with short suggestions. Anonymous, always on, one shared window.",
             "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+          },
+          {
+            "@type": "VideoObject",
+            "@id": "https://cloudbrowser.live/#liveview",
+            "name": "Cloud Browser Live — the public agentic browser session",
+            "description": "A continuously-running live view of one AI agent browsing the open web. Anyone can watch in real time and post anonymous suggestions for the agent's next move.",
+            "thumbnailUrl": "https://cloudbrowser.live/og.png",
+            "uploadDate": "2026-05-10T00:00:00Z",
+            "contentUrl": "https://cloudbrowser.live/",
+            "embedUrl": "https://cloudbrowser.live/",
+            "publication": {
+              "@type": "BroadcastEvent",
+              "isLiveBroadcast": true,
+              "startDate": "2026-05-10T00:00:00Z"
+            }
+          },
+          {
+            "@type": "HowTo",
+            "@id": "https://cloudbrowser.live/#howto",
+            "name": "How to watch and steer the public AI browser",
+            "description": "Three steps: watch the agent move, send an anonymous suggestion, and see the agent pick from the room.",
+            "step": [
+              { "@type": "HowToStep", "position": 1, "name": "The agent moves", "text": "The agent loads a page, runs a search, or reads what it found, then tells the room what it intends to do next." },
+              { "@type": "HowToStep", "position": 2, "name": "The room suggests", "text": "Visitors send short anonymous messages — \"try arXiv\", \"scroll down\", \"go back\". Every message is visible to everyone." },
+              { "@type": "HowToStep", "position": 3, "name": "The agent picks", "text": "The agent reads the suggestions, chooses the most relevant, and acts. The browser updates. Repeat." }
+            ]
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://cloudbrowser.live/#crumbs",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Agentic browsers", "item": "https://cloudbrowser.live/" },
+              { "@type": "ListItem", "position": 2, "name": "Cloud Browser Live · The public agentic browser", "item": "https://cloudbrowser.live/" }
+            ]
           },
           {
             "@type": "FAQPage",
             "@id": "https://cloudbrowser.live/#faq",
             "mainEntity": [
-              { "@type": "Question", "name": "Is this a real AI or a recording?", "acceptedAnswer": { "@type": "Answer", "text": "Real. The browser you see is a live session. What's on screen is what the agent is doing right now." } },
+              { "@type": "Question", "name": "What is an agentic browser?", "acceptedAnswer": { "@type": "Answer", "text": "An agentic browser is a web browser where an AI agent — powered by a large language model — performs the actual browsing. The agent reads pages, clicks links, fills forms, and navigates on someone's behalf. Examples include Perplexity Comet, OpenAI ChatGPT Atlas, The Browser Company Dia, and the open-source BrowserOS. Cloud Browser Live is a public agentic browser: one agent, one shared window, anonymous suggestions from anyone." } },
+              { "@type": "Question", "name": "What is a public AI browser?", "acceptedAnswer": { "@type": "Answer", "text": "A public AI browser is an agentic browser session that is open to the public — anyone can watch the agent and influence what it does next. Cloud Browser Live is one such session, running continuously since May 10, 2026. Unlike Comet, Atlas, or Dia (which are personal agentic browsers tied to one user account), there is no signup, and every visitor sees the same browser at the same moment." } },
+              { "@type": "Question", "name": "Can I really watch an AI browse the web live?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. The browser you see is a live session, not a recording. The agent is moving in real time and what is on screen is what it is doing right now. Anyone can drop in, watch, send a suggestion, and leave. The session never stops." } },
+              { "@type": "Question", "name": "How is this different from Perplexity Comet, ChatGPT Atlas, or Dia?", "acceptedAnswer": { "@type": "Answer", "text": "Comet (Perplexity), Atlas (OpenAI), and Dia (The Browser Company) are personal agentic browsers — your account, your tabs, your tasks. Cloud Browser Live is the opposite: one shared agent, one window, no accounts, anonymous suggestions from the whole room. It is the multiplayer version of an agentic browser." } },
+              { "@type": "Question", "name": "How is this different from Browserbase, browser-use, or Stagehand?", "acceptedAnswer": { "@type": "Answer", "text": "Browserbase, browser-use, Stagehand, Steel, and Cloudflare Browser Run are infrastructure for developers — you write code, you get a cloud browser. Cloud Browser Live is a consumer product: no SDK, no install, nothing to script. Just a website you watch, with one shared agent." } },
               { "@type": "Question", "name": "Can the agent see my suggestion?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Every message in the room is part of the agent's input. It reads them and picks what to act on." } },
               { "@type": "Question", "name": "Why is the browser read-only?", "acceptedAnswer": { "@type": "Answer", "text": "You are watching the agent's session, not driving it yourself. The agent is the only one with hands on the keyboard. You influence it by suggesting, not clicking." } },
               { "@type": "Question", "name": "Do you store who I am?", "acceptedAnswer": { "@type": "Answer", "text": "No login, no email. The site keeps a random anonymous ID in your browser so the agent can tell visitors apart in the room. Clear your storage and you are a new visitor." } },
-              { "@type": "Question", "name": "What model is the agent?", "acceptedAnswer": { "@type": "Answer", "text": "A general-purpose browsing agent built on a current-generation LLM, running on a real cloud browser. The exact model changes as we upgrade it." } },
-              { "@type": "Question", "name": "Can I run my own cloud browser like this?", "acceptedAnswer": { "@type": "Answer", "text": "Not through Cloud Browser Live — this is one shared agent. For private, scriptable cloud browsers, look at the agentic browser-as-a-service category: Browserbase, Browserless, Cloudflare Browser Run, browser-use." } }
+              { "@type": "Question", "name": "What model is the agent?", "acceptedAnswer": { "@type": "Answer", "text": "A general-purpose browsing agent built on a current-generation LLM (Claude, GPT, or Gemini class), running on a real cloud browser. The exact model changes as we upgrade it." } }
             ]
           }
         ]
@@ -283,9 +341,9 @@
         margin: 0;
         font-family: var(--serif);
         font-weight: 500;
-        font-size: clamp(40px, 5vw, 68px);
-        line-height: 0.98;
-        letter-spacing: -0.018em;
+        font-size: clamp(44px, 5.6vw, 84px);
+        line-height: 0.96;
+        letter-spacing: -0.022em;
         color: var(--ink);
       }
       .hero-left h1 em {
@@ -295,39 +353,34 @@
 
       .hero-left .sub {
         margin: 0;
-        max-width: 460px;
+        max-width: 520px;
         color: var(--muted-strong);
-        font-size: clamp(15px, 1.15vw, 17px);
-        line-height: 1.55;
+        font-size: clamp(16px, 1.35vw, 19px);
+        line-height: 1.5;
       }
 
       .hero-stats {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 14px 28px;
-        padding: 18px 22px;
-        border: 1px solid var(--hairline);
-        border-radius: 14px;
-        background: rgba(255, 255, 255, 0.55);
-        backdrop-filter: blur(10px);
-        max-width: 460px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px 22px;
+        font-family: var(--mono);
+        font-size: 12px;
+        color: var(--muted-strong);
+        letter-spacing: 0.02em;
       }
 
       .hero-stats .stat strong {
-        display: block;
-        font-family: var(--sans);
-        font-size: 26px;
-        font-weight: 700;
         color: var(--ink);
-        margin-bottom: 2px;
-        letter-spacing: -0.012em;
+        font-weight: 700;
+        font-family: var(--sans);
+        font-size: 13.5px;
+        margin-right: 4px;
+        letter-spacing: -0.005em;
       }
 
       .hero-stats .stat span {
-        font-family: var(--mono);
-        color: var(--muted-strong);
-        font-size: 10.5px;
-        letter-spacing: 0.06em;
+        font-size: 11px;
+        letter-spacing: 0.05em;
         text-transform: uppercase;
       }
 
@@ -993,6 +1046,80 @@
 
       @media (max-width: 720px) { .what-grid { grid-template-columns: 1fr; } }
 
+      /* =========================== COMPARE ============================ */
+
+      .compare {
+        margin: 48px 0 0;
+        padding: 0;
+        list-style: none;
+        display: grid;
+        gap: 0;
+      }
+
+      .compare li {
+        display: grid;
+        grid-template-columns: minmax(220px, 300px) 1fr;
+        gap: 28px;
+        padding: 22px 0;
+        border-top: 1px solid var(--hairline);
+        align-items: baseline;
+      }
+
+      .compare li:last-child {
+        border-bottom: 1px solid var(--hairline);
+      }
+
+      .compare li.us {
+        position: relative;
+        background: linear-gradient(90deg, var(--accent-tint), transparent 65%);
+        padding-left: 22px;
+        margin: 0 -22px;
+        border-top-color: rgba(15, 122, 92, 0.3);
+        border-bottom-color: rgba(15, 122, 92, 0.3);
+      }
+
+      .compare li.us::before {
+        content: "";
+        position: absolute;
+        left: 0; top: 0; bottom: 0;
+        width: 3px;
+        background: var(--accent);
+      }
+
+      .compare .who strong {
+        display: block;
+        font-family: var(--serif);
+        font-weight: 500;
+        font-size: 21px;
+        line-height: 1.2;
+        letter-spacing: -0.005em;
+        color: var(--ink);
+      }
+
+      .compare .who span {
+        display: block;
+        margin-top: 5px;
+        font-family: var(--mono);
+        font-size: 11px;
+        color: var(--muted);
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      .compare p {
+        margin: 0;
+        color: var(--ink-soft);
+        font-size: 15.5px;
+        line-height: 1.55;
+      }
+
+      .compare li.us p { color: var(--ink); font-weight: 500; }
+
+      @media (max-width: 720px) {
+        .compare li { grid-template-columns: 1fr; gap: 8px; }
+        .compare li.us { padding-left: 18px; margin: 0 -18px; }
+      }
+
       /* HOW steps */
 
       .steps {
@@ -1513,11 +1640,12 @@
       <div class="hero-grid">
 
         <div class="hero-left">
-          <span class="hero-eyebrow"><span class="dot"></span> Public AI browser · since May 10</span>
+          <span class="hero-eyebrow"><span class="dot"></span> Public agentic browser · live since May 10</span>
           <h1>One AI browser.<br />The internet <em>watching.</em></h1>
           <p class="sub">
-            A public session that never stops. Anonymous suggestions, real moves on a real browser.
-            Tap in for a minute or stay all night.
+            A live, shared session where one AI agent browses the open web and anyone can suggest
+            the next move. Like Twitch Plays Pokémon — but the player is a Claude-class agent and
+            the game is the open internet.
           </p>
 
           <div class="hero-stats">
@@ -1764,13 +1892,13 @@
     <!-- ============================ WHAT =========================== -->
     <section class="band" id="what">
       <div class="wrap-tight">
-        <span class="eyebrow">What you are watching</span>
+        <span class="eyebrow">What is a public agentic browser?</span>
         <h2 class="display-md">One AI browser, in the open, all the time.</h2>
         <p class="lede" style="margin-top: 22px">
-          Cloud Browser Live is one AI browser session that runs continuously, in public.
-          Anyone can watch what the agent is doing and send a short suggestion for the next move.
-          No login, no profile — just one collective browser that anonymous visitors steer together,
-          in the open, always on.
+          Cloud Browser Live is a <strong>public agentic browser</strong> — a live, shared web session
+          where one AI agent browses the internet in real time and anyone can watch or steer it with
+          anonymous suggestions. Think <em>Twitch Plays Pokémon</em>, but the player is a Claude- or
+          GPT-class agent and the game is the open web.
         </p>
         <div class="what-grid">
           <article class="pillar">
@@ -1786,6 +1914,64 @@
             <p>The session runs continuously. Drop in, leave, come back tomorrow — the browser is still moving, and the room is still talking.</p>
           </article>
         </div>
+      </div>
+    </section>
+
+    <!-- ========================== COMPARE ========================== -->
+    <section class="band" id="compare">
+      <div class="wrap-tight">
+        <span class="eyebrow">How we compare</span>
+        <h2 class="display-md">Different from Comet, Atlas, Dia, and Browserbase.</h2>
+        <p class="lede" style="margin-top: 22px">
+          Most agentic browsers are <em>yours</em> — your account, your tabs, your tasks. Cloud
+          Browser Live is <em>ours</em> — one shared agent, one window, anonymous suggestions from
+          the whole room. The multiplayer agentic browser.
+        </p>
+
+        <ul class="compare">
+          <li>
+            <div class="who">
+              <strong>Perplexity Comet</strong>
+              <span>Personal · ~3M users</span>
+            </div>
+            <p>A search-first agentic browser. You sign in; the agent runs queries on your account. Private to you, free since October 2025.</p>
+          </li>
+          <li>
+            <div class="who">
+              <strong>OpenAI ChatGPT Atlas</strong>
+              <span>Personal · ~5M users</span>
+            </div>
+            <p>Your tabs, your ChatGPT, your tasks. The most fully agentic of the personal browsers, deeply wired into ChatGPT.</p>
+          </li>
+          <li>
+            <div class="who">
+              <strong>The Browser Company Dia</strong>
+              <span>Personal · ships with macOS</span>
+            </div>
+            <p>A "thought partner" across your tabs. Closer to an AI-augmented browser than a fully agentic one. Successor to Arc.</p>
+          </li>
+          <li>
+            <div class="who">
+              <strong>BrowserOS, Brave Leo, Opera Neon</strong>
+              <span>Personal · open-source &amp; vendor</span>
+            </div>
+            <p>Open-source Chromium forks and built-in vendor agents. Same per-user model — your browser, with an agent inside it.</p>
+          </li>
+          <li>
+            <div class="who">
+              <strong>Browserbase · Stagehand · browser-use · Steel · Cloudflare Browser Run</strong>
+              <span>Infrastructure · developers</span>
+            </div>
+            <p>Cloud browsers behind an API. You write code, you get a browser. Power tools for engineers, not a product you watch.</p>
+          </li>
+          <li class="us">
+            <div class="who">
+              <strong>Cloud Browser Live</strong>
+              <span>Public · anonymous · multiplayer</span>
+            </div>
+            <p>One shared agent. One window. No accounts. Anyone can watch, anyone can suggest. The first public agentic browser that the open internet steers together.</p>
+          </li>
+        </ul>
       </div>
     </section>
 
@@ -1875,8 +2061,24 @@
         <h2 class="display-md">Frequently asked.</h2>
         <div class="faq-list">
           <details class="q">
-            <summary>Is this a real AI or a recording?</summary>
-            <div class="a">Real. The browser you see is a live session. What is on screen is what the agent is doing right now.</div>
+            <summary>What is an agentic browser?</summary>
+            <div class="a">An agentic browser is a web browser where an AI agent — powered by a large language model — performs the actual browsing. The agent reads pages, clicks links, fills forms, and navigates on someone's behalf. Examples include Perplexity Comet, OpenAI ChatGPT Atlas, The Browser Company Dia, and the open-source BrowserOS. Cloud Browser Live is a <em>public</em> agentic browser: one agent, one shared window, anonymous suggestions from anyone.</div>
+          </details>
+          <details class="q">
+            <summary>What is a public AI browser?</summary>
+            <div class="a">A public AI browser is an agentic browser session that is open to the public — anyone can watch the agent and influence what it does next. Cloud Browser Live is one such session, running continuously since May 10, 2026. Unlike Comet, Atlas, or Dia (which are personal agentic browsers tied to one user account), there is no signup, and every visitor sees the same browser at the same moment.</div>
+          </details>
+          <details class="q">
+            <summary>Can I really watch an AI browse the web live?</summary>
+            <div class="a">Yes. The browser you see is a live session, not a recording. The agent is moving in real time and what is on screen is what it is doing right now. Anyone can drop in, watch, send a suggestion, and leave. The session never stops.</div>
+          </details>
+          <details class="q">
+            <summary>How is this different from Perplexity Comet, ChatGPT Atlas, or Dia?</summary>
+            <div class="a">Comet (Perplexity), Atlas (OpenAI), and Dia (The Browser Company) are personal agentic browsers — your account, your tabs, your tasks. Cloud Browser Live is the opposite: one shared agent, one window, no accounts, anonymous suggestions from the whole room. It is the multiplayer version of an agentic browser.</div>
+          </details>
+          <details class="q">
+            <summary>How is this different from Browserbase, browser-use, or Stagehand?</summary>
+            <div class="a">Browserbase, browser-use, Stagehand, Steel, and Cloudflare Browser Run are infrastructure for developers — you write code, you get a cloud browser. Cloud Browser Live is a consumer product: no SDK, no install, nothing to script. Just a website you watch, with one shared agent.</div>
           </details>
           <details class="q">
             <summary>Can the agent see my suggestion?</summary>
@@ -1892,11 +2094,7 @@
           </details>
           <details class="q">
             <summary>What model is the agent?</summary>
-            <div class="a">A general-purpose browsing agent built on a current-generation LLM, running on a real cloud browser. The exact model changes as we upgrade it.</div>
-          </details>
-          <details class="q">
-            <summary>Can I run my own cloud browser like this?</summary>
-            <div class="a">Not through Cloud Browser Live — this is one shared agent. For private, scriptable cloud browsers, look at the agentic browser-as-a-service category: Browserbase, Browserless, Cloudflare Browser Run, browser-use.</div>
+            <div class="a">A general-purpose browsing agent built on a current-generation LLM (Claude, GPT, or Gemini class), running on a real cloud browser. The exact model changes as we upgrade it.</div>
           </details>
         </div>
       </div>
