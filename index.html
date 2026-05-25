@@ -3,34 +3,34 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Cloud Browser Live · Watch the public AI browser. Suggest the next move.</title>
+    <title>Cloud Browser Live · One AI browser. The internet watching.</title>
     <meta
       name="description"
-      content="One AI browser running continuously, in public. Anyone can watch what the agent is doing and suggest the next move. No login, no profile — one collective browser, always on."
+      content="A public AI browser session that never stops. Anonymous suggestions. Real moves on a real browser. Watch one agent browse the web with the whole room steering."
     />
     <link rel="canonical" href="https://cloudbrowser.live/" />
     <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large" />
-    <meta name="theme-color" content="#f6f3ea" />
+    <meta name="theme-color" content="#f4f1e7" />
 
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://cloudbrowser.live/" />
-    <meta property="og:title" content="Cloud Browser Live · The public AI browser session" />
-    <meta
-      property="og:description"
-      content="One agent. One window. One room of strangers steering it. Live, anonymous, always on."
-    />
+    <meta property="og:title" content="Cloud Browser Live · One AI browser. The internet watching." />
+    <meta property="og:description" content="A public AI browser session. One agent. Anonymous suggestions. Always on." />
     <meta property="og:image" content="https://cloudbrowser.live/og.png" />
     <meta property="og:site_name" content="Cloud Browser Live" />
-
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Cloud Browser Live" />
-    <meta
-      name="twitter:description"
-      content="One public AI browser. Watch it. Steer it. Anonymous and always on."
-    />
+    <meta name="twitter:description" content="One public AI browser. Watch it. Steer it. Anonymous and always on." />
     <meta name="twitter:image" content="https://cloudbrowser.live/og.png" />
 
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='7' fill='%230f7a5c'/><circle cx='16' cy='16' r='13' fill='none' stroke='%230f7a5c' stroke-opacity='.25' stroke-width='2'/></svg>" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500;6..72,600;6..72,700&display=swap"
+      rel="stylesheet"
+    />
 
     <script type="application/ld+json">
       {
@@ -59,36 +59,12 @@
             "@type": "FAQPage",
             "@id": "https://cloudbrowser.live/#faq",
             "mainEntity": [
-              {
-                "@type": "Question",
-                "name": "Is this a real AI or a recording?",
-                "acceptedAnswer": { "@type": "Answer", "text": "Real. The browser you see is a live session. What's on screen is what the agent is doing right now." }
-              },
-              {
-                "@type": "Question",
-                "name": "Can the agent see my suggestion?",
-                "acceptedAnswer": { "@type": "Answer", "text": "Yes. Every message in the room is part of the agent's input. It reads them and picks what to act on." }
-              },
-              {
-                "@type": "Question",
-                "name": "Why is the browser read-only?",
-                "acceptedAnswer": { "@type": "Answer", "text": "You are watching the agent's session, not driving it yourself. The agent is the only one with hands on the keyboard. You influence it by suggesting, not clicking." }
-              },
-              {
-                "@type": "Question",
-                "name": "Do you store who I am?",
-                "acceptedAnswer": { "@type": "Answer", "text": "No login, no email. The site keeps a random anonymous ID in your browser so the agent can tell visitors apart in the room. Clear your storage and you are a new visitor." }
-              },
-              {
-                "@type": "Question",
-                "name": "What model is the agent?",
-                "acceptedAnswer": { "@type": "Answer", "text": "A general-purpose browsing agent built on a current-generation LLM, running on a real cloud browser. The exact model changes as we upgrade it." }
-              },
-              {
-                "@type": "Question",
-                "name": "Can I run my own cloud browser like this?",
-                "acceptedAnswer": { "@type": "Answer", "text": "Not through Cloud Browser Live — this is one shared agent. For private, scriptable cloud browsers, look at the agentic browser-as-a-service category: Browserbase, Browserless, Cloudflare Browser Run, browser-use." }
-              }
+              { "@type": "Question", "name": "Is this a real AI or a recording?", "acceptedAnswer": { "@type": "Answer", "text": "Real. The browser you see is a live session. What's on screen is what the agent is doing right now." } },
+              { "@type": "Question", "name": "Can the agent see my suggestion?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Every message in the room is part of the agent's input. It reads them and picks what to act on." } },
+              { "@type": "Question", "name": "Why is the browser read-only?", "acceptedAnswer": { "@type": "Answer", "text": "You are watching the agent's session, not driving it yourself. The agent is the only one with hands on the keyboard. You influence it by suggesting, not clicking." } },
+              { "@type": "Question", "name": "Do you store who I am?", "acceptedAnswer": { "@type": "Answer", "text": "No login, no email. The site keeps a random anonymous ID in your browser so the agent can tell visitors apart in the room. Clear your storage and you are a new visitor." } },
+              { "@type": "Question", "name": "What model is the agent?", "acceptedAnswer": { "@type": "Answer", "text": "A general-purpose browsing agent built on a current-generation LLM, running on a real cloud browser. The exact model changes as we upgrade it." } },
+              { "@type": "Question", "name": "Can I run my own cloud browser like this?", "acceptedAnswer": { "@type": "Answer", "text": "Not through Cloud Browser Live — this is one shared agent. For private, scriptable cloud browsers, look at the agentic browser-as-a-service category: Browserbase, Browserless, Cloudflare Browser Run, browser-use." } }
             ]
           }
         ]
@@ -98,1265 +74,2115 @@
     <style>
       :root {
         color-scheme: light;
-        --ink: #14140f;
-        --ink-soft: #2d2c26;
+        --paper: #f4f1e7;
+        --paper-deep: #ebe7d7;
+        --paper-card: #fbfaf3;
+        --ink: #0d0c08;
+        --ink-soft: #1f1e18;
+        --ink-2: #2b2a22;
         --muted: #6d6a62;
-        --muted-strong: #514e47;
-        --hairline: rgba(20, 20, 15, 0.1);
-        --hairline-strong: rgba(20, 20, 15, 0.18);
-        --paper: #f7f5ee;
-        --paper-deep: #ede9dd;
-        --white-soft: rgba(255, 255, 255, 0.82);
-        --shadow-lift: 0 22px 70px rgba(18, 18, 18, 0.18);
-        --shadow-card: 0 14px 34px rgba(18, 18, 18, 0.08);
+        --muted-strong: #46443c;
+        --hairline: rgba(13, 12, 8, 0.1);
+        --hairline-strong: rgba(13, 12, 8, 0.18);
         --accent: #0f7a5c;
         --accent-strong: #0c5d48;
         --accent-tint: rgba(15, 122, 92, 0.12);
+        --warm: #c25a2a;
+        --warm-soft: rgba(194, 90, 42, 0.12);
+        --shadow-lift: 0 30px 80px rgba(13, 12, 8, 0.18);
+        --shadow-card: 0 16px 40px rgba(13, 12, 8, 0.08);
+        --serif: Newsreader, "Iowan Old Style", Georgia, serif;
+        --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas, monospace;
       }
 
       *, *::before, *::after { box-sizing: border-box; }
 
-      html { scroll-behavior: smooth; }
+      html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 
-      html, body {
+      body {
         margin: 0;
         background: var(--paper);
         color: var(--ink);
-        font-family:
-          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
-          "Segoe UI", sans-serif;
+        font-family: var(--sans);
         -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
       }
 
-      a { color: var(--accent); text-decoration: none; }
+      a { color: var(--ink); text-decoration: none; }
       a:hover { color: var(--accent-strong); }
 
-      button, textarea { font: inherit; }
+      button { font: inherit; cursor: pointer; }
 
-      /* ------------------------------ HERO ----------------------------- */
+      /* ============================== UTIL ============================ */
 
-      .hero {
-        position: relative;
-        width: 100%;
-        height: 100vh;
-        min-height: 620px;
-        overflow: hidden;
-        isolation: isolate;
-        background: linear-gradient(135deg, #fbfbf8 0%, #eff2ed 52%, #f7f8f4 100%);
-      }
+      .wrap { max-width: 1180px; margin: 0 auto; padding: 0 28px; }
+      .wrap-tight { max-width: 920px; margin: 0 auto; padding: 0 28px; }
+      .wrap-narrow { max-width: 680px; margin: 0 auto; padding: 0 28px; }
 
-      .browser-shell {
-        position: absolute;
-        inset: 14px;
-        overflow: hidden;
-        border: 1px solid var(--hairline);
-        border-radius: 18px;
-        background: #f5f6f2;
-        box-shadow: var(--shadow-lift);
-      }
-
-      .browser-bar {
-        position: relative;
-        z-index: 3;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        height: 42px;
-        padding: 0 14px;
-        border-bottom: 1px solid var(--hairline);
-        background: rgba(250, 251, 247, 0.92);
-        backdrop-filter: blur(18px);
-      }
-
-      .dots { display: flex; gap: 7px; flex: 0 0 auto; }
-      .dots span {
-        width: 10px; height: 10px;
-        border-radius: 999px;
-        background: #d8d1c0;
-      }
-
-      .address {
-        min-width: 0;
-        flex: 0 1 360px;
-        max-width: 44vw;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        border: 1px solid var(--hairline);
-        border-radius: 999px;
-        padding: 7px 12px;
-        color: #5d5a52;
-        background: rgba(255, 255, 255, 0.78);
+      .eyebrow {
+        display: inline-block;
+        margin-bottom: 14px;
+        color: var(--muted);
         font-size: 12px;
-      }
-
-      .browser-stage {
-        position: absolute;
-        inset: 42px 0 0;
-        background:
-          linear-gradient(rgba(247, 248, 244, 0.5), rgba(247, 248, 244, 0)),
-          #ffffff;
-      }
-
-      .browser-stage::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        z-index: 2;
-        cursor: default;
-      }
-
-      iframe {
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-        border: 0;
-        pointer-events: none;
-        background: #ffffff;
-      }
-
-      .empty-browser {
-        position: absolute;
-        inset: 0;
-        display: grid;
-        place-items: center;
-        padding: 28px;
-        color: #777168;
-        text-align: center;
-        font-size: 15px;
-        line-height: 1.5;
-      }
-
-      .intent-strip {
-        position: absolute;
-        z-index: 6;
-        top: 56px;
-        left: 28px;
-        right: 28px;
-        display: flex;
-        justify-content: center;
-        pointer-events: none;
-      }
-
-      .intent-strip > span {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        max-width: 100%;
-        padding: 7px 14px;
-        border: 1px solid var(--hairline);
-        border-radius: 999px;
-        background: rgba(255, 255, 255, 0.86);
-        backdrop-filter: blur(18px);
-        color: var(--muted-strong);
-        font-size: 12px;
-        line-height: 1.3;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        box-shadow: 0 10px 28px rgba(18, 18, 18, 0.06);
-      }
-
-      .intent-strip strong {
-        color: var(--ink);
-        font-size: 11px;
-        letter-spacing: 0.08em;
+        font-weight: 700;
+        letter-spacing: 0.16em;
         text-transform: uppercase;
       }
 
-      /* Topline overlay */
-      .topline {
-        position: absolute;
-        z-index: 8;
-        top: 28px;
-        left: 34px;
-        right: 34px;
-        display: grid;
-        grid-template-columns: minmax(140px, 0.8fr) minmax(260px, 1.4fr) minmax(120px, 0.8fr);
-        align-items: start;
-        gap: 18px;
-        pointer-events: none;
+      .display {
+        font-family: var(--serif);
+        font-weight: 500;
+        font-size: clamp(36px, 6.6vw, 76px);
+        line-height: 1.02;
+        letter-spacing: -0.018em;
+        color: var(--ink);
       }
 
-      .brand, .live-pill, .headline, .nav-links { pointer-events: auto; }
+      .display-md {
+        font-family: var(--serif);
+        font-weight: 500;
+        font-size: clamp(28px, 4.4vw, 48px);
+        line-height: 1.05;
+        letter-spacing: -0.012em;
+        color: var(--ink);
+      }
 
-      .brand {
+      .lede {
+        font-size: clamp(17px, 1.6vw, 20px);
+        line-height: 1.55;
+        color: var(--ink-soft);
+        max-width: 640px;
+      }
+
+      .label {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--muted-strong);
+      }
+
+      /* ============================== NAV ============================= */
+
+      .topnav {
+        position: fixed;
+        top: 0; left: 0; right: 0;
+        z-index: 50;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 14px 22px;
+        background: rgba(244, 241, 231, 0.72);
+        backdrop-filter: blur(16px) saturate(140%);
+        border-bottom: 1px solid var(--hairline);
+      }
+
+      .topnav .brand {
         display: inline-flex;
         align-items: center;
-        gap: 9px;
-        width: max-content;
-        max-width: 100%;
-        padding: 9px 13px;
-        border: 1px solid var(--hairline);
-        border-radius: 999px;
-        background: var(--white-soft);
-        backdrop-filter: blur(18px);
-        box-shadow: var(--shadow-card);
-        font-size: 13px;
+        gap: 10px;
+        font-size: 14px;
         font-weight: 700;
         color: var(--ink);
       }
 
-      .mark {
-        width: 9px;
-        height: 9px;
+      .topnav .brand .mark {
+        width: 10px; height: 10px;
         border-radius: 999px;
         background: var(--accent);
         box-shadow: 0 0 0 5px var(--accent-tint);
       }
 
-      .headline {
-        justify-self: center;
-        width: min(100%, 600px);
-        padding: 2px 0 0;
-        text-align: center;
-        text-shadow: 0 2px 18px rgba(255, 255, 255, 0.92);
-      }
-
-      .headline h1 {
-        margin: 0;
-        font-size: clamp(22px, 3.2vh, 34px);
-        line-height: 1.04;
-        font-weight: 780;
-        letter-spacing: -0.01em;
-        color: var(--ink);
-      }
-
-      .headline p {
-        margin: 8px auto 0;
-        max-width: 460px;
-        color: var(--muted-strong);
+      .topnav nav {
+        display: flex;
+        gap: 22px;
         font-size: 13px;
-        line-height: 1.45;
+        font-weight: 600;
+        color: var(--muted-strong);
       }
 
-      .live-pill {
-        justify-self: end;
+      .topnav nav a:hover { color: var(--ink); }
+
+      .topnav .pill {
         display: inline-flex;
         align-items: center;
         gap: 8px;
-        width: max-content;
-        padding: 9px 13px;
-        border: 1px solid rgba(15, 122, 92, 0.2);
+        padding: 7px 11px 7px 11px;
+        border: 1px solid rgba(15, 122, 92, 0.22);
         border-radius: 999px;
         background: rgba(239, 251, 245, 0.86);
-        backdrop-filter: blur(18px);
-        color: #134d3f;
-        font-size: 13px;
+        color: #0e4836;
+        font-size: 12px;
         font-weight: 700;
-        box-shadow: var(--shadow-card);
       }
 
       .pulse {
-        width: 8px;
-        height: 8px;
+        width: 7px; height: 7px;
         border-radius: 999px;
         background: var(--accent);
         animation: pulse 1.8s ease-in-out infinite;
       }
 
-      /* Messages overlay */
-      .messages {
+      @media (max-width: 720px) {
+        .topnav nav { display: none; }
+      }
+
+      /* ============================= HERO ============================= */
+
+      .hero {
+        position: relative;
+        padding: 96px 24px 28px;
+        background:
+          radial-gradient(1100px 580px at 80% -10%, rgba(15, 122, 92, 0.08), transparent 60%),
+          radial-gradient(900px 500px at -10% 20%, rgba(194, 90, 42, 0.07), transparent 55%),
+          var(--paper);
+      }
+
+      .hero-headline {
+        position: relative;
+        z-index: 2;
+        max-width: 1180px;
+        margin: 0 auto 28px;
+        padding: 28px 4px 0;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: end;
+        gap: 28px;
+      }
+
+      .hero-headline h1 {
+        margin: 0;
+        font-family: var(--serif);
+        font-weight: 500;
+        font-size: clamp(40px, 6.8vw, 84px);
+        line-height: 0.98;
+        letter-spacing: -0.02em;
+      }
+
+      .hero-headline h1 em {
+        font-style: italic;
+        color: var(--accent-strong);
+      }
+
+      .hero-headline .sub {
+        max-width: 360px;
+        color: var(--muted-strong);
+        font-size: 15px;
+        line-height: 1.5;
+        padding-bottom: 8px;
+      }
+
+      .hero-stats {
+        position: relative;
+        z-index: 2;
+        max-width: 1180px;
+        margin: 14px auto 22px;
+        display: flex;
+        gap: 36px;
+        align-items: baseline;
+        flex-wrap: wrap;
+        padding: 0 4px;
+        font-family: var(--mono);
+        font-size: 12.5px;
+        color: var(--muted-strong);
+      }
+
+      .hero-stats .stat strong {
+        font-family: var(--sans);
+        font-size: 22px;
+        font-weight: 700;
+        color: var(--ink);
+        margin-right: 8px;
+        letter-spacing: -0.01em;
+      }
+
+      .hero-stats .stat span { letter-spacing: 0.04em; text-transform: uppercase; font-size: 11px; }
+
+      /* The fake browser stage */
+      .stage {
+        position: relative;
+        z-index: 2;
+        max-width: 1240px;
+        height: min(64vh, 720px);
+        min-height: 520px;
+        margin: 0 auto;
+        border-radius: 22px;
+        background: #f5f4ec;
+        border: 1px solid var(--hairline-strong);
+        box-shadow: var(--shadow-lift);
+        overflow: hidden;
+        isolation: isolate;
+      }
+
+      .stage-bar {
+        position: relative;
+        z-index: 3;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        height: 44px;
+        padding: 0 14px;
+        border-bottom: 1px solid var(--hairline);
+        background: linear-gradient(to bottom, #fbf9f1, #f5f3eb);
+      }
+
+      .stage-bar .dots { display: flex; gap: 7px; }
+      .stage-bar .dots span {
+        width: 11px; height: 11px;
+        border-radius: 999px;
+        background: #d7cfba;
+      }
+      .stage-bar .dots span:nth-child(1) { background: #e7625a; }
+      .stage-bar .dots span:nth-child(2) { background: #e2b14c; }
+      .stage-bar .dots span:nth-child(3) { background: #5ab07e; }
+
+      .url-bar {
+        flex: 1;
+        min-width: 0;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        height: 28px;
+        padding: 0 12px;
+        border: 1px solid var(--hairline);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.82);
+        color: #4a4740;
+        font-family: var(--mono);
+        font-size: 12px;
+      }
+
+      .url-bar .lock {
+        width: 12px; height: 12px;
+        display: grid; place-items: center;
+        color: var(--accent);
+      }
+
+      .url-bar .url {
+        min-width: 0;
+        flex: 1;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .url-bar .caret {
+        display: inline-block;
+        width: 6px;
+        height: 12px;
+        background: var(--ink);
+        animation: blink 0.9s steps(2, jump-none) infinite;
+        vertical-align: -2px;
+      }
+
+      .stage-bar .intent-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 4px 9px;
+        border: 1px solid var(--hairline);
+        border-radius: 999px;
+        background: rgba(239, 251, 245, 0.7);
+        color: #0e4836;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.03em;
+      }
+
+      .stage-bar .intent-tag .ping {
+        width: 6px; height: 6px;
+        border-radius: 999px;
+        background: var(--accent);
+        animation: pulse 1.6s ease-in-out infinite;
+      }
+
+      /* Stage canvas */
+      .stage-canvas {
         position: absolute;
-        z-index: 9;
-        left: 34px;
-        bottom: 116px;
+        inset: 44px 0 0;
+        overflow: hidden;
+        background: #fff;
+      }
+
+      .scene {
+        position: absolute;
+        inset: 0;
+        padding: 0;
+        opacity: 0;
+        transform: translateY(14px) scale(0.995);
+        transition: opacity 600ms ease, transform 600ms ease, filter 600ms ease;
+        filter: blur(6px);
+      }
+
+      .scene.active {
+        opacity: 1;
+        transform: none;
+        filter: none;
+        z-index: 2;
+      }
+
+      /* Mock pages — generic frames */
+      .mock {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: #fff;
+        color: var(--ink-soft);
+        font-size: 13.5px;
+        line-height: 1.55;
+      }
+
+      .mock .mock-head {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        padding: 14px 24px;
+        border-bottom: 1px solid rgba(0,0,0,0.06);
+        background: #fbfaf6;
+        font-size: 12.5px;
+        font-weight: 700;
+        color: #2b2a22;
+      }
+      .mock .mock-head .logo {
+        width: 22px; height: 22px;
+        border-radius: 6px;
+        display: grid; place-items: center;
+        color: white; font-size: 12px; font-weight: 800;
+      }
+      .mock .mock-head nav { display: flex; gap: 18px; font-weight: 500; color: #5e5b53; font-size: 12.5px; }
+
+      .mock .mock-body { display: grid; gap: 18px; padding: 22px 24px 28px; }
+
+      .mock h2.mock-title {
+        margin: 0;
+        font-family: var(--serif);
+        font-weight: 500;
+        font-size: 30px;
+        line-height: 1.12;
+        letter-spacing: -0.008em;
+        color: var(--ink);
+      }
+
+      .mock p.mock-p { margin: 0; max-width: 64ch; color: var(--ink-soft); }
+
+      .mock .skeleton { display: grid; gap: 10px; }
+      .mock .skeleton .row {
+        height: 12px;
+        border-radius: 4px;
+        background: linear-gradient(90deg, #eee 0%, #f6f4ec 50%, #eee 100%);
+        background-size: 200% 100%;
+        animation: shimmer 2.4s linear infinite;
+      }
+      .mock .skeleton .row.short { width: 60%; }
+      .mock .skeleton .row.med { width: 84%; }
+
+      /* --- SCENE A: GitHub-ish --- */
+      .mock-gh .mock-head .logo { background: #0d0c08; }
+      .mock-gh .repo-top {
+        display: flex; flex-wrap: wrap; gap: 12px;
+        padding: 18px 24px;
+        border-bottom: 1px solid #eee;
+        align-items: baseline;
+      }
+      .mock-gh .repo-top .crumb {
+        font-family: var(--mono);
+        font-size: 16px;
+      }
+      .mock-gh .repo-top .crumb b { font-weight: 700; }
+      .mock-gh .repo-top .crumb span { color: var(--muted); margin: 0 4px; }
+      .mock-gh .repo-top .badge {
+        margin-left: auto;
+        font-size: 11.5px;
+        font-weight: 700;
+        padding: 3px 8px;
+        border: 1px solid var(--hairline);
+        border-radius: 999px;
+        background: #fff;
+      }
+      .mock-gh .filebar {
+        display: flex; gap: 0; padding: 10px 24px;
+        border-bottom: 1px solid #eee;
+        font-size: 12.5px; color: var(--muted-strong); font-family: var(--mono);
+        align-items: center;
+      }
+      .mock-gh .filebar .branch {
+        padding: 4px 10px; border: 1px solid var(--hairline);
+        border-radius: 6px; background: #fbfaf3; font-weight: 600; color: var(--ink-soft);
+      }
+      .mock-gh .filebar .pin { margin-left: auto; color: var(--muted); }
+      .mock-gh .filelist {
+        margin: 0 24px;
+        border: 1px solid #eee;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+      .mock-gh .filelist .row {
+        display: grid;
+        grid-template-columns: 24px 1.4fr 3fr 100px;
+        gap: 12px;
+        padding: 10px 14px;
+        border-top: 1px solid #f1efe7;
+        font-size: 13px;
+        align-items: center;
+      }
+      .mock-gh .filelist .row:first-child { border-top: 0; background: #fbfaf3; font-weight: 700; color: var(--ink-soft); }
+      .mock-gh .filelist .row .ico { color: var(--muted); }
+      .mock-gh .filelist .row .msg { color: var(--muted-strong); font-size: 12.5px; }
+      .mock-gh .filelist .row .age { color: var(--muted); font-size: 12px; text-align: right; }
+
+      /* --- SCENE B: Wikipedia-ish article --- */
+      .mock-wiki .mock-head .logo { background: #0d0c08; color: #fff; font-family: var(--serif); font-weight: 700; }
+      .mock-wiki .mock-body { padding: 24px 36px 28px; gap: 14px; }
+      .mock-wiki h2.mock-title { font-size: 34px; border-bottom: 1px solid #e9e6db; padding-bottom: 12px; }
+      .mock-wiki .toc {
+        margin-top: 4px;
+        padding: 12px 16px;
+        border: 1px solid #e9e6db;
+        background: #fbfaf3;
+        font-size: 13px;
+        color: var(--ink-soft);
+        max-width: 260px;
+      }
+      .mock-wiki .toc .lbl { font-weight: 700; color: var(--ink); margin-bottom: 8px; display: block; }
+      .mock-wiki .toc ol { margin: 0; padding-left: 18px; }
+      .mock-wiki .toc ol li { padding: 2px 0; }
+      .mock-wiki .infobox {
+        position: absolute;
+        top: 90px;
+        right: 36px;
+        width: 240px;
+        padding: 12px;
+        border: 1px solid #e9e6db;
+        background: #fbfaf3;
+        font-size: 12.5px;
+        color: var(--ink-soft);
+      }
+      .mock-wiki .infobox .head { font-weight: 700; color: var(--ink); margin-bottom: 8px; }
+      .mock-wiki .infobox dl { margin: 0; display: grid; grid-template-columns: 90px 1fr; gap: 6px 10px; }
+      .mock-wiki .infobox dt { color: var(--muted-strong); font-weight: 600; }
+      .mock-wiki .infobox dd { margin: 0; }
+
+      /* --- SCENE C: news article --- */
+      .mock-news .mock-head { background: #0d0c08; color: #f4f1e7; }
+      .mock-news .mock-head .logo { background: #c25a2a; }
+      .mock-news .mock-head nav { color: rgba(244, 241, 231, 0.8); }
+      .mock-news .mock-body { padding: 28px 36px; gap: 14px; }
+      .mock-news .kicker { color: var(--warm); font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; font-size: 11.5px; }
+      .mock-news h2.mock-title { font-size: 38px; line-height: 1.06; }
+      .mock-news .byline { color: var(--muted-strong); font-size: 12.5px; font-family: var(--mono); }
+      .mock-news .lead { font-family: var(--serif); font-size: 18px; line-height: 1.55; color: var(--ink-soft); max-width: 64ch; }
+      .mock-news .image {
+        margin-top: 8px;
+        height: 180px;
+        background:
+          linear-gradient(135deg, rgba(13,12,8,0.5), rgba(13,12,8,0.1)),
+          repeating-linear-gradient(45deg, #c25a2a 0 14px, #d9743d 14px 28px);
+        border-radius: 6px;
+      }
+
+      /* --- SCENE D: SERP search --- */
+      .mock-serp .mock-head { background: #fbf9f1; }
+      .mock-serp .mock-head .logo { background: #0f7a5c; }
+      .mock-serp .searchbar {
+        margin: 16px 24px;
+        display: flex; align-items: center; gap: 10px;
+        padding: 12px 18px;
+        border: 1px solid var(--hairline);
+        border-radius: 999px;
+        background: #fff;
+        font-size: 14px;
+      }
+      .mock-serp .searchbar .q { font-weight: 600; color: var(--ink-soft); }
+      .mock-serp .searchbar .ico { color: var(--muted); }
+      .mock-serp .results { display: grid; gap: 22px; padding: 6px 24px 24px; }
+      .mock-serp .results .result .url-line { color: var(--muted); font-size: 12px; font-family: var(--mono); margin-bottom: 4px; }
+      .mock-serp .results .result h3 { margin: 0 0 4px; font-size: 18px; font-weight: 500; color: #1a4b89; }
+      .mock-serp .results .result p { margin: 0; color: var(--ink-soft); font-size: 13.5px; line-height: 1.5; max-width: 64ch; }
+
+      /* Stage overlays */
+
+      .agent-strip {
+        position: absolute;
+        z-index: 5;
+        left: 18px; top: 56px;
+        max-width: calc(100% - 36px);
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        padding: 7px 13px;
+        border: 1px solid var(--hairline-strong);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.92);
+        backdrop-filter: blur(18px);
+        color: var(--ink-soft);
+        font-size: 12.5px;
+        line-height: 1.3;
+        box-shadow: 0 10px 26px rgba(13, 12, 8, 0.08);
+        overflow: hidden;
+      }
+
+      .agent-strip .who {
+        font-weight: 800;
+        font-size: 10.5px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--accent-strong);
+      }
+
+      .room {
+        position: absolute;
+        z-index: 6;
+        right: 18px;
+        bottom: 96px;
+        width: min(360px, calc(100% - 36px));
         display: flex;
         flex-direction: column;
-        justify-content: flex-end;
-        gap: 9px;
-        width: min(420px, calc(100vw - 68px));
-        height: min(280px, 36vh);
-        overflow: hidden;
+        gap: 8px;
+        align-items: flex-end;
         pointer-events: none;
-        mask-image: linear-gradient(to bottom, transparent 0, #000 22%, #000 100%);
       }
 
-      .message {
+      .bubble {
         max-width: 100%;
-        width: fit-content;
-        min-width: 0;
-        padding: 10px 13px 11px;
+        padding: 9px 13px;
         border: 1px solid var(--hairline);
-        border-radius: 18px 18px 18px 5px;
-        background: rgba(255, 255, 255, 0.86);
-        backdrop-filter: blur(18px);
-        box-shadow: var(--shadow-card);
-        animation: floatIn 520ms cubic-bezier(0.18, 0.9, 0.2, 1) both;
+        border-radius: 16px 16px 4px 16px;
+        background: rgba(255, 255, 255, 0.94);
+        backdrop-filter: blur(14px);
+        box-shadow: 0 14px 30px rgba(13, 12, 8, 0.12);
+        color: var(--ink-soft);
+        font-size: 13px;
+        line-height: 1.4;
+        animation: bubbleIn 520ms cubic-bezier(0.18, 0.9, 0.2, 1) both;
       }
 
-      .message.operator {
-        background: rgba(235, 248, 241, 0.92);
-        border-color: rgba(15, 122, 92, 0.22);
-      }
+      .bubble.gone { animation: bubbleOut 600ms ease both; }
 
-      .message.you {
-        background: rgba(247, 246, 240, 0.96);
-        border-color: var(--hairline-strong);
-      }
-
-      .message.fading { animation: driftOut 720ms ease both; }
-
-      .message strong {
+      .bubble .who {
         display: block;
-        margin-bottom: 4px;
+        margin-bottom: 3px;
         color: var(--muted-strong);
         font-size: 10px;
         font-weight: 800;
-        letter-spacing: 0.08em;
+        letter-spacing: 0.1em;
         text-transform: uppercase;
       }
 
-      .message p {
-        display: -webkit-box;
-        margin: 0;
-        overflow: hidden;
-        color: var(--ink-soft);
-        font-size: 13px;
-        line-height: 1.42;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 3;
-        line-clamp: 3;
-        overflow-wrap: anywhere;
-      }
-
-      .message-empty {
+      .bubble.agent {
+        border-radius: 16px 16px 16px 4px;
         align-self: flex-start;
-        padding: 10px 13px;
-        border: 1px solid var(--hairline);
-        border-radius: 999px;
-        background: rgba(255, 255, 255, 0.78);
-        backdrop-filter: blur(18px);
-        color: var(--muted);
-        font-size: 13px;
-        box-shadow: var(--shadow-card);
+        background: rgba(239, 251, 245, 0.94);
+        border-color: rgba(15, 122, 92, 0.22);
       }
+      .bubble.agent .who { color: var(--accent-strong); }
 
-      /* Composer */
       .composer {
         position: absolute;
-        z-index: 10;
-        left: 34px;
-        bottom: 30px;
-        width: min(560px, calc(100vw - 68px));
-        border: 1px solid var(--hairline-strong);
-        border-radius: 24px;
-        background: rgba(255, 255, 255, 0.92);
-        backdrop-filter: blur(22px);
-        box-shadow: var(--shadow-lift);
-      }
-
-      .composer form {
+        z-index: 7;
+        left: 18px; right: 18px;
+        bottom: 16px;
         display: grid;
-        grid-template-columns: minmax(0, 1fr) auto;
+        grid-template-columns: 1fr auto;
         gap: 10px;
-        align-items: end;
+        align-items: center;
         padding: 10px;
+        border: 1px solid var(--hairline-strong);
+        border-radius: 18px;
+        background: rgba(255, 255, 255, 0.96);
+        backdrop-filter: blur(18px);
+        box-shadow: 0 22px 50px rgba(13, 12, 8, 0.14);
       }
 
-      .composer textarea {
-        width: 100%;
-        height: 48px;
-        max-height: 96px;
-        resize: none;
+      .composer .field {
+        height: 38px;
+        padding: 0 14px;
         border: 0;
         outline: 0;
-        border-radius: 16px;
-        padding: 14px 13px;
         background: transparent;
+        font: 500 14px var(--sans);
         color: var(--ink);
-        font-size: 15px;
-        line-height: 1.35;
+        width: 100%;
       }
 
-      .composer textarea::placeholder { color: #8c877c; }
+      .composer .field::placeholder { color: #8c8779; }
 
       .composer button {
-        display: inline-grid;
-        place-items: center;
-        width: 48px;
-        height: 48px;
+        height: 38px;
+        padding: 0 16px;
         border: 0;
-        border-radius: 17px;
-        background: var(--accent);
-        color: white;
-        cursor: pointer;
-        transition: transform 160ms ease, background 160ms ease, opacity 160ms ease;
+        border-radius: 12px;
+        background: var(--ink);
+        color: #fbfaf3;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.01em;
+        transition: background 160ms, transform 160ms;
       }
-
       .composer button:hover { background: var(--accent-strong); transform: translateY(-1px); }
-      .composer button:disabled { cursor: default; opacity: 0.45; transform: none; }
 
-      .send-icon {
-        width: 19px; height: 19px;
-        fill: none; stroke: currentColor;
-        stroke-linecap: round; stroke-linejoin: round;
-        stroke-width: 2.2;
+      .composer .hint {
+        position: absolute;
+        right: 14px; bottom: -22px;
+        font-size: 11px;
+        color: var(--muted);
+        font-family: var(--mono);
       }
 
-      /* Scroll cue */
-      .scroll-cue {
-        position: absolute;
-        z-index: 7;
-        right: 34px;
-        bottom: 34px;
-        display: inline-flex;
+      /* Footer scroll cue (hero) */
+      .scrollcue {
+        display: block;
+        margin: 22px auto 0;
+        text-align: center;
+        color: var(--muted-strong);
+        font-size: 11.5px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        font-weight: 700;
+      }
+
+      .scrollcue .down {
+        display: block;
+        margin: 8px auto 0;
+        width: 1px; height: 32px;
+        background: linear-gradient(to bottom, var(--muted), transparent);
+      }
+
+      /* =========================== ROOM GRID ========================== */
+
+      .roomgrid {
+        background: var(--ink);
+        color: #f4f1e7;
+        padding: clamp(64px, 9vh, 120px) 28px;
+      }
+
+      .roomgrid .top {
+        max-width: 1180px;
+        margin: 0 auto 36px;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: end;
+        gap: 18px;
+      }
+
+      .roomgrid .top h2 {
+        margin: 0;
+        font-family: var(--serif);
+        font-weight: 500;
+        font-size: clamp(28px, 4.2vw, 48px);
+        line-height: 1.06;
+        letter-spacing: -0.012em;
+        color: #fbfaf3;
+      }
+
+      .roomgrid .top .meta {
+        font-family: var(--mono);
+        font-size: 12.5px;
+        color: rgba(244, 241, 231, 0.6);
+        text-align: right;
+        line-height: 1.55;
+      }
+
+      .roomgrid .grid {
+        max-width: 1180px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .tab {
+        border-radius: 14px;
+        overflow: hidden;
+        background: #1a1813;
+        border: 1px solid rgba(244, 241, 231, 0.08);
+        box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+      }
+
+      .tab .tab-head {
+        display: flex;
         align-items: center;
         gap: 8px;
-        padding: 9px 14px;
-        border: 1px solid var(--hairline-strong);
-        border-radius: 999px;
-        background: rgba(24, 24, 22, 0.84);
-        color: #fffaf0;
-        font-size: 12px;
-        font-weight: 600;
-        letter-spacing: 0.04em;
-        text-transform: uppercase;
-        backdrop-filter: blur(18px);
+        padding: 9px 12px;
+        background: #211e17;
+        border-bottom: 1px solid rgba(244, 241, 231, 0.06);
+        font-family: var(--mono);
+        font-size: 11px;
+        color: rgba(244, 241, 231, 0.6);
       }
 
-      .scroll-cue:hover { color: #fffaf0; background: rgba(24, 24, 22, 0.92); }
-      .scroll-cue svg { width: 12px; height: 12px; }
-
-      .toast {
-        position: absolute;
-        z-index: 11;
-        right: 34px;
-        bottom: 84px;
-        max-width: min(360px, calc(100vw - 68px));
-        padding: 10px 13px;
-        border: 1px solid var(--hairline);
+      .tab .tab-head .dot {
+        width: 7px; height: 7px;
         border-radius: 999px;
-        background: rgba(24, 24, 22, 0.84);
-        color: #fffaf0;
-        font-size: 13px;
+        background: var(--accent);
+        flex: 0 0 auto;
+      }
+
+      .tab .tab-head .u {
+        flex: 1;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .tab .tab-view {
+        position: relative;
+        height: 220px;
+        background: #f4f1e7;
+        overflow: hidden;
+      }
+
+      .tab .tab-view .miniscene {
+        position: absolute;
+        inset: 0;
         opacity: 0;
         transform: translateY(10px);
-        transition: opacity 180ms ease, transform 180ms ease;
-        pointer-events: none;
+        transition: opacity 500ms ease, transform 500ms ease;
+      }
+      .tab .tab-view .miniscene.on { opacity: 1; transform: none; }
+
+      .miniscene-content {
+        position: absolute;
+        inset: 0;
+        padding: 14px;
+        font-size: 11.5px;
+        line-height: 1.4;
+        color: var(--ink-soft);
+        background: #fbfaf3;
       }
 
-      .toast.show { opacity: 1; transform: translateY(0); }
-
-      /* ----------------------------- CONTENT --------------------------- */
-
-      main.content { background: var(--paper); }
-
-      section.band {
-        padding: clamp(72px, 12vh, 140px) 28px;
-      }
-
-      section.band.deep { background: var(--paper-deep); }
-      section.band.ink  { background: var(--ink); color: #efece4; }
-      section.band.ink .eyebrow { color: rgba(239, 236, 228, 0.6); }
-      section.band.ink h2,
-      section.band.ink p { color: #efece4; }
-      section.band.ink .card { background: rgba(255, 255, 255, 0.04); border-color: rgba(239, 236, 228, 0.14); color: #efece4; }
-      section.band.ink .card h3 { color: #fffaf0; }
-
-      .wrap {
-        max-width: 980px;
-        margin: 0 auto;
-      }
-
-      .wrap-narrow {
-        max-width: 680px;
-        margin: 0 auto;
-      }
-
-      .eyebrow {
-        display: block;
-        margin-bottom: 14px;
-        color: var(--muted);
-        font-size: 12px;
-        font-weight: 700;
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
-      }
-
-      h2.display {
-        margin: 0 0 24px;
-        font-size: clamp(28px, 4.4vw, 44px);
-        line-height: 1.06;
-        font-weight: 780;
-        letter-spacing: -0.015em;
+      .miniscene-content h4 {
+        margin: 0 0 6px;
+        font-family: var(--serif);
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1.15;
         color: var(--ink);
       }
 
-      h3.card-title {
+      .miniscene-content .meta {
+        color: var(--muted);
+        font-size: 10.5px;
+        font-family: var(--mono);
+        margin-bottom: 10px;
+      }
+
+      .miniscene-content .line {
+        height: 8px;
+        border-radius: 3px;
+        background: #e9e5d6;
+        margin-bottom: 6px;
+      }
+      .miniscene-content .line.s { width: 60%; }
+      .miniscene-content .line.m { width: 80%; }
+
+      .tab .tab-foot {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        padding: 10px 12px;
+        background: #1a1813;
+        border-top: 1px solid rgba(244, 241, 231, 0.06);
+        font-size: 11.5px;
+        color: rgba(244, 241, 231, 0.74);
+      }
+      .tab .tab-foot .doing { color: #fbfaf3; font-weight: 600; }
+      .tab .tab-foot .count { font-family: var(--mono); color: rgba(244, 241, 231, 0.5); }
+
+      @media (max-width: 980px) {
+        .roomgrid .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      }
+      @media (max-width: 520px) {
+        .roomgrid .grid { grid-template-columns: 1fr; }
+      }
+
+      /* =========================== WHAT/HOW =========================== */
+
+      .band { padding: clamp(72px, 12vh, 140px) 28px; }
+      .band.deep { background: var(--paper-deep); }
+
+      .what-grid {
+        margin-top: 48px;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .pillar {
+        position: relative;
+        padding: 26px 24px 24px;
+        border: 1px solid var(--hairline);
+        border-radius: 16px;
+        background: var(--paper-card);
+        overflow: hidden;
+      }
+
+      .pillar::before {
+        content: "";
+        position: absolute;
+        top: 0; left: 0; right: 0;
+        height: 3px;
+        background: var(--accent);
+      }
+
+      .pillar:nth-child(2)::before { background: var(--warm); }
+      .pillar:nth-child(3)::before { background: var(--ink); }
+
+      .pillar h3 {
         margin: 0 0 8px;
-        font-size: 16px;
-        line-height: 1.3;
+        font-family: var(--serif);
+        font-weight: 500;
+        font-size: 22px;
+        line-height: 1.2;
+        color: var(--ink);
+      }
+
+      .pillar p { margin: 0; color: var(--ink-soft); font-size: 15px; line-height: 1.55; }
+
+      @media (max-width: 720px) { .what-grid { grid-template-columns: 1fr; } }
+
+      /* HOW steps */
+
+      .steps {
+        list-style: none;
+        margin: 48px 0 0;
+        padding: 0;
+        display: grid;
+        gap: 14px;
+      }
+
+      .step {
+        display: grid;
+        grid-template-columns: 64px 1fr auto;
+        gap: 22px;
+        padding: 26px 24px;
+        border: 1px solid var(--hairline);
+        border-radius: 16px;
+        background: var(--paper-card);
+        align-items: center;
+      }
+
+      .step .num {
+        font-family: var(--mono);
+        font-size: 12.5px;
         font-weight: 700;
+        color: var(--muted);
+        letter-spacing: 0.04em;
+      }
+
+      .step h4 {
+        margin: 0 0 4px;
+        font-family: var(--serif);
+        font-weight: 500;
+        font-size: 22px;
         letter-spacing: -0.005em;
         color: var(--ink);
       }
 
-      p.lede {
-        max-width: 640px;
-        margin: 0;
-        color: var(--ink-soft);
-        font-size: clamp(17px, 1.6vw, 19px);
-        line-height: 1.55;
-      }
+      .step p { margin: 0; color: var(--ink-soft); font-size: 15px; line-height: 1.55; max-width: 56ch; }
 
-      p.body {
-        margin: 0 0 1em;
-        color: var(--ink-soft);
-        font-size: 16.5px;
-        line-height: 1.62;
-      }
-
-      p.body:last-child { margin-bottom: 0; }
-
-      .cards {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 18px;
-        margin-top: 36px;
-      }
-
-      .card {
-        padding: 22px;
-        border: 1px solid var(--hairline);
-        border-radius: 16px;
-        background: rgba(255, 255, 255, 0.7);
-        backdrop-filter: blur(8px);
-        color: var(--ink-soft);
-        font-size: 14.5px;
-        line-height: 1.55;
-      }
-
-      ol.steps {
-        counter-reset: step;
-        list-style: none;
-        margin: 36px 0 0;
-        padding: 0;
-        display: grid;
-        gap: 18px;
-      }
-
-      ol.steps li {
-        counter-increment: step;
+      .step .diagram {
+        width: 200px;
+        height: 80px;
+        border-radius: 10px;
+        background: #f3efe2;
         position: relative;
-        padding: 22px 22px 22px 70px;
-        border: 1px solid var(--hairline);
-        border-radius: 16px;
-        background: rgba(255, 255, 255, 0.7);
-        color: var(--ink-soft);
-        font-size: 15px;
-        line-height: 1.55;
+        overflow: hidden;
       }
 
-      ol.steps li::before {
-        content: counter(step, decimal-leading-zero);
+      .step .diagram .pageA, .step .diagram .pageB {
         position: absolute;
-        left: 22px;
-        top: 22px;
-        width: 32px;
-        height: 32px;
-        display: grid;
-        place-items: center;
-        border-radius: 999px;
+        top: 12px; bottom: 12px;
+        width: 70px;
+        border-radius: 4px;
+        background: #fff;
+        border: 1px solid var(--hairline);
+      }
+      .step .diagram .pageA { left: 14px; }
+      .step .diagram .pageB { right: 14px; }
+      .step .diagram .pageA::after, .step .diagram .pageB::after {
+        content: "";
+        position: absolute;
+        left: 8px; right: 8px; top: 10px;
+        height: 4px;
+        background: #e5e1d0;
+        border-radius: 2px;
+        box-shadow: 0 8px 0 0 #e9e5d6, 0 16px 0 0 #e5e1d0;
+      }
+
+      .step .diagram .arrow {
+        position: absolute;
+        left: 50%; top: 50%;
+        transform: translate(-50%, -50%);
+        width: 36px; height: 2px;
         background: var(--accent);
-        color: white;
-        font-size: 12px;
-        font-weight: 800;
-        letter-spacing: 0.02em;
+        animation: arrowSlide 2.4s ease-in-out infinite;
       }
-
-      ol.steps li strong {
-        display: block;
-        margin-bottom: 4px;
-        color: var(--ink);
-        font-size: 16px;
-        font-weight: 700;
-      }
-
-      .moments {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 18px;
-        margin-top: 36px;
-      }
-
-      .moment {
-        padding: 20px;
-        border: 1px solid var(--hairline);
-        border-radius: 14px;
-        background: rgba(255, 255, 255, 0.7);
-      }
-
-      .moment time {
-        display: block;
-        margin-bottom: 8px;
-        color: var(--muted);
-        font-size: 11.5px;
-        font-weight: 600;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-      }
-
-      .moment h3 {
-        margin: 0 0 8px;
-        color: var(--ink);
-        font-size: 16.5px;
-        font-weight: 700;
-        line-height: 1.3;
-      }
-
-      .moment p {
-        margin: 0;
-        color: var(--ink-soft);
-        font-size: 14.5px;
-        line-height: 1.55;
-      }
-
-      .moments-empty {
-        margin: 36px 0 0;
-        padding: 36px;
-        border: 1px dashed var(--hairline-strong);
-        border-radius: 16px;
-        text-align: center;
-        color: var(--muted);
-        font-size: 14px;
-      }
-
-      details.faq {
-        border-top: 1px solid var(--hairline);
-      }
-
-      details.faq:last-of-type { border-bottom: 1px solid var(--hairline); }
-
-      details.faq summary {
-        padding: 22px 36px 22px 0;
-        position: relative;
-        cursor: pointer;
-        font-size: 17px;
-        font-weight: 700;
-        color: var(--ink);
-        list-style: none;
-      }
-
-      details.faq summary::-webkit-details-marker { display: none; }
-
-      details.faq summary::after {
-        content: "+";
+      .step .diagram .arrow::after {
+        content: "";
         position: absolute;
-        right: 6px;
-        top: 50%;
-        transform: translateY(-50%);
+        right: -2px; top: -4px;
+        width: 0; height: 0;
+        border-left: 8px solid var(--accent);
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+      }
+
+      .step:nth-child(2) .diagram { background: #f5efe2; }
+      .step:nth-child(2) .diagram .pageA { display: none; }
+      .step:nth-child(2) .diagram .pageB { left: 50%; transform: translateX(-50%); }
+      .step:nth-child(2) .diagram::before {
+        content: "";
+        position: absolute;
+        left: 18px; top: 20px;
+        width: 60px; height: 6px;
+        border-radius: 3px;
+        background: var(--warm);
+        box-shadow: 0 16px 0 0 rgba(194,90,42,0.45), 0 32px 0 0 rgba(194,90,42,0.22);
+        animation: shouts 2.4s ease-in-out infinite;
+      }
+
+      .step:nth-child(3) .diagram { background: #ebe7d7; }
+      .step:nth-child(3) .diagram::before {
+        content: "→";
+        position: absolute;
+        left: 50%; top: 50%;
+        transform: translate(-50%, -50%);
+        font-family: var(--mono);
         font-size: 22px;
-        font-weight: 400;
-        color: var(--muted);
-        transition: transform 180ms ease;
+        font-weight: 700;
+        color: var(--ink);
+        animation: bob 2s ease-in-out infinite;
       }
 
-      details.faq[open] summary::after { content: "−"; }
-
-      details.faq .answer {
-        padding: 0 0 22px;
-        color: var(--ink-soft);
-        font-size: 15.5px;
-        line-height: 1.6;
+      @media (max-width: 720px) {
+        .step { grid-template-columns: 1fr; gap: 12px; }
+        .step .diagram { width: 100%; height: 64px; }
       }
 
-      /* Footer */
-      footer.foot {
-        padding: 56px 28px;
+      /* =========================== MARQUEE ============================ */
+
+      .marquee-band {
         background: var(--ink);
-        color: rgba(239, 236, 228, 0.7);
+        color: #f4f1e7;
+        padding: 64px 0 80px;
+        overflow: hidden;
       }
 
-      footer.foot .wrap {
+      .marquee-head {
+        display: flex; justify-content: space-between; align-items: end;
+        max-width: 1180px;
+        margin: 0 auto 28px;
+        padding: 0 28px;
+      }
+
+      .marquee-head h2 {
+        margin: 0;
+        font-family: var(--serif);
+        font-weight: 500;
+        font-size: clamp(24px, 3.4vw, 36px);
+        line-height: 1.08;
+        color: #fbfaf3;
+      }
+
+      .marquee-head .meta { font-family: var(--mono); font-size: 12.5px; color: rgba(244,241,231,0.55); }
+
+      .marquee-row {
+        position: relative;
         display: flex;
-        flex-wrap: wrap;
-        gap: 24px;
-        justify-content: space-between;
-        align-items: end;
+        overflow: hidden;
+        mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
       }
 
-      footer.foot .brand-foot {
+      .marquee-track {
+        display: flex;
+        gap: 28px;
+        padding: 12px 0;
+        animation: scrollLeft 80s linear infinite;
+        white-space: nowrap;
+      }
+
+      .marquee-row.alt .marquee-track { animation-duration: 100s; animation-direction: reverse; }
+
+      .marquee-track span.chip {
         display: inline-flex;
         align-items: center;
         gap: 9px;
-        color: #fffaf0;
-        font-weight: 700;
+        padding: 9px 16px;
+        border-radius: 999px;
+        background: rgba(244, 241, 231, 0.06);
+        border: 1px solid rgba(244, 241, 231, 0.1);
+        color: #fbfaf3;
         font-size: 14px;
+        font-weight: 500;
+      }
+      .marquee-track span.chip .role {
+        font-family: var(--mono);
+        font-size: 10.5px;
+        font-weight: 700;
+        color: rgba(244, 241, 231, 0.5);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+      .marquee-track span.chip .role.op { color: rgba(108, 220, 178, 0.85); }
+
+      /* =========================== MANIFESTO ========================== */
+
+      .manifesto {
+        padding: clamp(80px, 13vh, 160px) 28px;
+        background:
+          radial-gradient(900px 500px at 100% 0%, rgba(15, 122, 92, 0.08), transparent 60%),
+          var(--paper);
       }
 
-      footer.foot p { margin: 8px 0 0; font-size: 13px; max-width: 420px; line-height: 1.5; }
+      .manifesto .frame {
+        max-width: 760px;
+        margin: 0 auto;
+        position: relative;
+      }
 
-      footer.foot ul {
+      .manifesto .frame::before {
+        content: "“";
+        position: absolute;
+        top: -64px; left: -18px;
+        font-family: var(--serif);
+        font-size: 200px;
+        line-height: 1;
+        color: var(--accent);
+        opacity: 0.18;
+      }
+
+      .manifesto h2 {
+        margin: 0 0 26px;
+        font-family: var(--serif);
+        font-weight: 500;
+        font-size: clamp(28px, 4.2vw, 46px);
+        line-height: 1.08;
+        letter-spacing: -0.012em;
+        color: var(--ink);
+      }
+
+      .manifesto p {
+        margin: 0 0 18px;
+        font-family: var(--serif);
+        font-weight: 400;
+        font-size: clamp(18px, 1.7vw, 22px);
+        line-height: 1.55;
+        color: var(--ink-2);
+      }
+
+      .manifesto p:last-of-type { margin-bottom: 0; }
+
+      .manifesto .sig {
+        margin-top: 36px;
         display: flex;
-        gap: 18px;
-        margin: 0;
-        padding: 0;
+        align-items: center;
+        gap: 12px;
+        font-family: var(--mono);
+        font-size: 12.5px;
+        color: var(--muted-strong);
+      }
+
+      /* ============================== FAQ ============================= */
+
+      .faq {
+        padding: clamp(72px, 12vh, 140px) 28px;
+        background: var(--paper-deep);
+      }
+
+      .faq-list { margin-top: 36px; }
+
+      details.q { border-top: 1px solid var(--hairline-strong); }
+      details.q:last-of-type { border-bottom: 1px solid var(--hairline-strong); }
+
+      details.q summary {
+        position: relative;
+        padding: 26px 56px 26px 0;
+        cursor: pointer;
+        font-family: var(--serif);
+        font-weight: 500;
+        font-size: 22px;
+        line-height: 1.3;
+        color: var(--ink);
         list-style: none;
       }
 
-      footer.foot a { color: rgba(239, 236, 228, 0.78); font-size: 13px; }
-      footer.foot a:hover { color: #fffaf0; }
+      details.q summary::-webkit-details-marker { display: none; }
 
-      /* ----------------------------- MOTION ---------------------------- */
-
-      @keyframes pulse {
-        0%, 100% { box-shadow: 0 0 0 0 rgba(15, 122, 92, 0.2); }
-        50% { box-shadow: 0 0 0 8px rgba(15, 122, 92, 0); }
+      details.q summary::after {
+        content: "+";
+        position: absolute;
+        right: 6px;
+        top: 26px;
+        font-family: var(--sans);
+        font-size: 22px;
+        font-weight: 300;
+        color: var(--muted);
+        transition: transform 220ms ease;
       }
 
-      @keyframes floatIn {
-        from { opacity: 0; transform: translateY(22px) scale(0.98); }
+      details.q[open] summary::after { content: "−"; }
+
+      details.q .a {
+        padding: 0 0 26px;
+        color: var(--ink-soft);
+        font-size: 16px;
+        line-height: 1.6;
+        max-width: 64ch;
+      }
+
+      /* ============================== CTA ============================= */
+
+      .cta {
+        position: relative;
+        padding: clamp(96px, 14vh, 180px) 28px;
+        text-align: center;
+        background:
+          radial-gradient(800px 460px at 50% 50%, rgba(15, 122, 92, 0.16), transparent 60%),
+          var(--paper);
+        overflow: hidden;
+      }
+
+      .cta::before, .cta::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        width: 1px;
+        height: 200px;
+        background: linear-gradient(to bottom, transparent, var(--hairline), transparent);
+      }
+      .cta::before { left: 12%; transform: translateY(-50%); }
+      .cta::after { right: 12%; transform: translateY(-50%); }
+
+      .cta h2 {
+        margin: 0 0 22px;
+        font-family: var(--serif);
+        font-weight: 500;
+        font-size: clamp(36px, 6vw, 76px);
+        line-height: 1.02;
+        letter-spacing: -0.018em;
+        color: var(--ink);
+      }
+
+      .cta p { margin: 0 auto 36px; max-width: 460px; color: var(--ink-soft); font-size: 16px; line-height: 1.55; }
+
+      .cta .btn-row { display: inline-flex; align-items: center; gap: 14px; flex-wrap: wrap; justify-content: center; }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 16px 26px;
+        border-radius: 14px;
+        font-weight: 700;
+        font-size: 15px;
+        transition: transform 160ms ease, background 160ms ease, color 160ms ease;
+      }
+
+      .btn-primary {
+        background: var(--ink);
+        color: #fbfaf3;
+      }
+      .btn-primary:hover { background: var(--accent-strong); color: #fbfaf3; transform: translateY(-1px); }
+
+      .btn-ghost {
+        color: var(--ink);
+        border: 1px solid var(--hairline-strong);
+      }
+      .btn-ghost:hover { background: rgba(13, 12, 8, 0.06); color: var(--ink); }
+
+      .btn .arrow { transition: transform 220ms ease; }
+      .btn:hover .arrow { transform: translateX(3px); }
+
+      /* ============================ FOOTER ============================ */
+
+      footer.foot {
+        background: var(--ink);
+        color: rgba(244, 241, 231, 0.7);
+        padding: 64px 28px 48px;
+      }
+
+      footer.foot .row {
+        max-width: 1180px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        gap: 28px;
+        align-items: start;
+      }
+
+      footer.foot h5 {
+        margin: 0 0 10px;
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: rgba(244, 241, 231, 0.5);
+      }
+
+      footer.foot a { color: rgba(244, 241, 231, 0.85); font-size: 14px; }
+      footer.foot a:hover { color: #fbfaf3; }
+
+      footer.foot ul { margin: 0; padding: 0; list-style: none; }
+      footer.foot ul li { padding: 4px 0; }
+
+      footer.foot .signoff {
+        max-width: 1180px;
+        margin: 48px auto 0;
+        padding-top: 28px;
+        border-top: 1px solid rgba(244, 241, 231, 0.12);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 14px;
+        font-family: var(--mono);
+        font-size: 11.5px;
+        color: rgba(244, 241, 231, 0.55);
+      }
+
+      footer.foot .signoff .brand-foot {
+        color: #fbfaf3;
+        font-family: var(--sans);
+        font-size: 14px;
+        font-weight: 700;
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+      }
+      footer.foot .signoff .brand-foot .mark {
+        width: 9px; height: 9px;
+        border-radius: 999px; background: var(--accent);
+        box-shadow: 0 0 0 5px var(--accent-tint);
+      }
+
+      @media (max-width: 720px) {
+        footer.foot .row { grid-template-columns: 1fr 1fr; }
+        footer.foot .signoff { flex-direction: column; align-items: flex-start; }
+      }
+
+      /* =========================== KEYFRAMES ========================== */
+
+      @keyframes pulse {
+        0%, 100% { box-shadow: 0 0 0 0 rgba(15, 122, 92, 0.25); }
+        50%      { box-shadow: 0 0 0 8px rgba(15, 122, 92, 0); }
+      }
+
+      @keyframes blink {
+        50% { opacity: 0; }
+      }
+
+      @keyframes shimmer {
+        0%   { background-position: 200% 0; }
+        100% { background-position: -200% 0; }
+      }
+
+      @keyframes bubbleIn {
+        from { opacity: 0; transform: translateY(18px) scale(0.96); }
         to   { opacity: 1; transform: translateY(0) scale(1); }
       }
 
-      @keyframes driftOut {
-        to { opacity: 0; transform: translateY(-26px) scale(0.98); filter: blur(2px); }
+      @keyframes bubbleOut {
+        to { opacity: 0; transform: translateY(-22px) scale(0.98); filter: blur(2px); }
       }
 
-      /* --------------------------- RESPONSIVE -------------------------- */
-
-      @media (max-width: 780px) {
-        .browser-shell { inset: 10px; border-radius: 15px; }
-
-        .topline {
-          top: 22px;
-          left: 22px;
-          right: 22px;
-          grid-template-columns: 1fr auto;
-          gap: 10px;
-        }
-
-        .headline {
-          grid-column: 1 / -1;
-          grid-row: 2;
-          justify-self: start;
-          width: min(100%, 430px);
-          text-align: left;
-        }
-
-        .headline p { margin-left: 0; }
-
-        .intent-strip { top: 110px; left: 18px; right: 18px; }
-        .intent-strip > span { white-space: normal; text-align: left; line-height: 1.4; }
-
-        .messages { left: 18px; right: 18px; bottom: 116px; width: auto; height: min(220px, 30vh); }
-        .composer { left: 18px; right: 18px; bottom: 22px; width: auto; }
-        .toast { right: 18px; bottom: 92px; }
-        .scroll-cue { right: 18px; bottom: 12px; padding: 7px 11px; font-size: 11px; }
-
-        .cards { grid-template-columns: 1fr; }
-        .moments { grid-template-columns: 1fr; }
-
-        footer.foot .wrap { align-items: flex-start; }
+      @keyframes scrollLeft {
+        from { transform: translateX(0); }
+        to   { transform: translateX(-50%); }
       }
 
-      @media (max-height: 640px) {
-        .headline p { display: none; }
-        .intent-strip { display: none; }
-        .messages { height: 170px; }
+      @keyframes arrowSlide {
+        0%   { transform: translate(-90%, -50%); opacity: 0.2; }
+        50%  { transform: translate(-50%, -50%); opacity: 1; }
+        100% { transform: translate(-10%, -50%); opacity: 0; }
+      }
+
+      @keyframes shouts {
+        0%, 100% { opacity: 0.4; }
+        50% { opacity: 1; }
+      }
+
+      @keyframes bob {
+        0%, 100% { transform: translate(-50%, -50%); }
+        50% { transform: translate(-30%, -50%); }
       }
 
       @media (prefers-reduced-motion: reduce) {
         *, *::before, *::after {
           animation-duration: 1ms !important;
           animation-iteration-count: 1 !important;
-          scroll-behavior: auto !important;
           transition-duration: 1ms !important;
         }
       }
+
+      /* =========================== HERO RESPONSIVE ==================== */
+
+      @media (max-width: 880px) {
+        .hero-headline { grid-template-columns: 1fr; }
+        .hero-headline .sub { padding-bottom: 0; }
+        .stage { height: 70vh; min-height: 540px; }
+        .agent-strip { top: 52px; }
+        .room { width: calc(100% - 36px); bottom: 100px; }
+      }
+
+      @media (max-width: 520px) {
+        .hero { padding: 80px 14px 22px; }
+        .stage { border-radius: 14px; }
+        .hero-stats { gap: 22px; }
+        .hero-stats .stat strong { font-size: 18px; }
+      }
     </style>
   </head>
+
   <body>
 
-    <!-- =========================== HERO =========================== -->
-    <section class="hero" aria-label="Public AI browser room">
-      <div class="browser-shell" aria-label="Live browser view">
-        <div class="browser-bar" aria-hidden="true">
+    <!-- ============================ NAV ============================ -->
+    <header class="topnav">
+      <a href="#" class="brand"><span class="mark"></span> Cloud Browser Live</a>
+      <nav>
+        <a href="#what">What</a>
+        <a href="#how">How</a>
+        <a href="#why">Why</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <span class="pill"><span class="pulse"></span> <span id="watchPill">1,283 watching</span></span>
+    </header>
+
+    <!-- =========================== HERO ============================ -->
+    <section class="hero">
+      <div class="hero-headline">
+        <h1>One AI browser.<br />The internet <em>watching.</em></h1>
+        <p class="sub">
+          A public session that never stops. Anonymous suggestions, real moves on a real browser.
+          Tap in for a minute or stay all night.
+        </p>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat"><strong id="statWatch">1,283</strong><span>watching now</span></div>
+        <div class="stat"><strong id="statNudge">47,392</strong><span>nudges this week</span></div>
+        <div class="stat"><strong id="statDays">14</strong><span>days running</span></div>
+        <div class="stat"><strong id="statMoves">9,184</strong><span>agent moves</span></div>
+      </div>
+
+      <div class="stage" aria-label="Live browser session">
+        <div class="stage-bar">
           <div class="dots"><span></span><span></span><span></span></div>
-          <div class="address" id="browserAddress">cloudbrowser.live · loading session…</div>
+          <div class="url-bar">
+            <span class="lock" aria-hidden="true">
+              <svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.6">
+                <rect x="3" y="7" width="10" height="7" rx="1.4"/>
+                <path d="M5 7V5a3 3 0 0 1 6 0v2"/>
+              </svg>
+            </span>
+            <span class="url" id="addressUrl">cloudbrowser.live/session/14d</span>
+            <span class="caret"></span>
+          </div>
+          <span class="intent-tag"><span class="ping"></span> agent · move <span id="moveBadge">#9,184</span></span>
         </div>
-        <div class="browser-stage">
-          <iframe
-            id="browserFrame"
-            title="Live AI browser session"
-            tabindex="-1"
-            referrerpolicy="no-referrer"
-            sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
-          ></iframe>
-          <div class="empty-browser" id="browserEmpty">Loading the live browser…</div>
+
+        <div class="stage-canvas" id="stageCanvas">
+
+          <!-- SCENE A: GitHub-ish -->
+          <div class="scene active" data-scene="gh">
+            <div class="mock mock-gh">
+              <div class="mock-head">
+                <span class="logo">G</span>
+                <span>github.com</span>
+                <nav><span>Pull requests</span><span>Issues</span><span>Marketplace</span><span>Explore</span></nav>
+              </div>
+              <div class="repo-top">
+                <div class="crumb">
+                  <b>openai</b> <span>/</span> <b>whisper</b>
+                </div>
+                <span class="badge">★ 71.2k</span>
+              </div>
+              <div class="filebar">
+                <span class="branch">⎇ main</span>
+                <span style="margin-left:14px">last commit · 2h ago</span>
+                <span class="pin">whisper · MIT · 56 contributors</span>
+              </div>
+              <div class="filelist">
+                <div class="row"><span class="ico">📁</span><span>Name</span><span class="msg">Last commit message</span><span class="age">Age</span></div>
+                <div class="row"><span class="ico">📁</span><span>whisper</span><span class="msg">fix: tokenizer edge case for multilingual</span><span class="age">2h</span></div>
+                <div class="row"><span class="ico">📁</span><span>tests</span><span class="msg">add transcription benchmark for ar/ja</span><span class="age">1d</span></div>
+                <div class="row"><span class="ico">📄</span><span>README.md</span><span class="msg">docs: clarify GPU requirements</span><span class="age">3d</span></div>
+                <div class="row"><span class="ico">📄</span><span>setup.py</span><span class="msg">bump version to 20260601</span><span class="age">5d</span></div>
+                <div class="row"><span class="ico">📄</span><span>LICENSE</span><span class="msg">initial commit</span><span class="age">3y</span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SCENE B: Wikipedia-ish -->
+          <div class="scene" data-scene="wiki">
+            <div class="mock mock-wiki">
+              <div class="mock-head">
+                <span class="logo">W</span>
+                <span>en.wikipedia.org</span>
+                <nav><span>Article</span><span>Talk</span><span>Read</span><span>Edit</span><span>View history</span></nav>
+              </div>
+              <div class="mock-body">
+                <h2 class="mock-title">Heliopolis (ancient Egypt)</h2>
+                <p class="mock-p">Heliopolis was one of the oldest cities of ancient Egypt, the capital of the 13th Lower Egyptian nome. It was situated near the modern Cairo suburbs of Ain Shams and El-Matareya. Heliopolis was a major religious centre dedicated to the sun god Ra-Atum, whose cult dominated the city throughout antiquity.</p>
+                <div class="toc">
+                  <span class="lbl">Contents</span>
+                  <ol>
+                    <li>Name and etymology</li>
+                    <li>Religion and the cult of Ra</li>
+                    <li>The Mnevis bull</li>
+                    <li>Decline under the Ptolemies</li>
+                    <li>Modern archaeology</li>
+                  </ol>
+                </div>
+                <p class="mock-p">In Egyptian, the city was known as <em>Iunu</em>, "the pillars". The name <em>Heliopolis</em> was given by the Greeks, who associated the local god with their own Helios, the personification of the sun.</p>
+              </div>
+              <div class="infobox">
+                <div class="head">Heliopolis</div>
+                <dl>
+                  <dt>Egyptian</dt><dd>Iunu</dd>
+                  <dt>Founded</dt><dd>c. 3100 BCE</dd>
+                  <dt>Region</dt><dd>Lower Egypt</dd>
+                  <dt>Deity</dt><dd>Ra-Atum</dd>
+                  <dt>Coordinates</dt><dd>30.13°N 31.31°E</dd>
+                </dl>
+              </div>
+            </div>
+          </div>
+
+          <!-- SCENE C: news -->
+          <div class="scene" data-scene="news">
+            <div class="mock mock-news">
+              <div class="mock-head">
+                <span class="logo">F</span>
+                <span>foreignpress.org</span>
+                <nav><span>World</span><span>Climate</span><span>Tech</span><span>Opinion</span></nav>
+              </div>
+              <div class="mock-body">
+                <span class="kicker">Long read · 18 min</span>
+                <h2 class="mock-title">The quiet rise of agentic web traffic, and what it does to the open internet</h2>
+                <span class="byline">By M. Okafor · May 24, 2026</span>
+                <p class="lead">In April 2026, browser-based AI agents accounted for roughly 71 percent of observed agentic traffic. What does it mean when most of the visitors arriving at a webpage are not people?</p>
+                <div class="image" aria-hidden="true"></div>
+                <p class="mock-p" style="margin-top:6px">Across the top ten agentic systems, four now route every page request through a managed cloud browser. The shift is invisible to users but reshapes how the web is measured, monetised, and seen.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- SCENE D: SERP -->
+          <div class="scene" data-scene="serp">
+            <div class="mock mock-serp">
+              <div class="mock-head">
+                <span class="logo">k</span>
+                <span>kagi.com</span>
+                <nav><span>Web</span><span>Images</span><span>News</span><span>Maps</span></nav>
+              </div>
+              <div class="searchbar">
+                <span class="ico">🔎</span>
+                <span class="q">are there any 1990s geocities mirrors still online</span>
+              </div>
+              <div class="results">
+                <div class="result">
+                  <div class="url-line">oocities.org › heartland › 7820</div>
+                  <h3>OoCities: the Geocities mirror project (since 2009)</h3>
+                  <p>A volunteer-run effort that scraped 12 million Geocities pages before the 2009 shutdown. Browsable by original neighbourhood (Athens, Heartland, Tokyo, SiliconValley).</p>
+                </div>
+                <div class="result">
+                  <div class="url-line">reocities.com</div>
+                  <h3>ReoCities — Geocities, re-hosted</h3>
+                  <p>Another long-running mirror, intermittently online. Lower fidelity than OoCities, but retains some files that only existed on one user's account.</p>
+                </div>
+                <div class="result">
+                  <div class="url-line">archive.org › wayback › geocities</div>
+                  <h3>Wayback Machine: Geocities collection</h3>
+                  <p>The Internet Archive's Geocities collection — searchable by URL, includes the Archive Team's torrent of the full crawl (one terabyte).</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="agent-strip">
+          <span class="who">agent</span>
+          <span id="agentLine">Picking up where it left off…</span>
+        </div>
+
+        <div class="room" id="roomLayer" aria-live="polite"></div>
+
+        <div class="composer">
+          <input class="field" id="composer" placeholder="Suggest the next move…" />
+          <button id="sendFake" type="button">Send</button>
+          <span class="hint">⌘ + Enter · anonymous</span>
         </div>
       </div>
 
-      <div class="intent-strip" aria-live="polite">
-        <span><strong>Agent</strong> <span id="agentIntent">picking up where it left off…</span></span>
-      </div>
-
-      <header class="topline">
-        <a class="brand" href="#what" aria-label="Cloud Browser Live">
-          <span class="mark"></span> Cloud Browser Live
-        </a>
-        <div class="headline">
-          <h1>The public AI browser.</h1>
-          <p>One agent, browsing in the open. Anyone can suggest the next move.</p>
-        </div>
-        <div class="live-pill"><span class="pulse"></span><span id="liveState">Live</span></div>
-      </header>
-
-      <section class="messages" id="messages" aria-live="polite" aria-label="Recent suggestions">
-        <div class="message-empty" id="messageEmpty">Waiting for the room to move…</div>
-      </section>
-
-      <section class="composer" aria-label="Send a suggestion">
-        <form id="messageForm">
-          <textarea
-            id="messageInput"
-            aria-label="Suggestion"
-            autocomplete="off"
-            maxlength="600"
-            placeholder="Suggest the next move…"
-            rows="1"
-          ></textarea>
-          <button id="sendButton" type="submit" aria-label="Send suggestion" disabled>
-            <svg class="send-icon" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M5 12h13"></path>
-              <path d="m13 6 6 6-6 6"></path>
-            </svg>
-          </button>
-        </form>
-      </section>
-
-      <a class="scroll-cue" href="#what" aria-label="Learn more about Cloud Browser Live">
+      <a class="scrollcue" href="#what">
         About this room
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M6 9l6 6 6-6"/>
-        </svg>
+        <span class="down" aria-hidden="true"></span>
       </a>
-
-      <div class="toast" id="toast" role="status" aria-live="polite"></div>
     </section>
 
-    <!-- ========================== CONTENT ========================== -->
-    <main class="content">
-
-      <!-- WHAT -->
-      <section class="band" id="what">
-        <div class="wrap">
-          <span class="eyebrow">What you are watching</span>
-          <h2 class="display">One AI browser, in the open, all the time.</h2>
-          <p class="lede">
-            Cloud Browser Live is one AI browser session that runs continuously, in public.
-            Anyone can watch what the agent is doing and send a short suggestion for the next move.
-            No login, no profile — just one collective browser that anonymous visitors steer together,
-            in the open, always on.
-          </p>
-          <div class="cards">
-            <article class="card">
-              <h3 class="card-title">One shared window</h3>
-              Every visitor is watching the same browser, in the same moment, on the same page.
-              There is no per-user session — this is one room.
-            </article>
-            <article class="card">
-              <h3 class="card-title">Open to anonymous nudges</h3>
-              Anyone can suggest the next click, search, or scroll. The agent reads the room and picks
-              what to act on. There is no signup and nothing to install.
-            </article>
-            <article class="card">
-              <h3 class="card-title">Always live</h3>
-              The session runs continuously. Drop in, leave, come back tomorrow — the browser is
-              still moving, and the room is still talking.
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- HOW -->
-      <section class="band deep" id="how">
-        <div class="wrap">
-          <span class="eyebrow">How it works</span>
-          <h2 class="display">Three things, in a loop.</h2>
-          <ol class="steps">
-            <li>
-              <strong>The agent moves.</strong>
-              It loads a page, runs a search, or reads what it found, and tells the room what it
-              intends to do next.
-            </li>
-            <li>
-              <strong>The room suggests.</strong>
-              Visitors send short messages — "try arXiv", "scroll down", "go back". Every message
-              is anonymous and visible to everyone.
-            </li>
-            <li>
-              <strong>The agent picks.</strong>
-              It reads the suggestions, chooses the most relevant, and acts. The browser updates.
-              The room watches. Repeat.
-            </li>
-          </ol>
-        </div>
-      </section>
-
-      <!-- MOMENTS -->
-      <section class="band" id="moments">
-        <div class="wrap">
-          <span class="eyebrow">Recent moments</span>
-          <h2 class="display">Selected highlights from the room.</h2>
-          <p class="lede">
-            Notable detours, dead ends, and discoveries from the public session. Pulled from the live
-            archive — updated as new ones happen.
-          </p>
-          <div id="momentsGrid" class="moments" hidden></div>
-          <div id="momentsEmpty" class="moments-empty">
-            No archived moments yet. The room is just getting started — check back soon, or watch the
-            live session above.
-          </div>
-        </div>
-      </section>
-
-      <!-- WHY -->
-      <section class="band deep" id="why">
-        <div class="wrap-narrow">
-          <span class="eyebrow">Why this exists</span>
-          <h2 class="display">Most AI agents browse in private. This one browses in public.</h2>
-          <p class="body">
-            Most AI agents work alone. Behind logins, on someone's behalf, inside an SDK call you
-            cannot see. Their decisions never reach the open web.
-          </p>
-          <p class="body">
-            Cloud Browser Live is the opposite. One agent, browsing in public, on no one's behalf in
-            particular. The window is open. The room is anonymous. The session never ends.
-          </p>
-          <p class="body">
-            We did not build this because public agents are useful. We built it because watching one
-            think — in real time, with strangers nudging it — changes how you understand what AI does
-            on the web. It is a public square for autonomous browsing. We hope it stays that way.
-          </p>
-        </div>
-      </section>
-
-      <!-- FAQ -->
-      <section class="band" id="faq">
-        <div class="wrap-narrow">
-          <span class="eyebrow">Common questions</span>
-          <h2 class="display">Frequently asked.</h2>
-
-          <details class="faq">
-            <summary>Is this a real AI or a recording?</summary>
-            <div class="answer">Real. The browser you see is a live session. What is on screen is what the agent is doing right now.</div>
-          </details>
-          <details class="faq">
-            <summary>Can the agent see my suggestion?</summary>
-            <div class="answer">Yes. Every message in the room is part of the agent's input. It reads them and picks what to act on.</div>
-          </details>
-          <details class="faq">
-            <summary>Why is the browser read-only?</summary>
-            <div class="answer">You are watching the agent's session, not driving it yourself. The agent is the only one with hands on the keyboard. You influence it by suggesting, not clicking.</div>
-          </details>
-          <details class="faq">
-            <summary>Do you store who I am?</summary>
-            <div class="answer">No login, no email. The site keeps a random anonymous ID in your browser so the agent can tell visitors apart in the room. Clear your storage and you are a new visitor.</div>
-          </details>
-          <details class="faq">
-            <summary>What model is the agent?</summary>
-            <div class="answer">A general-purpose browsing agent built on a current-generation LLM, running on a real cloud browser. The exact model changes as we upgrade it.</div>
-          </details>
-          <details class="faq">
-            <summary>Can I run my own cloud browser like this?</summary>
-            <div class="answer">Not through Cloud Browser Live — this is one shared agent. For private, scriptable cloud browsers, look at the agentic browser-as-a-service category: Browserbase, Browserless, Cloudflare Browser Run, browser-use.</div>
-          </details>
-        </div>
-      </section>
-    </main>
-
-    <footer class="foot">
-      <div class="wrap">
+    <!-- ========================= ROOM GRID ========================= -->
+    <section class="roomgrid" id="rooms">
+      <div class="top">
         <div>
-          <span class="brand-foot"><span class="mark"></span> Cloud Browser Live</span>
-          <p>The public AI browser session. One agent, one window, always on, open to anonymous suggestions.</p>
+          <span class="eyebrow" style="color: rgba(244, 241, 231, 0.55)">Right now, in the room</span>
+          <h2>The agent has four tabs open.<br />Here is what each one is doing.</h2>
         </div>
-        <ul>
-          <li><a href="#what">What it is</a></li>
-          <li><a href="#how">How it works</a></li>
-          <li><a href="#why">Why</a></li>
-          <li><a href="#faq">FAQ</a></li>
-        </ul>
+        <div class="meta">
+          updated continuously<br />
+          last sync · <span id="syncTs">just now</span>
+        </div>
+      </div>
+
+      <div class="grid" id="tabsGrid">
+        <article class="tab" data-tab="0">
+          <div class="tab-head"><span class="dot"></span><span class="u">github.com/openai/whisper</span></div>
+          <div class="tab-view">
+            <div class="miniscene on">
+              <div class="miniscene-content">
+                <h4>openai / whisper</h4>
+                <div class="meta">main · last commit 2h ago</div>
+                <div class="line m"></div><div class="line s"></div><div class="line m"></div><div class="line s"></div><div class="line m"></div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-foot"><span class="doing">Reading tokenizer.py</span><span class="count" data-count="0">427 nudges</span></div>
+        </article>
+
+        <article class="tab" data-tab="1">
+          <div class="tab-head"><span class="dot"></span><span class="u">en.wikipedia.org/wiki/Heliopolis</span></div>
+          <div class="tab-view">
+            <div class="miniscene on">
+              <div class="miniscene-content">
+                <h4>Heliopolis</h4>
+                <div class="meta">ancient Egypt · religion</div>
+                <div class="line m"></div><div class="line"></div><div class="line s"></div><div class="line m"></div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-foot"><span class="doing">Following Ra-Atum link</span><span class="count" data-count="0">112 nudges</span></div>
+        </article>
+
+        <article class="tab" data-tab="2">
+          <div class="tab-head"><span class="dot"></span><span class="u">foreignpress.org/long/agentic-web</span></div>
+          <div class="tab-view">
+            <div class="miniscene on">
+              <div class="miniscene-content">
+                <h4>The quiet rise of agentic web traffic</h4>
+                <div class="meta">long read · 18 min</div>
+                <div class="line m"></div><div class="line s"></div><div class="line m"></div><div class="line"></div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-foot"><span class="doing">Reading section 3</span><span class="count" data-count="0">208 nudges</span></div>
+        </article>
+
+        <article class="tab" data-tab="3">
+          <div class="tab-head"><span class="dot"></span><span class="u">kagi.com/search?q=geocities+mirror</span></div>
+          <div class="tab-view">
+            <div class="miniscene on">
+              <div class="miniscene-content">
+                <h4>are there any 1990s geocities mirrors still online</h4>
+                <div class="meta">search results · 12 hits</div>
+                <div class="line m"></div><div class="line"></div><div class="line s"></div><div class="line m"></div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-foot"><span class="doing">Considering oocities.org</span><span class="count" data-count="0">340 nudges</span></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============================ WHAT =========================== -->
+    <section class="band" id="what">
+      <div class="wrap-tight">
+        <span class="eyebrow">What you are watching</span>
+        <h2 class="display-md">One AI browser, in the open, all the time.</h2>
+        <p class="lede" style="margin-top: 22px">
+          Cloud Browser Live is one AI browser session that runs continuously, in public.
+          Anyone can watch what the agent is doing and send a short suggestion for the next move.
+          No login, no profile — just one collective browser that anonymous visitors steer together,
+          in the open, always on.
+        </p>
+        <div class="what-grid">
+          <article class="pillar">
+            <h3>One shared window</h3>
+            <p>Every visitor is watching the same browser, in the same moment, on the same page. There is no per-user session — this is one room.</p>
+          </article>
+          <article class="pillar">
+            <h3>Open to anonymous nudges</h3>
+            <p>Anyone can suggest the next click, search, or scroll. The agent reads the room and picks what to act on. No signup, nothing to install.</p>
+          </article>
+          <article class="pillar">
+            <h3>Always live</h3>
+            <p>The session runs continuously. Drop in, leave, come back tomorrow — the browser is still moving, and the room is still talking.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ HOW ============================ -->
+    <section class="band deep" id="how">
+      <div class="wrap-tight">
+        <span class="eyebrow">How it works</span>
+        <h2 class="display-md">Three things, in a loop.</h2>
+        <ol class="steps">
+          <li class="step">
+            <span class="num">01</span>
+            <div>
+              <h4>The agent moves.</h4>
+              <p>It loads a page, runs a search, or reads what it found, then tells the room what it intends to do next.</p>
+            </div>
+            <div class="diagram" aria-hidden="true">
+              <div class="pageA"></div>
+              <div class="pageB"></div>
+              <div class="arrow"></div>
+            </div>
+          </li>
+          <li class="step">
+            <span class="num">02</span>
+            <div>
+              <h4>The room suggests.</h4>
+              <p>Visitors send short messages — "try arXiv", "scroll down", "go back". Every message is anonymous and visible to everyone.</p>
+            </div>
+            <div class="diagram" aria-hidden="true">
+              <div class="pageB"></div>
+            </div>
+          </li>
+          <li class="step">
+            <span class="num">03</span>
+            <div>
+              <h4>The agent picks.</h4>
+              <p>It reads the suggestions, chooses the most relevant, and acts. The browser updates. The room watches. Repeat.</p>
+            </div>
+            <div class="diagram" aria-hidden="true"></div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ========================== MARQUEE ========================== -->
+    <section class="marquee-band">
+      <div class="marquee-head">
+        <h2>The room never stops talking.</h2>
+        <span class="meta">recent suggestions · public stream</span>
+      </div>
+      <div class="marquee-row">
+        <div class="marquee-track" id="mq1"></div>
+      </div>
+      <div class="marquee-row alt" style="margin-top: 10px">
+        <div class="marquee-track" id="mq2"></div>
+      </div>
+    </section>
+
+    <!-- ========================== MANIFESTO ========================= -->
+    <section class="manifesto" id="why">
+      <div class="frame">
+        <span class="eyebrow">Why this exists</span>
+        <h2>Most AI agents browse in private. This one browses in public.</h2>
+        <p>
+          Most AI agents work alone. Behind logins, on someone's behalf, inside an SDK call you
+          cannot see. Their decisions never reach the open web.
+        </p>
+        <p>
+          Cloud Browser Live is the opposite. One agent, browsing in public, on no one's behalf in
+          particular. The window is open. The room is anonymous. The session never ends.
+        </p>
+        <p>
+          We did not build this because public agents are useful. We built it because watching one
+          think, in real time, with strangers nudging it, changes how you understand what AI does
+          on the web. It is a public square for autonomous browsing. We hope it stays that way.
+        </p>
+        <div class="sig">
+          <span style="color: var(--accent)">●</span>
+          <span>The room · running since May 10, 2026</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ FAQ ============================ -->
+    <section class="faq" id="faq">
+      <div class="wrap-narrow">
+        <span class="eyebrow">Common questions</span>
+        <h2 class="display-md">Frequently asked.</h2>
+        <div class="faq-list">
+          <details class="q">
+            <summary>Is this a real AI or a recording?</summary>
+            <div class="a">Real. The browser you see is a live session. What is on screen is what the agent is doing right now.</div>
+          </details>
+          <details class="q">
+            <summary>Can the agent see my suggestion?</summary>
+            <div class="a">Yes. Every message in the room is part of the agent's input. It reads them and picks what to act on.</div>
+          </details>
+          <details class="q">
+            <summary>Why is the browser read-only?</summary>
+            <div class="a">You are watching the agent's session, not driving it yourself. The agent is the only one with hands on the keyboard. You influence it by suggesting, not clicking.</div>
+          </details>
+          <details class="q">
+            <summary>Do you store who I am?</summary>
+            <div class="a">No login, no email. The site keeps a random anonymous ID in your browser so the agent can tell visitors apart in the room. Clear your storage and you are a new visitor.</div>
+          </details>
+          <details class="q">
+            <summary>What model is the agent?</summary>
+            <div class="a">A general-purpose browsing agent built on a current-generation LLM, running on a real cloud browser. The exact model changes as we upgrade it.</div>
+          </details>
+          <details class="q">
+            <summary>Can I run my own cloud browser like this?</summary>
+            <div class="a">Not through Cloud Browser Live — this is one shared agent. For private, scriptable cloud browsers, look at the agentic browser-as-a-service category: Browserbase, Browserless, Cloudflare Browser Run, browser-use.</div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ CTA ============================ -->
+    <section class="cta">
+      <h2>Step into the room.</h2>
+      <p>Watch one AI browse the web. Send a nudge. Stay as long as you want. Anonymous, always on.</p>
+      <div class="btn-row">
+        <a href="#" class="btn btn-primary">Open the live session <span class="arrow">→</span></a>
+        <a href="#what" class="btn btn-ghost">Read the manifesto</a>
+      </div>
+    </section>
+
+    <!-- =========================== FOOTER ========================== -->
+    <footer class="foot">
+      <div class="row">
+        <div>
+          <h5>Cloud Browser Live</h5>
+          <p style="margin: 6px 0 0; color: rgba(244, 241, 231, 0.7); font-size: 14px; line-height: 1.55; max-width: 360px;">
+            One public AI browser. Always on. Anonymous. Anyone can suggest the next move.
+          </p>
+        </div>
+        <div>
+          <h5>The room</h5>
+          <ul>
+            <li><a href="#what">What it is</a></li>
+            <li><a href="#how">How it works</a></li>
+            <li><a href="#rooms">Recent moments</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>About</h5>
+          <ul>
+            <li><a href="#why">Manifesto</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#">Press</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Elsewhere</h5>
+          <ul>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">GitHub</a></li>
+            <li><a href="#">Email</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="signoff">
+        <span class="brand-foot"><span class="mark"></span> cloudbrowser.live</span>
+        <span>© 2026 · The room is open · no cookies · no ads · no signup</span>
       </div>
     </footer>
 
-    <!-- ============================ SCRIPT ============================ -->
-    <script type="module">
-      import { createClient } from 'https://esm.sh/@insforge/sdk@latest';
+    <!-- ============================ SCRIPT ========================== -->
+    <script>
+      // ----------------------------------------------------------------
+      // SCRIPTED SCENARIO ENGINE — all mock, all fake, all impressive.
+      // ----------------------------------------------------------------
 
-      const CONFIG = {
-        baseUrl: 'https://wz4ktvdw.us-east.insforge.app',
-        anonKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3OC0xMjM0LTU2NzgtOTBhYi1jZGVmMTIzNDU2NzgiLCJlbWFpbCI6ImFub25AaW5zZm9yZ2UuY29tIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzk2NTc4MTF9.I-rDGoCh2IVx0pK7TXWVc0WdftjWUrAmPNeg5Bkcbho',
+      const $ = (sel) => document.querySelector(sel);
+
+      // Hero scene engine
+      const scenes = [
+        {
+          key: "gh",
+          url: "github.com/openai/whisper",
+          beats: [
+            { intent: "Opening github.com/openai/whisper to check the latest commit.", delay: 0 },
+            { visitor: "scroll to the tests folder", delay: 1200 },
+            { intent: "Visitor wants to see tests. Hovering on tests/.", delay: 2200 },
+            { visitor: "open tokenizer.py", delay: 3400 },
+            { intent: "Two visitors agree. Clicking through to tokenizer.py.", delay: 4400 },
+          ],
+          duration: 6800,
+        },
+        {
+          key: "wiki",
+          url: "en.wikipedia.org/wiki/Heliopolis_(ancient_Egypt)",
+          beats: [
+            { intent: "Following a link from someone in the room — Heliopolis on Wikipedia.", delay: 0 },
+            { visitor: "is this the same as Iunu?", delay: 1400 },
+            { intent: "Good catch. Reading the etymology section to confirm.", delay: 2600 },
+            { visitor: "show the infobox", delay: 4000 },
+            { intent: "Same city. Coordinates land in modern Cairo. Noting it.", delay: 5200 },
+          ],
+          duration: 7400,
+        },
+        {
+          key: "news",
+          url: "foreignpress.org/long/agentic-web",
+          beats: [
+            { intent: "A visitor flagged this long read. Opening it.", delay: 0 },
+            { visitor: "skip to the part about traffic share", delay: 1500 },
+            { intent: "Searching the page for 'agentic traffic'.", delay: 2700 },
+            { visitor: "this number changed last month", delay: 4100 },
+            { intent: "Worth checking. Will open the source dataset next.", delay: 5400 },
+          ],
+          duration: 7400,
+        },
+        {
+          key: "serp",
+          url: "kagi.com/search?q=geocities+mirror",
+          beats: [
+            { intent: "Searching for 1990s Geocities mirrors that are still online.", delay: 0 },
+            { visitor: "OoCities is the best one", delay: 1400 },
+            { intent: "Three votes for oocities.org. Reading the result.", delay: 2800 },
+            { visitor: "try the heartland neighbourhood", delay: 4200 },
+            { intent: "Going to oocities.org/heartland — feels right for the era.", delay: 5400 },
+          ],
+          duration: 7800,
+        },
+      ];
+
+      const agentLine = $("#agentLine");
+      const addressUrl = $("#addressUrl");
+      const moveBadge = $("#moveBadge");
+      const roomLayer = $("#roomLayer");
+      const stageCanvas = $("#stageCanvas");
+      const sceneEls = [...stageCanvas.querySelectorAll(".scene")];
+      let sceneIdx = 0;
+      let moveCount = 9184;
+
+      function activateScene(key) {
+        sceneEls.forEach((el) => el.classList.toggle("active", el.dataset.scene === key));
+      }
+
+      function setUrl(url) {
+        // small typing effect
+        addressUrl.textContent = "";
+        let i = 0;
+        const tick = () => {
+          if (i <= url.length) {
+            addressUrl.textContent = url.slice(0, i);
+            i += 1;
+            setTimeout(tick, 20 + Math.random() * 24);
+          }
+        };
+        tick();
+      }
+
+      function setIntent(text) {
+        moveCount += 1;
+        moveBadge.textContent = "#" + moveCount.toLocaleString();
+        agentLine.textContent = text;
+      }
+
+      function pushBubble(text, who) {
+        // who: "visitor" | "agent"
+        const bubble = document.createElement("div");
+        bubble.className = "bubble" + (who === "agent" ? " agent" : "");
+        const w = document.createElement("span");
+        w.className = "who";
+        w.textContent = who === "agent" ? "agent" : pickVisitorTag();
+        const p = document.createElement("span");
+        p.textContent = text;
+        bubble.append(w, document.createElement("br"), p);
+        roomLayer.appendChild(bubble);
+        // keep at most 3
+        while (roomLayer.children.length > 3) {
+          const old = roomLayer.firstElementChild;
+          old.classList.add("gone");
+          setTimeout(() => old.remove(), 600);
+        }
+      }
+
+      const visitorTagPool = [
+        "visitor · #4193",
+        "visitor · #0810",
+        "visitor · #2275",
+        "visitor · #6024",
+        "visitor · #9181",
+        "you",
+        "visitor · #7340",
+        "visitor · #0028",
+      ];
+      let vTag = 0;
+      function pickVisitorTag() {
+        const t = visitorTagPool[vTag % visitorTagPool.length];
+        vTag += 1;
+        return t;
+      }
+
+      function runScene(idx) {
+        const sc = scenes[idx];
+        activateScene(sc.key);
+        setTimeout(() => setUrl(sc.url), 140);
+        // clear bubbles between scenes
+        roomLayer.innerHTML = "";
+
+        const timers = [];
+        for (const beat of sc.beats) {
+          timers.push(
+            setTimeout(() => {
+              if (beat.intent) {
+                setIntent(beat.intent);
+                pushBubble(beat.intent, "agent");
+              }
+              if (beat.visitor) {
+                pushBubble(beat.visitor, "visitor");
+              }
+            }, beat.delay)
+          );
+        }
+
+        // chain next
+        timers.push(
+          setTimeout(() => {
+            sceneIdx = (sceneIdx + 1) % scenes.length;
+            runScene(sceneIdx);
+          }, sc.duration + 1200)
+        );
+      }
+
+      runScene(0);
+
+      // ----------------------------------------------------------------
+      // Counter ticking (subtle, plausible)
+      // ----------------------------------------------------------------
+
+      const counters = {
+        watch: { el: $("#statWatch"), pill: $("#watchPill"), value: 1283 },
+        nudge: { el: $("#statNudge"), value: 47392 },
+        moves: { el: $("#statMoves"), value: 9184 },
       };
 
-      const insforge = createClient(CONFIG);
+      function tickCounters() {
+        // watchers fluctuate +/- a few
+        const delta = Math.floor(Math.random() * 7) - 2;
+        counters.watch.value = Math.max(420, counters.watch.value + delta);
+        counters.watch.el.textContent = counters.watch.value.toLocaleString();
+        counters.watch.pill.textContent = counters.watch.value.toLocaleString() + " watching";
 
-      // ---------- Anonymous visitor identity ----------
-      function visitorId() {
-        let id = localStorage.getItem('cbl_actor');
-        if (!id) {
-          const fresh =
-            (crypto && crypto.randomUUID && crypto.randomUUID()) ||
-            `${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 10)}`;
-          id = `v:${fresh}`;
-          localStorage.setItem('cbl_actor', id);
-        }
-        return id;
+        // nudges always go up
+        counters.nudge.value += Math.floor(Math.random() * 3) + 1;
+        counters.nudge.el.textContent = counters.nudge.value.toLocaleString();
+
+        // agent moves only update when intents fire — but reflect periodically
+        counters.moves.el.textContent = moveCount.toLocaleString();
       }
-      const ACTOR = visitorId();
+      setInterval(tickCounters, 2200);
 
-      // ---------- DOM refs ----------
-      const browserFrame = document.getElementById('browserFrame');
-      const browserEmpty = document.getElementById('browserEmpty');
-      const browserAddress = document.getElementById('browserAddress');
-      const agentIntent = document.getElementById('agentIntent');
-      const liveState = document.getElementById('liveState');
-      const messagesEl = document.getElementById('messages');
-      const messageEmpty = document.getElementById('messageEmpty');
-      const form = document.getElementById('messageForm');
-      const input = document.getElementById('messageInput');
-      const sendButton = document.getElementById('sendButton');
-      const toast = document.getElementById('toast');
-      const momentsGrid = document.getElementById('momentsGrid');
-      const momentsEmpty = document.getElementById('momentsEmpty');
-
-      // ---------- Session state ----------
-      let SESSION = null;
-      const renderedMessages = new Map();
-      const maxVisibleMessages = 4;
-      let toastTimer = 0;
-
-      function showToast(text) {
-        toast.textContent = text;
-        toast.classList.add('show');
-        clearTimeout(toastTimer);
-        toastTimer = setTimeout(() => toast.classList.remove('show'), 2400);
+      // sync timestamp in room grid
+      function tickSync() {
+        const opts = ["just now", "a moment ago", "2s ago", "4s ago", "5s ago"];
+        const ts = $("#syncTs");
+        if (ts) ts.textContent = opts[Math.floor(Math.random() * opts.length)];
       }
+      setInterval(tickSync, 3400);
 
-      function classifySource(msg) {
-        if (msg.source === 'operator') return 'operator';
-        if (msg.actor_id && msg.actor_id === ACTOR) return 'you';
-        return 'visitor';
-      }
+      // ----------------------------------------------------------------
+      // Tab grid: subtle "doing" updates per tab
+      // ----------------------------------------------------------------
 
-      function trimMessages() {
-        const nodes = [...messagesEl.querySelectorAll('.message')];
-        const extra = nodes.length - maxVisibleMessages;
-        if (extra <= 0) return;
-        nodes.slice(0, extra).forEach((node) => {
-          node.classList.add('fading');
-          node.addEventListener('animationend', () => node.remove(), { once: true });
-        });
-      }
+      const tabActions = [
+        ["Reading tokenizer.py", "Diffing against main", "Opening README", "Scrolling commits", "Reading tests/"],
+        ["Following Ra-Atum link", "Reading the infobox", "Checking coordinates", "Opening Talk page", "Re-reading section 1"],
+        ["Reading section 3", "Re-checking the chart", "Searching for citations", "Opening footnote 14", "Reading the byline"],
+        ["Considering oocities.org", "Opening reocities.com", "Trying Wayback Machine", "Reading top result", "Refining query"],
+      ];
 
-      function renderMessage(msg) {
-        if (!msg || !msg.id || !msg.content) return;
-        if (renderedMessages.has(msg.id)) return;
-        renderedMessages.set(msg.id, true);
-        if (renderedMessages.size > 200) {
-          const oldest = renderedMessages.keys().next().value;
-          renderedMessages.delete(oldest);
-        }
-
-        messageEmpty.hidden = true;
-        const kind = classifySource(msg);
-        const bubble = document.createElement('article');
-        bubble.className = `message ${kind}`;
-        bubble.dataset.id = msg.id;
-
-        const label = document.createElement('strong');
-        label.textContent = kind === 'operator' ? 'agent' : kind === 'you' ? 'you' : 'visitor';
-
-        const body = document.createElement('p');
-        body.textContent = msg.content;
-
-        bubble.append(label, body);
-        messagesEl.appendChild(bubble);
-        trimMessages();
-      }
-
-      function applySession(row) {
-        if (!row) return;
-        SESSION = row;
-        if (row.browser_live_url && browserFrame.src !== row.browser_live_url) {
-          browserFrame.src = row.browser_live_url;
-        }
-        if (row.current_url) browserAddress.textContent = row.current_url;
-        else if (row.browser_live_url) browserAddress.textContent = 'cloudbrowser.live · live session';
-        if (row.current_intent) agentIntent.textContent = row.current_intent;
-      }
-
-      // ---------- Data loading ----------
-      async function loadSession() {
-        const { data, error } = await insforge.database
-          .from('sessions')
-          .select('*')
-          .eq('status', 'live')
-          .limit(1);
-
-        if (error) {
-          console.error('sessions read failed', error);
-          browserEmpty.textContent = 'The live browser is not available yet.';
-          liveState.textContent = 'Offline';
-          return null;
-        }
-
-        const row = Array.isArray(data) && data.length ? data[0] : null;
-        if (!row) {
-          browserEmpty.textContent = 'No live session right now.';
-          liveState.textContent = 'Idle';
-          return null;
-        }
-        applySession(row);
-        browserFrame.addEventListener('load', () => { browserEmpty.hidden = true; }, { once: true });
-        return row;
-      }
-
-      async function backfillMessages() {
-        if (!SESSION) return;
-        const { data, error } = await insforge.database
-          .from('messages')
-          .select('*')
-          .eq('session_id', SESSION.id)
-          .order('created_at', { ascending: false })
-          .limit(20);
-        if (error) {
-          console.error('messages backfill failed', error);
-          return;
-        }
-        (data || []).slice().reverse().forEach(renderMessage);
-      }
-
-      async function subscribeRoom() {
-        try {
-          await insforge.realtime.connect();
-        } catch (error) {
-          console.error('realtime connect failed', error);
-          liveState.textContent = 'Reconnecting';
-          return;
-        }
-
-        const room = await insforge.realtime.subscribe('room:public');
-        const session = await insforge.realtime.subscribe('session:current');
-        if (!room.ok || !session.ok) {
-          console.error('subscribe failed', room.error || session.error);
-          liveState.textContent = 'Reconnecting';
-          return;
-        }
-
-        insforge.realtime.on('message', (payload) => renderMessage(payload));
-        insforge.realtime.on('intent', (payload) => {
-          if (payload?.current_intent) agentIntent.textContent = payload.current_intent;
-        });
-        insforge.realtime.on('session', (payload) => {
-          if (!payload) return;
-          if (payload.current_url) browserAddress.textContent = payload.current_url;
-          if (payload.browser_live_url && browserFrame.src !== payload.browser_live_url) {
-            browserFrame.src = payload.browser_live_url;
-          }
-          if (payload.current_intent) agentIntent.textContent = payload.current_intent;
-        });
-
-        insforge.realtime.on('disconnect', () => { liveState.textContent = 'Reconnecting'; });
-        insforge.realtime.on('connect', () => { liveState.textContent = 'Live'; });
-
-        liveState.textContent = 'Live';
-      }
-
-      async function loadMoments() {
-        const { data, error } = await insforge.database
-          .from('session_moments')
-          .select('*')
-          .order('created_at', { ascending: false })
-          .limit(6);
-        if (error || !data?.length) return;
-
-        momentsEmpty.hidden = true;
-        momentsGrid.hidden = false;
-        momentsGrid.innerHTML = '';
-        for (const m of data) {
-          const card = document.createElement('article');
-          card.className = 'moment';
-          const date = document.createElement('time');
-          date.dateTime = m.created_at;
-          date.textContent = new Date(m.created_at).toLocaleString(undefined, { dateStyle: 'medium', timeStyle: 'short' });
-          const heading = document.createElement('h3');
-          heading.textContent = m.title || 'Untitled moment';
-          const body = document.createElement('p');
-          body.textContent = m.body || '';
-          card.append(date, heading);
-          if (m.body) card.append(body);
-          momentsGrid.appendChild(card);
-        }
-      }
-
-      // ---------- Composer ----------
-      function autoresize() {
-        input.style.height = '48px';
-        input.style.height = `${Math.min(input.scrollHeight, 96)}px`;
-      }
-
-      input.addEventListener('input', () => {
-        sendButton.disabled = input.value.trim().length === 0;
-        autoresize();
+      const counterStarts = [427, 112, 208, 340];
+      document.querySelectorAll(".tab").forEach((tab, i) => {
+        const doing = tab.querySelector(".doing");
+        const count = tab.querySelector(".count");
+        let cVal = counterStarts[i];
+        let aIdx = 0;
+        setInterval(() => {
+          aIdx = (aIdx + 1) % tabActions[i].length;
+          doing.textContent = tabActions[i][aIdx];
+          cVal += Math.floor(Math.random() * 4);
+          count.textContent = cVal.toLocaleString() + " nudges";
+        }, 2400 + i * 600);
       });
 
-      input.addEventListener('keydown', (event) => {
-        if (event.key === 'Enter' && !event.shiftKey) {
-          event.preventDefault();
-          if (!sendButton.disabled) form.requestSubmit();
-        }
-      });
+      // ----------------------------------------------------------------
+      // Marquee — fake suggestion stream
+      // ----------------------------------------------------------------
 
-      browserFrame.addEventListener('focus', () => input.focus());
+      const suggestionPool = [
+        { role: "visitor", text: "scroll down to the citations" },
+        { role: "operator", text: "scrolling — found it on page 3" },
+        { role: "visitor", text: "try arXiv next" },
+        { role: "visitor", text: "go back, that was the wrong tab" },
+        { role: "operator", text: "back. opening the geocities mirror" },
+        { role: "visitor", text: "search for 'tokenizer ar'" },
+        { role: "operator", text: "matched 14 results. reading the top one" },
+        { role: "visitor", text: "open the issues tab" },
+        { role: "visitor", text: "translate the page to English" },
+        { role: "operator", text: "no translation needed, page is already en" },
+        { role: "visitor", text: "click on Mnevis bull" },
+        { role: "operator", text: "interesting, opening" },
+        { role: "visitor", text: "show the talk page" },
+        { role: "operator", text: "talk page open. last edit 4 days ago" },
+        { role: "visitor", text: "what does Iunu mean" },
+        { role: "operator", text: "the pillars. ancient name for the city" },
+        { role: "visitor", text: "find the founder's name" },
+        { role: "operator", text: "no single founder — pre-dynastic settlement" },
+        { role: "visitor", text: "search for similar projects" },
+        { role: "operator", text: "running query: 'public AI browser'" },
+        { role: "visitor", text: "go to wayback machine instead" },
+        { role: "operator", text: "good idea. switching tabs" },
+        { role: "visitor", text: "read the kicker only, then leave" },
+        { role: "operator", text: "kicker read. moving on" },
+      ];
 
-      form.addEventListener('submit', async (event) => {
-        event.preventDefault();
-        const content = input.value.trim();
-        if (!content || !SESSION) return;
-
-        sendButton.disabled = true;
-        input.value = '';
-        autoresize();
-
-        const { error } = await insforge.database.from('messages').insert([{
-          session_id: SESSION.id,
-          source: 'visitor',
-          actor_id: ACTOR,
-          content,
-        }]);
-
-        if (error) {
-          input.value = content;
-          sendButton.disabled = false;
-          autoresize();
-          const msg = String(error.message || '').toLowerCase().includes('row level security')
-            ? 'Slow down — too many suggestions just now.'
-            : (error.message || 'Could not send.');
-          showToast(msg);
-          return;
-        }
-
-        // Fire-and-forget bridge forwarding. The visitor message is already in the room.
-        insforge.functions
-          .invoke('openagents-bridge', { body: { mode: 'forward', content, actor_id: ACTOR } })
-          .catch((err) => console.warn('bridge forward failed', err));
-
-        showToast('Sent to the room');
-      });
-
-      // ---------- Startup ----------
-      loadSession()
-        .then(() => Promise.all([backfillMessages(), subscribeRoom(), loadMoments()]))
-        .catch((error) => {
-          console.error('startup failed', error);
-          liveState.textContent = 'Offline';
+      function fillMarquee(track, offset = 0) {
+        // build content twice so the scroll loops
+        const items = suggestionPool.concat(suggestionPool);
+        items.forEach((s, i) => {
+          const chip = document.createElement("span");
+          chip.className = "chip";
+          const role = document.createElement("span");
+          role.className = "role" + (s.role === "operator" ? " op" : "");
+          role.textContent = s.role === "operator" ? "agent" : "visitor";
+          const txt = document.createElement("span");
+          txt.textContent = s.text;
+          chip.append(role, txt);
+          track.appendChild(chip);
         });
+      }
+      fillMarquee($("#mq1"));
+      fillMarquee($("#mq2"));
 
-      input.focus();
+      // ----------------------------------------------------------------
+      // Fake composer — purely decorative
+      // ----------------------------------------------------------------
+
+      const composer = $("#composer");
+      const sendFake = $("#sendFake");
+      function fakeSend() {
+        const v = composer.value.trim();
+        if (!v) return;
+        pushBubble(v, "visitor");
+        // give a little agent acknowledgment after a beat
+        const ack = [
+          "noted — running it now.",
+          "good call. trying that next.",
+          "in the queue. one beat.",
+          "interesting. reading first.",
+        ][Math.floor(Math.random() * 4)];
+        setTimeout(() => pushBubble(ack, "agent"), 900 + Math.random() * 600);
+        composer.value = "";
+      }
+      sendFake.addEventListener("click", fakeSend);
+      composer.addEventListener("keydown", (e) => {
+        if ((e.key === "Enter" && (e.metaKey || e.ctrlKey)) || (e.key === "Enter" && !e.shiftKey)) {
+          e.preventDefault();
+          fakeSend();
+        }
+      });
     </script>
   </body>
 </html>

@@ -2,6 +2,12 @@
 
 One AI browser session, running continuously, in public. Anyone can watch what the agent is doing and send a short suggestion for the next move. No login, no profile — one collective browser, anonymous, always on.
 
+## Status
+
+**`index.html` is currently a self-contained marketing landing page.** All content in the hero stage (URL morph, agent intent, visitor bubbles, scripted scenarios across four mock pages, counters, marquee) is **mocked client-side** — no backend calls, no network dependencies. The page is a single static file you can host anywhere.
+
+The InsForge backend (schema, edge function, schedule) below is provisioned and live in project `wz4ktvdw.us-east` but **not wired to the page**. It's ready for Phase 2 when the real agent goes live.
+
 ## Architecture
 
 ```
