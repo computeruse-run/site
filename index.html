@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="dark">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -11,7 +11,7 @@
     <meta name="keywords" content="computer use, ai agent sandbox, cloud desktop for ai, agent browser, computer use api, claude computer use, openai computer use, gemini agent" />
     <link rel="canonical" href="https://computeruse.run/" />
     <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large" />
-    <meta name="theme-color" content="#0a0a0a" />
+    <meta name="theme-color" content="#FBFAF5" />
 
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://computeruse.run/" />
@@ -24,7 +24,7 @@
     <meta name="twitter:description" content="A cloud sandbox with a browser and a desktop. Your choice of LLM. One SDK." />
     <meta name="twitter:image" content="https://computeruse.run/og.png" />
 
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%2310B981'/><path d='M9 11h14M9 16h14M9 21h9' stroke='%23000' stroke-width='2.4' stroke-linecap='round'/></svg>" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%230F7A5C'/><path d='M9 11h14M9 16h14M9 21h9' stroke='%23FFFFFF' stroke-width='2.4' stroke-linecap='round'/></svg>" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -36,16 +36,19 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
-        darkMode: 'class',
         theme: { extend: {
           fontFamily: { sans: ['Inter', 'sans-serif'], mono: ['"JetBrains Mono"', 'monospace'] },
           colors: {
-            ink: { 950: '#050505', 900: '#0a0a0a', 800: '#111111', 700: '#171717', 600: '#1f1f1f' },
-            accent: { DEFAULT: '#10B981', soft: 'rgba(16,185,129,0.12)', strong: '#059669' },
-            warm: '#FB923C',
+            paper: { DEFAULT: '#FBFAF5', deep: '#F3F0E6', card: '#FFFFFF' },
+            ink: { DEFAULT: '#0F0E0A', soft: '#3D3A33', muted: '#6F6B61', faint: '#9C988D' },
+            hairline: { DEFAULT: 'rgba(15,14,10,0.08)', strong: 'rgba(15,14,10,0.16)' },
+            accent: { DEFAULT: '#0F7A5C', soft: 'rgba(15,122,92,0.08)', strong: '#0C5D48' },
+            warm: '#C25A2A',
+            // Dark surfaces (kept for the code block only)
+            code: { bg: '#171612', border: 'rgba(255,255,255,0.08)' },
           },
           keyframes: {
-            pulse: { '0%, 100%': { boxShadow: '0 0 0 0 rgba(16,185,129,0.4)' }, '50%': { boxShadow: '0 0 0 7px rgba(16,185,129,0)' } },
+            pulse: { '0%, 100%': { boxShadow: '0 0 0 0 rgba(15,122,92,0.32)' }, '50%': { boxShadow: '0 0 0 6px rgba(15,122,92,0)' } },
             fadeUp: { from: { opacity: '0', transform: 'translateY(8px)' }, to: { opacity: '1', transform: 'translateY(0)' } },
           },
           animation: { pulse: 'pulse 1.8s ease-in-out infinite', fadeUp: 'fadeUp 600ms cubic-bezier(0.18,0.9,0.2,1) both' },
@@ -57,65 +60,41 @@
       {
         "@context": "https://schema.org",
         "@graph": [
-          {
-            "@type": "Organization",
-            "@id": "https://computeruse.run/#org",
-            "name": "Computer Use Cloud",
-            "url": "https://computeruse.run/",
-            "logo": "https://computeruse.run/og.png"
-          },
-          {
-            "@type": "WebSite",
-            "@id": "https://computeruse.run/#website",
-            "url": "https://computeruse.run/",
-            "name": "Computer Use Cloud",
-            "publisher": { "@id": "https://computeruse.run/#org" }
-          },
-          {
-            "@type": "SoftwareApplication",
-            "name": "Computer Use Cloud",
-            "applicationCategory": "DeveloperApplication",
-            "operatingSystem": "Cloud",
-            "url": "https://computeruse.run/",
-            "publisher": { "@id": "https://computeruse.run/#org" },
-            "description": "A cloud sandbox with a browser and a desktop, driven by your choice of LLM. One SDK. Claude, GPT, or Gemini.",
-            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
-          },
-          {
-            "@type": "FAQPage",
-            "mainEntity": [
+          { "@type": "Organization", "@id": "https://computeruse.run/#org", "name": "Computer Use Cloud", "url": "https://computeruse.run/", "logo": "https://computeruse.run/og.png" },
+          { "@type": "WebSite", "@id": "https://computeruse.run/#website", "url": "https://computeruse.run/", "name": "Computer Use Cloud", "publisher": { "@id": "https://computeruse.run/#org" } },
+          { "@type": "SoftwareApplication", "name": "Computer Use Cloud", "applicationCategory": "DeveloperApplication", "operatingSystem": "Cloud", "url": "https://computeruse.run/", "publisher": { "@id": "https://computeruse.run/#org" }, "description": "A cloud sandbox with a browser and a desktop, driven by your choice of LLM. One SDK. Claude, GPT, or Gemini.", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" } },
+          { "@type": "FAQPage", "mainEntity": [
               { "@type": "Question", "name": "What is Computer Use Cloud?", "acceptedAnswer": { "@type": "Answer", "text": "Computer Use Cloud is a managed cloud sandbox built for AI agents. Each sandbox is a Linux desktop with a browser open inside. Your AI agent — Claude, GPT, or Gemini, your pick — drives it through one SDK." } },
-              { "@type": "Question", "name": "Why both a browser and a computer?", "acceptedAnswer": { "@type": "Answer", "text": "Most agent tasks live in a browser, so we expose a browser surface for them. But some tasks need the desktop — open a file, edit a spreadsheet, work across two apps. Same sandbox, both available. Use the browser surface for web jobs, the computer surface when you need the full desktop." } },
+              { "@type": "Question", "name": "Why both a browser and a computer?", "acceptedAnswer": { "@type": "Answer", "text": "Most agent tasks live in a browser, so we expose a browser surface for them. But some tasks need the desktop — open a file, edit a spreadsheet, work across two apps. Same sandbox, both available." } },
               { "@type": "Question", "name": "Which LLMs are supported?", "acceptedAnswer": { "@type": "Answer", "text": "Anthropic Claude, OpenAI GPT, and Google Gemini are first-class. The model is a kwarg on Sandbox(). Bring your own API key for the model provider; the sandbox itself is what we host." } },
               { "@type": "Question", "name": "How is this different from Browserbase or Browser Use Cloud?", "acceptedAnswer": { "@type": "Answer", "text": "Browserbase and Browser Use Cloud give you a browser in the cloud. We give you a desktop with a browser inside. If your agent ever needs to open a file outside the browser, edit a document, or use anything that is not a web page, you need the desktop surface they don't have." } },
               { "@type": "Question", "name": "How is this different from E2B Desktop?", "acceptedAnswer": { "@type": "Answer", "text": "E2B Desktop is a general-purpose code-interpreter sandbox that happens to expose a desktop. We are focused specifically on AI agents driving browser plus desktop tasks. Same primitive, narrower product surface, different SDK ergonomics — one unified Sandbox with browser and computer namespaces." } },
               { "@type": "Question", "name": "What does the SDK look like?", "acceptedAnswer": { "@type": "Answer", "text": "One class. with Sandbox(model='claude-sonnet-4-6') as s, then s.browser.run('...') or s.computer.run('...'). The browser and computer share the same desktop — a file downloaded by the browser is visible to the computer." } },
               { "@type": "Question", "name": "Is the runtime open source?", "acceptedAnswer": { "@type": "Answer", "text": "Planned. The runtime drops as Apache-2.0 at milestone M5 in the public roadmap. Self-host the same sandbox image inside your VPC, point the SDK at your endpoint, and skip the cloud entirely if you'd rather." } },
               { "@type": "Question", "name": "Can I really watch the agent run live?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Every sandbox exposes a public live view URL. Embed it in your own app via iframe, share it with a teammate for debugging, or watch from your dashboard." } }
-            ]
-          }
+          ] }
         ]
       }
     </script>
   </head>
 
-  <body class="bg-ink-900 text-white font-sans antialiased">
+  <body class="bg-paper text-ink font-sans antialiased">
 
     <!-- NAV -->
-    <header class="fixed top-0 inset-x-0 z-50 border-b border-white/5 bg-ink-900/70 backdrop-blur-xl">
+    <header class="fixed top-0 inset-x-0 z-50 border-b border-hairline bg-paper/80 backdrop-blur-xl">
       <div class="max-w-[1280px] mx-auto px-6 h-14 flex items-center justify-between gap-6">
-        <a href="/" class="flex items-center gap-2.5 font-bold text-[15px]">
-          <span class="w-7 h-7 rounded-md bg-accent grid place-items-center text-black font-extrabold text-[13px]">≡</span>
-          Computer Use <span class="text-white/45 font-medium">Cloud</span>
+        <a href="/" class="flex items-center gap-2.5 font-bold text-[15px] text-ink">
+          <span class="w-7 h-7 rounded-md bg-accent grid place-items-center text-white font-extrabold text-[13px]">≡</span>
+          Computer Use <span class="text-ink-muted font-medium">Cloud</span>
         </a>
-        <nav class="hidden md:flex items-center gap-7 text-[13.5px] font-medium text-white/70">
-          <a href="#sandbox" class="hover:text-white">Sandbox</a>
-          <a href="#compare" class="hover:text-white">Compare</a>
-          <a href="#pricing" class="hover:text-white">Pricing</a>
-          <a href="#faq" class="hover:text-white">FAQ</a>
-          <a href="https://github.com/computeruse-run" class="hover:text-white">GitHub</a>
+        <nav class="hidden md:flex items-center gap-7 text-[13.5px] font-medium text-ink-soft">
+          <a href="#sandbox" class="hover:text-ink">Sandbox</a>
+          <a href="#compare" class="hover:text-ink">Compare</a>
+          <a href="#pricing" class="hover:text-ink">Pricing</a>
+          <a href="#faq" class="hover:text-ink">FAQ</a>
+          <a href="https://github.com/computeruse-run" class="hover:text-ink">GitHub</a>
         </nav>
-        <a href="#signup" class="inline-flex items-center gap-1.5 bg-accent text-black hover:bg-emerald-400 transition rounded-md px-3.5 py-1.5 text-[13px] font-semibold">
+        <a href="#signup" class="inline-flex items-center gap-1.5 bg-ink text-paper hover:bg-accent transition rounded-md px-3.5 py-1.5 text-[13px] font-semibold">
           Start free
           <svg viewBox="0 0 16 16" class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 4l4 4-4 4"/></svg>
         </a>
@@ -124,30 +103,35 @@
 
     <!-- HERO -->
     <section class="relative min-h-screen flex items-center px-6 pt-20 pb-12 overflow-hidden">
-      <div class="absolute inset-0 -z-10 opacity-[0.18]" style="background-image: radial-gradient(640px 420px at 18% 0%, #10B981, transparent 65%), radial-gradient(720px 520px at 88% 28%, #FB923C, transparent 60%);"></div>
-      <div class="absolute inset-0 -z-10" style="background-image: linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px); background-size: 48px 48px; mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, #000 30%, transparent 75%);"></div>
+      <div class="absolute inset-0 -z-10" style="background-image: linear-gradient(rgba(15,14,10,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(15,14,10,0.025) 1px, transparent 1px); background-size: 56px 56px; mask-image: radial-gradient(ellipse 70% 55% at 50% 35%, #000 30%, transparent 75%);"></div>
+      <div class="absolute inset-0 -z-10 opacity-60" style="background-image: radial-gradient(640px 420px at 18% 0%, rgba(15,122,92,0.10), transparent 65%), radial-gradient(720px 520px at 88% 28%, rgba(194,90,42,0.08), transparent 60%);"></div>
 
       <div class="max-w-[1280px] mx-auto w-full grid lg:grid-cols-[5fr_7fr] gap-12 items-center animate-fadeUp">
 
         <div>
-          <h1 class="font-bold text-[clamp(44px,5.6vw,84px)] leading-[0.96] tracking-[-0.024em]">
+          <span class="inline-flex items-center gap-2 text-[11.5px] font-bold uppercase tracking-[0.16em] text-ink-muted mb-6">
+            <span class="w-1.5 h-1.5 rounded-full bg-accent animate-pulse"></span>
+            Cloud sandbox for AI agents
+          </span>
+          <h1 class="font-bold text-[clamp(44px,5.6vw,84px)] leading-[0.96] tracking-[-0.024em] text-ink">
             Give your AI agent<br />a <em class="not-italic text-accent">computer.</em>
           </h1>
-          <p class="mt-7 text-[clamp(16px,1.3vw,19px)] leading-[1.55] text-white/65 max-w-[420px]">
+          <p class="mt-7 text-[clamp(16px,1.3vw,19px)] leading-[1.55] text-ink-soft max-w-[440px]">
             A cloud sandbox with a browser and a desktop. Claude, GPT, or Gemini drives it. One SDK.
           </p>
-          <div class="mt-8 flex items-center gap-4 flex-wrap">
-            <a href="#signup" class="inline-flex items-center gap-2 bg-white text-black hover:bg-white/90 transition rounded-lg px-5 py-3 text-[14.5px] font-semibold">
+          <div class="mt-9 flex items-center gap-5 flex-wrap">
+            <a href="#signup" class="inline-flex items-center gap-2 bg-ink text-paper hover:bg-accent transition rounded-lg px-5 py-3 text-[14.5px] font-semibold">
               Start free
               <svg viewBox="0 0 16 16" class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 4l4 4-4 4"/></svg>
             </a>
-            <a href="https://github.com/computeruse-run/sdk" class="text-white/70 hover:text-white text-[14px] font-semibold border-b border-white/15 hover:border-white/40 pb-px">
+            <a href="https://github.com/computeruse-run/sdk" class="text-ink-soft hover:text-ink text-[14px] font-semibold border-b border-hairline-strong hover:border-ink pb-px">
               Read the SDK
             </a>
           </div>
         </div>
 
-        <div class="rounded-2xl border border-white/10 bg-ink-800/80 backdrop-blur-xl shadow-[0_30px_80px_rgba(0,0,0,0.5)] overflow-hidden">
+        <!-- Code card stays dark for contrast (standard Series A pattern: dark code on light page) -->
+        <div class="rounded-2xl border border-code-border bg-code-bg shadow-[0_24px_60px_rgba(15,14,10,0.10)] overflow-hidden">
           <div class="flex items-center gap-1.5 px-4 py-3 border-b border-white/5">
             <span class="w-2.5 h-2.5 rounded-full bg-white/15"></span>
             <span class="w-2.5 h-2.5 rounded-full bg-white/15"></span>
@@ -167,124 +151,124 @@
     </section>
 
     <!-- SECTION: ONE SANDBOX, TWO SURFACES -->
-    <section class="px-6 py-28 border-t border-white/5" id="sandbox">
+    <section class="px-6 py-28 border-t border-hairline" id="sandbox">
       <div class="max-w-[1080px] mx-auto">
-        <h2 class="font-bold text-[clamp(28px,3.6vw,44px)] leading-[1.05] tracking-[-0.018em] max-w-[720px]">
+        <h2 class="font-bold text-[clamp(28px,3.6vw,44px)] leading-[1.05] tracking-[-0.018em] max-w-[720px] text-ink">
           One sandbox.<br />
-          <span class="text-white/45">A browser and a desktop, sharing one machine.</span>
+          <span class="text-ink-muted">A browser and a desktop, sharing one machine.</span>
         </h2>
 
-        <div class="mt-16 grid md:grid-cols-2 gap-6">
-          <div class="rounded-2xl border border-white/10 bg-ink-800 p-7">
+        <div class="mt-16 grid md:grid-cols-2 gap-5">
+          <div class="rounded-2xl border border-hairline bg-paper-card p-7 shadow-[0_2px_8px_rgba(15,14,10,0.03)]">
             <div class="flex items-center gap-2 text-accent font-mono text-[12px] uppercase tracking-[0.12em] font-bold mb-4">
               <svg viewBox="0 0 16 16" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="3" width="12" height="10" rx="1.2"/><path d="M2 6h12"/></svg>
               s.browser
             </div>
-            <h3 class="font-bold text-[20px] mb-2">When the job is on a web page.</h3>
-            <p class="text-[14.5px] leading-[1.55] text-white/60">Navigate, click, type, scrape, fill forms. Full CDP underneath; the agent decides the actions.</p>
+            <h3 class="font-bold text-[20px] mb-2 text-ink">When the job is on a web page.</h3>
+            <p class="text-[14.5px] leading-[1.55] text-ink-soft">Navigate, click, type, scrape, fill forms. Full CDP underneath; the agent decides the actions.</p>
           </div>
-          <div class="rounded-2xl border border-white/10 bg-ink-800 p-7">
+          <div class="rounded-2xl border border-hairline bg-paper-card p-7 shadow-[0_2px_8px_rgba(15,14,10,0.03)]">
             <div class="flex items-center gap-2 text-accent font-mono text-[12px] uppercase tracking-[0.12em] font-bold mb-4">
               <svg viewBox="0 0 16 16" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="2" width="12" height="10" rx="1.2"/><path d="M5 14h6M8 12v2"/></svg>
               s.computer
             </div>
-            <h3 class="font-bold text-[20px] mb-2">When the job needs the desktop.</h3>
-            <p class="text-[14.5px] leading-[1.55] text-white/60">Open files, run a CLI, edit a document, jump between two apps. The browser is just one window.</p>
+            <h3 class="font-bold text-[20px] mb-2 text-ink">When the job needs the desktop.</h3>
+            <p class="text-[14.5px] leading-[1.55] text-ink-soft">Open files, run a CLI, edit a document, jump between two apps. The browser is just one window.</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- SECTION: ANY MODEL -->
-    <section class="px-6 py-28 bg-ink-800 border-y border-white/5">
+    <section class="px-6 py-28 bg-paper-deep border-y border-hairline">
       <div class="max-w-[1080px] mx-auto">
-        <h2 class="font-bold text-[clamp(28px,3.6vw,44px)] leading-[1.05] tracking-[-0.018em] max-w-[720px]">
-          Any model. <span class="text-white/45">Yours to pick.</span>
+        <h2 class="font-bold text-[clamp(28px,3.6vw,44px)] leading-[1.05] tracking-[-0.018em] max-w-[720px] text-ink">
+          Any model. <span class="text-ink-muted">Yours to pick.</span>
         </h2>
 
         <div class="mt-12 flex flex-wrap gap-3">
-          <span class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-ink-900 px-4 py-2 text-[13.5px] font-mono">
+          <span class="inline-flex items-center gap-2 rounded-full border border-hairline-strong bg-paper-card px-4 py-2 text-[13.5px] font-mono text-ink">
             <span class="w-2 h-2 rounded-full bg-accent"></span> claude-sonnet-4-6
           </span>
-          <span class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-ink-900 px-4 py-2 text-[13.5px] font-mono">
+          <span class="inline-flex items-center gap-2 rounded-full border border-hairline-strong bg-paper-card px-4 py-2 text-[13.5px] font-mono text-ink">
             <span class="w-2 h-2 rounded-full bg-accent"></span> gpt-5
           </span>
-          <span class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-ink-900 px-4 py-2 text-[13.5px] font-mono">
+          <span class="inline-flex items-center gap-2 rounded-full border border-hairline-strong bg-paper-card px-4 py-2 text-[13.5px] font-mono text-ink">
             <span class="w-2 h-2 rounded-full bg-accent"></span> gemini-3-pro
           </span>
         </div>
 
-        <p class="mt-8 text-[15px] text-white/55 max-w-[560px]">
-          Model is a kwarg on <code class="font-mono text-[13.5px] bg-white/5 rounded px-1.5 py-0.5 text-white">Sandbox()</code>. Bring your own provider key. We handle everything else.
+        <p class="mt-8 text-[15px] text-ink-soft max-w-[560px]">
+          Model is a kwarg on <code class="font-mono text-[13.5px] bg-paper-card border border-hairline rounded px-1.5 py-0.5 text-ink">Sandbox()</code>. Bring your own provider key. We handle everything else.
         </p>
       </div>
     </section>
 
     <!-- SECTION: HOW THIS IS DIFFERENT -->
-    <section class="px-6 py-28 border-t border-white/5" id="compare">
+    <section class="px-6 py-28 border-t border-hairline" id="compare">
       <div class="max-w-[1080px] mx-auto">
-        <h2 class="font-bold text-[clamp(28px,3.6vw,44px)] leading-[1.05] tracking-[-0.018em] max-w-[720px]">
+        <h2 class="font-bold text-[clamp(28px,3.6vw,44px)] leading-[1.05] tracking-[-0.018em] max-w-[720px] text-ink">
           How this is different.
         </h2>
-        <p class="mt-5 text-[15.5px] leading-[1.55] text-white/60 max-w-[600px]">
+        <p class="mt-5 text-[15.5px] leading-[1.55] text-ink-soft max-w-[600px]">
           Three categories of tool that sound similar — they aren't. Plain English on what each one actually is.
         </p>
 
-        <div class="mt-12 grid md:grid-cols-3 gap-4">
-          <article class="rounded-2xl border border-white/10 bg-ink-800 p-6">
-            <h3 class="font-bold text-[18px] mb-3">Anthropic Computer Use</h3>
-            <p class="text-[14.5px] leading-[1.55] text-white/60">A <em class="not-italic text-white">model capability</em>. Claude reads screenshots and emits coordinate-based actions. Anthropic ships a reference Docker for self-hosting; you build the cluster, the IP rotation, the CAPTCHA contract.</p>
-            <p class="mt-3 text-[14.5px] leading-[1.55] text-accent font-medium">We host the desktop it drives, as a managed cloud.</p>
+        <div class="mt-12 grid md:grid-cols-3 gap-5">
+          <article class="rounded-2xl border border-hairline bg-paper-card p-7 shadow-[0_2px_8px_rgba(15,14,10,0.03)]">
+            <h3 class="font-bold text-[18px] mb-3 text-ink">Anthropic Computer Use</h3>
+            <p class="text-[14.5px] leading-[1.55] text-ink-soft">A <em class="not-italic text-ink font-medium">model capability</em>. Claude reads screenshots and emits coordinate-based actions. Anthropic ships a reference Docker for self-hosting; you build the cluster, IP rotation, CAPTCHA contract.</p>
+            <p class="mt-4 text-[14.5px] leading-[1.55] text-accent-strong font-semibold">We host the desktop it drives, as a managed cloud.</p>
           </article>
-          <article class="rounded-2xl border border-white/10 bg-ink-800 p-6">
-            <h3 class="font-bold text-[18px] mb-3">Browser Use</h3>
-            <p class="text-[14.5px] leading-[1.55] text-white/60">An <em class="not-italic text-white">open-source agent SDK</em> for the browser, plus their hosted Browser Use Cloud. The SDK is great. The hosted Cloud bills three meters — browser-time + LLM step + per-task surcharge.</p>
-            <p class="mt-3 text-[14.5px] leading-[1.55] text-accent font-medium">We host a desktop with a browser, one meter, no compatibility claim.</p>
+          <article class="rounded-2xl border border-hairline bg-paper-card p-7 shadow-[0_2px_8px_rgba(15,14,10,0.03)]">
+            <h3 class="font-bold text-[18px] mb-3 text-ink">Browser Use</h3>
+            <p class="text-[14.5px] leading-[1.55] text-ink-soft">An <em class="not-italic text-ink font-medium">open-source agent SDK</em> for the browser, plus their hosted Browser Use Cloud. The SDK is great. The hosted Cloud bills three meters — browser-time + LLM step + per-task surcharge.</p>
+            <p class="mt-4 text-[14.5px] leading-[1.55] text-accent-strong font-semibold">We host a desktop with a browser, one meter, no compatibility claim.</p>
           </article>
-          <article class="rounded-2xl border border-white/10 bg-ink-800 p-6">
-            <h3 class="font-bold text-[18px] mb-3">Browserbase</h3>
-            <p class="text-[14.5px] leading-[1.55] text-white/60">A <em class="not-italic text-white">managed browser cloud</em>. Three years old, polished, deep docs. They give you a browser in the cloud. Per browser-hour billing — the meter runs while the model is thinking.</p>
-            <p class="mt-3 text-[14.5px] leading-[1.55] text-accent font-medium">We give you a desktop with a browser inside — broader primitive, per-active-second meter.</p>
+          <article class="rounded-2xl border border-hairline bg-paper-card p-7 shadow-[0_2px_8px_rgba(15,14,10,0.03)]">
+            <h3 class="font-bold text-[18px] mb-3 text-ink">Browserbase</h3>
+            <p class="text-[14.5px] leading-[1.55] text-ink-soft">A <em class="not-italic text-ink font-medium">managed browser cloud</em>. Three years old, polished, deep docs. They give you a browser in the cloud. Per browser-hour billing — the meter runs while the model is thinking.</p>
+            <p class="mt-4 text-[14.5px] leading-[1.55] text-accent-strong font-semibold">We give you a desktop with a browser inside — broader primitive, per-active-second meter.</p>
           </article>
         </div>
       </div>
     </section>
 
     <!-- SECTION: PRICING -->
-    <section class="px-6 py-28 bg-ink-800 border-t border-white/5" id="pricing">
+    <section class="px-6 py-28 bg-paper-deep border-t border-hairline" id="pricing">
       <div class="max-w-[1080px] mx-auto">
         <div class="flex items-baseline gap-3 mb-12">
-          <h2 class="font-bold text-[clamp(28px,3.6vw,44px)] leading-[1.05] tracking-[-0.018em]">Pricing.</h2>
+          <h2 class="font-bold text-[clamp(28px,3.6vw,44px)] leading-[1.05] tracking-[-0.018em] text-ink">Pricing.</h2>
           <span class="text-[11px] uppercase tracking-[0.14em] font-bold text-warm">Preview</span>
         </div>
 
-        <div class="grid md:grid-cols-3 gap-4">
-          <div class="rounded-2xl border border-white/10 bg-ink-800 p-7 flex flex-col">
-            <h3 class="font-bold text-[18px]">Free</h3>
-            <div class="mt-5 flex items-baseline gap-1.5"><span class="text-[42px] font-bold tracking-tight">$0</span><span class="text-[13px] text-white/50">/ mo</span></div>
-            <a href="#signup" class="mt-6 block text-center bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg py-2.5 text-[13.5px] font-semibold">Start free</a>
-            <ul class="mt-7 space-y-2.5 text-[13.5px] text-white/65 flex-1">
+        <div class="grid md:grid-cols-3 gap-5">
+          <div class="rounded-2xl border border-hairline bg-paper-card p-7 flex flex-col shadow-[0_2px_8px_rgba(15,14,10,0.03)]">
+            <h3 class="font-bold text-[18px] text-ink">Free</h3>
+            <div class="mt-5 flex items-baseline gap-1.5"><span class="text-[42px] font-bold tracking-tight text-ink">$0</span><span class="text-[13px] text-ink-muted">/ mo</span></div>
+            <a href="#signup" class="mt-6 block text-center bg-paper hover:bg-paper-deep border border-hairline-strong rounded-lg py-2.5 text-[13.5px] font-semibold text-ink">Start free</a>
+            <ul class="mt-7 space-y-2.5 text-[13.5px] text-ink-soft flex-1">
               <li class="flex gap-2"><span class="text-accent">✓</span> 100 active hours / mo</li>
               <li class="flex gap-2"><span class="text-accent">✓</span> Live view URL</li>
-              <li class="flex gap-2"><span class="text-white/30">—</span> No credit card</li>
+              <li class="flex gap-2"><span class="text-ink-faint">—</span> No credit card</li>
             </ul>
           </div>
-          <div class="rounded-2xl border-2 border-accent bg-accent/[0.04] p-7 relative shadow-[0_30px_60px_rgba(16,185,129,0.18)] flex flex-col">
-            <span class="absolute -top-3 left-7 bg-accent text-black text-[10.5px] font-extrabold uppercase tracking-[0.1em] px-2 py-0.5 rounded">Most popular</span>
-            <h3 class="font-bold text-[18px]">Pro</h3>
-            <div class="mt-5 flex items-baseline gap-1.5"><span class="text-[42px] font-bold tracking-tight">$20</span><span class="text-[13px] text-white/55">/ mo</span></div>
-            <a href="#signup" class="mt-6 block text-center bg-accent hover:bg-emerald-400 transition text-black rounded-lg py-2.5 text-[13.5px] font-extrabold">Start Pro</a>
-            <ul class="mt-7 space-y-2.5 text-[13.5px] text-white/80 flex-1">
+          <div class="rounded-2xl border-2 border-accent bg-paper-card p-7 relative shadow-[0_24px_60px_rgba(15,122,92,0.18)] flex flex-col">
+            <span class="absolute -top-3 left-7 bg-accent text-white text-[10.5px] font-extrabold uppercase tracking-[0.1em] px-2 py-0.5 rounded">Most popular</span>
+            <h3 class="font-bold text-[18px] text-ink">Pro</h3>
+            <div class="mt-5 flex items-baseline gap-1.5"><span class="text-[42px] font-bold tracking-tight text-ink">$20</span><span class="text-[13px] text-ink-muted">/ mo</span></div>
+            <a href="#signup" class="mt-6 block text-center bg-accent hover:bg-accent-strong transition text-white rounded-lg py-2.5 text-[13.5px] font-extrabold">Start Pro</a>
+            <ul class="mt-7 space-y-2.5 text-[13.5px] text-ink-soft flex-1">
               <li class="flex gap-2"><span class="text-accent">✓</span> 500 active hours / mo</li>
               <li class="flex gap-2"><span class="text-accent">✓</span> Session recording</li>
               <li class="flex gap-2"><span class="text-accent">✓</span> Email support</li>
             </ul>
           </div>
-          <div class="rounded-2xl border border-white/10 bg-ink-900 p-7 flex flex-col">
-            <h3 class="font-bold text-[18px]">Team</h3>
-            <div class="mt-5 flex items-baseline gap-1.5"><span class="text-[42px] font-bold tracking-tight">$200</span><span class="text-[13px] text-white/50">/ mo</span></div>
-            <a href="#contact" class="mt-6 block text-center bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg py-2.5 text-[13.5px] font-semibold">Contact</a>
-            <ul class="mt-7 space-y-2.5 text-[13.5px] text-white/65 flex-1">
+          <div class="rounded-2xl border border-hairline bg-paper-card p-7 flex flex-col shadow-[0_2px_8px_rgba(15,14,10,0.03)]">
+            <h3 class="font-bold text-[18px] text-ink">Team</h3>
+            <div class="mt-5 flex items-baseline gap-1.5"><span class="text-[42px] font-bold tracking-tight text-ink">$200</span><span class="text-[13px] text-ink-muted">/ mo</span></div>
+            <a href="#contact" class="mt-6 block text-center bg-paper hover:bg-paper-deep border border-hairline-strong rounded-lg py-2.5 text-[13.5px] font-semibold text-ink">Contact</a>
+            <ul class="mt-7 space-y-2.5 text-[13.5px] text-ink-soft flex-1">
               <li class="flex gap-2"><span class="text-accent">✓</span> 5,000 active hours / mo</li>
               <li class="flex gap-2"><span class="text-accent">✓</span> Self-host license</li>
               <li class="flex gap-2"><span class="text-accent">✓</span> Slack support</li>
@@ -292,135 +276,149 @@
           </div>
         </div>
 
-        <!-- Pricing model comparison -->
-        <div class="mt-14 max-w-[820px] mx-auto rounded-2xl border border-white/10 bg-ink-900 overflow-hidden">
-          <div class="px-6 py-4 border-b border-white/5 bg-ink-700">
-            <h3 class="font-bold text-[12px] uppercase tracking-[0.14em] text-white/55">How pricing models compare</h3>
+        <!-- Pricing model comparison table -->
+        <div class="mt-14 max-w-[860px] mx-auto rounded-2xl border border-hairline bg-paper-card overflow-hidden shadow-[0_2px_8px_rgba(15,14,10,0.03)]">
+          <div class="px-6 py-4 border-b border-hairline bg-paper">
+            <h3 class="font-bold text-[12px] uppercase tracking-[0.14em] text-ink-muted">How pricing models compare</h3>
           </div>
-          <div class="divide-y divide-white/5 text-[13.5px]">
-            <div class="grid grid-cols-[1.2fr_1.6fr] gap-4 px-6 py-3.5">
-              <span class="text-white/85">Anthropic Computer Use</span>
-              <span class="text-white/55 font-mono text-[12.5px]">Self-host · your compute + model tokens</span>
-            </div>
-            <div class="grid grid-cols-[1.2fr_1.6fr] gap-4 px-6 py-3.5">
-              <span class="text-white/85">Browser Use Cloud</span>
-              <span class="text-white/55 font-mono text-[12.5px]">3 meters · browser-time + LLM step + per-task</span>
-            </div>
-            <div class="grid grid-cols-[1.2fr_1.6fr] gap-4 px-6 py-3.5">
-              <span class="text-white/85">Browserbase</span>
-              <span class="text-white/55 font-mono text-[12.5px]">$39/mo Hobby · per browser-hour billing</span>
-            </div>
-            <div class="grid grid-cols-[1.2fr_1.6fr] gap-4 px-6 py-3.5">
-              <span class="text-white/85">E2B Desktop</span>
-              <span class="text-white/55 font-mono text-[12.5px]">Per sandbox-hour</span>
-            </div>
-            <div class="grid grid-cols-[1.2fr_1.6fr] gap-4 px-6 py-3.5 bg-accent/[0.05]">
-              <span class="text-accent font-bold">Computer Use Cloud</span>
-              <span class="text-accent font-mono text-[12.5px]">Per active second · idle (model thinking) is free</span>
-            </div>
-          </div>
-          <p class="px-6 py-3 text-[11.5px] text-white/35 font-mono italic border-t border-white/5">Pricing models as published by each vendor on 2026-05-25. Specific dollar amounts may have changed since.</p>
+          <table class="w-full text-[13.5px]">
+            <thead class="text-[10.5px] uppercase tracking-[0.12em] font-bold text-ink-muted bg-paper-deep border-b border-hairline">
+              <tr>
+                <th class="px-6 py-3 text-left">Vendor</th>
+                <th class="px-6 py-3 text-left">Pricing model</th>
+                <th class="px-6 py-3 text-left hidden sm:table-cell">Starts at</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-hairline">
+              <tr>
+                <td class="px-6 py-3.5 text-ink align-top">Anthropic Computer Use</td>
+                <td class="px-6 py-3.5 text-ink-soft font-mono text-[12.5px] align-top">Self-host · your compute + model tokens</td>
+                <td class="px-6 py-3.5 text-ink-muted font-mono text-[12.5px] align-top hidden sm:table-cell">your AWS bill</td>
+              </tr>
+              <tr>
+                <td class="px-6 py-3.5 text-ink align-top">Browser Use Cloud</td>
+                <td class="px-6 py-3.5 text-ink-soft font-mono text-[12.5px] align-top">3 meters · browser-time + LLM step + per-task</td>
+                <td class="px-6 py-3.5 text-ink-muted font-mono text-[12.5px] align-top hidden sm:table-cell">per-task surcharge</td>
+              </tr>
+              <tr>
+                <td class="px-6 py-3.5 text-ink align-top">Browserbase</td>
+                <td class="px-6 py-3.5 text-ink-soft font-mono text-[12.5px] align-top">Per browser-hour billing</td>
+                <td class="px-6 py-3.5 text-ink-muted font-mono text-[12.5px] align-top hidden sm:table-cell">$39/mo Hobby</td>
+              </tr>
+              <tr>
+                <td class="px-6 py-3.5 text-ink align-top">E2B Desktop</td>
+                <td class="px-6 py-3.5 text-ink-soft font-mono text-[12.5px] align-top">Per sandbox-hour</td>
+                <td class="px-6 py-3.5 text-ink-muted font-mono text-[12.5px] align-top hidden sm:table-cell">free tier + per-hour</td>
+              </tr>
+              <tr class="bg-accent-soft">
+                <td class="px-6 py-3.5 text-accent-strong font-bold align-top">Computer Use Cloud</td>
+                <td class="px-6 py-3.5 text-accent-strong font-mono text-[12.5px] align-top">Per active second · idle (model thinking) is free</td>
+                <td class="px-6 py-3.5 text-accent-strong font-mono text-[12.5px] align-top hidden sm:table-cell">free 100 hr/mo</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="px-6 py-3 text-[11.5px] text-ink-faint font-mono italic border-t border-hairline">Pricing models as published by each vendor on 2026-05-25. Specific dollar amounts may have changed.</p>
         </div>
       </div>
     </section>
 
-    <!-- FAQ (where the AEO copy lives) -->
-    <section class="px-6 py-28 bg-ink-800 border-y border-white/5" id="faq">
+    <!-- FAQ -->
+    <section class="px-6 py-28 border-t border-hairline" id="faq">
       <div class="max-w-[760px] mx-auto">
-        <h2 class="font-bold text-[clamp(28px,3.6vw,40px)] leading-[1.05] tracking-[-0.018em] mb-10">FAQ.</h2>
+        <h2 class="font-bold text-[clamp(28px,3.6vw,40px)] leading-[1.05] tracking-[-0.018em] mb-10 text-ink">FAQ.</h2>
 
-        <div class="divide-y divide-white/10 border-t border-b border-white/10">
+        <div class="divide-y divide-hairline border-t border-b border-hairline">
           <details class="group py-5">
             <summary class="flex justify-between items-start gap-4 cursor-pointer list-none">
-              <span class="text-[16.5px] font-semibold">What is Computer Use Cloud?</span>
-              <span class="text-white/40 text-[20px] leading-none mt-0.5 group-open:rotate-45 transition">+</span>
+              <span class="text-[16.5px] font-semibold text-ink">What is Computer Use Cloud?</span>
+              <span class="text-ink-muted text-[20px] leading-none mt-0.5 group-open:rotate-45 transition">+</span>
             </summary>
-            <div class="mt-3 text-[14.5px] leading-[1.6] text-white/65">A managed cloud sandbox built for AI agents. Each sandbox is a Linux desktop with a browser open inside. Your AI agent — Claude, GPT, or Gemini, your pick — drives it through one SDK.</div>
+            <div class="mt-3 text-[14.5px] leading-[1.6] text-ink-soft">A managed cloud sandbox built for AI agents. Each sandbox is a Linux desktop with a browser open inside. Your AI agent — Claude, GPT, or Gemini, your pick — drives it through one SDK.</div>
           </details>
 
           <details class="group py-5">
             <summary class="flex justify-between items-start gap-4 cursor-pointer list-none">
-              <span class="text-[16.5px] font-semibold">Why both a browser and a computer?</span>
-              <span class="text-white/40 text-[20px] leading-none mt-0.5 group-open:rotate-45 transition">+</span>
+              <span class="text-[16.5px] font-semibold text-ink">Why both a browser and a computer?</span>
+              <span class="text-ink-muted text-[20px] leading-none mt-0.5 group-open:rotate-45 transition">+</span>
             </summary>
-            <div class="mt-3 text-[14.5px] leading-[1.6] text-white/65">Most agent tasks live in a browser, so we expose a browser surface for them. But some tasks need the desktop — open a file, edit a spreadsheet, work across two apps. Same sandbox, both available. Use the browser surface for web jobs, the computer surface when you need the full desktop.</div>
+            <div class="mt-3 text-[14.5px] leading-[1.6] text-ink-soft">Most agent tasks live in a browser, so we expose a browser surface for them. But some tasks need the desktop — open a file, edit a spreadsheet, work across two apps. Same sandbox, both available.</div>
           </details>
 
           <details class="group py-5">
             <summary class="flex justify-between items-start gap-4 cursor-pointer list-none">
-              <span class="text-[16.5px] font-semibold">Which LLMs are supported?</span>
-              <span class="text-white/40 text-[20px] leading-none mt-0.5 group-open:rotate-45 transition">+</span>
+              <span class="text-[16.5px] font-semibold text-ink">Which LLMs are supported?</span>
+              <span class="text-ink-muted text-[20px] leading-none mt-0.5 group-open:rotate-45 transition">+</span>
             </summary>
-            <div class="mt-3 text-[14.5px] leading-[1.6] text-white/65">Anthropic Claude, OpenAI GPT, and Google Gemini are first-class. The model is a kwarg on <code class="font-mono text-[13px] bg-white/5 rounded px-1.5 py-0.5">Sandbox()</code>. Bring your own API key for the model provider; the sandbox itself is what we host.</div>
+            <div class="mt-3 text-[14.5px] leading-[1.6] text-ink-soft">Anthropic Claude, OpenAI GPT, and Google Gemini are first-class. The model is a kwarg on <code class="font-mono text-[13px] bg-paper-deep border border-hairline rounded px-1.5 py-0.5 text-ink">Sandbox()</code>. Bring your own API key for the model provider; the sandbox itself is what we host.</div>
           </details>
 
           <details class="group py-5">
             <summary class="flex justify-between items-start gap-4 cursor-pointer list-none">
-              <span class="text-[16.5px] font-semibold">How is this different from Browserbase or Browser Use Cloud?</span>
-              <span class="text-white/40 text-[20px] leading-none mt-0.5 group-open:rotate-45 transition">+</span>
+              <span class="text-[16.5px] font-semibold text-ink">How is this different from Browserbase or Browser Use Cloud?</span>
+              <span class="text-ink-muted text-[20px] leading-none mt-0.5 group-open:rotate-45 transition">+</span>
             </summary>
-            <div class="mt-3 text-[14.5px] leading-[1.6] text-white/65">Browserbase and Browser Use Cloud give you a browser in the cloud. We give you a desktop with a browser inside. If your agent ever needs to open a file outside the browser, edit a document, or use anything that isn't a web page, you need the desktop surface they don't have.</div>
+            <div class="mt-3 text-[14.5px] leading-[1.6] text-ink-soft">Browserbase and Browser Use Cloud give you a browser in the cloud. We give you a desktop with a browser inside. If your agent ever needs to open a file outside the browser, edit a document, or use anything that isn't a web page, you need the desktop surface they don't have.</div>
           </details>
 
           <details class="group py-5">
             <summary class="flex justify-between items-start gap-4 cursor-pointer list-none">
-              <span class="text-[16.5px] font-semibold">How is this different from E2B Desktop?</span>
-              <span class="text-white/40 text-[20px] leading-none mt-0.5 group-open:rotate-45 transition">+</span>
+              <span class="text-[16.5px] font-semibold text-ink">How is this different from E2B Desktop?</span>
+              <span class="text-ink-muted text-[20px] leading-none mt-0.5 group-open:rotate-45 transition">+</span>
             </summary>
-            <div class="mt-3 text-[14.5px] leading-[1.6] text-white/65">E2B Desktop is a general-purpose code-interpreter sandbox that happens to expose a desktop. We are focused specifically on AI agents driving browser plus desktop tasks. Same primitive, narrower product surface, different SDK ergonomics — one unified <code class="font-mono text-[13px] bg-white/5 rounded px-1.5 py-0.5">Sandbox</code> with browser and computer namespaces.</div>
+            <div class="mt-3 text-[14.5px] leading-[1.6] text-ink-soft">E2B Desktop is a general-purpose code-interpreter sandbox that happens to expose a desktop. We are focused specifically on AI agents driving browser plus desktop tasks. Same primitive, narrower product surface, different SDK ergonomics — one unified <code class="font-mono text-[13px] bg-paper-deep border border-hairline rounded px-1.5 py-0.5 text-ink">Sandbox</code> with browser and computer namespaces.</div>
           </details>
 
           <details class="group py-5">
             <summary class="flex justify-between items-start gap-4 cursor-pointer list-none">
-              <span class="text-[16.5px] font-semibold">What does the SDK look like?</span>
-              <span class="text-white/40 text-[20px] leading-none mt-0.5 group-open:rotate-45 transition">+</span>
+              <span class="text-[16.5px] font-semibold text-ink">What does the SDK look like?</span>
+              <span class="text-ink-muted text-[20px] leading-none mt-0.5 group-open:rotate-45 transition">+</span>
             </summary>
-            <div class="mt-3 text-[14.5px] leading-[1.6] text-white/65">One class. <code class="font-mono text-[13px] bg-white/5 rounded px-1.5 py-0.5">with Sandbox(model="claude-sonnet-4-6") as s</code>, then <code class="font-mono text-[13px] bg-white/5 rounded px-1.5 py-0.5">s.browser.run("...")</code> or <code class="font-mono text-[13px] bg-white/5 rounded px-1.5 py-0.5">s.computer.run("...")</code>. The browser and computer share the same desktop — a file downloaded by the browser is visible to the computer.</div>
+            <div class="mt-3 text-[14.5px] leading-[1.6] text-ink-soft">One class. <code class="font-mono text-[13px] bg-paper-deep border border-hairline rounded px-1.5 py-0.5 text-ink">with Sandbox(model="claude-sonnet-4-6") as s</code>, then <code class="font-mono text-[13px] bg-paper-deep border border-hairline rounded px-1.5 py-0.5 text-ink">s.browser.run("...")</code> or <code class="font-mono text-[13px] bg-paper-deep border border-hairline rounded px-1.5 py-0.5 text-ink">s.computer.run("...")</code>. The browser and computer share the same desktop — a file downloaded by the browser is visible to the computer.</div>
           </details>
 
           <details class="group py-5">
             <summary class="flex justify-between items-start gap-4 cursor-pointer list-none">
-              <span class="text-[16.5px] font-semibold">Is the runtime open source?</span>
-              <span class="text-white/40 text-[20px] leading-none mt-0.5 group-open:rotate-45 transition">+</span>
+              <span class="text-[16.5px] font-semibold text-ink">Is the runtime open source?</span>
+              <span class="text-ink-muted text-[20px] leading-none mt-0.5 group-open:rotate-45 transition">+</span>
             </summary>
-            <div class="mt-3 text-[14.5px] leading-[1.6] text-white/65">Planned. The runtime drops as Apache-2.0 at milestone M5 in the public <a href="https://github.com/computeruse-run/specs/blob/main/ROADMAP.md" class="text-accent hover:underline">roadmap</a>. Self-host the same sandbox image inside your VPC, point the SDK at your endpoint, and skip the cloud entirely if you'd rather.</div>
+            <div class="mt-3 text-[14.5px] leading-[1.6] text-ink-soft">Planned. The runtime drops as Apache-2.0 at milestone M5 in the public roadmap. Self-host the same sandbox image inside your VPC, point the SDK at your endpoint, and skip the cloud entirely if you'd rather.</div>
           </details>
 
           <details class="group py-5">
             <summary class="flex justify-between items-start gap-4 cursor-pointer list-none">
-              <span class="text-[16.5px] font-semibold">Can I watch the agent run live?</span>
-              <span class="text-white/40 text-[20px] leading-none mt-0.5 group-open:rotate-45 transition">+</span>
+              <span class="text-[16.5px] font-semibold text-ink">Can I watch the agent run live?</span>
+              <span class="text-ink-muted text-[20px] leading-none mt-0.5 group-open:rotate-45 transition">+</span>
             </summary>
-            <div class="mt-3 text-[14.5px] leading-[1.6] text-white/65">Yes. Every sandbox exposes a public live view URL. Embed it in your own app via iframe, share it with a teammate for debugging, or watch from your dashboard.</div>
+            <div class="mt-3 text-[14.5px] leading-[1.6] text-ink-soft">Yes. Every sandbox exposes a public live view URL. Embed it in your own app via iframe, share it with a teammate for debugging, or watch from your dashboard.</div>
           </details>
         </div>
       </div>
     </section>
 
     <!-- CTA -->
-    <section class="px-6 py-32 text-center relative overflow-hidden">
-      <div class="absolute inset-0 -z-10" style="background-image: radial-gradient(800px 400px at 50% 50%, rgba(16,185,129,0.18), transparent 60%);"></div>
-      <h2 class="font-bold text-[clamp(36px,5vw,64px)] leading-[1.02] tracking-[-0.022em] max-w-[680px] mx-auto">
+    <section class="px-6 py-32 text-center relative overflow-hidden bg-paper-deep border-t border-hairline">
+      <div class="absolute inset-0 -z-10" style="background-image: radial-gradient(720px 360px at 50% 50%, rgba(15,122,92,0.10), transparent 65%);"></div>
+      <h2 class="font-bold text-[clamp(36px,5vw,64px)] leading-[1.02] tracking-[-0.022em] max-w-[680px] mx-auto text-ink">
         Give your agent a computer.
       </h2>
-      <a href="#signup" class="mt-9 inline-flex items-center gap-2 bg-accent text-black hover:bg-emerald-400 transition rounded-lg px-6 py-3.5 text-[15px] font-extrabold">
+      <a href="#signup" class="mt-9 inline-flex items-center gap-2 bg-ink text-paper hover:bg-accent transition rounded-lg px-6 py-3.5 text-[15px] font-extrabold">
         Start free
         <svg viewBox="0 0 16 16" class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 4l4 4-4 4"/></svg>
       </a>
     </section>
 
     <!-- FOOTER -->
-    <footer class="px-6 py-12 border-t border-white/5 bg-ink-950">
-      <div class="max-w-[1180px] mx-auto flex items-center justify-between gap-6 flex-wrap font-mono text-[11.5px] text-white/35">
-        <a href="/" class="flex items-center gap-2 text-white/65 hover:text-white">
-          <span class="w-5 h-5 rounded bg-accent grid place-items-center text-black font-extrabold text-[10px]">≡</span>
+    <footer class="px-6 py-12 border-t border-hairline bg-paper">
+      <div class="max-w-[1180px] mx-auto flex items-center justify-between gap-6 flex-wrap font-mono text-[11.5px] text-ink-muted">
+        <a href="/" class="flex items-center gap-2 text-ink-soft hover:text-ink">
+          <span class="w-5 h-5 rounded bg-accent grid place-items-center text-white font-extrabold text-[10px]">≡</span>
           computeruse.run
         </a>
         <div class="flex items-center gap-5">
-          <a href="https://github.com/computeruse-run" class="hover:text-white">GitHub</a>
-          <a href="https://github.com/computeruse-run/sdk" class="hover:text-white">SDK</a>
-          <a href="https://github.com/computeruse-run/specs" class="hover:text-white">Specs</a>
-          <a href="#faq" class="hover:text-white">FAQ</a>
+          <a href="https://github.com/computeruse-run" class="hover:text-ink">GitHub</a>
+          <a href="https://github.com/computeruse-run/sdk" class="hover:text-ink">SDK</a>
+          <a href="https://github.com/computeruse-run/specs" class="hover:text-ink">Specs</a>
+          <a href="#faq" class="hover:text-ink">FAQ</a>
         </div>
         <span>© 2026</span>
       </div>
