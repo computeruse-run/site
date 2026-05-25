@@ -5,7 +5,7 @@
 Pre-configured cloud sandboxes for Anthropic Computer Use, OpenAI Operator, and Gemini agents. One API across three models. 60% cheaper than Browserbase for typical agent workloads. 2-second cold start. Pay per active second. Free tier — 10 hours/month.
 
 → Live site (eventually): [computeruse.run](https://computeruse.run/)
-→ GitHub org (to register): `github.com/computeruse`
+→ GitHub org: [`github.com/computeruse-dev`](https://github.com/computeruse-dev) (bare `computeruse` was taken)
 
 ## Status
 
@@ -68,7 +68,9 @@ npx serve . -l 8080
 ## Roadmap (marketing-side)
 
 - [ ] Wire `computeruse.run` DNS at static host
-- [ ] Register `github.com/computeruse` org
+- [x] Register `github.com/computeruse-dev` org (bare `computeruse` was unavailable)
+- [ ] Push `sdk/` to `github.com/computeruse-dev/sdk` as its own repo
+- [ ] Claim `computeruse` on PyPI (publish `sdk/` stub)
 - [ ] Publish HN Show post (see `marketing/hn-post.md`)
 - [ ] Replace placeholder `/docs/quickstart`, `/openai-operator`, `/gemini-computer-use` routes with real pages
 - [ ] Add `sitemap.xml` + `robots.txt`

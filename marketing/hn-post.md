@@ -1,6 +1,6 @@
 # HN Show post — Computer Use Cloud
 
-**Status**: draft, not yet posted. Post when: homepage is live on `computeruse.run`, free signup works, at least a stub GitHub repo exists at `github.com/computeruse/sdk`.
+**Status**: draft, not yet posted. Post when: homepage is live on `computeruse.run`, free signup works, at least a stub GitHub repo exists at `github.com/computeruse-dev/sdk`.
 
 ---
 
