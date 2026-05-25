@@ -1,37 +1,91 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="dark">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Cloud Browser Live · The public agentic browser. Watch one AI agent browse the web.</title>
+    <title>Computer Use Cloud · Run Computer Use in the cloud for Claude, GPT &amp; Gemini agents</title>
     <meta
       name="description"
-      content="Cloud Browser Live is a public agentic browser — a live, shared session where one AI agent browses the web in real time and anyone can suggest the next move. Like Twitch Plays Pokémon, but the player is an AI agent and the game is the open web."
+      content="Pre-configured cloud sandboxes for Anthropic Computer Use, OpenAI Operator, and Gemini agents. 60% cheaper than Browserbase. 2-second cold start. Pay per active second. Free 10 hours per month."
     />
-    <meta name="keywords" content="agentic browser, public agentic browser, watch AI agent browse the web, multiplayer agentic browser, AI agent demo, live agentic browser, Perplexity Comet, ChatGPT Atlas, Dia browser, BrowserOS, Browserbase, browser-use, Stagehand" />
-    <link rel="canonical" href="https://cloudbrowser.live/" />
+    <meta name="keywords" content="computer use, computer use api, claude computer use, openai operator, anthropic computer use, browserbase alternative, browserbase pricing, computer use cloud, agentic browser, AI agent sandbox" />
+    <link rel="canonical" href="https://computeruse.run/" />
     <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large" />
-    <meta name="theme-color" content="#f4f1e7" />
+    <meta name="theme-color" content="#0a0a0a" />
 
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://cloudbrowser.live/" />
-    <meta property="og:title" content="Cloud Browser Live · The public agentic browser" />
-    <meta property="og:description" content="One AI agent. One window. The whole internet steering. Anonymous, always on — Twitch Plays Pokémon for the open web." />
-    <meta property="og:image" content="https://cloudbrowser.live/og.png" />
-    <meta property="og:site_name" content="Cloud Browser Live" />
+    <meta property="og:url" content="https://computeruse.run/" />
+    <meta property="og:title" content="Computer Use Cloud · The cloud platform for AI agents" />
+    <meta property="og:description" content="Pre-configured cloud sandboxes for Claude Computer Use, OpenAI Operator, and Gemini. 60% cheaper than Browserbase. 2-second cold start." />
+    <meta property="og:image" content="https://computeruse.run/og.png" />
+    <meta property="og:site_name" content="Computer Use Cloud" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Cloud Browser Live · The public agentic browser" />
-    <meta name="twitter:description" content="Watch one AI browse the open web. Send anonymous suggestions. Always on." />
-    <meta name="twitter:image" content="https://cloudbrowser.live/og.png" />
+    <meta name="twitter:title" content="Computer Use Cloud" />
+    <meta name="twitter:description" content="The cloud platform for Claude, GPT, and Gemini Computer Use agents. 60% cheaper than Browserbase." />
+    <meta name="twitter:image" content="https://computeruse.run/og.png" />
 
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='7' fill='%230f7a5c'/><circle cx='16' cy='16' r='13' fill='none' stroke='%230f7a5c' stroke-opacity='.25' stroke-width='2'/></svg>" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%2310B981'/><path d='M9 11h14M9 16h14M9 21h9' stroke='%23000' stroke-width='2.4' stroke-linecap='round'/></svg>" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500;6..72,600;6..72,700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'sans-serif'],
+              mono: ['"JetBrains Mono"', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace'],
+            },
+            colors: {
+              ink: {
+                950: '#050505',
+                900: '#0a0a0a',
+                800: '#111111',
+                700: '#171717',
+                600: '#1f1f1f',
+                500: '#2a2a2a',
+              },
+              accent: {
+                DEFAULT: '#10B981',
+                soft: 'rgba(16, 185, 129, 0.12)',
+                strong: '#059669',
+              },
+              warm: '#FB923C',
+            },
+            keyframes: {
+              pulse: {
+                '0%, 100%': { boxShadow: '0 0 0 0 rgba(16, 185, 129, 0.4)' },
+                '50%': { boxShadow: '0 0 0 7px rgba(16, 185, 129, 0)' },
+              },
+              shimmer: {
+                '0%': { backgroundPosition: '200% 0' },
+                '100%': { backgroundPosition: '-200% 0' },
+              },
+              caret: {
+                '50%': { opacity: '0' },
+              },
+              fadeUp: {
+                from: { opacity: '0', transform: 'translateY(8px)' },
+                to: { opacity: '1', transform: 'translateY(0)' },
+              },
+            },
+            animation: {
+              pulse: 'pulse 1.8s ease-in-out infinite',
+              shimmer: 'shimmer 3s linear infinite',
+              caret: 'caret 1s steps(2, jump-none) infinite',
+              fadeUp: 'fadeUp 600ms cubic-bezier(0.18, 0.9, 0.2, 1) both',
+            },
+          },
+        },
+      };
+    </script>
 
     <script type="application/ld+json">
       {
@@ -39,2362 +93,682 @@
         "@graph": [
           {
             "@type": "Organization",
-            "@id": "https://cloudbrowser.live/#org",
-            "name": "Cloud Browser Live",
-            "url": "https://cloudbrowser.live/",
-            "logo": "https://cloudbrowser.live/og.png",
-            "description": "Operator of the public agentic browser at cloudbrowser.live."
+            "@id": "https://computeruse.run/#org",
+            "name": "Computer Use Cloud",
+            "url": "https://computeruse.run/",
+            "logo": "https://computeruse.run/og.png",
+            "description": "The cloud platform for running Computer Use agents — Claude, GPT, Gemini — on pre-configured sandboxes. 60% cheaper than Browserbase."
           },
           {
             "@type": "WebSite",
-            "@id": "https://cloudbrowser.live/#website",
-            "url": "https://cloudbrowser.live/",
-            "name": "Cloud Browser Live",
-            "publisher": { "@id": "https://cloudbrowser.live/#org" }
-          },
-          {
-            "@type": "WebApplication",
-            "@id": "https://cloudbrowser.live/#app",
-            "name": "Cloud Browser Live",
-            "alternateName": ["Public agentic browser"],
-            "applicationCategory": "BrowserApplication",
-            "applicationSubCategory": "Agentic browser",
-            "operatingSystem": "Web",
-            "browserRequirements": "Requires a modern web browser.",
-            "url": "https://cloudbrowser.live/",
-            "publisher": { "@id": "https://cloudbrowser.live/#org" },
-            "description": "A public agentic browser — a live, shared web session where one AI agent browses the open internet and anyone can watch or steer it with anonymous suggestions.",
-            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+            "@id": "https://computeruse.run/#website",
+            "url": "https://computeruse.run/",
+            "name": "Computer Use Cloud",
+            "publisher": { "@id": "https://computeruse.run/#org" }
           },
           {
             "@type": "SoftwareApplication",
-            "@id": "https://cloudbrowser.live/#software",
-            "name": "Cloud Browser Live",
-            "applicationCategory": "BrowserApplication",
-            "operatingSystem": "Web",
-            "url": "https://cloudbrowser.live/",
-            "publisher": { "@id": "https://cloudbrowser.live/#org" },
-            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
-          },
-          {
-            "@type": "VideoObject",
-            "@id": "https://cloudbrowser.live/#liveview",
-            "name": "Cloud Browser Live — the public agentic browser session",
-            "description": "A continuously-running live view of one AI agent browsing the open web. Anyone can watch in real time and post anonymous suggestions for the agent's next move.",
-            "thumbnailUrl": "https://cloudbrowser.live/og.png",
-            "uploadDate": "2026-05-10T00:00:00Z",
-            "contentUrl": "https://cloudbrowser.live/",
-            "embedUrl": "https://cloudbrowser.live/",
-            "publication": {
-              "@type": "BroadcastEvent",
-              "isLiveBroadcast": true,
-              "startDate": "2026-05-10T00:00:00Z"
-            }
-          },
-          {
-            "@type": "HowTo",
-            "@id": "https://cloudbrowser.live/#howto",
-            "name": "How to watch and steer the public agentic browser",
-            "description": "Three steps: watch the agent move, send an anonymous suggestion, and see the agent pick from the room.",
-            "step": [
-              { "@type": "HowToStep", "position": 1, "name": "The agent moves", "text": "The agent loads a page, runs a search, or reads what it found, then tells the room what it intends to do next." },
-              { "@type": "HowToStep", "position": 2, "name": "The room suggests", "text": "Visitors send short anonymous messages — \"try arXiv\", \"scroll down\", \"go back\". Every message is visible to everyone." },
-              { "@type": "HowToStep", "position": 3, "name": "The agent picks", "text": "The agent reads the suggestions, chooses the most relevant, and acts. The browser updates. Repeat." }
-            ]
-          },
-          {
-            "@type": "BreadcrumbList",
-            "@id": "https://cloudbrowser.live/#crumbs",
-            "itemListElement": [
-              { "@type": "ListItem", "position": 1, "name": "Agentic browsers", "item": "https://cloudbrowser.live/" },
-              { "@type": "ListItem", "position": 2, "name": "Cloud Browser Live · The public agentic browser", "item": "https://cloudbrowser.live/" }
+            "@id": "https://computeruse.run/#app",
+            "name": "Computer Use Cloud",
+            "alternateName": ["ComputerUse", "ComputerUse.run"],
+            "applicationCategory": "DeveloperApplication",
+            "applicationSubCategory": "AI agent cloud sandbox",
+            "operatingSystem": "Cloud",
+            "url": "https://computeruse.run/",
+            "publisher": { "@id": "https://computeruse.run/#org" },
+            "description": "Pre-configured cloud sandboxes for Anthropic Computer Use, OpenAI Operator, and Google Gemini agents. One API across three models. 60% cheaper than Browserbase, 2-second cold start, pay per active second.",
+            "offers": [
+              { "@type": "Offer", "name": "Free", "price": "0", "priceCurrency": "USD", "description": "10 active hours per month, free forever." },
+              { "@type": "Offer", "name": "Pro", "price": "20", "priceCurrency": "USD", "description": "100 active hours per month, then $0.05 per active hour." }
             ]
           },
           {
             "@type": "FAQPage",
-            "@id": "https://cloudbrowser.live/#faq",
+            "@id": "https://computeruse.run/#faq",
             "mainEntity": [
-              { "@type": "Question", "name": "What is an agentic browser?", "acceptedAnswer": { "@type": "Answer", "text": "An agentic browser is a web browser where an AI agent — powered by a large language model — performs the actual browsing. The agent reads pages, clicks links, fills forms, and navigates on someone's behalf. Examples include Perplexity Comet, OpenAI ChatGPT Atlas, The Browser Company Dia, and the open-source BrowserOS. Cloud Browser Live is a public agentic browser: one agent, one shared window, anonymous suggestions from anyone." } },
-              { "@type": "Question", "name": "What is a public agentic browser?", "acceptedAnswer": { "@type": "Answer", "text": "A public agentic browser is an agentic browser session that is open to the public — anyone can watch the agent and influence what it does next. Cloud Browser Live is one such session, running continuously since May 10, 2026. Unlike Comet, Atlas, or Dia (which are personal agentic browsers tied to one user account), there is no signup, and every visitor sees the same browser at the same moment." } },
-              { "@type": "Question", "name": "Can I really watch an AI browse the web live?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. The browser you see is a live session, not a recording. The agent is moving in real time and what is on screen is what it is doing right now. Anyone can drop in, watch, send a suggestion, and leave. The session never stops." } },
-              { "@type": "Question", "name": "How is this different from Perplexity Comet, ChatGPT Atlas, or Dia?", "acceptedAnswer": { "@type": "Answer", "text": "Comet (Perplexity), Atlas (OpenAI), and Dia (The Browser Company) are personal agentic browsers — your account, your tabs, your tasks. Cloud Browser Live is the opposite: one shared agent, one window, no accounts, anonymous suggestions from the whole room. It is the multiplayer version of an agentic browser." } },
-              { "@type": "Question", "name": "How is this different from Browserbase, browser-use, or Stagehand?", "acceptedAnswer": { "@type": "Answer", "text": "Browserbase, browser-use, Stagehand, Steel, and Cloudflare Browser Run are infrastructure for developers — you write code, you get a cloud browser. Cloud Browser Live is a consumer product: no SDK, no install, nothing to script. Just a website you watch, with one shared agent." } },
-              { "@type": "Question", "name": "Can the agent see my suggestion?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Every message in the room is part of the agent's input. It reads them and picks what to act on." } },
-              { "@type": "Question", "name": "Why is the browser read-only?", "acceptedAnswer": { "@type": "Answer", "text": "You are watching the agent's session, not driving it yourself. The agent is the only one with hands on the keyboard. You influence it by suggesting, not clicking." } },
-              { "@type": "Question", "name": "Do you store who I am?", "acceptedAnswer": { "@type": "Answer", "text": "No login, no email. The site keeps a random anonymous ID in your browser so the agent can tell visitors apart in the room. Clear your storage and you are a new visitor." } },
-              { "@type": "Question", "name": "What model is the agent?", "acceptedAnswer": { "@type": "Answer", "text": "A general-purpose browsing agent built on a current-generation LLM, running on a real cloud browser. The exact model changes as we upgrade it." } }
+              { "@type": "Question", "name": "What is Computer Use?", "acceptedAnswer": { "@type": "Answer", "text": "Computer Use is a class of AI agent capability where a large language model controls a real computer — clicking, typing, scrolling, reading screenshots — to complete tasks on a real browser or desktop. Anthropic released the first widely-used Computer Use API in October 2024; OpenAI shipped Operator in early 2025; Google added Gemini agent capabilities in 2026. Computer Use Cloud runs all three on managed cloud sandboxes so you don't have to host a browser yourself." } },
+              { "@type": "Question", "name": "How is Computer Use Cloud different from Browserbase?", "acceptedAnswer": { "@type": "Answer", "text": "Three differences. First, price — we charge per active second, not per browser-hour, so idle time is free. For typical agent workloads that's 60% cheaper than Browserbase. Second, three models behind one API — Claude Computer Use, OpenAI Operator, Gemini agent, all swappable with one line of code. Third, faster cold starts (2 seconds versus 3-5)." } },
+              { "@type": "Question", "name": "Does it work with Claude Computer Use Beta?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. The Claude provider is a managed wrapper around the official Anthropic Computer Use Beta API. You bring your own Anthropic API key or use our pooled credits; we run the sandbox, capture screenshots, return the accessibility tree, and forward tool calls back to the model." } },
+              { "@type": "Question", "name": "Does it work with OpenAI Operator?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. The OpenAI provider wraps the Operator API (the computer-use-preview model). Same one-line swap from Claude — Sandbox.openai() instead of Sandbox.claude() — and the rest of your agent code is unchanged." } },
+              { "@type": "Question", "name": "Can I self-host?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. The runtime is open source under Apache 2.0 — clone it, run it on your own infrastructure, point your SDK at the self-hosted endpoint. The cloud is for teams who would rather pay per active second than maintain a sandbox fleet." } },
+              { "@type": "Question", "name": "How do I migrate from Browserbase?", "acceptedAnswer": { "@type": "Answer", "text": "Most Browserbase agent code is a Playwright session wrapped in their SDK. Computer Use Cloud exposes the same Playwright CDP endpoint plus higher-level Sandbox.claude() / Sandbox.openai() helpers. Swap the connection string and one import; the rest of your agent code keeps working." } },
+              { "@type": "Question", "name": "Is there a free tier?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. 10 active hours per month, free forever, no credit card. After that, Pro is $20/month for 100 active hours plus $0.05 per additional active hour." } },
+              { "@type": "Question", "name": "What runs inside the sandbox?", "acceptedAnswer": { "@type": "Answer", "text": "A pre-configured Linux container with Chromium, common fonts and codecs, residential proxy by default, captcha solver, accessibility-tree extractor, and the screenshot pipeline tuned for vision LLMs. You get a Playwright CDP endpoint plus the high-level Sandbox helpers." } }
             ]
           }
         ]
       }
     </script>
-
-    <style>
-      :root {
-        color-scheme: light;
-        --paper: #f4f1e7;
-        --paper-deep: #ebe7d7;
-        --paper-card: #fbfaf3;
-        --ink: #0d0c08;
-        --ink-soft: #1f1e18;
-        --ink-2: #2b2a22;
-        --muted: #6d6a62;
-        --muted-strong: #46443c;
-        --hairline: rgba(13, 12, 8, 0.1);
-        --hairline-strong: rgba(13, 12, 8, 0.18);
-        --accent: #0f7a5c;
-        --accent-strong: #0c5d48;
-        --accent-tint: rgba(15, 122, 92, 0.12);
-        --warm: #c25a2a;
-        --warm-soft: rgba(194, 90, 42, 0.12);
-        --shadow-lift: 0 30px 80px rgba(13, 12, 8, 0.18);
-        --shadow-card: 0 16px 40px rgba(13, 12, 8, 0.08);
-        --serif: Newsreader, "Iowan Old Style", Georgia, serif;
-        --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas, monospace;
-      }
-
-      *, *::before, *::after { box-sizing: border-box; }
-
-      html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
-
-      body {
-        margin: 0;
-        background: var(--paper);
-        color: var(--ink);
-        font-family: var(--sans);
-        -webkit-font-smoothing: antialiased;
-        text-rendering: optimizeLegibility;
-      }
-
-      a { color: var(--ink); text-decoration: none; }
-      a:hover { color: var(--accent-strong); }
-
-      button { font: inherit; cursor: pointer; }
-
-      /* ============================== UTIL ============================ */
-
-      .wrap { max-width: 1180px; margin: 0 auto; padding: 0 28px; }
-      .wrap-tight { max-width: 920px; margin: 0 auto; padding: 0 28px; }
-      .wrap-narrow { max-width: 680px; margin: 0 auto; padding: 0 28px; }
-
-      .eyebrow {
-        display: inline-block;
-        margin-bottom: 14px;
-        color: var(--muted);
-        font-size: 12px;
-        font-weight: 700;
-        letter-spacing: 0.16em;
-        text-transform: uppercase;
-      }
-
-      .display {
-        font-family: var(--serif);
-        font-weight: 500;
-        font-size: clamp(36px, 6.6vw, 76px);
-        line-height: 1.02;
-        letter-spacing: -0.018em;
-        color: var(--ink);
-      }
-
-      .display-md {
-        font-family: var(--serif);
-        font-weight: 500;
-        font-size: clamp(28px, 4.4vw, 48px);
-        line-height: 1.05;
-        letter-spacing: -0.012em;
-        color: var(--ink);
-      }
-
-      .lede {
-        font-size: clamp(17px, 1.6vw, 20px);
-        line-height: 1.55;
-        color: var(--ink-soft);
-        max-width: 640px;
-      }
-
-      .label {
-        font-size: 11px;
-        font-weight: 700;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        color: var(--muted-strong);
-      }
-
-      /* ============================== NAV ============================= */
-
-      .topnav {
-        position: fixed;
-        top: 0; left: 0; right: 0;
-        z-index: 50;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 16px;
-        padding: 14px 22px;
-        background: rgba(244, 241, 231, 0.72);
-        backdrop-filter: blur(16px) saturate(140%);
-        border-bottom: 1px solid var(--hairline);
-      }
-
-      .topnav .brand {
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        font-size: 14px;
-        font-weight: 700;
-        color: var(--ink);
-      }
-
-      .topnav .brand .mark {
-        width: 10px; height: 10px;
-        border-radius: 999px;
-        background: var(--accent);
-        box-shadow: 0 0 0 5px var(--accent-tint);
-      }
-
-      .topnav nav {
-        display: flex;
-        gap: 22px;
-        font-size: 13px;
-        font-weight: 600;
-        color: var(--muted-strong);
-      }
-
-      .topnav nav a:hover { color: var(--ink); }
-
-      .topnav .pill {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        padding: 7px 11px 7px 11px;
-        border: 1px solid rgba(15, 122, 92, 0.22);
-        border-radius: 999px;
-        background: rgba(239, 251, 245, 0.86);
-        color: #0e4836;
-        font-size: 12px;
-        font-weight: 700;
-      }
-
-      .pulse {
-        width: 7px; height: 7px;
-        border-radius: 999px;
-        background: var(--accent);
-        animation: pulse 1.8s ease-in-out infinite;
-      }
-
-      @media (max-width: 720px) {
-        .topnav nav { display: none; }
-      }
-
-      /* ============================= HERO ============================= */
-
-      .hero {
-        position: relative;
-        min-height: 100vh;
-        padding: 84px 24px 36px;
-        display: flex;
-        align-items: center;
-        background:
-          radial-gradient(1100px 580px at 80% -10%, rgba(15, 122, 92, 0.08), transparent 60%),
-          radial-gradient(900px 500px at -10% 20%, rgba(194, 90, 42, 0.07), transparent 55%),
-          var(--paper);
-      }
-
-      .hero-grid {
-        position: relative;
-        z-index: 2;
-        width: 100%;
-        max-width: 1380px;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
-        gap: clamp(28px, 4.5vw, 64px);
-        align-items: center;
-      }
-
-      .hero-left {
-        display: flex;
-        flex-direction: column;
-        gap: 22px;
-        min-width: 0;
-      }
-
-      .hero-eyebrow {
-        display: inline-flex;
-        align-items: center;
-        gap: 9px;
-        font-size: 11.5px;
-        font-weight: 700;
-        letter-spacing: 0.16em;
-        text-transform: uppercase;
-        color: var(--muted-strong);
-      }
-      .hero-eyebrow .dot {
-        width: 7px; height: 7px;
-        border-radius: 999px;
-        background: var(--accent);
-        box-shadow: 0 0 0 4px var(--accent-tint);
-      }
-
-      .hero-left h1 {
-        margin: 0;
-        font-family: var(--serif);
-        font-weight: 500;
-        font-size: clamp(44px, 5.6vw, 84px);
-        line-height: 0.96;
-        letter-spacing: -0.022em;
-        color: var(--ink);
-      }
-      .hero-left h1 em {
-        font-style: italic;
-        color: var(--accent-strong);
-      }
-
-      .hero-left .sub {
-        margin: 0;
-        max-width: 520px;
-        color: var(--muted-strong);
-        font-size: clamp(16px, 1.35vw, 19px);
-        line-height: 1.5;
-      }
-
-      .hero-cta {
-        display: inline-flex;
-        align-items: center;
-        gap: 20px;
-        flex-wrap: wrap;
-        margin-top: 4px;
-      }
-
-      .btn-link {
-        color: var(--muted-strong);
-        font-size: 13px;
-        font-weight: 600;
-        border-bottom: 1px solid var(--hairline-strong);
-        padding-bottom: 1px;
-      }
-      .btn-link:hover { color: var(--ink); }
-
-      .hero-right { min-width: 0; }
-
-      /* The fake browser stage */
-      .stage {
-        position: relative;
-        z-index: 2;
-        width: 100%;
-        height: min(76vh, 680px);
-        min-height: 460px;
-        margin: 0;
-        border-radius: 22px;
-        background: #f5f4ec;
-        border: 1px solid var(--hairline-strong);
-        box-shadow: var(--shadow-lift);
-        overflow: hidden;
-        isolation: isolate;
-      }
-
-      .stage-bar {
-        position: relative;
-        z-index: 3;
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        height: 44px;
-        padding: 0 14px;
-        border-bottom: 1px solid var(--hairline);
-        background: linear-gradient(to bottom, #fbf9f1, #f5f3eb);
-      }
-
-      .stage-bar .dots { display: flex; gap: 7px; }
-      .stage-bar .dots span {
-        width: 11px; height: 11px;
-        border-radius: 999px;
-        background: #d7cfba;
-      }
-      .stage-bar .dots span:nth-child(1) { background: #e7625a; }
-      .stage-bar .dots span:nth-child(2) { background: #e2b14c; }
-      .stage-bar .dots span:nth-child(3) { background: #5ab07e; }
-
-      .url-bar {
-        flex: 1;
-        min-width: 0;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        height: 28px;
-        padding: 0 12px;
-        border: 1px solid var(--hairline);
-        border-radius: 999px;
-        background: rgba(255, 255, 255, 0.82);
-        color: #4a4740;
-        font-family: var(--mono);
-        font-size: 12px;
-      }
-
-      .url-bar .lock {
-        width: 12px; height: 12px;
-        display: grid; place-items: center;
-        color: var(--accent);
-      }
-
-      .url-bar .url {
-        min-width: 0;
-        flex: 1;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-      }
-
-      .url-bar .caret {
-        display: inline-block;
-        width: 6px;
-        height: 12px;
-        background: var(--ink);
-        animation: blink 0.9s steps(2, jump-none) infinite;
-        vertical-align: -2px;
-      }
-
-      .stage-bar .intent-tag {
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        padding: 4px 9px;
-        border: 1px solid var(--hairline);
-        border-radius: 999px;
-        background: rgba(239, 251, 245, 0.7);
-        color: #0e4836;
-        font-size: 11px;
-        font-weight: 700;
-        letter-spacing: 0.03em;
-      }
-
-      .stage-bar .intent-tag .ping {
-        width: 6px; height: 6px;
-        border-radius: 999px;
-        background: var(--accent);
-        animation: pulse 1.6s ease-in-out infinite;
-      }
-
-      /* Stage canvas */
-      .stage-canvas {
-        position: absolute;
-        inset: 44px 0 0;
-        overflow: hidden;
-        background: #fff;
-      }
-
-      .scene {
-        position: absolute;
-        inset: 0;
-        padding: 0;
-        opacity: 0;
-        transform: translateY(14px) scale(0.995);
-        transition: opacity 600ms ease, transform 600ms ease, filter 600ms ease;
-        filter: blur(6px);
-      }
-
-      .scene.active {
-        opacity: 1;
-        transform: none;
-        filter: none;
-        z-index: 2;
-      }
-
-      /* Mock pages — generic frames */
-      .mock {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-        background: #fff;
-        color: var(--ink-soft);
-        font-size: 13.5px;
-        line-height: 1.55;
-      }
-
-      .mock .mock-head {
-        display: flex;
-        align-items: center;
-        gap: 14px;
-        padding: 14px 24px;
-        border-bottom: 1px solid rgba(0,0,0,0.06);
-        background: #fbfaf6;
-        font-size: 12.5px;
-        font-weight: 700;
-        color: #2b2a22;
-      }
-      .mock .mock-head .logo {
-        width: 22px; height: 22px;
-        border-radius: 6px;
-        display: grid; place-items: center;
-        color: white; font-size: 12px; font-weight: 800;
-      }
-      .mock .mock-head nav { display: flex; gap: 18px; font-weight: 500; color: #5e5b53; font-size: 12.5px; }
-
-      .mock .mock-body { display: grid; gap: 18px; padding: 22px 24px 28px; }
-
-      .mock h2.mock-title {
-        margin: 0;
-        font-family: var(--serif);
-        font-weight: 500;
-        font-size: 30px;
-        line-height: 1.12;
-        letter-spacing: -0.008em;
-        color: var(--ink);
-      }
-
-      .mock p.mock-p { margin: 0; max-width: 64ch; color: var(--ink-soft); }
-
-      .mock .skeleton { display: grid; gap: 10px; }
-      .mock .skeleton .row {
-        height: 12px;
-        border-radius: 4px;
-        background: linear-gradient(90deg, #eee 0%, #f6f4ec 50%, #eee 100%);
-        background-size: 200% 100%;
-        animation: shimmer 2.4s linear infinite;
-      }
-      .mock .skeleton .row.short { width: 60%; }
-      .mock .skeleton .row.med { width: 84%; }
-
-      /* --- SCENE A: GitHub-ish --- */
-      .mock-gh .mock-head .logo { background: #0d0c08; }
-      .mock-gh .repo-top {
-        display: flex; flex-wrap: wrap; gap: 12px;
-        padding: 18px 24px;
-        border-bottom: 1px solid #eee;
-        align-items: baseline;
-      }
-      .mock-gh .repo-top .crumb {
-        font-family: var(--mono);
-        font-size: 16px;
-      }
-      .mock-gh .repo-top .crumb b { font-weight: 700; }
-      .mock-gh .repo-top .crumb span { color: var(--muted); margin: 0 4px; }
-      .mock-gh .repo-top .badge {
-        margin-left: auto;
-        font-size: 11.5px;
-        font-weight: 700;
-        padding: 3px 8px;
-        border: 1px solid var(--hairline);
-        border-radius: 999px;
-        background: #fff;
-      }
-      .mock-gh .filebar {
-        display: flex; gap: 0; padding: 10px 24px;
-        border-bottom: 1px solid #eee;
-        font-size: 12.5px; color: var(--muted-strong); font-family: var(--mono);
-        align-items: center;
-      }
-      .mock-gh .filebar .branch {
-        padding: 4px 10px; border: 1px solid var(--hairline);
-        border-radius: 6px; background: #fbfaf3; font-weight: 600; color: var(--ink-soft);
-      }
-      .mock-gh .filebar .pin { margin-left: auto; color: var(--muted); }
-      .mock-gh .filelist {
-        margin: 0 24px;
-        border: 1px solid #eee;
-        border-radius: 8px;
-        overflow: hidden;
-      }
-      .mock-gh .filelist .row {
-        display: grid;
-        grid-template-columns: 24px 1.4fr 3fr 100px;
-        gap: 12px;
-        padding: 10px 14px;
-        border-top: 1px solid #f1efe7;
-        font-size: 13px;
-        align-items: center;
-      }
-      .mock-gh .filelist .row:first-child { border-top: 0; background: #fbfaf3; font-weight: 700; color: var(--ink-soft); }
-      .mock-gh .filelist .row .ico { color: var(--muted); }
-      .mock-gh .filelist .row .msg { color: var(--muted-strong); font-size: 12.5px; }
-      .mock-gh .filelist .row .age { color: var(--muted); font-size: 12px; text-align: right; }
-
-      /* --- SCENE B: Wikipedia-ish article --- */
-      .mock-wiki .mock-head .logo { background: #0d0c08; color: #fff; font-family: var(--serif); font-weight: 700; }
-      .mock-wiki .mock-body { padding: 24px 36px 28px; gap: 14px; }
-      .mock-wiki h2.mock-title { font-size: 34px; border-bottom: 1px solid #e9e6db; padding-bottom: 12px; }
-      .mock-wiki .toc {
-        margin-top: 4px;
-        padding: 12px 16px;
-        border: 1px solid #e9e6db;
-        background: #fbfaf3;
-        font-size: 13px;
-        color: var(--ink-soft);
-        max-width: 260px;
-      }
-      .mock-wiki .toc .lbl { font-weight: 700; color: var(--ink); margin-bottom: 8px; display: block; }
-      .mock-wiki .toc ol { margin: 0; padding-left: 18px; }
-      .mock-wiki .toc ol li { padding: 2px 0; }
-      .mock-wiki .infobox {
-        position: absolute;
-        top: 90px;
-        right: 36px;
-        width: 240px;
-        padding: 12px;
-        border: 1px solid #e9e6db;
-        background: #fbfaf3;
-        font-size: 12.5px;
-        color: var(--ink-soft);
-      }
-      .mock-wiki .infobox .head { font-weight: 700; color: var(--ink); margin-bottom: 8px; }
-      .mock-wiki .infobox dl { margin: 0; display: grid; grid-template-columns: 90px 1fr; gap: 6px 10px; }
-      .mock-wiki .infobox dt { color: var(--muted-strong); font-weight: 600; }
-      .mock-wiki .infobox dd { margin: 0; }
-
-      /* --- SCENE C: news article --- */
-      .mock-news .mock-head { background: #0d0c08; color: #f4f1e7; }
-      .mock-news .mock-head .logo { background: #c25a2a; }
-      .mock-news .mock-head nav { color: rgba(244, 241, 231, 0.8); }
-      .mock-news .mock-body { padding: 28px 36px; gap: 14px; }
-      .mock-news .kicker { color: var(--warm); font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; font-size: 11.5px; }
-      .mock-news h2.mock-title { font-size: 38px; line-height: 1.06; }
-      .mock-news .byline { color: var(--muted-strong); font-size: 12.5px; font-family: var(--mono); }
-      .mock-news .lead { font-family: var(--serif); font-size: 18px; line-height: 1.55; color: var(--ink-soft); max-width: 64ch; }
-      .mock-news .image {
-        margin-top: 8px;
-        height: 180px;
-        background:
-          linear-gradient(135deg, rgba(13,12,8,0.5), rgba(13,12,8,0.1)),
-          repeating-linear-gradient(45deg, #c25a2a 0 14px, #d9743d 14px 28px);
-        border-radius: 6px;
-      }
-
-      /* --- SCENE D: SERP search --- */
-      .mock-serp .mock-head { background: #fbf9f1; }
-      .mock-serp .mock-head .logo { background: #0f7a5c; }
-      .mock-serp .searchbar {
-        margin: 16px 24px;
-        display: flex; align-items: center; gap: 10px;
-        padding: 12px 18px;
-        border: 1px solid var(--hairline);
-        border-radius: 999px;
-        background: #fff;
-        font-size: 14px;
-      }
-      .mock-serp .searchbar .q { font-weight: 600; color: var(--ink-soft); }
-      .mock-serp .searchbar .ico { color: var(--muted); }
-      .mock-serp .results { display: grid; gap: 22px; padding: 6px 24px 24px; }
-      .mock-serp .results .result .url-line { color: var(--muted); font-size: 12px; font-family: var(--mono); margin-bottom: 4px; }
-      .mock-serp .results .result h3 { margin: 0 0 4px; font-size: 18px; font-weight: 500; color: #1a4b89; }
-      .mock-serp .results .result p { margin: 0; color: var(--ink-soft); font-size: 13.5px; line-height: 1.5; max-width: 64ch; }
-
-      /* Stage overlays */
-
-      .agent-strip {
-        position: absolute;
-        z-index: 5;
-        left: 18px; top: 56px;
-        max-width: calc(100% - 36px);
-        display: inline-flex;
-        align-items: center;
-        gap: 9px;
-        padding: 7px 13px;
-        border: 1px solid var(--hairline-strong);
-        border-radius: 999px;
-        background: rgba(255, 255, 255, 0.92);
-        backdrop-filter: blur(18px);
-        color: var(--ink-soft);
-        font-size: 12.5px;
-        line-height: 1.3;
-        box-shadow: 0 10px 26px rgba(13, 12, 8, 0.08);
-        overflow: hidden;
-      }
-
-      .agent-strip .who {
-        font-weight: 800;
-        font-size: 10.5px;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        color: var(--accent-strong);
-      }
-
-      .room {
-        position: absolute;
-        z-index: 6;
-        right: 18px;
-        bottom: 96px;
-        width: min(360px, calc(100% - 36px));
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-        align-items: flex-end;
-        pointer-events: none;
-      }
-
-      .bubble {
-        max-width: 100%;
-        padding: 9px 13px;
-        border: 1px solid var(--hairline);
-        border-radius: 16px 16px 4px 16px;
-        background: rgba(255, 255, 255, 0.94);
-        backdrop-filter: blur(14px);
-        box-shadow: 0 14px 30px rgba(13, 12, 8, 0.12);
-        color: var(--ink-soft);
-        font-size: 13px;
-        line-height: 1.4;
-        animation: bubbleIn 520ms cubic-bezier(0.18, 0.9, 0.2, 1) both;
-      }
-
-      .bubble.gone { animation: bubbleOut 600ms ease both; }
-
-      .bubble .who {
-        display: block;
-        margin-bottom: 3px;
-        color: var(--muted-strong);
-        font-size: 10px;
-        font-weight: 800;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-      }
-
-      .bubble.agent {
-        border-radius: 16px 16px 16px 4px;
-        align-self: flex-start;
-        background: rgba(239, 251, 245, 0.94);
-        border-color: rgba(15, 122, 92, 0.22);
-      }
-      .bubble.agent .who { color: var(--accent-strong); }
-
-      .composer {
-        position: absolute;
-        z-index: 7;
-        left: 18px; right: 18px;
-        bottom: 16px;
-        display: grid;
-        grid-template-columns: 1fr auto;
-        gap: 10px;
-        align-items: center;
-        padding: 10px;
-        border: 1px solid var(--hairline-strong);
-        border-radius: 18px;
-        background: rgba(255, 255, 255, 0.96);
-        backdrop-filter: blur(18px);
-        box-shadow: 0 22px 50px rgba(13, 12, 8, 0.14);
-      }
-
-      .composer .field {
-        height: 38px;
-        padding: 0 14px;
-        border: 0;
-        outline: 0;
-        background: transparent;
-        font: 500 14px var(--sans);
-        color: var(--ink);
-        width: 100%;
-      }
-
-      .composer .field::placeholder { color: #8c8779; }
-
-      .composer button {
-        height: 38px;
-        padding: 0 16px;
-        border: 0;
-        border-radius: 12px;
-        background: var(--ink);
-        color: #fbfaf3;
-        font-size: 13px;
-        font-weight: 700;
-        letter-spacing: 0.01em;
-        transition: background 160ms, transform 160ms;
-      }
-      .composer button:hover { background: var(--accent-strong); transform: translateY(-1px); }
-
-      .composer .hint {
-        position: absolute;
-        right: 14px; bottom: -22px;
-        font-size: 11px;
-        color: var(--muted);
-        font-family: var(--mono);
-      }
-
-      /* Footer scroll cue (hero) */
-      .scrollcue {
-        display: block;
-        margin: 22px auto 0;
-        text-align: center;
-        color: var(--muted-strong);
-        font-size: 11.5px;
-        letter-spacing: 0.16em;
-        text-transform: uppercase;
-        font-weight: 700;
-      }
-
-      .scrollcue .down {
-        display: block;
-        margin: 8px auto 0;
-        width: 1px; height: 32px;
-        background: linear-gradient(to bottom, var(--muted), transparent);
-      }
-
-      /* =========================== ROOM GRID ========================== */
-
-      .roomgrid {
-        background: var(--ink);
-        color: #f4f1e7;
-        padding: clamp(64px, 9vh, 120px) 28px;
-      }
-
-      .roomgrid .top {
-        max-width: 1180px;
-        margin: 0 auto 36px;
-        display: grid;
-        grid-template-columns: 1fr auto;
-        align-items: end;
-        gap: 18px;
-      }
-
-      .roomgrid .top h2 {
-        margin: 0;
-        font-family: var(--serif);
-        font-weight: 500;
-        font-size: clamp(28px, 4.2vw, 48px);
-        line-height: 1.06;
-        letter-spacing: -0.012em;
-        color: #fbfaf3;
-      }
-
-      .roomgrid .top .meta {
-        font-family: var(--mono);
-        font-size: 12.5px;
-        color: rgba(244, 241, 231, 0.6);
-        text-align: right;
-        line-height: 1.55;
-      }
-
-      .roomgrid .grid {
-        max-width: 1180px;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 14px;
-      }
-
-      .tab {
-        border-radius: 14px;
-        overflow: hidden;
-        background: #1a1813;
-        border: 1px solid rgba(244, 241, 231, 0.08);
-        box-shadow: 0 30px 60px rgba(0,0,0,0.4);
-      }
-
-      .tab .tab-head {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        padding: 9px 12px;
-        background: #211e17;
-        border-bottom: 1px solid rgba(244, 241, 231, 0.06);
-        font-family: var(--mono);
-        font-size: 11px;
-        color: rgba(244, 241, 231, 0.6);
-      }
-
-      .tab .tab-head .dot {
-        width: 7px; height: 7px;
-        border-radius: 999px;
-        background: var(--accent);
-        flex: 0 0 auto;
-      }
-
-      .tab .tab-head .u {
-        flex: 1;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-      }
-
-      .tab .tab-view {
-        position: relative;
-        height: 220px;
-        background: #f4f1e7;
-        overflow: hidden;
-      }
-
-      .tab .tab-view .miniscene {
-        position: absolute;
-        inset: 0;
-        opacity: 0;
-        transform: translateY(10px);
-        transition: opacity 500ms ease, transform 500ms ease;
-      }
-      .tab .tab-view .miniscene.on { opacity: 1; transform: none; }
-
-      .miniscene-content {
-        position: absolute;
-        inset: 0;
-        padding: 14px;
-        font-size: 11.5px;
-        line-height: 1.4;
-        color: var(--ink-soft);
-        background: #fbfaf3;
-      }
-
-      .miniscene-content h4 {
-        margin: 0 0 6px;
-        font-family: var(--serif);
-        font-size: 16px;
-        font-weight: 500;
-        line-height: 1.15;
-        color: var(--ink);
-      }
-
-      .miniscene-content .meta {
-        color: var(--muted);
-        font-size: 10.5px;
-        font-family: var(--mono);
-        margin-bottom: 10px;
-      }
-
-      .miniscene-content .line {
-        height: 8px;
-        border-radius: 3px;
-        background: #e9e5d6;
-        margin-bottom: 6px;
-      }
-      .miniscene-content .line.s { width: 60%; }
-      .miniscene-content .line.m { width: 80%; }
-
-      .tab .tab-foot {
-        display: flex;
-        justify-content: space-between;
-        gap: 10px;
-        padding: 10px 12px;
-        background: #1a1813;
-        border-top: 1px solid rgba(244, 241, 231, 0.06);
-        font-size: 11.5px;
-        color: rgba(244, 241, 231, 0.74);
-      }
-      .tab .tab-foot .doing { color: #fbfaf3; font-weight: 600; }
-      .tab .tab-foot .count { font-family: var(--mono); color: rgba(244, 241, 231, 0.5); }
-
-      @media (max-width: 980px) {
-        .roomgrid .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      }
-      @media (max-width: 520px) {
-        .roomgrid .grid { grid-template-columns: 1fr; }
-      }
-
-      /* =========================== WHAT/HOW =========================== */
-
-      .band { padding: clamp(72px, 12vh, 140px) 28px; }
-      .band.deep { background: var(--paper-deep); }
-
-      .what-grid {
-        margin-top: 48px;
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 16px;
-      }
-
-      .pillar {
-        position: relative;
-        padding: 26px 24px 24px;
-        border: 1px solid var(--hairline);
-        border-radius: 16px;
-        background: var(--paper-card);
-        overflow: hidden;
-      }
-
-      .pillar::before {
-        content: "";
-        position: absolute;
-        top: 0; left: 0; right: 0;
-        height: 3px;
-        background: var(--accent);
-      }
-
-      .pillar:nth-child(2)::before { background: var(--warm); }
-      .pillar:nth-child(3)::before { background: var(--ink); }
-
-      .pillar h3 {
-        margin: 0 0 8px;
-        font-family: var(--serif);
-        font-weight: 500;
-        font-size: 22px;
-        line-height: 1.2;
-        color: var(--ink);
-      }
-
-      .pillar p { margin: 0; color: var(--ink-soft); font-size: 15px; line-height: 1.55; }
-
-      @media (max-width: 720px) { .what-grid { grid-template-columns: 1fr; } }
-
-      /* =========================== COMPARE ============================ */
-
-      .compare {
-        margin: 48px 0 0;
-        padding: 0;
-        list-style: none;
-        display: grid;
-        gap: 0;
-      }
-
-      .compare li {
-        display: grid;
-        grid-template-columns: minmax(220px, 300px) 1fr;
-        gap: 28px;
-        padding: 22px 0;
-        border-top: 1px solid var(--hairline);
-        align-items: baseline;
-      }
-
-      .compare li:last-child {
-        border-bottom: 1px solid var(--hairline);
-      }
-
-      .compare li.us {
-        position: relative;
-        background: linear-gradient(90deg, var(--accent-tint), transparent 65%);
-        padding-left: 22px;
-        margin: 0 -22px;
-        border-top-color: rgba(15, 122, 92, 0.3);
-        border-bottom-color: rgba(15, 122, 92, 0.3);
-      }
-
-      .compare li.us::before {
-        content: "";
-        position: absolute;
-        left: 0; top: 0; bottom: 0;
-        width: 3px;
-        background: var(--accent);
-      }
-
-      .compare .who strong {
-        display: block;
-        font-family: var(--serif);
-        font-weight: 500;
-        font-size: 21px;
-        line-height: 1.2;
-        letter-spacing: -0.005em;
-        color: var(--ink);
-      }
-
-      .compare .who span {
-        display: block;
-        margin-top: 5px;
-        font-family: var(--mono);
-        font-size: 11px;
-        color: var(--muted);
-        letter-spacing: 0.06em;
-        text-transform: uppercase;
-      }
-
-      .compare p {
-        margin: 0;
-        color: var(--ink-soft);
-        font-size: 15.5px;
-        line-height: 1.55;
-      }
-
-      .compare li.us p { color: var(--ink); font-weight: 500; }
-
-      @media (max-width: 720px) {
-        .compare li { grid-template-columns: 1fr; gap: 8px; }
-        .compare li.us { padding-left: 18px; margin: 0 -18px; }
-      }
-
-      /* HOW steps */
-
-      .steps {
-        list-style: none;
-        margin: 48px 0 0;
-        padding: 0;
-        display: grid;
-        gap: 14px;
-      }
-
-      .step {
-        display: grid;
-        grid-template-columns: 64px 1fr auto;
-        gap: 22px;
-        padding: 26px 24px;
-        border: 1px solid var(--hairline);
-        border-radius: 16px;
-        background: var(--paper-card);
-        align-items: center;
-      }
-
-      .step .num {
-        font-family: var(--mono);
-        font-size: 12.5px;
-        font-weight: 700;
-        color: var(--muted);
-        letter-spacing: 0.04em;
-      }
-
-      .step h4 {
-        margin: 0 0 4px;
-        font-family: var(--serif);
-        font-weight: 500;
-        font-size: 22px;
-        letter-spacing: -0.005em;
-        color: var(--ink);
-      }
-
-      .step p { margin: 0; color: var(--ink-soft); font-size: 15px; line-height: 1.55; max-width: 56ch; }
-
-      .step .diagram {
-        width: 200px;
-        height: 80px;
-        border-radius: 10px;
-        background: #f3efe2;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .step .diagram .pageA, .step .diagram .pageB {
-        position: absolute;
-        top: 12px; bottom: 12px;
-        width: 70px;
-        border-radius: 4px;
-        background: #fff;
-        border: 1px solid var(--hairline);
-      }
-      .step .diagram .pageA { left: 14px; }
-      .step .diagram .pageB { right: 14px; }
-      .step .diagram .pageA::after, .step .diagram .pageB::after {
-        content: "";
-        position: absolute;
-        left: 8px; right: 8px; top: 10px;
-        height: 4px;
-        background: #e5e1d0;
-        border-radius: 2px;
-        box-shadow: 0 8px 0 0 #e9e5d6, 0 16px 0 0 #e5e1d0;
-      }
-
-      .step .diagram .arrow {
-        position: absolute;
-        left: 50%; top: 50%;
-        transform: translate(-50%, -50%);
-        width: 36px; height: 2px;
-        background: var(--accent);
-        animation: arrowSlide 2.4s ease-in-out infinite;
-      }
-      .step .diagram .arrow::after {
-        content: "";
-        position: absolute;
-        right: -2px; top: -4px;
-        width: 0; height: 0;
-        border-left: 8px solid var(--accent);
-        border-top: 5px solid transparent;
-        border-bottom: 5px solid transparent;
-      }
-
-      .step:nth-child(2) .diagram { background: #f5efe2; }
-      .step:nth-child(2) .diagram .pageA { display: none; }
-      .step:nth-child(2) .diagram .pageB { left: 50%; transform: translateX(-50%); }
-      .step:nth-child(2) .diagram::before {
-        content: "";
-        position: absolute;
-        left: 18px; top: 20px;
-        width: 60px; height: 6px;
-        border-radius: 3px;
-        background: var(--warm);
-        box-shadow: 0 16px 0 0 rgba(194,90,42,0.45), 0 32px 0 0 rgba(194,90,42,0.22);
-        animation: shouts 2.4s ease-in-out infinite;
-      }
-
-      .step:nth-child(3) .diagram { background: #ebe7d7; }
-      .step:nth-child(3) .diagram::before {
-        content: "→";
-        position: absolute;
-        left: 50%; top: 50%;
-        transform: translate(-50%, -50%);
-        font-family: var(--mono);
-        font-size: 22px;
-        font-weight: 700;
-        color: var(--ink);
-        animation: bob 2s ease-in-out infinite;
-      }
-
-      @media (max-width: 720px) {
-        .step { grid-template-columns: 1fr; gap: 12px; }
-        .step .diagram { width: 100%; height: 64px; }
-      }
-
-      /* =========================== MARQUEE ============================ */
-
-      .marquee-band {
-        background: var(--ink);
-        color: #f4f1e7;
-        padding: 64px 0 80px;
-        overflow: hidden;
-      }
-
-      .marquee-head {
-        display: flex; justify-content: space-between; align-items: end;
-        max-width: 1180px;
-        margin: 0 auto 28px;
-        padding: 0 28px;
-      }
-
-      .marquee-head h2 {
-        margin: 0;
-        font-family: var(--serif);
-        font-weight: 500;
-        font-size: clamp(24px, 3.4vw, 36px);
-        line-height: 1.08;
-        color: #fbfaf3;
-      }
-
-      .marquee-head .meta { font-family: var(--mono); font-size: 12.5px; color: rgba(244,241,231,0.55); }
-
-      .marquee-row {
-        position: relative;
-        display: flex;
-        overflow: hidden;
-        mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
-      }
-
-      .marquee-track {
-        display: flex;
-        gap: 28px;
-        padding: 12px 0;
-        animation: scrollLeft 80s linear infinite;
-        white-space: nowrap;
-      }
-
-      .marquee-row.alt .marquee-track { animation-duration: 100s; animation-direction: reverse; }
-
-      .marquee-track span.chip {
-        display: inline-flex;
-        align-items: center;
-        gap: 9px;
-        padding: 9px 16px;
-        border-radius: 999px;
-        background: rgba(244, 241, 231, 0.06);
-        border: 1px solid rgba(244, 241, 231, 0.1);
-        color: #fbfaf3;
-        font-size: 14px;
-        font-weight: 500;
-      }
-      .marquee-track span.chip .role {
-        font-family: var(--mono);
-        font-size: 10.5px;
-        font-weight: 700;
-        color: rgba(244, 241, 231, 0.5);
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-      }
-      .marquee-track span.chip .role.op { color: rgba(108, 220, 178, 0.85); }
-
-      /* =========================== MANIFESTO ========================== */
-
-      .manifesto {
-        padding: clamp(80px, 13vh, 160px) 28px;
-        background:
-          radial-gradient(900px 500px at 100% 0%, rgba(15, 122, 92, 0.08), transparent 60%),
-          var(--paper);
-      }
-
-      .manifesto .frame {
-        max-width: 760px;
-        margin: 0 auto;
-        position: relative;
-      }
-
-      .manifesto .frame::before {
-        content: "“";
-        position: absolute;
-        top: -64px; left: -18px;
-        font-family: var(--serif);
-        font-size: 200px;
-        line-height: 1;
-        color: var(--accent);
-        opacity: 0.18;
-      }
-
-      .manifesto h2 {
-        margin: 0 0 26px;
-        font-family: var(--serif);
-        font-weight: 500;
-        font-size: clamp(28px, 4.2vw, 46px);
-        line-height: 1.08;
-        letter-spacing: -0.012em;
-        color: var(--ink);
-      }
-
-      .manifesto p {
-        margin: 0 0 18px;
-        font-family: var(--serif);
-        font-weight: 400;
-        font-size: clamp(18px, 1.7vw, 22px);
-        line-height: 1.55;
-        color: var(--ink-2);
-      }
-
-      .manifesto p:last-of-type { margin-bottom: 0; }
-
-      .manifesto .sig {
-        margin-top: 36px;
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        font-family: var(--mono);
-        font-size: 12.5px;
-        color: var(--muted-strong);
-      }
-
-      /* ============================== FAQ ============================= */
-
-      .faq {
-        padding: clamp(72px, 12vh, 140px) 28px;
-        background: var(--paper-deep);
-      }
-
-      .faq-list { margin-top: 36px; }
-
-      details.q { border-top: 1px solid var(--hairline-strong); }
-      details.q:last-of-type { border-bottom: 1px solid var(--hairline-strong); }
-
-      details.q summary {
-        position: relative;
-        padding: 26px 56px 26px 0;
-        cursor: pointer;
-        font-family: var(--serif);
-        font-weight: 500;
-        font-size: 22px;
-        line-height: 1.3;
-        color: var(--ink);
-        list-style: none;
-      }
-
-      details.q summary::-webkit-details-marker { display: none; }
-
-      details.q summary::after {
-        content: "+";
-        position: absolute;
-        right: 6px;
-        top: 26px;
-        font-family: var(--sans);
-        font-size: 22px;
-        font-weight: 300;
-        color: var(--muted);
-        transition: transform 220ms ease;
-      }
-
-      details.q[open] summary::after { content: "−"; }
-
-      details.q .a {
-        padding: 0 0 26px;
-        color: var(--ink-soft);
-        font-size: 16px;
-        line-height: 1.6;
-        max-width: 64ch;
-      }
-
-      /* ============================== CTA ============================= */
-
-      .cta {
-        position: relative;
-        padding: clamp(96px, 14vh, 180px) 28px;
-        text-align: center;
-        background:
-          radial-gradient(800px 460px at 50% 50%, rgba(15, 122, 92, 0.16), transparent 60%),
-          var(--paper);
-        overflow: hidden;
-      }
-
-      .cta::before, .cta::after {
-        content: "";
-        position: absolute;
-        top: 50%;
-        width: 1px;
-        height: 200px;
-        background: linear-gradient(to bottom, transparent, var(--hairline), transparent);
-      }
-      .cta::before { left: 12%; transform: translateY(-50%); }
-      .cta::after { right: 12%; transform: translateY(-50%); }
-
-      .cta h2 {
-        margin: 0 0 22px;
-        font-family: var(--serif);
-        font-weight: 500;
-        font-size: clamp(36px, 6vw, 76px);
-        line-height: 1.02;
-        letter-spacing: -0.018em;
-        color: var(--ink);
-      }
-
-      .cta p { margin: 0 auto 36px; max-width: 460px; color: var(--ink-soft); font-size: 16px; line-height: 1.55; }
-
-      .cta .btn-row { display: inline-flex; align-items: center; gap: 14px; flex-wrap: wrap; justify-content: center; }
-
-      .btn {
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        padding: 16px 26px;
-        border-radius: 14px;
-        font-weight: 700;
-        font-size: 15px;
-        transition: transform 160ms ease, background 160ms ease, color 160ms ease;
-      }
-
-      .btn-primary {
-        background: var(--ink);
-        color: #fbfaf3;
-      }
-      .btn-primary:hover { background: var(--accent-strong); color: #fbfaf3; transform: translateY(-1px); }
-
-      .btn-ghost {
-        color: var(--ink);
-        border: 1px solid var(--hairline-strong);
-      }
-      .btn-ghost:hover { background: rgba(13, 12, 8, 0.06); color: var(--ink); }
-
-      .btn .arrow { transition: transform 220ms ease; }
-      .btn:hover .arrow { transform: translateX(3px); }
-
-      /* ============================ FOOTER ============================ */
-
-      footer.foot {
-        background: var(--ink);
-        color: rgba(244, 241, 231, 0.7);
-        padding: 64px 28px 48px;
-      }
-
-      footer.foot .row {
-        max-width: 1180px;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: 2fr 1fr 1fr 1fr;
-        gap: 28px;
-        align-items: start;
-      }
-
-      footer.foot h5 {
-        margin: 0 0 10px;
-        font-size: 11px;
-        font-weight: 800;
-        letter-spacing: 0.16em;
-        text-transform: uppercase;
-        color: rgba(244, 241, 231, 0.5);
-      }
-
-      footer.foot a { color: rgba(244, 241, 231, 0.85); font-size: 14px; }
-      footer.foot a:hover { color: #fbfaf3; }
-
-      footer.foot ul { margin: 0; padding: 0; list-style: none; }
-      footer.foot ul li { padding: 4px 0; }
-
-      footer.foot .signoff {
-        max-width: 1180px;
-        margin: 48px auto 0;
-        padding-top: 28px;
-        border-top: 1px solid rgba(244, 241, 231, 0.12);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 14px;
-        font-family: var(--mono);
-        font-size: 11.5px;
-        color: rgba(244, 241, 231, 0.55);
-      }
-
-      footer.foot .signoff .brand-foot {
-        color: #fbfaf3;
-        font-family: var(--sans);
-        font-size: 14px;
-        font-weight: 700;
-        display: inline-flex;
-        align-items: center;
-        gap: 9px;
-      }
-      footer.foot .signoff .brand-foot .mark {
-        width: 9px; height: 9px;
-        border-radius: 999px; background: var(--accent);
-        box-shadow: 0 0 0 5px var(--accent-tint);
-      }
-
-      @media (max-width: 720px) {
-        footer.foot .row { grid-template-columns: 1fr 1fr; }
-        footer.foot .signoff { flex-direction: column; align-items: flex-start; }
-      }
-
-      /* =========================== KEYFRAMES ========================== */
-
-      @keyframes pulse {
-        0%, 100% { box-shadow: 0 0 0 0 rgba(15, 122, 92, 0.25); }
-        50%      { box-shadow: 0 0 0 8px rgba(15, 122, 92, 0); }
-      }
-
-      @keyframes blink {
-        50% { opacity: 0; }
-      }
-
-      @keyframes shimmer {
-        0%   { background-position: 200% 0; }
-        100% { background-position: -200% 0; }
-      }
-
-      @keyframes bubbleIn {
-        from { opacity: 0; transform: translateY(18px) scale(0.96); }
-        to   { opacity: 1; transform: translateY(0) scale(1); }
-      }
-
-      @keyframes bubbleOut {
-        to { opacity: 0; transform: translateY(-22px) scale(0.98); filter: blur(2px); }
-      }
-
-      @keyframes scrollLeft {
-        from { transform: translateX(0); }
-        to   { transform: translateX(-50%); }
-      }
-
-      @keyframes arrowSlide {
-        0%   { transform: translate(-90%, -50%); opacity: 0.2; }
-        50%  { transform: translate(-50%, -50%); opacity: 1; }
-        100% { transform: translate(-10%, -50%); opacity: 0; }
-      }
-
-      @keyframes shouts {
-        0%, 100% { opacity: 0.4; }
-        50% { opacity: 1; }
-      }
-
-      @keyframes bob {
-        0%, 100% { transform: translate(-50%, -50%); }
-        50% { transform: translate(-30%, -50%); }
-      }
-
-      @media (prefers-reduced-motion: reduce) {
-        *, *::before, *::after {
-          animation-duration: 1ms !important;
-          animation-iteration-count: 1 !important;
-          transition-duration: 1ms !important;
-        }
-      }
-
-      /* =========================== HERO RESPONSIVE ==================== */
-
-      @media (max-width: 980px) {
-        .hero {
-          min-height: auto;
-          padding: 92px 16px 56px;
-          align-items: stretch;
-        }
-        .hero-grid {
-          grid-template-columns: 1fr;
-          gap: 32px;
-        }
-        .stage { height: 60vh; min-height: 440px; }
-        .agent-strip { top: 52px; }
-        .room { width: calc(100% - 36px); bottom: 100px; }
-      }
-
-      @media (max-width: 520px) {
-        .hero { padding: 84px 14px 48px; }
-        .stage { border-radius: 14px; height: 58vh; min-height: 400px; }
-        .hero-left h1 { font-size: clamp(34px, 8vw, 44px); }
-      }
-    </style>
   </head>
 
-  <body>
+  <body class="bg-ink-900 text-white font-sans antialiased">
 
     <!-- ============================ NAV ============================ -->
-    <header class="topnav">
-      <a href="#" class="brand"><span class="mark"></span> Cloud Browser Live</a>
-      <nav>
-        <a href="#what">What</a>
-        <a href="#how">How</a>
-        <a href="#why">Why</a>
-        <a href="#faq">FAQ</a>
-      </nav>
-      <span class="pill"><span class="pulse"></span> <span id="watchPill">1,283 watching</span></span>
+    <header class="fixed top-0 inset-x-0 z-50 border-b border-white/5 bg-ink-900/70 backdrop-blur-xl">
+      <div class="max-w-[1280px] mx-auto px-6 h-14 flex items-center justify-between gap-6">
+        <a href="/" class="flex items-center gap-2.5 font-bold text-[15px] tracking-tight">
+          <span class="inline-block w-7 h-7 rounded-md bg-accent grid place-items-center text-black font-extrabold text-[13px]">≡</span>
+          Computer Use <span class="text-white/45 font-medium">Cloud</span>
+        </a>
+        <nav class="hidden md:flex items-center gap-7 text-[13.5px] font-medium text-white/70">
+          <a href="#how" class="hover:text-white">How it works</a>
+          <a href="#compare" class="hover:text-white">vs Browserbase</a>
+          <a href="#pricing" class="hover:text-white">Pricing</a>
+          <a href="#docs" class="hover:text-white">Docs</a>
+          <a href="https://github.com/computeruse" class="hover:text-white">GitHub</a>
+        </nav>
+        <div class="flex items-center gap-2.5">
+          <a href="#signin" class="hidden sm:inline-flex text-[13px] font-semibold text-white/70 hover:text-white px-3 py-1.5">Sign in</a>
+          <a href="#signup" class="inline-flex items-center gap-1.5 bg-accent text-black hover:bg-emerald-400 transition rounded-md px-3.5 py-1.5 text-[13px] font-semibold">
+            Start free
+            <svg viewBox="0 0 16 16" class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 4l4 4-4 4"/></svg>
+          </a>
+        </div>
+      </div>
     </header>
 
     <!-- =========================== HERO ============================ -->
-    <section class="hero">
-      <div class="hero-grid">
+    <section class="relative pt-28 pb-20 px-6 overflow-hidden">
+      <!-- ambient backdrop -->
+      <div class="absolute inset-0 -z-10 opacity-[0.18]" style="background-image: radial-gradient(600px 400px at 20% 0%, #10B981, transparent 65%), radial-gradient(700px 500px at 90% 30%, #FB923C, transparent 60%);"></div>
+      <div class="absolute inset-0 -z-10" style="background-image: linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px); background-size: 48px 48px; mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, #000 30%, transparent 75%);"></div>
 
-        <div class="hero-left">
-          <span class="hero-eyebrow"><span class="dot"></span> Public agentic browser</span>
-          <h1>One agentic browser.<br />The internet <em>watching.</em></h1>
-          <p class="sub">
-            Watch one AI agent browse the open web. Anonymous nudges from the whole room.
+      <div class="max-w-[1280px] mx-auto grid lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] gap-10 lg:gap-16 items-center">
+
+        <!-- LEFT: copy -->
+        <div class="animate-fadeUp">
+          <span class="inline-flex items-center gap-2 text-[11.5px] font-bold uppercase tracking-[0.16em] text-white/60 mb-6">
+            <span class="w-1.5 h-1.5 rounded-full bg-accent animate-pulse"></span>
+            The Computer Use cloud
+          </span>
+          <h1 class="font-sans font-bold text-[clamp(40px,5.6vw,76px)] leading-[0.97] tracking-[-0.025em] text-white">
+            Run Computer&nbsp;Use<br />in the cloud.
+          </h1>
+          <p class="mt-6 text-[clamp(16px,1.3vw,18px)] leading-[1.55] text-white/65 max-w-[520px]">
+            Pre-configured sandboxes for Claude Computer Use, OpenAI Operator, and Gemini agents.
+            One API, three models. <span class="text-white">60% cheaper than Browserbase</span>.
           </p>
-          <div class="hero-cta">
-            <a href="#what" class="btn btn-primary">Step into the room <span class="arrow">→</span></a>
-            <a href="#why" class="btn-link">Read the manifesto</a>
+
+          <div class="mt-8 flex items-center gap-4 flex-wrap">
+            <a href="#signup" class="inline-flex items-center gap-2 bg-white text-black hover:bg-white/90 transition rounded-lg px-5 py-3 text-[14.5px] font-semibold">
+              Start free — 10 hours/month
+              <svg viewBox="0 0 16 16" class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 4l4 4-4 4"/></svg>
+            </a>
+            <a href="#compare" class="inline-flex items-center gap-2 text-white/70 hover:text-white text-[14px] font-semibold border-b border-white/15 hover:border-white/40 pb-px">
+              See pricing vs Browserbase
+            </a>
+          </div>
+
+          <!-- trust line -->
+          <div class="mt-10 flex items-center gap-5 text-[12px] text-white/40 font-mono">
+            <span class="flex items-center gap-1.5"><span class="w-1 h-1 rounded-full bg-accent"></span> 2s cold start</span>
+            <span class="flex items-center gap-1.5"><span class="w-1 h-1 rounded-full bg-accent"></span> per-second billing</span>
+            <span class="flex items-center gap-1.5"><span class="w-1 h-1 rounded-full bg-accent"></span> Apache-2.0 runtime</span>
           </div>
         </div>
 
-        <div class="hero-right">
-        <div class="stage" aria-label="Live browser session">
-        <div class="stage-bar">
-          <div class="dots"><span></span><span></span><span></span></div>
-          <div class="url-bar">
-            <span class="lock" aria-hidden="true">
-              <svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.6">
-                <rect x="3" y="7" width="10" height="7" rx="1.4"/>
-                <path d="M5 7V5a3 3 0 0 1 6 0v2"/>
-              </svg>
-            </span>
-            <span class="url" id="addressUrl">cloudbrowser.live/session/14d</span>
-            <span class="caret"></span>
-          </div>
-          <span class="intent-tag"><span class="ping"></span> agent · move <span id="moveBadge">#9,184</span></span>
-        </div>
+        <!-- RIGHT: code card -->
+        <div class="relative animate-fadeUp" style="animation-delay: 120ms">
+          <div class="rounded-2xl border border-white/10 bg-ink-800/80 backdrop-blur-xl shadow-[0_30px_80px_rgba(0,0,0,0.5)] overflow-hidden">
+            <!-- tabs -->
+            <div class="flex items-center justify-between gap-2 px-3 pt-3">
+              <div class="flex items-center gap-1.5">
+                <span class="w-2.5 h-2.5 rounded-full bg-white/15"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-white/15"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-white/15"></span>
+              </div>
+              <div role="tablist" class="flex items-center gap-1 bg-ink-900/80 rounded-md p-1 text-[12px]" id="modelTabs">
+                <button data-tab="claude" class="model-tab px-2.5 py-1 rounded font-semibold text-white bg-white/10">Claude</button>
+                <button data-tab="openai" class="model-tab px-2.5 py-1 rounded font-medium text-white/55 hover:text-white/85">OpenAI</button>
+                <button data-tab="gemini" class="model-tab px-2.5 py-1 rounded font-medium text-white/55 hover:text-white/85">Gemini</button>
+              </div>
+              <span class="font-mono text-[10.5px] text-white/35">demo.py</span>
+            </div>
 
-        <div class="stage-canvas" id="stageCanvas">
+            <pre class="font-mono text-[13px] leading-[1.65] p-5 pt-4 text-white/90 overflow-x-auto" id="codeBlock"><span class="text-white/35"># Claude Computer Use, on the cloud</span>
+<span class="text-warm">from</span> computeruse <span class="text-warm">import</span> Sandbox
 
-          <!-- SCENE A: GitHub-ish -->
-          <div class="scene active" data-scene="gh">
-            <div class="mock mock-gh">
-              <div class="mock-head">
-                <span class="logo">G</span>
-                <span>github.com</span>
-                <nav><span>Pull requests</span><span>Issues</span><span>Marketplace</span><span>Explore</span></nav>
-              </div>
-              <div class="repo-top">
-                <div class="crumb">
-                  <b>openai</b> <span>/</span> <b>whisper</b>
-                </div>
-                <span class="badge">★ 71.2k</span>
-              </div>
-              <div class="filebar">
-                <span class="branch">⎇ main</span>
-                <span style="margin-left:14px">last commit · 2h ago</span>
-                <span class="pin">whisper · MIT · 56 contributors</span>
-              </div>
-              <div class="filelist">
-                <div class="row"><span class="ico">📁</span><span>Name</span><span class="msg">Last commit message</span><span class="age">Age</span></div>
-                <div class="row"><span class="ico">📁</span><span>whisper</span><span class="msg">fix: tokenizer edge case for multilingual</span><span class="age">2h</span></div>
-                <div class="row"><span class="ico">📁</span><span>tests</span><span class="msg">add transcription benchmark for ar/ja</span><span class="age">1d</span></div>
-                <div class="row"><span class="ico">📄</span><span>README.md</span><span class="msg">docs: clarify GPU requirements</span><span class="age">3d</span></div>
-                <div class="row"><span class="ico">📄</span><span>setup.py</span><span class="msg">bump version to 20260601</span><span class="age">5d</span></div>
-                <div class="row"><span class="ico">📄</span><span>LICENSE</span><span class="msg">initial commit</span><span class="age">3y</span></div>
-              </div>
+<span class="text-warm">with</span> Sandbox.claude(model=<span class="text-accent">"claude-sonnet-4-6"</span>) <span class="text-warm">as</span> sb:
+    result = sb.run(
+        <span class="text-accent">"Find the cheapest direct flight"</span>
+        <span class="text-accent">" to Lisbon next Tuesday."</span>
+    )
+    <span class="text-warm">print</span>(result.transcript)<span class="inline-block w-2 h-4 bg-accent animate-caret align-[-2px] ml-px"></span></pre>
+
+            <!-- footer strip -->
+            <div class="flex items-center justify-between gap-3 px-5 py-3 border-t border-white/5 bg-ink-900/50">
+              <span class="font-mono text-[11px] text-white/50">$ pip install computeruse</span>
+              <span class="font-mono text-[11px] text-accent">cold start: 1.8s · $0.04 ran</span>
             </div>
           </div>
 
-          <!-- SCENE B: Wikipedia-ish -->
-          <div class="scene" data-scene="wiki">
-            <div class="mock mock-wiki">
-              <div class="mock-head">
-                <span class="logo">W</span>
-                <span>en.wikipedia.org</span>
-                <nav><span>Article</span><span>Talk</span><span>Read</span><span>Edit</span><span>View history</span></nav>
-              </div>
-              <div class="mock-body">
-                <h2 class="mock-title">Heliopolis (ancient Egypt)</h2>
-                <p class="mock-p">Heliopolis was one of the oldest cities of ancient Egypt, the capital of the 13th Lower Egyptian nome. It was situated near the modern Cairo suburbs of Ain Shams and El-Matareya. Heliopolis was a major religious centre dedicated to the sun god Ra-Atum, whose cult dominated the city throughout antiquity.</p>
-                <div class="toc">
-                  <span class="lbl">Contents</span>
-                  <ol>
-                    <li>Name and etymology</li>
-                    <li>Religion and the cult of Ra</li>
-                    <li>The Mnevis bull</li>
-                    <li>Decline under the Ptolemies</li>
-                    <li>Modern archaeology</li>
-                  </ol>
-                </div>
-                <p class="mock-p">In Egyptian, the city was known as <em>Iunu</em>, "the pillars". The name <em>Heliopolis</em> was given by the Greeks, who associated the local god with their own Helios, the personification of the sun.</p>
-              </div>
-              <div class="infobox">
-                <div class="head">Heliopolis</div>
-                <dl>
-                  <dt>Egyptian</dt><dd>Iunu</dd>
-                  <dt>Founded</dt><dd>c. 3100 BCE</dd>
-                  <dt>Region</dt><dd>Lower Egypt</dd>
-                  <dt>Deity</dt><dd>Ra-Atum</dd>
-                  <dt>Coordinates</dt><dd>30.13°N 31.31°E</dd>
-                </dl>
-              </div>
-            </div>
+          <!-- floating quote/proof badge -->
+          <div class="absolute -bottom-5 -right-3 hidden md:flex items-center gap-2 bg-ink-700 border border-white/10 rounded-full px-3 py-1.5 text-[11.5px] font-mono text-white/70 shadow-xl">
+            <span class="text-warm">↘</span> 45× cheaper per task than Browserbase
           </div>
-
-          <!-- SCENE C: news -->
-          <div class="scene" data-scene="news">
-            <div class="mock mock-news">
-              <div class="mock-head">
-                <span class="logo">F</span>
-                <span>foreignpress.org</span>
-                <nav><span>World</span><span>Climate</span><span>Tech</span><span>Opinion</span></nav>
-              </div>
-              <div class="mock-body">
-                <span class="kicker">Long read · 18 min</span>
-                <h2 class="mock-title">The quiet rise of agentic web traffic, and what it does to the open internet</h2>
-                <span class="byline">By M. Okafor · May 24, 2026</span>
-                <p class="lead">In April 2026, browser-based AI agents accounted for roughly 71 percent of observed agentic traffic. What does it mean when most of the visitors arriving at a webpage are not people?</p>
-                <div class="image" aria-hidden="true"></div>
-                <p class="mock-p" style="margin-top:6px">Across the top ten agentic systems, four now route every page request through a managed cloud browser. The shift is invisible to users but reshapes how the web is measured, monetised, and seen.</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- SCENE D: SERP -->
-          <div class="scene" data-scene="serp">
-            <div class="mock mock-serp">
-              <div class="mock-head">
-                <span class="logo">k</span>
-                <span>kagi.com</span>
-                <nav><span>Web</span><span>Images</span><span>News</span><span>Maps</span></nav>
-              </div>
-              <div class="searchbar">
-                <span class="ico">🔎</span>
-                <span class="q">are there any 1990s geocities mirrors still online</span>
-              </div>
-              <div class="results">
-                <div class="result">
-                  <div class="url-line">oocities.org › heartland › 7820</div>
-                  <h3>OoCities: the Geocities mirror project (since 2009)</h3>
-                  <p>A volunteer-run effort that scraped 12 million Geocities pages before the 2009 shutdown. Browsable by original neighbourhood (Athens, Heartland, Tokyo, SiliconValley).</p>
-                </div>
-                <div class="result">
-                  <div class="url-line">reocities.com</div>
-                  <h3>ReoCities — Geocities, re-hosted</h3>
-                  <p>Another long-running mirror, intermittently online. Lower fidelity than OoCities, but retains some files that only existed on one user's account.</p>
-                </div>
-                <div class="result">
-                  <div class="url-line">archive.org › wayback › geocities</div>
-                  <h3>Wayback Machine: Geocities collection</h3>
-                  <p>The Internet Archive's Geocities collection — searchable by URL, includes the Archive Team's torrent of the full crawl (one terabyte).</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
         </div>
-
-        <div class="agent-strip">
-          <span class="who">agent</span>
-          <span id="agentLine">Picking up where it left off…</span>
-        </div>
-
-        <div class="room" id="roomLayer" aria-live="polite"></div>
-
-        <div class="composer">
-          <input class="field" id="composer" placeholder="Suggest the next move…" />
-          <button id="sendFake" type="button">Send</button>
-          <span class="hint">⌘ + Enter · anonymous</span>
-        </div>
-      </div>
-        </div>
-
       </div>
     </section>
 
-    <!-- ========================= ROOM GRID ========================= -->
-    <section class="roomgrid" id="rooms">
-      <div class="top">
-        <div>
-          <span class="eyebrow" style="color: rgba(244, 241, 231, 0.55)">Right now, in the room</span>
-          <h2>The agent has four tabs open.<br />Here is what each one is doing.</h2>
-        </div>
-        <div class="meta">
-          updated continuously<br />
-          last sync · <span id="syncTs">just now</span>
-        </div>
-      </div>
-
-      <div class="grid" id="tabsGrid">
-        <article class="tab" data-tab="0">
-          <div class="tab-head"><span class="dot"></span><span class="u">github.com/openai/whisper</span></div>
-          <div class="tab-view">
-            <div class="miniscene on">
-              <div class="miniscene-content">
-                <h4>openai / whisper</h4>
-                <div class="meta">main · last commit 2h ago</div>
-                <div class="line m"></div><div class="line s"></div><div class="line m"></div><div class="line s"></div><div class="line m"></div>
-              </div>
-            </div>
-          </div>
-          <div class="tab-foot"><span class="doing">Reading tokenizer.py</span><span class="count" data-count="0">427 nudges</span></div>
-        </article>
-
-        <article class="tab" data-tab="1">
-          <div class="tab-head"><span class="dot"></span><span class="u">en.wikipedia.org/wiki/Heliopolis</span></div>
-          <div class="tab-view">
-            <div class="miniscene on">
-              <div class="miniscene-content">
-                <h4>Heliopolis</h4>
-                <div class="meta">ancient Egypt · religion</div>
-                <div class="line m"></div><div class="line"></div><div class="line s"></div><div class="line m"></div>
-              </div>
-            </div>
-          </div>
-          <div class="tab-foot"><span class="doing">Following Ra-Atum link</span><span class="count" data-count="0">112 nudges</span></div>
-        </article>
-
-        <article class="tab" data-tab="2">
-          <div class="tab-head"><span class="dot"></span><span class="u">foreignpress.org/long/agentic-web</span></div>
-          <div class="tab-view">
-            <div class="miniscene on">
-              <div class="miniscene-content">
-                <h4>The quiet rise of agentic web traffic</h4>
-                <div class="meta">long read · 18 min</div>
-                <div class="line m"></div><div class="line s"></div><div class="line m"></div><div class="line"></div>
-              </div>
-            </div>
-          </div>
-          <div class="tab-foot"><span class="doing">Reading section 3</span><span class="count" data-count="0">208 nudges</span></div>
-        </article>
-
-        <article class="tab" data-tab="3">
-          <div class="tab-head"><span class="dot"></span><span class="u">kagi.com/search?q=geocities+mirror</span></div>
-          <div class="tab-view">
-            <div class="miniscene on">
-              <div class="miniscene-content">
-                <h4>are there any 1990s geocities mirrors still online</h4>
-                <div class="meta">search results · 12 hits</div>
-                <div class="line m"></div><div class="line"></div><div class="line s"></div><div class="line m"></div>
-              </div>
-            </div>
-          </div>
-          <div class="tab-foot"><span class="doing">Considering oocities.org</span><span class="count" data-count="0">340 nudges</span></div>
-        </article>
+    <!-- ========================= LOGOS ROW ========================== -->
+    <section class="px-6 py-10 border-y border-white/5 bg-ink-900">
+      <div class="max-w-[1180px] mx-auto flex flex-wrap items-center justify-center gap-x-10 gap-y-4 text-[12px] uppercase tracking-[0.14em] text-white/35 font-semibold">
+        <span class="text-white/55">Built for</span>
+        <span>Anthropic Claude</span>
+        <span>OpenAI Operator</span>
+        <span>Gemini Agents</span>
+        <span>Playwright</span>
+        <span>browser-use</span>
+        <span>Stagehand</span>
+        <span>LangChain</span>
       </div>
     </section>
 
-    <!-- ============================ WHAT =========================== -->
-    <section class="band" id="what">
-      <div class="wrap-tight">
-        <span class="eyebrow">What is a public agentic browser?</span>
-        <h2 class="display-md">One agentic browser, in the open, all the time.</h2>
-        <p class="lede" style="margin-top: 22px">
-          Cloud Browser Live is a <strong>public agentic browser</strong> — a live, shared web session
-          where one AI agent browses the internet in real time and anyone can watch or steer it with
-          anonymous suggestions. Think <em>Twitch Plays Pokémon</em>, but the player is an AI agent
-          and the game is the open web.
+    <!-- ====================== WHAT IS / DEFINITION ================== -->
+    <section class="px-6 py-24" id="docs">
+      <div class="max-w-[920px] mx-auto">
+        <span class="inline-block text-[12px] font-bold uppercase tracking-[0.16em] text-white/45 mb-4">What is Computer Use?</span>
+        <h2 class="font-sans font-bold text-[clamp(28px,3.8vw,44px)] leading-[1.05] tracking-[-0.018em] text-white">
+          The first AI capability that <em class="text-warm not-italic">actually uses the computer.</em>
+        </h2>
+        <p class="mt-6 text-[17px] leading-[1.6] text-white/70 max-w-[680px]">
+          Computer Use is a class of AI agent capability where a large language model controls a real
+          browser or desktop — clicking, typing, scrolling, reading screenshots — to complete tasks
+          end-to-end. Anthropic released the first widely-used Computer Use API in October 2024;
+          OpenAI shipped Operator in early 2025; Google added Gemini agent capabilities in 2026.
         </p>
-        <div class="what-grid">
-          <article class="pillar">
-            <h3>One shared window</h3>
-            <p>Every visitor is watching the same browser, in the same moment, on the same page. There is no per-user session — this is one room.</p>
-          </article>
-          <article class="pillar">
-            <h3>Open to anonymous nudges</h3>
-            <p>Anyone can suggest the next click, search, or scroll. The agent reads the room and picks what to act on. No signup, nothing to install.</p>
-          </article>
-          <article class="pillar">
-            <h3>Always live</h3>
-            <p>The session runs continuously. Drop in, leave, come back tomorrow — the browser is still moving, and the room is still talking.</p>
-          </article>
+        <p class="mt-4 text-[17px] leading-[1.6] text-white/70 max-w-[680px]">
+          <strong class="text-white">Computer Use Cloud</strong> runs all three on managed sandboxes
+          behind a single API, so you don't host browsers, you don't pay for idle time, and you can
+          swap providers with one line.
+        </p>
+      </div>
+    </section>
+
+    <!-- =================== ONE API THREE MODELS ===================== -->
+    <section class="px-6 py-24 bg-ink-800 border-y border-white/5" id="how">
+      <div class="max-w-[1180px] mx-auto">
+        <div class="grid lg:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] gap-12 items-start">
+          <div>
+            <span class="inline-block text-[12px] font-bold uppercase tracking-[0.16em] text-white/45 mb-4">One API, three models</span>
+            <h2 class="font-sans font-bold text-[clamp(28px,3.4vw,40px)] leading-[1.06] tracking-[-0.018em] text-white">
+              Swap Claude, OpenAI, and Gemini with one line.
+            </h2>
+            <p class="mt-5 text-[16px] leading-[1.6] text-white/65">
+              We wrap Anthropic's Computer Use Beta, OpenAI's <code class="font-mono text-[14px] text-white/85 bg-white/5 rounded px-1.5 py-0.5">computer-use-preview</code>, and Gemini's agent endpoint in a single surface. Same Sandbox object, same tools, same screenshot loop. Switch providers per task.
+            </p>
+            <ul class="mt-8 space-y-3 text-[14.5px] text-white/70">
+              <li class="flex gap-3"><span class="text-accent font-mono mt-px">▸</span>Bring your own API key, or use our pooled credits.</li>
+              <li class="flex gap-3"><span class="text-accent font-mono mt-px">▸</span>Built-in screenshot, DOM, and accessibility-tree capture.</li>
+              <li class="flex gap-3"><span class="text-accent font-mono mt-px">▸</span>Residential proxy and captcha solving on by default.</li>
+              <li class="flex gap-3"><span class="text-accent font-mono mt-px">▸</span>Live view URL — embed the running session in your app.</li>
+            </ul>
+          </div>
+
+          <!-- bigger code card -->
+          <div class="rounded-xl border border-white/10 bg-ink-900/95 shadow-2xl overflow-hidden">
+            <div class="flex items-center gap-1 px-3 pt-3 border-b border-white/5" role="tablist" id="bigTabs">
+              <button data-bigtab="claude" class="big-tab px-3 py-2 font-mono text-[12px] text-white border-b-2 border-accent -mb-px">claude.py</button>
+              <button data-bigtab="openai" class="big-tab px-3 py-2 font-mono text-[12px] text-white/55 hover:text-white/85 border-b-2 border-transparent">openai.py</button>
+              <button data-bigtab="gemini" class="big-tab px-3 py-2 font-mono text-[12px] text-white/55 hover:text-white/85 border-b-2 border-transparent">gemini.py</button>
+            </div>
+            <pre class="font-mono text-[13.5px] leading-[1.7] p-6 text-white/90 overflow-x-auto whitespace-pre" id="bigCode"><span class="text-white/35"># Anthropic Computer Use, pre-configured.</span>
+<span class="text-warm">from</span> computeruse <span class="text-warm">import</span> Sandbox
+
+<span class="text-warm">with</span> Sandbox.claude(model=<span class="text-accent">"claude-sonnet-4-6"</span>) <span class="text-warm">as</span> sb:
+    sb.goto(<span class="text-accent">"https://www.google.com/flights"</span>)
+    result = sb.agent.run(
+        <span class="text-accent">"Find the cheapest direct flight"</span>
+        <span class="text-accent">" SFO → LIS next Tuesday. Return the airline,"</span>
+        <span class="text-accent">" price, and departure time."</span>
+    )
+
+    <span class="text-warm">print</span>(result.value)
+    <span class="text-warm">print</span>(<span class="text-accent">f"cost: ${result.usage.usd}"</span>)
+    <span class="text-warm">print</span>(<span class="text-accent">f"active: {result.usage.active_seconds}s"</span>)</pre>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- ========================== COMPARE ========================== -->
-    <section class="band" id="compare">
-      <div class="wrap-tight">
-        <span class="eyebrow">How we compare</span>
-        <h2 class="display-md">Different from Comet, Atlas, Dia, and Browserbase.</h2>
-        <p class="lede" style="margin-top: 22px">
-          Most agentic browsers are <em>yours</em> — your account, your tabs, your tasks. Cloud
-          Browser Live is <em>ours</em> — one shared agent, one window, anonymous suggestions from
-          the whole room. The multiplayer agentic browser.
-        </p>
-
-        <ul class="compare">
-          <li>
-            <div class="who">
-              <strong>Perplexity Comet</strong>
-              <span>Personal · ~3M users</span>
-            </div>
-            <p>A search-first agentic browser. You sign in; the agent runs queries on your account. Private to you, free since October 2025.</p>
-          </li>
-          <li>
-            <div class="who">
-              <strong>OpenAI ChatGPT Atlas</strong>
-              <span>Personal · ~5M users</span>
-            </div>
-            <p>Your tabs, your ChatGPT, your tasks. The most fully agentic of the personal browsers, deeply wired into ChatGPT.</p>
-          </li>
-          <li>
-            <div class="who">
-              <strong>The Browser Company Dia</strong>
-              <span>Personal · ships with macOS</span>
-            </div>
-            <p>A "thought partner" across your tabs. Closer to an AI-augmented browser than a fully agentic one. Successor to Arc.</p>
-          </li>
-          <li>
-            <div class="who">
-              <strong>BrowserOS, Brave Leo, Opera Neon</strong>
-              <span>Personal · open-source &amp; vendor</span>
-            </div>
-            <p>Open-source Chromium forks and built-in vendor agents. Same per-user model — your browser, with an agent inside it.</p>
-          </li>
-          <li>
-            <div class="who">
-              <strong>Browserbase · Stagehand · browser-use · Steel · Cloudflare Browser Run</strong>
-              <span>Infrastructure · developers</span>
-            </div>
-            <p>Cloud browsers behind an API. You write code, you get a browser. Power tools for engineers, not a product you watch.</p>
-          </li>
-          <li class="us">
-            <div class="who">
-              <strong>Cloud Browser Live</strong>
-              <span>Public · anonymous · multiplayer</span>
-            </div>
-            <p>One shared agent. One window. No accounts. Anyone can watch, anyone can suggest. The first public agentic browser that the open internet steers together.</p>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- ============================ HOW ============================ -->
-    <section class="band deep" id="how">
-      <div class="wrap-tight">
-        <span class="eyebrow">How it works</span>
-        <h2 class="display-md">Three things, in a loop.</h2>
-        <ol class="steps">
-          <li class="step">
-            <span class="num">01</span>
-            <div>
-              <h4>The agent moves.</h4>
-              <p>It loads a page, runs a search, or reads what it found, then tells the room what it intends to do next.</p>
-            </div>
-            <div class="diagram" aria-hidden="true">
-              <div class="pageA"></div>
-              <div class="pageB"></div>
-              <div class="arrow"></div>
-            </div>
-          </li>
-          <li class="step">
-            <span class="num">02</span>
-            <div>
-              <h4>The room suggests.</h4>
-              <p>Visitors send short messages — "try arXiv", "scroll down", "go back". Every message is anonymous and visible to everyone.</p>
-            </div>
-            <div class="diagram" aria-hidden="true">
-              <div class="pageB"></div>
-            </div>
-          </li>
-          <li class="step">
-            <span class="num">03</span>
-            <div>
-              <h4>The agent picks.</h4>
-              <p>It reads the suggestions, chooses the most relevant, and acts. The browser updates. The room watches. Repeat.</p>
-            </div>
-            <div class="diagram" aria-hidden="true"></div>
-          </li>
-        </ol>
-      </div>
-    </section>
-
-    <!-- ========================== MARQUEE ========================== -->
-    <section class="marquee-band">
-      <div class="marquee-head">
-        <h2>The room never stops talking.</h2>
-        <span class="meta">recent suggestions · public stream</span>
-      </div>
-      <div class="marquee-row">
-        <div class="marquee-track" id="mq1"></div>
-      </div>
-      <div class="marquee-row alt" style="margin-top: 10px">
-        <div class="marquee-track" id="mq2"></div>
-      </div>
-    </section>
-
-    <!-- ========================== MANIFESTO ========================= -->
-    <section class="manifesto" id="why">
-      <div class="frame">
-        <span class="eyebrow">Why this exists</span>
-        <h2>Most AI agents browse in private. This one browses in public.</h2>
-        <p>
-          Most AI agents work alone. Behind logins, on someone's behalf, inside an SDK call you
-          cannot see. Their decisions never reach the open web.
-        </p>
-        <p>
-          Cloud Browser Live is the opposite. One agent, browsing in public, on no one's behalf in
-          particular. The window is open. The room is anonymous. The session never ends.
-        </p>
-        <p>
-          We did not build this because public agents are useful. We built it because watching one
-          think, in real time, with strangers nudging it, changes how you understand what AI does
-          on the web. It is a public square for autonomous browsing. We hope it stays that way.
-        </p>
-        <div class="sig">
-          <span style="color: var(--accent)">●</span>
-          <span>The room · running since May 10, 2026</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================ FAQ ============================ -->
-    <section class="faq" id="faq">
-      <div class="wrap-narrow">
-        <span class="eyebrow">Common questions</span>
-        <h2 class="display-md">Frequently asked.</h2>
-        <div class="faq-list">
-          <details class="q">
-            <summary>What is an agentic browser?</summary>
-            <div class="a">An agentic browser is a web browser where an AI agent — powered by a large language model — performs the actual browsing. The agent reads pages, clicks links, fills forms, and navigates on someone's behalf. Examples include Perplexity Comet, OpenAI ChatGPT Atlas, The Browser Company Dia, and the open-source BrowserOS. Cloud Browser Live is a <em>public</em> agentic browser: one agent, one shared window, anonymous suggestions from anyone.</div>
-          </details>
-          <details class="q">
-            <summary>What is a public agentic browser?</summary>
-            <div class="a">A public agentic browser is an agentic browser session that is open to the public — anyone can watch the agent and influence what it does next. Cloud Browser Live is one such session, running continuously since May 10, 2026. Unlike Comet, Atlas, or Dia (which are personal agentic browsers tied to one user account), there is no signup, and every visitor sees the same browser at the same moment.</div>
-          </details>
-          <details class="q">
-            <summary>Can I really watch an AI browse the web live?</summary>
-            <div class="a">Yes. The browser you see is a live session, not a recording. The agent is moving in real time and what is on screen is what it is doing right now. Anyone can drop in, watch, send a suggestion, and leave. The session never stops.</div>
-          </details>
-          <details class="q">
-            <summary>How is this different from Perplexity Comet, ChatGPT Atlas, or Dia?</summary>
-            <div class="a">Comet (Perplexity), Atlas (OpenAI), and Dia (The Browser Company) are personal agentic browsers — your account, your tabs, your tasks. Cloud Browser Live is the opposite: one shared agent, one window, no accounts, anonymous suggestions from the whole room. It is the multiplayer version of an agentic browser.</div>
-          </details>
-          <details class="q">
-            <summary>How is this different from Browserbase, browser-use, or Stagehand?</summary>
-            <div class="a">Browserbase, browser-use, Stagehand, Steel, and Cloudflare Browser Run are infrastructure for developers — you write code, you get a cloud browser. Cloud Browser Live is a consumer product: no SDK, no install, nothing to script. Just a website you watch, with one shared agent.</div>
-          </details>
-          <details class="q">
-            <summary>Can the agent see my suggestion?</summary>
-            <div class="a">Yes. Every message in the room is part of the agent's input. It reads them and picks what to act on.</div>
-          </details>
-          <details class="q">
-            <summary>Why is the browser read-only?</summary>
-            <div class="a">You are watching the agent's session, not driving it yourself. The agent is the only one with hands on the keyboard. You influence it by suggesting, not clicking.</div>
-          </details>
-          <details class="q">
-            <summary>Do you store who I am?</summary>
-            <div class="a">No login, no email. The site keeps a random anonymous ID in your browser so the agent can tell visitors apart in the room. Clear your storage and you are a new visitor.</div>
-          </details>
-          <details class="q">
-            <summary>What model is the agent?</summary>
-            <div class="a">A general-purpose browsing agent built on a current-generation LLM, running on a real cloud browser. The exact model changes as we upgrade it.</div>
-          </details>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================ CTA ============================ -->
-    <section class="cta">
-      <h2>Step into the room.</h2>
-      <p>Watch one AI browse the web. Send a nudge. Stay as long as you want. Anonymous, always on.</p>
-      <div class="btn-row">
-        <a href="#" class="btn btn-primary">Open the live session <span class="arrow">→</span></a>
-        <a href="#what" class="btn btn-ghost">Read the manifesto</a>
-      </div>
-    </section>
-
-    <!-- =========================== FOOTER ========================== -->
-    <footer class="foot">
-      <div class="row">
-        <div>
-          <h5>Cloud Browser Live</h5>
-          <p style="margin: 6px 0 0; color: rgba(244, 241, 231, 0.7); font-size: 14px; line-height: 1.55; max-width: 360px;">
-            One public agentic browser. Always on. Anonymous. Anyone can suggest the next move.
+    <!-- =================== 60% CHEAPER + COMPARE ==================== -->
+    <section class="px-6 py-24" id="compare">
+      <div class="max-w-[1180px] mx-auto">
+        <div class="text-center mb-16">
+          <span class="inline-block text-[12px] font-bold uppercase tracking-[0.16em] text-warm mb-4">Pricing reality</span>
+          <h2 class="font-sans font-bold text-[clamp(32px,4.4vw,56px)] leading-[1.02] tracking-[-0.02em] text-white max-w-[820px] mx-auto">
+            60% cheaper than Browserbase<br />
+            <span class="text-white/45">for typical agent workloads.</span>
+          </h2>
+          <p class="mt-6 text-[16.5px] leading-[1.6] text-white/60 max-w-[620px] mx-auto">
+            Browserbase bills per browser-hour, so you pay while the agent thinks.
+            We bill per <em class="text-white not-italic">active second</em> — idle is free.
+            For a typical Claude Computer Use task that's a 60-95% reduction.
           </p>
         </div>
+
+        <!-- comparison table -->
+        <div class="rounded-2xl border border-white/10 overflow-hidden bg-ink-800 shadow-xl">
+          <div class="grid grid-cols-[1.4fr_1fr_1fr_1fr_1fr] text-[12px] uppercase tracking-[0.1em] font-bold text-white/45 border-b border-white/5 bg-ink-700">
+            <div class="px-5 py-4">Feature</div>
+            <div class="px-3 py-4 text-center bg-accent/10 text-accent font-extrabold">Computer Use Cloud</div>
+            <div class="px-3 py-4 text-center">Browserbase</div>
+            <div class="px-3 py-4 text-center">E2B</div>
+            <div class="px-3 py-4 text-center">Self-host</div>
+          </div>
+
+          <div class="divide-y divide-white/5 text-[14px]">
+            <div class="grid grid-cols-[1.4fr_1fr_1fr_1fr_1fr] items-center">
+              <div class="px-5 py-4 text-white/75 font-medium">Billing model</div>
+              <div class="px-3 py-4 text-center text-accent font-semibold bg-accent/[0.04]">Per active second</div>
+              <div class="px-3 py-4 text-center text-white/65">Per browser-hour</div>
+              <div class="px-3 py-4 text-center text-white/65">Per sandbox-hour</div>
+              <div class="px-3 py-4 text-center text-white/65">Infra cost</div>
+            </div>
+            <div class="grid grid-cols-[1.4fr_1fr_1fr_1fr_1fr] items-center">
+              <div class="px-5 py-4 text-white/75 font-medium">Cold start</div>
+              <div class="px-3 py-4 text-center text-accent font-semibold bg-accent/[0.04]">~1.8s</div>
+              <div class="px-3 py-4 text-center text-white/65">3-5s</div>
+              <div class="px-3 py-4 text-center text-white/65">~6s</div>
+              <div class="px-3 py-4 text-center text-white/65">30s+ (boot)</div>
+            </div>
+            <div class="grid grid-cols-[1.4fr_1fr_1fr_1fr_1fr] items-center">
+              <div class="px-5 py-4 text-white/75 font-medium">Claude Computer Use</div>
+              <div class="px-3 py-4 text-center text-accent font-semibold bg-accent/[0.04]">Built-in</div>
+              <div class="px-3 py-4 text-center text-white/65">Manual wiring</div>
+              <div class="px-3 py-4 text-center text-white/65">Manual wiring</div>
+              <div class="px-3 py-4 text-center text-white/65">DIY</div>
+            </div>
+            <div class="grid grid-cols-[1.4fr_1fr_1fr_1fr_1fr] items-center">
+              <div class="px-5 py-4 text-white/75 font-medium">OpenAI Operator</div>
+              <div class="px-3 py-4 text-center text-accent font-semibold bg-accent/[0.04]">Built-in</div>
+              <div class="px-3 py-4 text-center text-white/65">Manual wiring</div>
+              <div class="px-3 py-4 text-center text-white/65">Manual wiring</div>
+              <div class="px-3 py-4 text-center text-white/65">DIY</div>
+            </div>
+            <div class="grid grid-cols-[1.4fr_1fr_1fr_1fr_1fr] items-center">
+              <div class="px-5 py-4 text-white/75 font-medium">Live view URL</div>
+              <div class="px-3 py-4 text-center text-accent font-semibold bg-accent/[0.04]">Yes</div>
+              <div class="px-3 py-4 text-center text-white/65">Yes</div>
+              <div class="px-3 py-4 text-center text-white/65">No</div>
+              <div class="px-3 py-4 text-center text-white/65">DIY (CDP)</div>
+            </div>
+            <div class="grid grid-cols-[1.4fr_1fr_1fr_1fr_1fr] items-center">
+              <div class="px-5 py-4 text-white/75 font-medium">Captcha solving</div>
+              <div class="px-3 py-4 text-center text-accent font-semibold bg-accent/[0.04]">Default on</div>
+              <div class="px-3 py-4 text-center text-white/65">Add-on</div>
+              <div class="px-3 py-4 text-center text-white/65">No</div>
+              <div class="px-3 py-4 text-center text-white/65">DIY</div>
+            </div>
+            <div class="grid grid-cols-[1.4fr_1fr_1fr_1fr_1fr] items-center">
+              <div class="px-5 py-4 text-white/75 font-medium">Open-source runtime</div>
+              <div class="px-3 py-4 text-center text-accent font-semibold bg-accent/[0.04]">Apache 2.0</div>
+              <div class="px-3 py-4 text-center text-white/65">No</div>
+              <div class="px-3 py-4 text-center text-white/65">Yes (stalled)</div>
+              <div class="px-3 py-4 text-center text-white/65">N/A</div>
+            </div>
+            <div class="grid grid-cols-[1.4fr_1fr_1fr_1fr_1fr] items-center bg-white/[0.02]">
+              <div class="px-5 py-4 text-white font-semibold">Cost for typical 8-min Claude task</div>
+              <div class="px-3 py-4 text-center text-accent font-extrabold bg-accent/[0.06]">$0.06</div>
+              <div class="px-3 py-4 text-center text-warm font-semibold">$0.27</div>
+              <div class="px-3 py-4 text-center text-white/65">$0.18</div>
+              <div class="px-3 py-4 text-center text-white/65">~$0.04 + ops</div>
+            </div>
+          </div>
+        </div>
+
+        <p class="text-center mt-8 text-[12.5px] text-white/45 font-mono">
+          Methodology: Claude Computer Use, 8 minutes total task time, 35% agent active, 65% model-thinking idle. As of May 2026.
+        </p>
+
+        <div class="text-center mt-8">
+          <a href="/vs/browserbase.html" class="inline-flex items-center gap-2 text-accent hover:text-emerald-400 text-[14.5px] font-semibold border-b border-accent/40 hover:border-accent pb-px">
+            Full comparison + migration guide
+            <svg viewBox="0 0 16 16" class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 4l4 4-4 4"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== WHY DEVELOPERS ========================= -->
+    <section class="px-6 py-24 bg-ink-800 border-y border-white/5">
+      <div class="max-w-[1180px] mx-auto">
+        <div class="max-w-[760px] mb-14">
+          <span class="inline-block text-[12px] font-bold uppercase tracking-[0.16em] text-white/45 mb-4">Why developers choose us</span>
+          <h2 class="font-sans font-bold text-[clamp(28px,3.4vw,40px)] leading-[1.06] tracking-[-0.018em] text-white">
+            Everything Browserbase forgot to ship.
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <article class="rounded-xl border border-white/10 bg-ink-900 p-6">
+            <div class="w-9 h-9 rounded-lg bg-accent/15 grid place-items-center text-accent mb-5">
+              <svg viewBox="0 0 24 24" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"/></svg>
+            </div>
+            <h3 class="font-bold text-[16px] mb-2 text-white">2-second cold start</h3>
+            <p class="text-[13.5px] leading-[1.55] text-white/60">Pre-warmed Chromium pool. The sandbox is ready before your agent's first tool call.</p>
+          </article>
+
+          <article class="rounded-xl border border-white/10 bg-ink-900 p-6">
+            <div class="w-9 h-9 rounded-lg bg-accent/15 grid place-items-center text-accent mb-5">
+              <svg viewBox="0 0 24 24" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            </div>
+            <h3 class="font-bold text-[16px] mb-2 text-white">Per-active-second billing</h3>
+            <p class="text-[13.5px] leading-[1.55] text-white/60">Idle while the model thinks is free. You pay for keystrokes, not for sitting still.</p>
+          </article>
+
+          <article class="rounded-xl border border-white/10 bg-ink-900 p-6">
+            <div class="w-9 h-9 rounded-lg bg-accent/15 grid place-items-center text-accent mb-5">
+              <svg viewBox="0 0 24 24" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z"/></svg>
+            </div>
+            <h3 class="font-bold text-[16px] mb-2 text-white">One SDK, three models</h3>
+            <p class="text-[13.5px] leading-[1.55] text-white/60">Claude, OpenAI, Gemini — same Sandbox object, swappable per task. Don't lock in.</p>
+          </article>
+
+          <article class="rounded-xl border border-white/10 bg-ink-900 p-6">
+            <div class="w-9 h-9 rounded-lg bg-accent/15 grid place-items-center text-accent mb-5">
+              <svg viewBox="0 0 24 24" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
+            </div>
+            <h3 class="font-bold text-[16px] mb-2 text-white">Open-source runtime</h3>
+            <p class="text-[13.5px] leading-[1.55] text-white/60">Apache 2.0. Self-host the sandbox when you outgrow the cloud. No lock-in path.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ PRICING ========================== -->
+    <section class="px-6 py-24" id="pricing">
+      <div class="max-w-[1180px] mx-auto">
+        <div class="text-center mb-14">
+          <span class="inline-block text-[12px] font-bold uppercase tracking-[0.16em] text-white/45 mb-4">Pricing</span>
+          <h2 class="font-sans font-bold text-[clamp(28px,3.6vw,44px)] leading-[1.05] tracking-[-0.018em] text-white">
+            Free for hobbyists. Cheap for production.
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-4 max-w-[960px] mx-auto">
+          <!-- Free -->
+          <div class="rounded-xl border border-white/10 bg-ink-800 p-7">
+            <h3 class="font-bold text-[18px] text-white">Free</h3>
+            <p class="mt-1 text-[13px] text-white/50">For hacking, demos, evaluations</p>
+            <div class="mt-6 flex items-baseline gap-1.5">
+              <span class="text-[42px] font-bold tracking-tight text-white">$0</span>
+              <span class="text-[13px] text-white/50">/ month</span>
+            </div>
+            <a href="#signup" class="mt-6 block text-center bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg py-2.5 text-[13.5px] font-semibold text-white">Start free</a>
+            <ul class="mt-7 space-y-2.5 text-[13.5px] text-white/65">
+              <li class="flex gap-2"><span class="text-accent">✓</span> 10 active hours / month</li>
+              <li class="flex gap-2"><span class="text-accent">✓</span> Claude · OpenAI · Gemini</li>
+              <li class="flex gap-2"><span class="text-accent">✓</span> Live view URL</li>
+              <li class="flex gap-2"><span class="text-accent">✓</span> Residential proxy</li>
+              <li class="flex gap-2"><span class="text-white/30">—</span> No credit card</li>
+            </ul>
+          </div>
+
+          <!-- Pro (highlighted) -->
+          <div class="rounded-xl border-2 border-accent bg-accent/[0.04] p-7 relative shadow-[0_30px_60px_rgba(16,185,129,0.18)]">
+            <span class="absolute -top-3 left-7 bg-accent text-black text-[10.5px] font-extrabold uppercase tracking-[0.1em] px-2 py-0.5 rounded">Recommended</span>
+            <h3 class="font-bold text-[18px] text-white">Pro</h3>
+            <p class="mt-1 text-[13px] text-white/55">For production agents</p>
+            <div class="mt-6 flex items-baseline gap-1.5">
+              <span class="text-[42px] font-bold tracking-tight text-white">$20</span>
+              <span class="text-[13px] text-white/55">/ month</span>
+            </div>
+            <a href="#signup" class="mt-6 block text-center bg-accent hover:bg-emerald-400 transition text-black rounded-lg py-2.5 text-[13.5px] font-extrabold">Start Pro</a>
+            <ul class="mt-7 space-y-2.5 text-[13.5px] text-white/80">
+              <li class="flex gap-2"><span class="text-accent">✓</span> <strong>100 active hours / month</strong> included</li>
+              <li class="flex gap-2"><span class="text-accent">✓</span> Then $0.05 per active hour</li>
+              <li class="flex gap-2"><span class="text-accent">✓</span> Priority cold-start pool</li>
+              <li class="flex gap-2"><span class="text-accent">✓</span> Custom proxies + sticky sessions</li>
+              <li class="flex gap-2"><span class="text-accent">✓</span> Email support, 1-day SLA</li>
+            </ul>
+          </div>
+
+          <!-- Scale -->
+          <div class="rounded-xl border border-white/10 bg-ink-800 p-7">
+            <h3 class="font-bold text-[18px] text-white">Scale</h3>
+            <p class="mt-1 text-[13px] text-white/50">For high-volume + compliance</p>
+            <div class="mt-6 flex items-baseline gap-1.5">
+              <span class="text-[26px] font-bold tracking-tight text-white">Custom</span>
+            </div>
+            <a href="#contact" class="mt-6 block text-center bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg py-2.5 text-[13.5px] font-semibold text-white">Contact sales</a>
+            <ul class="mt-7 space-y-2.5 text-[13.5px] text-white/65">
+              <li class="flex gap-2"><span class="text-accent">✓</span> Reserved sandbox pool</li>
+              <li class="flex gap-2"><span class="text-accent">✓</span> Dedicated proxy pools</li>
+              <li class="flex gap-2"><span class="text-accent">✓</span> SOC 2, HIPAA, BAA</li>
+              <li class="flex gap-2"><span class="text-accent">✓</span> Self-hosted control plane option</li>
+              <li class="flex gap-2"><span class="text-accent">✓</span> Slack channel + 1-hour SLA</li>
+            </ul>
+          </div>
+        </div>
+
+        <p class="text-center mt-10 text-[12.5px] text-white/45 font-mono">
+          Browserbase Hobby starts at $39/mo with browser-hour billing. Our Pro is $20/mo and bills per active second.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================= FAQ ============================ -->
+    <section class="px-6 py-24 bg-ink-800 border-y border-white/5">
+      <div class="max-w-[760px] mx-auto">
+        <span class="inline-block text-[12px] font-bold uppercase tracking-[0.16em] text-white/45 mb-4">Frequently asked</span>
+        <h2 class="font-sans font-bold text-[clamp(28px,3.6vw,40px)] leading-[1.05] tracking-[-0.018em] text-white mb-10">
+          What developers ask before signing up.
+        </h2>
+
+        <div class="divide-y divide-white/10 border-t border-b border-white/10">
+          <details class="group py-5">
+            <summary class="flex justify-between items-start gap-4 cursor-pointer list-none">
+              <span class="text-[16.5px] font-semibold text-white">What is Computer Use?</span>
+              <span class="text-white/40 text-[20px] leading-none mt-0.5 group-open:rotate-45 transition">+</span>
+            </summary>
+            <div class="mt-3 text-[14.5px] leading-[1.6] text-white/65 max-w-[680px]">A class of AI agent capability where a large language model controls a real computer — clicking, typing, scrolling, reading screenshots — to complete tasks on a real browser or desktop. Anthropic released the first widely-used Computer Use API in October 2024; OpenAI shipped Operator in early 2025; Google added Gemini agent capabilities in 2026.</div>
+          </details>
+          <details class="group py-5">
+            <summary class="flex justify-between items-start gap-4 cursor-pointer list-none">
+              <span class="text-[16.5px] font-semibold text-white">How is Computer Use Cloud different from Browserbase?</span>
+              <span class="text-white/40 text-[20px] leading-none mt-0.5 group-open:rotate-45 transition">+</span>
+            </summary>
+            <div class="mt-3 text-[14.5px] leading-[1.6] text-white/65 max-w-[680px]">Three differences. First, price — we charge per active second, not per browser-hour, so idle is free. For typical agent workloads that's 60% cheaper. Second, three models behind one API — Claude, OpenAI, Gemini, swappable with one line. Third, faster cold starts (2 seconds vs 3-5).</div>
+          </details>
+          <details class="group py-5">
+            <summary class="flex justify-between items-start gap-4 cursor-pointer list-none">
+              <span class="text-[16.5px] font-semibold text-white">Does it work with Claude Computer Use Beta?</span>
+              <span class="text-white/40 text-[20px] leading-none mt-0.5 group-open:rotate-45 transition">+</span>
+            </summary>
+            <div class="mt-3 text-[14.5px] leading-[1.6] text-white/65 max-w-[680px]">Yes. The Claude provider is a managed wrapper around the official Anthropic Computer Use Beta API. You bring your own Anthropic API key or use our pooled credits; we run the sandbox, capture screenshots, return the accessibility tree, and forward tool calls back to the model.</div>
+          </details>
+          <details class="group py-5">
+            <summary class="flex justify-between items-start gap-4 cursor-pointer list-none">
+              <span class="text-[16.5px] font-semibold text-white">Does it work with OpenAI Operator?</span>
+              <span class="text-white/40 text-[20px] leading-none mt-0.5 group-open:rotate-45 transition">+</span>
+            </summary>
+            <div class="mt-3 text-[14.5px] leading-[1.6] text-white/65 max-w-[680px]">Yes. The OpenAI provider wraps the Operator API (the <code class="font-mono text-[13px] bg-white/5 rounded px-1.5 py-0.5">computer-use-preview</code> model). Same one-line swap from Claude — <code class="font-mono text-[13px] bg-white/5 rounded px-1.5 py-0.5">Sandbox.openai()</code> instead of <code class="font-mono text-[13px] bg-white/5 rounded px-1.5 py-0.5">Sandbox.claude()</code> — and the rest of your agent code is unchanged.</div>
+          </details>
+          <details class="group py-5">
+            <summary class="flex justify-between items-start gap-4 cursor-pointer list-none">
+              <span class="text-[16.5px] font-semibold text-white">Can I self-host?</span>
+              <span class="text-white/40 text-[20px] leading-none mt-0.5 group-open:rotate-45 transition">+</span>
+            </summary>
+            <div class="mt-3 text-[14.5px] leading-[1.6] text-white/65 max-w-[680px]">Yes. The runtime is open source under Apache 2.0 — clone it, run it on your own infrastructure, point your SDK at the self-hosted endpoint. The cloud is for teams who would rather pay per active second than maintain a sandbox fleet.</div>
+          </details>
+          <details class="group py-5">
+            <summary class="flex justify-between items-start gap-4 cursor-pointer list-none">
+              <span class="text-[16.5px] font-semibold text-white">How do I migrate from Browserbase?</span>
+              <span class="text-white/40 text-[20px] leading-none mt-0.5 group-open:rotate-45 transition">+</span>
+            </summary>
+            <div class="mt-3 text-[14.5px] leading-[1.6] text-white/65 max-w-[680px]">Most Browserbase agent code is a Playwright session wrapped in their SDK. Computer Use Cloud exposes the same Playwright CDP endpoint plus higher-level <code class="font-mono text-[13px] bg-white/5 rounded px-1.5 py-0.5">Sandbox.claude()</code> / <code class="font-mono text-[13px] bg-white/5 rounded px-1.5 py-0.5">Sandbox.openai()</code> helpers. Swap the connection string and one import; the rest of your agent code keeps working. <a href="/vs/browserbase.html" class="text-accent hover:underline">Full migration guide →</a></div>
+          </details>
+          <details class="group py-5">
+            <summary class="flex justify-between items-start gap-4 cursor-pointer list-none">
+              <span class="text-[16.5px] font-semibold text-white">Is there a free tier?</span>
+              <span class="text-white/40 text-[20px] leading-none mt-0.5 group-open:rotate-45 transition">+</span>
+            </summary>
+            <div class="mt-3 text-[14.5px] leading-[1.6] text-white/65 max-w-[680px]">Yes. 10 active hours per month, free forever, no credit card. After that, Pro is $20/month for 100 active hours plus $0.05 per additional active hour.</div>
+          </details>
+          <details class="group py-5">
+            <summary class="flex justify-between items-start gap-4 cursor-pointer list-none">
+              <span class="text-[16.5px] font-semibold text-white">What runs inside the sandbox?</span>
+              <span class="text-white/40 text-[20px] leading-none mt-0.5 group-open:rotate-45 transition">+</span>
+            </summary>
+            <div class="mt-3 text-[14.5px] leading-[1.6] text-white/65 max-w-[680px]">A pre-configured Linux container with Chromium, common fonts and codecs, residential proxy by default, captcha solver, accessibility-tree extractor, and the screenshot pipeline tuned for vision LLMs. You get a Playwright CDP endpoint plus the high-level Sandbox helpers.</div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================== CTA ============================== -->
+    <section class="px-6 py-28 text-center relative overflow-hidden">
+      <div class="absolute inset-0 -z-10" style="background-image: radial-gradient(800px 400px at 50% 50%, rgba(16,185,129,0.18), transparent 60%);"></div>
+      <div class="max-w-[760px] mx-auto">
+        <h2 class="font-sans font-bold text-[clamp(36px,5vw,64px)] leading-[1.02] tracking-[-0.022em] text-white">
+          Start in 60 seconds.
+        </h2>
+        <p class="mt-5 text-[16px] leading-[1.6] text-white/65 max-w-[520px] mx-auto">
+          <code class="font-mono text-[14px] bg-white/5 border border-white/10 rounded px-2 py-1 text-white">pip install computeruse</code> — 10 active hours/month, free forever, no card.
+        </p>
+        <div class="mt-9 flex items-center gap-4 justify-center flex-wrap">
+          <a href="#signup" class="inline-flex items-center gap-2 bg-accent text-black hover:bg-emerald-400 transition rounded-lg px-6 py-3.5 text-[15px] font-extrabold">
+            Start free
+            <svg viewBox="0 0 16 16" class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 4l4 4-4 4"/></svg>
+          </a>
+          <a href="https://github.com/computeruse" class="inline-flex items-center gap-2 text-white/80 hover:text-white text-[14.5px] font-semibold border border-white/15 hover:border-white/30 rounded-lg px-5 py-3.5">
+            <svg viewBox="0 0 24 24" class="w-4 h-4" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12c0 5.3 3.4 9.8 8.2 11.4.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.6.1-3.3 0 0 1-.3 3.3 1.2.9-.3 2-.4 3-.4s2 .1 3 .4c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 3 .1 3.3.8.8 1.2 1.9 1.2 3.2 0 4.7-2.8 5.7-5.5 6 .4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6C20.6 21.8 24 17.3 24 12c0-6.6-5.4-12-12-12z"/></svg>
+            Star on GitHub
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================== FOOTER =========================== -->
+    <footer class="px-6 py-14 border-t border-white/5 bg-ink-950">
+      <div class="max-w-[1180px] mx-auto grid md:grid-cols-[2fr_1fr_1fr_1fr] gap-10">
         <div>
-          <h5>The room</h5>
-          <ul>
-            <li><a href="#what">What it is</a></li>
-            <li><a href="#how">How it works</a></li>
-            <li><a href="#rooms">Recent moments</a></li>
+          <a href="/" class="flex items-center gap-2.5 font-bold text-[15px]">
+            <span class="inline-block w-7 h-7 rounded-md bg-accent grid place-items-center text-black font-extrabold text-[13px]">≡</span>
+            Computer Use <span class="text-white/45 font-medium">Cloud</span>
+          </a>
+          <p class="mt-3 text-[13.5px] leading-[1.55] text-white/45 max-w-[340px]">
+            The cloud platform for Claude, GPT, and Gemini Computer Use agents. Pay per active second.
+          </p>
+        </div>
+        <div>
+          <h5 class="text-[10.5px] font-extrabold uppercase tracking-[0.16em] text-white/35 mb-3">Product</h5>
+          <ul class="space-y-2 text-[13.5px] text-white/65">
+            <li><a href="#how" class="hover:text-white">How it works</a></li>
+            <li><a href="/vs/browserbase.html" class="hover:text-white">vs Browserbase</a></li>
+            <li><a href="#pricing" class="hover:text-white">Pricing</a></li>
+            <li><a href="#docs" class="hover:text-white">Docs</a></li>
           </ul>
         </div>
         <div>
-          <h5>About</h5>
-          <ul>
-            <li><a href="#why">Manifesto</a></li>
-            <li><a href="#faq">FAQ</a></li>
-            <li><a href="#">Press</a></li>
+          <h5 class="text-[10.5px] font-extrabold uppercase tracking-[0.16em] text-white/35 mb-3">Open source</h5>
+          <ul class="space-y-2 text-[13.5px] text-white/65">
+            <li><a href="https://github.com/computeruse" class="hover:text-white">GitHub org</a></li>
+            <li><a href="https://github.com/computeruse/sdk" class="hover:text-white">Python SDK</a></li>
+            <li><a href="https://github.com/computeruse/runtime" class="hover:text-white">Runtime (Apache 2.0)</a></li>
           </ul>
         </div>
         <div>
-          <h5>Elsewhere</h5>
-          <ul>
-            <li><a href="#">Twitter</a></li>
-            <li><a href="#">GitHub</a></li>
-            <li><a href="#">Email</a></li>
+          <h5 class="text-[10.5px] font-extrabold uppercase tracking-[0.16em] text-white/35 mb-3">Company</h5>
+          <ul class="space-y-2 text-[13.5px] text-white/65">
+            <li><a href="#contact" class="hover:text-white">Contact</a></li>
+            <li><a href="/privacy" class="hover:text-white">Privacy</a></li>
+            <li><a href="/terms" class="hover:text-white">Terms</a></li>
           </ul>
         </div>
       </div>
-      <div class="signoff">
-        <span class="brand-foot"><span class="mark"></span> cloudbrowser.live</span>
-        <span>© 2026 · The room is open · no cookies · no ads · no signup</span>
+      <div class="max-w-[1180px] mx-auto mt-10 pt-6 border-t border-white/5 flex items-center justify-between gap-4 flex-wrap font-mono text-[11.5px] text-white/35">
+        <span>computeruse.run · © 2026</span>
+        <span>Not affiliated with Anthropic, OpenAI, or Google.</span>
       </div>
     </footer>
 
     <!-- ============================ SCRIPT ========================== -->
     <script>
-      // ----------------------------------------------------------------
-      // SCRIPTED SCENARIO ENGINE — all mock, all fake, all impressive.
-      // ----------------------------------------------------------------
-
-      const $ = (sel) => document.querySelector(sel);
-
-      // Hero scene engine
-      const scenes = [
-        {
-          key: "gh",
-          url: "github.com/openai/whisper",
-          beats: [
-            { intent: "Opening github.com/openai/whisper to check the latest commit.", delay: 0 },
-            { visitor: "scroll to the tests folder", delay: 1200 },
-            { intent: "Visitor wants to see tests. Hovering on tests/.", delay: 2200 },
-            { visitor: "open tokenizer.py", delay: 3400 },
-            { intent: "Two visitors agree. Clicking through to tokenizer.py.", delay: 4400 },
-          ],
-          duration: 6800,
+      // hero small tabs
+      const SAMPLES = {
+        claude: {
+          comment: "# Claude Computer Use, on the cloud",
+          line: 'Sandbox.claude(model=<span class="text-accent">"claude-sonnet-4-6"</span>)',
         },
-        {
-          key: "wiki",
-          url: "en.wikipedia.org/wiki/Heliopolis_(ancient_Egypt)",
-          beats: [
-            { intent: "Following a link from someone in the room — Heliopolis on Wikipedia.", delay: 0 },
-            { visitor: "is this the same as Iunu?", delay: 1400 },
-            { intent: "Good catch. Reading the etymology section to confirm.", delay: 2600 },
-            { visitor: "show the infobox", delay: 4000 },
-            { intent: "Same city. Coordinates land in modern Cairo. Noting it.", delay: 5200 },
-          ],
-          duration: 7400,
+        openai: {
+          comment: "# OpenAI Operator, on the cloud",
+          line: 'Sandbox.openai(model=<span class="text-accent">"computer-use-preview"</span>)',
         },
-        {
-          key: "news",
-          url: "foreignpress.org/long/agentic-web",
-          beats: [
-            { intent: "A visitor flagged this long read. Opening it.", delay: 0 },
-            { visitor: "skip to the part about traffic share", delay: 1500 },
-            { intent: "Searching the page for 'agentic traffic'.", delay: 2700 },
-            { visitor: "this number changed last month", delay: 4100 },
-            { intent: "Worth checking. Will open the source dataset next.", delay: 5400 },
-          ],
-          duration: 7400,
+        gemini: {
+          comment: "# Gemini agent, on the cloud",
+          line: 'Sandbox.gemini(model=<span class="text-accent">"gemini-3-agent"</span>)',
         },
-        {
-          key: "serp",
-          url: "kagi.com/search?q=geocities+mirror",
-          beats: [
-            { intent: "Searching for 1990s Geocities mirrors that are still online.", delay: 0 },
-            { visitor: "OoCities is the best one", delay: 1400 },
-            { intent: "Three votes for oocities.org. Reading the result.", delay: 2800 },
-            { visitor: "try the heartland neighbourhood", delay: 4200 },
-            { intent: "Going to oocities.org/heartland — feels right for the era.", delay: 5400 },
-          ],
-          duration: 7800,
-        },
-      ];
+      };
 
-      const agentLine = $("#agentLine");
-      const addressUrl = $("#addressUrl");
-      const moveBadge = $("#moveBadge");
-      const roomLayer = $("#roomLayer");
-      const stageCanvas = $("#stageCanvas");
-      const sceneEls = [...stageCanvas.querySelectorAll(".scene")];
-      let sceneIdx = 0;
-      let moveCount = 9184;
-
-      function activateScene(key) {
-        sceneEls.forEach((el) => el.classList.toggle("active", el.dataset.scene === key));
-      }
-
-      function setUrl(url) {
-        // small typing effect
-        addressUrl.textContent = "";
-        let i = 0;
-        const tick = () => {
-          if (i <= url.length) {
-            addressUrl.textContent = url.slice(0, i);
-            i += 1;
-            setTimeout(tick, 20 + Math.random() * 24);
-          }
-        };
-        tick();
-      }
-
-      function setIntent(text) {
-        moveCount += 1;
-        moveBadge.textContent = "#" + moveCount.toLocaleString();
-        agentLine.textContent = text;
-      }
-
-      function pushBubble(text, who) {
-        // who: "visitor" | "agent"
-        const bubble = document.createElement("div");
-        bubble.className = "bubble" + (who === "agent" ? " agent" : "");
-        const w = document.createElement("span");
-        w.className = "who";
-        w.textContent = who === "agent" ? "agent" : pickVisitorTag();
-        const p = document.createElement("span");
-        p.textContent = text;
-        bubble.append(w, document.createElement("br"), p);
-        roomLayer.appendChild(bubble);
-        // keep at most 3
-        while (roomLayer.children.length > 3) {
-          const old = roomLayer.firstElementChild;
-          old.classList.add("gone");
-          setTimeout(() => old.remove(), 600);
-        }
-      }
-
-      const visitorTagPool = [
-        "visitor · #4193",
-        "visitor · #0810",
-        "visitor · #2275",
-        "visitor · #6024",
-        "visitor · #9181",
-        "you",
-        "visitor · #7340",
-        "visitor · #0028",
-      ];
-      let vTag = 0;
-      function pickVisitorTag() {
-        const t = visitorTagPool[vTag % visitorTagPool.length];
-        vTag += 1;
-        return t;
-      }
-
-      function runScene(idx) {
-        const sc = scenes[idx];
-        activateScene(sc.key);
-        setTimeout(() => setUrl(sc.url), 140);
-        // clear bubbles between scenes
-        roomLayer.innerHTML = "";
-
-        const timers = [];
-        for (const beat of sc.beats) {
-          timers.push(
-            setTimeout(() => {
-              if (beat.intent) {
-                setIntent(beat.intent);
-                pushBubble(beat.intent, "agent");
-              }
-              if (beat.visitor) {
-                pushBubble(beat.visitor, "visitor");
-              }
-            }, beat.delay)
-          );
-        }
-
-        // chain next
-        timers.push(
-          setTimeout(() => {
-            sceneIdx = (sceneIdx + 1) % scenes.length;
-            runScene(sceneIdx);
-          }, sc.duration + 1200)
-        );
-      }
-
-      runScene(0);
-
-      // ----------------------------------------------------------------
-      // Counter ticking (subtle, plausible)
-      // ----------------------------------------------------------------
-
-      const watchPill = $("#watchPill");
-      let watchCount = 1283;
-      function tickWatchers() {
-        const delta = Math.floor(Math.random() * 7) - 2;
-        watchCount = Math.max(420, watchCount + delta);
-        watchPill.textContent = watchCount.toLocaleString() + " watching";
-      }
-      setInterval(tickWatchers, 2200);
-
-      // sync timestamp in room grid
-      function tickSync() {
-        const opts = ["just now", "a moment ago", "2s ago", "4s ago", "5s ago"];
-        const ts = $("#syncTs");
-        if (ts) ts.textContent = opts[Math.floor(Math.random() * opts.length)];
-      }
-      setInterval(tickSync, 3400);
-
-      // ----------------------------------------------------------------
-      // Tab grid: subtle "doing" updates per tab
-      // ----------------------------------------------------------------
-
-      const tabActions = [
-        ["Reading tokenizer.py", "Diffing against main", "Opening README", "Scrolling commits", "Reading tests/"],
-        ["Following Ra-Atum link", "Reading the infobox", "Checking coordinates", "Opening Talk page", "Re-reading section 1"],
-        ["Reading section 3", "Re-checking the chart", "Searching for citations", "Opening footnote 14", "Reading the byline"],
-        ["Considering oocities.org", "Opening reocities.com", "Trying Wayback Machine", "Reading top result", "Refining query"],
-      ];
-
-      const counterStarts = [427, 112, 208, 340];
-      document.querySelectorAll(".tab").forEach((tab, i) => {
-        const doing = tab.querySelector(".doing");
-        const count = tab.querySelector(".count");
-        let cVal = counterStarts[i];
-        let aIdx = 0;
-        setInterval(() => {
-          aIdx = (aIdx + 1) % tabActions[i].length;
-          doing.textContent = tabActions[i][aIdx];
-          cVal += Math.floor(Math.random() * 4);
-          count.textContent = cVal.toLocaleString() + " nudges";
-        }, 2400 + i * 600);
-      });
-
-      // ----------------------------------------------------------------
-      // Marquee — fake suggestion stream
-      // ----------------------------------------------------------------
-
-      const suggestionPool = [
-        { role: "visitor", text: "scroll down to the citations" },
-        { role: "operator", text: "scrolling — found it on page 3" },
-        { role: "visitor", text: "try arXiv next" },
-        { role: "visitor", text: "go back, that was the wrong tab" },
-        { role: "operator", text: "back. opening the geocities mirror" },
-        { role: "visitor", text: "search for 'tokenizer ar'" },
-        { role: "operator", text: "matched 14 results. reading the top one" },
-        { role: "visitor", text: "open the issues tab" },
-        { role: "visitor", text: "translate the page to English" },
-        { role: "operator", text: "no translation needed, page is already en" },
-        { role: "visitor", text: "click on Mnevis bull" },
-        { role: "operator", text: "interesting, opening" },
-        { role: "visitor", text: "show the talk page" },
-        { role: "operator", text: "talk page open. last edit 4 days ago" },
-        { role: "visitor", text: "what does Iunu mean" },
-        { role: "operator", text: "the pillars. ancient name for the city" },
-        { role: "visitor", text: "find the founder's name" },
-        { role: "operator", text: "no single founder — pre-dynastic settlement" },
-        { role: "visitor", text: "search for similar projects" },
-        { role: "operator", text: "running query: 'public agentic browser'" },
-        { role: "visitor", text: "go to wayback machine instead" },
-        { role: "operator", text: "good idea. switching tabs" },
-        { role: "visitor", text: "read the kicker only, then leave" },
-        { role: "operator", text: "kicker read. moving on" },
-      ];
-
-      function fillMarquee(track, offset = 0) {
-        // build content twice so the scroll loops
-        const items = suggestionPool.concat(suggestionPool);
-        items.forEach((s, i) => {
-          const chip = document.createElement("span");
-          chip.className = "chip";
-          const role = document.createElement("span");
-          role.className = "role" + (s.role === "operator" ? " op" : "");
-          role.textContent = s.role === "operator" ? "agent" : "visitor";
-          const txt = document.createElement("span");
-          txt.textContent = s.text;
-          chip.append(role, txt);
-          track.appendChild(chip);
+      function paintHero(tab) {
+        const s = SAMPLES[tab];
+        document.getElementById('codeBlock').innerHTML =
+          `<span class="text-white/35">${s.comment}</span>\n` +
+          `<span class="text-warm">from</span> computeruse <span class="text-warm">import</span> Sandbox\n\n` +
+          `<span class="text-warm">with</span> ${s.line} <span class="text-warm">as</span> sb:\n` +
+          `    result = sb.run(\n` +
+          `        <span class="text-accent">"Find the cheapest direct flight"</span>\n` +
+          `        <span class="text-accent">" to Lisbon next Tuesday."</span>\n` +
+          `    )\n` +
+          `    <span class="text-warm">print</span>(result.transcript)` +
+          `<span class="inline-block w-2 h-4 bg-accent animate-caret align-[-2px] ml-px"></span>`;
+        document.querySelectorAll('.model-tab').forEach((b) => {
+          const on = b.dataset.tab === tab;
+          b.className = 'model-tab px-2.5 py-1 rounded ' + (on
+            ? 'font-semibold text-white bg-white/10'
+            : 'font-medium text-white/55 hover:text-white/85');
         });
       }
-      fillMarquee($("#mq1"));
-      fillMarquee($("#mq2"));
+      document.querySelectorAll('.model-tab').forEach((b) => {
+        b.addEventListener('click', () => paintHero(b.dataset.tab));
+      });
 
-      // ----------------------------------------------------------------
-      // Fake composer — purely decorative
-      // ----------------------------------------------------------------
+      // big code section tabs
+      const BIG_SAMPLES = {
+        claude: {
+          file: 'claude.py',
+          comment: '# Anthropic Computer Use, pre-configured.',
+          ctor: 'Sandbox.claude(model=<span class="text-accent">"claude-sonnet-4-6"</span>)',
+        },
+        openai: {
+          file: 'openai.py',
+          comment: '# OpenAI Operator, pre-configured.',
+          ctor: 'Sandbox.openai(model=<span class="text-accent">"computer-use-preview"</span>)',
+        },
+        gemini: {
+          file: 'gemini.py',
+          comment: '# Gemini agent, pre-configured.',
+          ctor: 'Sandbox.gemini(model=<span class="text-accent">"gemini-3-agent"</span>)',
+        },
+      };
 
-      const composer = $("#composer");
-      const sendFake = $("#sendFake");
-      function fakeSend() {
-        const v = composer.value.trim();
-        if (!v) return;
-        pushBubble(v, "visitor");
-        // give a little agent acknowledgment after a beat
-        const ack = [
-          "noted — running it now.",
-          "good call. trying that next.",
-          "in the queue. one beat.",
-          "interesting. reading first.",
-        ][Math.floor(Math.random() * 4)];
-        setTimeout(() => pushBubble(ack, "agent"), 900 + Math.random() * 600);
-        composer.value = "";
+      function paintBig(tab) {
+        const s = BIG_SAMPLES[tab];
+        document.getElementById('bigCode').innerHTML =
+          `<span class="text-white/35">${s.comment}</span>\n` +
+          `<span class="text-warm">from</span> computeruse <span class="text-warm">import</span> Sandbox\n\n` +
+          `<span class="text-warm">with</span> ${s.ctor} <span class="text-warm">as</span> sb:\n` +
+          `    sb.goto(<span class="text-accent">"https://www.google.com/flights"</span>)\n` +
+          `    result = sb.agent.run(\n` +
+          `        <span class="text-accent">"Find the cheapest direct flight"</span>\n` +
+          `        <span class="text-accent">" SFO → LIS next Tuesday. Return the airline,"</span>\n` +
+          `        <span class="text-accent">" price, and departure time."</span>\n` +
+          `    )\n\n` +
+          `    <span class="text-warm">print</span>(result.value)\n` +
+          `    <span class="text-warm">print</span>(<span class="text-accent">f"cost: \${result.usage.usd}"</span>)\n` +
+          `    <span class="text-warm">print</span>(<span class="text-accent">f"active: {result.usage.active_seconds}s"</span>)`;
+        document.querySelectorAll('.big-tab').forEach((b) => {
+          const on = b.dataset.bigtab === tab;
+          b.className = 'big-tab px-3 py-2 font-mono text-[12px] ' + (on
+            ? 'text-white border-b-2 border-accent -mb-px'
+            : 'text-white/55 hover:text-white/85 border-b-2 border-transparent');
+        });
+        // update visible filename label (already in tabs above the file)
       }
-      sendFake.addEventListener("click", fakeSend);
-      composer.addEventListener("keydown", (e) => {
-        if ((e.key === "Enter" && (e.metaKey || e.ctrlKey)) || (e.key === "Enter" && !e.shiftKey)) {
-          e.preventDefault();
-          fakeSend();
-        }
+      document.querySelectorAll('.big-tab').forEach((b) => {
+        b.addEventListener('click', () => paintBig(b.dataset.bigtab));
       });
     </script>
   </body>

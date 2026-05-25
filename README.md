@@ -1,71 +1,76 @@
-# cloudbrowser.live
+# Computer Use Cloud
 
-One AI browser session, running continuously, in public. Anyone can watch what the agent is doing and send a short suggestion for the next move. No login, no profile — one collective browser, anonymous, always on.
+**Run Computer Use in the cloud — built for Claude, GPT, and Gemini agents.**
+
+Pre-configured cloud sandboxes for Anthropic Computer Use, OpenAI Operator, and Gemini agents. One API across three models. 60% cheaper than Browserbase for typical agent workloads. 2-second cold start. Pay per active second. Free tier — 10 hours/month.
+
+→ Live site (eventually): [computeruse.run](https://computeruse.run/)
+→ GitHub org (to register): `github.com/computeruse`
 
 ## Status
 
-**`index.html` is currently a self-contained marketing landing page.** All content in the hero stage (URL morph, agent intent, visitor bubbles, scripted scenarios across four mock pages, counters, marquee) is **mocked client-side** — no backend calls, no network dependencies. The page is a single static file you can host anywhere.
+**This repo currently hosts the marketing site for computeruse.run.** The product itself — SDK, runtime, sandbox orchestration — is not in this repo yet. This repo ships:
 
-The InsForge backend (schema, edge function, schedule) below is provisioned and live in project `wz4ktvdw.us-east` but **not wired to the page**. It's ready for Phase 2 when the real agent goes live.
+| File | What |
+|---|---|
+| `index.html` | Homepage. Dark dev-tool aesthetic, Tailwind via CDN, no build step. |
+| `vs/browserbase.html` | The "vs Browserbase" comparison + migration guide. Targets `browserbase pricing` (140/mo, KD 17) and `browserbase alternative` queries. |
+| `marketing/hn-post.md` | Show HN draft for launch day. |
+| `migrations/`, `functions/` | **Archived.** Schema + edge function for the previous `cloudbrowser.live` consumer-spectator experiment. Provisioned in InsForge project `wz4ktvdw.us-east` but not wired to the current site. |
 
-## Architecture
+## History
 
-```
-Browser (index.html) ── @insforge/sdk ──► InsForge ─► realtime: room:public
-                                            │
-                                            ├─ sessions         (current iframe URL, intent, status)
-                                            ├─ messages         (chat + operator events; trigger publishes)
-                                            └─ session_moments  (archived highlights)
+The repo was originally `cloudbrowser.live` — a public AI browser session ("watch one AI browse the web, send anonymous nudges"). The pivot to Computer Use Cloud (a B2B developer infra product) happened May 24, 2026 after Semrush keyword analysis showed:
 
-                              edge function: openagents-bridge
-                                            │
-                                            └──► browserfabric / OpenAgents  (the actual AI agent)
-```
+- "agentic browser" / "AI browser" — Wikipedia-owned, low ROI
+- "computer use" — 1,900/mo head term, 4,940/mo cluster, exact-match domain available (`computeruse.run`)
+- "browserbase pricing" — KD 17, direct comparison wedge
 
-- `index.html` is a single static page. No build step. It subscribes to `room:public` and inserts visitor suggestions directly via `@insforge/sdk`.
-- The bridge function does two jobs: `mode: "pull"` (cron) — fetch new operator events from OpenAgents, sanitize, upsert into `messages`. `mode: "forward"` — push a visitor suggestion to OpenAgents so the agent sees it.
-- All credentials (the `OPENAGENTS_TOKEN`) live as InsForge secrets. The browser only ever sees the public anon key.
-
-## Setup
-
-```bash
-# 1. Link the project (already done if .insforge/project.json exists)
-npx @insforge/cli link
-
-# 2. Apply the schema + RLS + realtime triggers
-npm run db:apply
-
-# 3. Set the OpenAgents secrets (one-time)
-npx @insforge/cli secrets set OPENAGENTS_API https://agents-api.caremojo.app
-npx @insforge/cli secrets set OPENAGENTS_NETWORK 0048fff6
-npx @insforge/cli secrets set OPENAGENTS_CHANNEL channel-beaa27ab
-npx @insforge/cli secrets set OPENAGENTS_TOKEN <workspace-token>
-
-# 4. Deploy the bridge function
-npm run fn:deploy
-
-# 5. Schedule the bridge to pull every few seconds
-npx @insforge/cli schedules create --slug openagents-bridge --cron "*/5 * * * * *" --body '{"mode":"pull"}'
-
-# 6. Serve the page locally
-npm run dev
-# open http://localhost:8080
-```
+`cloudbrowser.live` stays in the user's name as a brand asset backup. The mock consumer landing lives in git history at commit `9441af1` if anyone wants to fork it.
 
 ## Deploy
 
-The page is one HTML file with no build step — host it anywhere. To use InsForge frontend hosting:
+No build step. Serve as static HTML.
 
 ```bash
-npx @insforge/cli deployments deploy --dir . --name cloudbrowser-live
+npx serve . -l 8080
+# open http://localhost:8080
 ```
 
-## Schema
+For production, host on any static CDN (Vercel / Netlify / Cloudflare Pages / S3+CloudFront).
 
-`migrations/20260524235454_init-room.sql` creates:
+DNS: point `computeruse.run` (already registered) at the static host. Plan to set up `cloudbrowser.live → 301 → computeruse.run` once the new site goes live, so any backlinks pointing at the old domain survive.
 
-- `sessions` — one row per continuously-running session, with `browser_live_url`, `current_url`, `current_intent`, `move_count`.
-- `messages` — every visible message in the room, with `source` (visitor | operator) and `actor_id` (anonymous visitor or upstream event ID).
-- `session_moments` — archived highlights, rendered in the "Recent moments" section for SEO and shareability.
-- Realtime channels: `room:public` (every new message), `session:current` (intent + URL updates).
-- RLS: anon `SELECT` everything; anon `INSERT` only into `messages` as a visitor in the live session, rate-limited to 6 messages / actor / minute.
+## SEO / AEO targets (May 2026 baseline)
+
+| Keyword | Vol/mo | KD | Page |
+|---|---|---|---|
+| `computer use` | 1,900 | high (DA-bound) | `/` |
+| `computer use api` | — | medium | `/` |
+| `claude computer use docs` | 140 | 32 | future `/docs/quickstart` |
+| `computer use claude` | 110 | 27 | `/` |
+| `browserbase pricing` | 140 | 17 | `/vs/browserbase.html` |
+| `browserbase alternative` | — | — | `/vs/browserbase.html` |
+
+Schema deployed: `Organization`, `WebSite`, `SoftwareApplication`, `FAQPage` on `/`; `Article` + `FAQPage` on `/vs/browserbase.html`.
+
+## Local dev
+
+```bash
+# serve
+npx serve . -l 8080
+
+# verify hero fits 100vh across viewports
+# verify JSON-LD with https://search.google.com/test/rich-results
+# verify the Tailwind CDN loads (no build artifacts to ship)
+```
+
+## Roadmap (marketing-side)
+
+- [ ] Wire `computeruse.run` DNS at static host
+- [ ] Register `github.com/computeruse` org
+- [ ] Publish HN Show post (see `marketing/hn-post.md`)
+- [ ] Replace placeholder `/docs/quickstart`, `/openai-operator`, `/gemini-computer-use` routes with real pages
+- [ ] Add `sitemap.xml` + `robots.txt`
+- [ ] Drop a real OG image at `/og.png` (1200×630)
+- [ ] Set up position tracking in Semrush for the keywords above
