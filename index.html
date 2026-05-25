@@ -233,81 +233,131 @@
 
       .hero {
         position: relative;
-        padding: 96px 24px 28px;
+        min-height: 100vh;
+        padding: 84px 24px 36px;
+        display: flex;
+        align-items: center;
         background:
           radial-gradient(1100px 580px at 80% -10%, rgba(15, 122, 92, 0.08), transparent 60%),
           radial-gradient(900px 500px at -10% 20%, rgba(194, 90, 42, 0.07), transparent 55%),
           var(--paper);
       }
 
-      .hero-headline {
+      .hero-grid {
         position: relative;
         z-index: 2;
-        max-width: 1180px;
-        margin: 0 auto 28px;
-        padding: 28px 4px 0;
+        width: 100%;
+        max-width: 1380px;
+        margin: 0 auto;
         display: grid;
-        grid-template-columns: 1fr auto;
-        align-items: end;
-        gap: 28px;
+        grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+        gap: clamp(28px, 4.5vw, 64px);
+        align-items: center;
       }
 
-      .hero-headline h1 {
+      .hero-left {
+        display: flex;
+        flex-direction: column;
+        gap: 22px;
+        min-width: 0;
+      }
+
+      .hero-eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        font-size: 11.5px;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--muted-strong);
+      }
+      .hero-eyebrow .dot {
+        width: 7px; height: 7px;
+        border-radius: 999px;
+        background: var(--accent);
+        box-shadow: 0 0 0 4px var(--accent-tint);
+      }
+
+      .hero-left h1 {
         margin: 0;
         font-family: var(--serif);
         font-weight: 500;
-        font-size: clamp(40px, 6.8vw, 84px);
+        font-size: clamp(40px, 5vw, 68px);
         line-height: 0.98;
-        letter-spacing: -0.02em;
+        letter-spacing: -0.018em;
+        color: var(--ink);
       }
-
-      .hero-headline h1 em {
+      .hero-left h1 em {
         font-style: italic;
         color: var(--accent-strong);
       }
 
-      .hero-headline .sub {
-        max-width: 360px;
+      .hero-left .sub {
+        margin: 0;
+        max-width: 460px;
         color: var(--muted-strong);
-        font-size: 15px;
-        line-height: 1.5;
-        padding-bottom: 8px;
+        font-size: clamp(15px, 1.15vw, 17px);
+        line-height: 1.55;
       }
 
       .hero-stats {
-        position: relative;
-        z-index: 2;
-        max-width: 1180px;
-        margin: 14px auto 22px;
-        display: flex;
-        gap: 36px;
-        align-items: baseline;
-        flex-wrap: wrap;
-        padding: 0 4px;
-        font-family: var(--mono);
-        font-size: 12.5px;
-        color: var(--muted-strong);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px 28px;
+        padding: 18px 22px;
+        border: 1px solid var(--hairline);
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.55);
+        backdrop-filter: blur(10px);
+        max-width: 460px;
       }
 
       .hero-stats .stat strong {
+        display: block;
         font-family: var(--sans);
-        font-size: 22px;
+        font-size: 26px;
         font-weight: 700;
         color: var(--ink);
-        margin-right: 8px;
-        letter-spacing: -0.01em;
+        margin-bottom: 2px;
+        letter-spacing: -0.012em;
       }
 
-      .hero-stats .stat span { letter-spacing: 0.04em; text-transform: uppercase; font-size: 11px; }
+      .hero-stats .stat span {
+        font-family: var(--mono);
+        color: var(--muted-strong);
+        font-size: 10.5px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      .hero-cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-top: 4px;
+      }
+
+      .btn-link {
+        color: var(--muted-strong);
+        font-size: 13px;
+        font-weight: 600;
+        border-bottom: 1px solid var(--hairline-strong);
+        padding-bottom: 1px;
+      }
+      .btn-link:hover { color: var(--ink); }
+
+      .hero-right { min-width: 0; }
 
       /* The fake browser stage */
       .stage {
         position: relative;
         z-index: 2;
-        max-width: 1240px;
-        height: min(64vh, 720px);
-        min-height: 520px;
-        margin: 0 auto;
+        width: 100%;
+        height: min(76vh, 680px);
+        min-height: 460px;
+        margin: 0;
         border-radius: 22px;
         background: #f5f4ec;
         border: 1px solid var(--hairline-strong);
@@ -1418,19 +1468,28 @@
 
       /* =========================== HERO RESPONSIVE ==================== */
 
-      @media (max-width: 880px) {
-        .hero-headline { grid-template-columns: 1fr; }
-        .hero-headline .sub { padding-bottom: 0; }
-        .stage { height: 70vh; min-height: 540px; }
+      @media (max-width: 980px) {
+        .hero {
+          min-height: auto;
+          padding: 92px 16px 56px;
+          align-items: stretch;
+        }
+        .hero-grid {
+          grid-template-columns: 1fr;
+          gap: 32px;
+        }
+        .hero-stats { max-width: none; }
+        .stage { height: 60vh; min-height: 440px; }
         .agent-strip { top: 52px; }
         .room { width: calc(100% - 36px); bottom: 100px; }
       }
 
       @media (max-width: 520px) {
-        .hero { padding: 80px 14px 22px; }
-        .stage { border-radius: 14px; }
-        .hero-stats { gap: 22px; }
-        .hero-stats .stat strong { font-size: 18px; }
+        .hero { padding: 84px 14px 48px; }
+        .stage { border-radius: 14px; height: 58vh; min-height: 400px; }
+        .hero-stats { padding: 14px 16px; gap: 12px 18px; }
+        .hero-stats .stat strong { font-size: 22px; }
+        .hero-left h1 { font-size: clamp(34px, 8vw, 44px); }
       }
     </style>
   </head>
@@ -1451,22 +1510,31 @@
 
     <!-- =========================== HERO ============================ -->
     <section class="hero">
-      <div class="hero-headline">
-        <h1>One AI browser.<br />The internet <em>watching.</em></h1>
-        <p class="sub">
-          A public session that never stops. Anonymous suggestions, real moves on a real browser.
-          Tap in for a minute or stay all night.
-        </p>
-      </div>
+      <div class="hero-grid">
 
-      <div class="hero-stats">
-        <div class="stat"><strong id="statWatch">1,283</strong><span>watching now</span></div>
-        <div class="stat"><strong id="statNudge">47,392</strong><span>nudges this week</span></div>
-        <div class="stat"><strong id="statDays">14</strong><span>days running</span></div>
-        <div class="stat"><strong id="statMoves">9,184</strong><span>agent moves</span></div>
-      </div>
+        <div class="hero-left">
+          <span class="hero-eyebrow"><span class="dot"></span> Public AI browser · since May 10</span>
+          <h1>One AI browser.<br />The internet <em>watching.</em></h1>
+          <p class="sub">
+            A public session that never stops. Anonymous suggestions, real moves on a real browser.
+            Tap in for a minute or stay all night.
+          </p>
 
-      <div class="stage" aria-label="Live browser session">
+          <div class="hero-stats">
+            <div class="stat"><strong id="statWatch">1,283</strong><span>watching now</span></div>
+            <div class="stat"><strong id="statNudge">47,392</strong><span>nudges this week</span></div>
+            <div class="stat"><strong id="statDays">14</strong><span>days running</span></div>
+            <div class="stat"><strong id="statMoves">9,184</strong><span>agent moves</span></div>
+          </div>
+
+          <div class="hero-cta">
+            <a href="#what" class="btn btn-primary">Step into the room <span class="arrow">→</span></a>
+            <a href="#why" class="btn-link">Read the manifesto</a>
+          </div>
+        </div>
+
+        <div class="hero-right">
+        <div class="stage" aria-label="Live browser session">
         <div class="stage-bar">
           <div class="dots"><span></span><span></span><span></span></div>
           <div class="url-bar">
@@ -1616,11 +1684,9 @@
           <span class="hint">⌘ + Enter · anonymous</span>
         </div>
       </div>
+        </div>
 
-      <a class="scrollcue" href="#what">
-        About this room
-        <span class="down" aria-hidden="true"></span>
-      </a>
+      </div>
     </section>
 
     <!-- ========================= ROOM GRID ========================= -->
