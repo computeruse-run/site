@@ -1,0 +1,16 @@
+{
+  "name": "cloudbrowser-live",
+  "version": "0.2.0",
+  "private": true,
+  "description": "The public AI browser session — one agent, one window, anonymous and always on.",
+  "scripts": {
+    "dev": "npx serve . -l 8080",
+    "db:apply": "npx @insforge/cli db migrations up --all",
+    "fn:deploy": "npx @insforge/cli functions deploy openagents-bridge --file ./functions/openagents-bridge/index.ts --name 'OpenAgents bridge' --description 'Pulls events from browserfabric and forwards visitor messages.'",
+    "fn:invoke:pull": "npx @insforge/cli functions invoke openagents-bridge --body '{\"mode\":\"pull\"}'",
+    "secrets:set": "echo 'Set with: npx @insforge/cli secrets set OPENAGENTS_API <url>; OPENAGENTS_NETWORK <id>; OPENAGENTS_CHANNEL <id>; OPENAGENTS_TOKEN <token>'"
+  },
+  "dependencies": {
+    "@insforge/sdk": "latest"
+  }
+}

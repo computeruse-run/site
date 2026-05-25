@@ -1,0 +1,1362 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cloud Browser Live · Watch the public AI browser. Suggest the next move.</title>
+    <meta
+      name="description"
+      content="One AI browser running continuously, in public. Anyone can watch what the agent is doing and suggest the next move. No login, no profile — one collective browser, always on."
+    />
+    <link rel="canonical" href="https://cloudbrowser.live/" />
+    <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large" />
+    <meta name="theme-color" content="#f6f3ea" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://cloudbrowser.live/" />
+    <meta property="og:title" content="Cloud Browser Live · The public AI browser session" />
+    <meta
+      property="og:description"
+      content="One agent. One window. One room of strangers steering it. Live, anonymous, always on."
+    />
+    <meta property="og:image" content="https://cloudbrowser.live/og.png" />
+    <meta property="og:site_name" content="Cloud Browser Live" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Cloud Browser Live" />
+    <meta
+      name="twitter:description"
+      content="One public AI browser. Watch it. Steer it. Anonymous and always on."
+    />
+    <meta name="twitter:image" content="https://cloudbrowser.live/og.png" />
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='7' fill='%230f7a5c'/><circle cx='16' cy='16' r='13' fill='none' stroke='%230f7a5c' stroke-opacity='.25' stroke-width='2'/></svg>" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://cloudbrowser.live/#org",
+            "name": "Cloud Browser Live",
+            "url": "https://cloudbrowser.live/",
+            "logo": "https://cloudbrowser.live/og.png",
+            "description": "Operator of the public AI browser at cloudbrowser.live."
+          },
+          {
+            "@type": "WebApplication",
+            "@id": "https://cloudbrowser.live/#app",
+            "name": "Cloud Browser Live",
+            "applicationCategory": "CollaborationApplication",
+            "operatingSystem": "Web",
+            "url": "https://cloudbrowser.live/",
+            "publisher": { "@id": "https://cloudbrowser.live/#org" },
+            "description": "A public AI browser session anyone can watch and steer with short suggestions. Anonymous, always on, one shared window.",
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+          },
+          {
+            "@type": "FAQPage",
+            "@id": "https://cloudbrowser.live/#faq",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Is this a real AI or a recording?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Real. The browser you see is a live session. What's on screen is what the agent is doing right now." }
+              },
+              {
+                "@type": "Question",
+                "name": "Can the agent see my suggestion?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Yes. Every message in the room is part of the agent's input. It reads them and picks what to act on." }
+              },
+              {
+                "@type": "Question",
+                "name": "Why is the browser read-only?",
+                "acceptedAnswer": { "@type": "Answer", "text": "You are watching the agent's session, not driving it yourself. The agent is the only one with hands on the keyboard. You influence it by suggesting, not clicking." }
+              },
+              {
+                "@type": "Question",
+                "name": "Do you store who I am?",
+                "acceptedAnswer": { "@type": "Answer", "text": "No login, no email. The site keeps a random anonymous ID in your browser so the agent can tell visitors apart in the room. Clear your storage and you are a new visitor." }
+              },
+              {
+                "@type": "Question",
+                "name": "What model is the agent?",
+                "acceptedAnswer": { "@type": "Answer", "text": "A general-purpose browsing agent built on a current-generation LLM, running on a real cloud browser. The exact model changes as we upgrade it." }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I run my own cloud browser like this?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Not through Cloud Browser Live — this is one shared agent. For private, scriptable cloud browsers, look at the agentic browser-as-a-service category: Browserbase, Browserless, Cloudflare Browser Run, browser-use." }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+
+    <style>
+      :root {
+        color-scheme: light;
+        --ink: #14140f;
+        --ink-soft: #2d2c26;
+        --muted: #6d6a62;
+        --muted-strong: #514e47;
+        --hairline: rgba(20, 20, 15, 0.1);
+        --hairline-strong: rgba(20, 20, 15, 0.18);
+        --paper: #f7f5ee;
+        --paper-deep: #ede9dd;
+        --white-soft: rgba(255, 255, 255, 0.82);
+        --shadow-lift: 0 22px 70px rgba(18, 18, 18, 0.18);
+        --shadow-card: 0 14px 34px rgba(18, 18, 18, 0.08);
+        --accent: #0f7a5c;
+        --accent-strong: #0c5d48;
+        --accent-tint: rgba(15, 122, 92, 0.12);
+      }
+
+      *, *::before, *::after { box-sizing: border-box; }
+
+      html { scroll-behavior: smooth; }
+
+      html, body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      a { color: var(--accent); text-decoration: none; }
+      a:hover { color: var(--accent-strong); }
+
+      button, textarea { font: inherit; }
+
+      /* ------------------------------ HERO ----------------------------- */
+
+      .hero {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        min-height: 620px;
+        overflow: hidden;
+        isolation: isolate;
+        background: linear-gradient(135deg, #fbfbf8 0%, #eff2ed 52%, #f7f8f4 100%);
+      }
+
+      .browser-shell {
+        position: absolute;
+        inset: 14px;
+        overflow: hidden;
+        border: 1px solid var(--hairline);
+        border-radius: 18px;
+        background: #f5f6f2;
+        box-shadow: var(--shadow-lift);
+      }
+
+      .browser-bar {
+        position: relative;
+        z-index: 3;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        height: 42px;
+        padding: 0 14px;
+        border-bottom: 1px solid var(--hairline);
+        background: rgba(250, 251, 247, 0.92);
+        backdrop-filter: blur(18px);
+      }
+
+      .dots { display: flex; gap: 7px; flex: 0 0 auto; }
+      .dots span {
+        width: 10px; height: 10px;
+        border-radius: 999px;
+        background: #d8d1c0;
+      }
+
+      .address {
+        min-width: 0;
+        flex: 0 1 360px;
+        max-width: 44vw;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        border: 1px solid var(--hairline);
+        border-radius: 999px;
+        padding: 7px 12px;
+        color: #5d5a52;
+        background: rgba(255, 255, 255, 0.78);
+        font-size: 12px;
+      }
+
+      .browser-stage {
+        position: absolute;
+        inset: 42px 0 0;
+        background:
+          linear-gradient(rgba(247, 248, 244, 0.5), rgba(247, 248, 244, 0)),
+          #ffffff;
+      }
+
+      .browser-stage::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 2;
+        cursor: default;
+      }
+
+      iframe {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+        pointer-events: none;
+        background: #ffffff;
+      }
+
+      .empty-browser {
+        position: absolute;
+        inset: 0;
+        display: grid;
+        place-items: center;
+        padding: 28px;
+        color: #777168;
+        text-align: center;
+        font-size: 15px;
+        line-height: 1.5;
+      }
+
+      .intent-strip {
+        position: absolute;
+        z-index: 6;
+        top: 56px;
+        left: 28px;
+        right: 28px;
+        display: flex;
+        justify-content: center;
+        pointer-events: none;
+      }
+
+      .intent-strip > span {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        max-width: 100%;
+        padding: 7px 14px;
+        border: 1px solid var(--hairline);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.86);
+        backdrop-filter: blur(18px);
+        color: var(--muted-strong);
+        font-size: 12px;
+        line-height: 1.3;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        box-shadow: 0 10px 28px rgba(18, 18, 18, 0.06);
+      }
+
+      .intent-strip strong {
+        color: var(--ink);
+        font-size: 11px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      /* Topline overlay */
+      .topline {
+        position: absolute;
+        z-index: 8;
+        top: 28px;
+        left: 34px;
+        right: 34px;
+        display: grid;
+        grid-template-columns: minmax(140px, 0.8fr) minmax(260px, 1.4fr) minmax(120px, 0.8fr);
+        align-items: start;
+        gap: 18px;
+        pointer-events: none;
+      }
+
+      .brand, .live-pill, .headline, .nav-links { pointer-events: auto; }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        width: max-content;
+        max-width: 100%;
+        padding: 9px 13px;
+        border: 1px solid var(--hairline);
+        border-radius: 999px;
+        background: var(--white-soft);
+        backdrop-filter: blur(18px);
+        box-shadow: var(--shadow-card);
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--ink);
+      }
+
+      .mark {
+        width: 9px;
+        height: 9px;
+        border-radius: 999px;
+        background: var(--accent);
+        box-shadow: 0 0 0 5px var(--accent-tint);
+      }
+
+      .headline {
+        justify-self: center;
+        width: min(100%, 600px);
+        padding: 2px 0 0;
+        text-align: center;
+        text-shadow: 0 2px 18px rgba(255, 255, 255, 0.92);
+      }
+
+      .headline h1 {
+        margin: 0;
+        font-size: clamp(22px, 3.2vh, 34px);
+        line-height: 1.04;
+        font-weight: 780;
+        letter-spacing: -0.01em;
+        color: var(--ink);
+      }
+
+      .headline p {
+        margin: 8px auto 0;
+        max-width: 460px;
+        color: var(--muted-strong);
+        font-size: 13px;
+        line-height: 1.45;
+      }
+
+      .live-pill {
+        justify-self: end;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        width: max-content;
+        padding: 9px 13px;
+        border: 1px solid rgba(15, 122, 92, 0.2);
+        border-radius: 999px;
+        background: rgba(239, 251, 245, 0.86);
+        backdrop-filter: blur(18px);
+        color: #134d3f;
+        font-size: 13px;
+        font-weight: 700;
+        box-shadow: var(--shadow-card);
+      }
+
+      .pulse {
+        width: 8px;
+        height: 8px;
+        border-radius: 999px;
+        background: var(--accent);
+        animation: pulse 1.8s ease-in-out infinite;
+      }
+
+      /* Messages overlay */
+      .messages {
+        position: absolute;
+        z-index: 9;
+        left: 34px;
+        bottom: 116px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        gap: 9px;
+        width: min(420px, calc(100vw - 68px));
+        height: min(280px, 36vh);
+        overflow: hidden;
+        pointer-events: none;
+        mask-image: linear-gradient(to bottom, transparent 0, #000 22%, #000 100%);
+      }
+
+      .message {
+        max-width: 100%;
+        width: fit-content;
+        min-width: 0;
+        padding: 10px 13px 11px;
+        border: 1px solid var(--hairline);
+        border-radius: 18px 18px 18px 5px;
+        background: rgba(255, 255, 255, 0.86);
+        backdrop-filter: blur(18px);
+        box-shadow: var(--shadow-card);
+        animation: floatIn 520ms cubic-bezier(0.18, 0.9, 0.2, 1) both;
+      }
+
+      .message.operator {
+        background: rgba(235, 248, 241, 0.92);
+        border-color: rgba(15, 122, 92, 0.22);
+      }
+
+      .message.you {
+        background: rgba(247, 246, 240, 0.96);
+        border-color: var(--hairline-strong);
+      }
+
+      .message.fading { animation: driftOut 720ms ease both; }
+
+      .message strong {
+        display: block;
+        margin-bottom: 4px;
+        color: var(--muted-strong);
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .message p {
+        display: -webkit-box;
+        margin: 0;
+        overflow: hidden;
+        color: var(--ink-soft);
+        font-size: 13px;
+        line-height: 1.42;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        line-clamp: 3;
+        overflow-wrap: anywhere;
+      }
+
+      .message-empty {
+        align-self: flex-start;
+        padding: 10px 13px;
+        border: 1px solid var(--hairline);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.78);
+        backdrop-filter: blur(18px);
+        color: var(--muted);
+        font-size: 13px;
+        box-shadow: var(--shadow-card);
+      }
+
+      /* Composer */
+      .composer {
+        position: absolute;
+        z-index: 10;
+        left: 34px;
+        bottom: 30px;
+        width: min(560px, calc(100vw - 68px));
+        border: 1px solid var(--hairline-strong);
+        border-radius: 24px;
+        background: rgba(255, 255, 255, 0.92);
+        backdrop-filter: blur(22px);
+        box-shadow: var(--shadow-lift);
+      }
+
+      .composer form {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 10px;
+        align-items: end;
+        padding: 10px;
+      }
+
+      .composer textarea {
+        width: 100%;
+        height: 48px;
+        max-height: 96px;
+        resize: none;
+        border: 0;
+        outline: 0;
+        border-radius: 16px;
+        padding: 14px 13px;
+        background: transparent;
+        color: var(--ink);
+        font-size: 15px;
+        line-height: 1.35;
+      }
+
+      .composer textarea::placeholder { color: #8c877c; }
+
+      .composer button {
+        display: inline-grid;
+        place-items: center;
+        width: 48px;
+        height: 48px;
+        border: 0;
+        border-radius: 17px;
+        background: var(--accent);
+        color: white;
+        cursor: pointer;
+        transition: transform 160ms ease, background 160ms ease, opacity 160ms ease;
+      }
+
+      .composer button:hover { background: var(--accent-strong); transform: translateY(-1px); }
+      .composer button:disabled { cursor: default; opacity: 0.45; transform: none; }
+
+      .send-icon {
+        width: 19px; height: 19px;
+        fill: none; stroke: currentColor;
+        stroke-linecap: round; stroke-linejoin: round;
+        stroke-width: 2.2;
+      }
+
+      /* Scroll cue */
+      .scroll-cue {
+        position: absolute;
+        z-index: 7;
+        right: 34px;
+        bottom: 34px;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 9px 14px;
+        border: 1px solid var(--hairline-strong);
+        border-radius: 999px;
+        background: rgba(24, 24, 22, 0.84);
+        color: #fffaf0;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        backdrop-filter: blur(18px);
+      }
+
+      .scroll-cue:hover { color: #fffaf0; background: rgba(24, 24, 22, 0.92); }
+      .scroll-cue svg { width: 12px; height: 12px; }
+
+      .toast {
+        position: absolute;
+        z-index: 11;
+        right: 34px;
+        bottom: 84px;
+        max-width: min(360px, calc(100vw - 68px));
+        padding: 10px 13px;
+        border: 1px solid var(--hairline);
+        border-radius: 999px;
+        background: rgba(24, 24, 22, 0.84);
+        color: #fffaf0;
+        font-size: 13px;
+        opacity: 0;
+        transform: translateY(10px);
+        transition: opacity 180ms ease, transform 180ms ease;
+        pointer-events: none;
+      }
+
+      .toast.show { opacity: 1; transform: translateY(0); }
+
+      /* ----------------------------- CONTENT --------------------------- */
+
+      main.content { background: var(--paper); }
+
+      section.band {
+        padding: clamp(72px, 12vh, 140px) 28px;
+      }
+
+      section.band.deep { background: var(--paper-deep); }
+      section.band.ink  { background: var(--ink); color: #efece4; }
+      section.band.ink .eyebrow { color: rgba(239, 236, 228, 0.6); }
+      section.band.ink h2,
+      section.band.ink p { color: #efece4; }
+      section.band.ink .card { background: rgba(255, 255, 255, 0.04); border-color: rgba(239, 236, 228, 0.14); color: #efece4; }
+      section.band.ink .card h3 { color: #fffaf0; }
+
+      .wrap {
+        max-width: 980px;
+        margin: 0 auto;
+      }
+
+      .wrap-narrow {
+        max-width: 680px;
+        margin: 0 auto;
+      }
+
+      .eyebrow {
+        display: block;
+        margin-bottom: 14px;
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      h2.display {
+        margin: 0 0 24px;
+        font-size: clamp(28px, 4.4vw, 44px);
+        line-height: 1.06;
+        font-weight: 780;
+        letter-spacing: -0.015em;
+        color: var(--ink);
+      }
+
+      h3.card-title {
+        margin: 0 0 8px;
+        font-size: 16px;
+        line-height: 1.3;
+        font-weight: 700;
+        letter-spacing: -0.005em;
+        color: var(--ink);
+      }
+
+      p.lede {
+        max-width: 640px;
+        margin: 0;
+        color: var(--ink-soft);
+        font-size: clamp(17px, 1.6vw, 19px);
+        line-height: 1.55;
+      }
+
+      p.body {
+        margin: 0 0 1em;
+        color: var(--ink-soft);
+        font-size: 16.5px;
+        line-height: 1.62;
+      }
+
+      p.body:last-child { margin-bottom: 0; }
+
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+        margin-top: 36px;
+      }
+
+      .card {
+        padding: 22px;
+        border: 1px solid var(--hairline);
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(8px);
+        color: var(--ink-soft);
+        font-size: 14.5px;
+        line-height: 1.55;
+      }
+
+      ol.steps {
+        counter-reset: step;
+        list-style: none;
+        margin: 36px 0 0;
+        padding: 0;
+        display: grid;
+        gap: 18px;
+      }
+
+      ol.steps li {
+        counter-increment: step;
+        position: relative;
+        padding: 22px 22px 22px 70px;
+        border: 1px solid var(--hairline);
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.7);
+        color: var(--ink-soft);
+        font-size: 15px;
+        line-height: 1.55;
+      }
+
+      ol.steps li::before {
+        content: counter(step, decimal-leading-zero);
+        position: absolute;
+        left: 22px;
+        top: 22px;
+        width: 32px;
+        height: 32px;
+        display: grid;
+        place-items: center;
+        border-radius: 999px;
+        background: var(--accent);
+        color: white;
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.02em;
+      }
+
+      ol.steps li strong {
+        display: block;
+        margin-bottom: 4px;
+        color: var(--ink);
+        font-size: 16px;
+        font-weight: 700;
+      }
+
+      .moments {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+        margin-top: 36px;
+      }
+
+      .moment {
+        padding: 20px;
+        border: 1px solid var(--hairline);
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.7);
+      }
+
+      .moment time {
+        display: block;
+        margin-bottom: 8px;
+        color: var(--muted);
+        font-size: 11.5px;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .moment h3 {
+        margin: 0 0 8px;
+        color: var(--ink);
+        font-size: 16.5px;
+        font-weight: 700;
+        line-height: 1.3;
+      }
+
+      .moment p {
+        margin: 0;
+        color: var(--ink-soft);
+        font-size: 14.5px;
+        line-height: 1.55;
+      }
+
+      .moments-empty {
+        margin: 36px 0 0;
+        padding: 36px;
+        border: 1px dashed var(--hairline-strong);
+        border-radius: 16px;
+        text-align: center;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      details.faq {
+        border-top: 1px solid var(--hairline);
+      }
+
+      details.faq:last-of-type { border-bottom: 1px solid var(--hairline); }
+
+      details.faq summary {
+        padding: 22px 36px 22px 0;
+        position: relative;
+        cursor: pointer;
+        font-size: 17px;
+        font-weight: 700;
+        color: var(--ink);
+        list-style: none;
+      }
+
+      details.faq summary::-webkit-details-marker { display: none; }
+
+      details.faq summary::after {
+        content: "+";
+        position: absolute;
+        right: 6px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 22px;
+        font-weight: 400;
+        color: var(--muted);
+        transition: transform 180ms ease;
+      }
+
+      details.faq[open] summary::after { content: "−"; }
+
+      details.faq .answer {
+        padding: 0 0 22px;
+        color: var(--ink-soft);
+        font-size: 15.5px;
+        line-height: 1.6;
+      }
+
+      /* Footer */
+      footer.foot {
+        padding: 56px 28px;
+        background: var(--ink);
+        color: rgba(239, 236, 228, 0.7);
+      }
+
+      footer.foot .wrap {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 24px;
+        justify-content: space-between;
+        align-items: end;
+      }
+
+      footer.foot .brand-foot {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        color: #fffaf0;
+        font-weight: 700;
+        font-size: 14px;
+      }
+
+      footer.foot p { margin: 8px 0 0; font-size: 13px; max-width: 420px; line-height: 1.5; }
+
+      footer.foot ul {
+        display: flex;
+        gap: 18px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      footer.foot a { color: rgba(239, 236, 228, 0.78); font-size: 13px; }
+      footer.foot a:hover { color: #fffaf0; }
+
+      /* ----------------------------- MOTION ---------------------------- */
+
+      @keyframes pulse {
+        0%, 100% { box-shadow: 0 0 0 0 rgba(15, 122, 92, 0.2); }
+        50% { box-shadow: 0 0 0 8px rgba(15, 122, 92, 0); }
+      }
+
+      @keyframes floatIn {
+        from { opacity: 0; transform: translateY(22px) scale(0.98); }
+        to   { opacity: 1; transform: translateY(0) scale(1); }
+      }
+
+      @keyframes driftOut {
+        to { opacity: 0; transform: translateY(-26px) scale(0.98); filter: blur(2px); }
+      }
+
+      /* --------------------------- RESPONSIVE -------------------------- */
+
+      @media (max-width: 780px) {
+        .browser-shell { inset: 10px; border-radius: 15px; }
+
+        .topline {
+          top: 22px;
+          left: 22px;
+          right: 22px;
+          grid-template-columns: 1fr auto;
+          gap: 10px;
+        }
+
+        .headline {
+          grid-column: 1 / -1;
+          grid-row: 2;
+          justify-self: start;
+          width: min(100%, 430px);
+          text-align: left;
+        }
+
+        .headline p { margin-left: 0; }
+
+        .intent-strip { top: 110px; left: 18px; right: 18px; }
+        .intent-strip > span { white-space: normal; text-align: left; line-height: 1.4; }
+
+        .messages { left: 18px; right: 18px; bottom: 116px; width: auto; height: min(220px, 30vh); }
+        .composer { left: 18px; right: 18px; bottom: 22px; width: auto; }
+        .toast { right: 18px; bottom: 92px; }
+        .scroll-cue { right: 18px; bottom: 12px; padding: 7px 11px; font-size: 11px; }
+
+        .cards { grid-template-columns: 1fr; }
+        .moments { grid-template-columns: 1fr; }
+
+        footer.foot .wrap { align-items: flex-start; }
+      }
+
+      @media (max-height: 640px) {
+        .headline p { display: none; }
+        .intent-strip { display: none; }
+        .messages { height: 170px; }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *, *::before, *::after {
+          animation-duration: 1ms !important;
+          animation-iteration-count: 1 !important;
+          scroll-behavior: auto !important;
+          transition-duration: 1ms !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- =========================== HERO =========================== -->
+    <section class="hero" aria-label="Public AI browser room">
+      <div class="browser-shell" aria-label="Live browser view">
+        <div class="browser-bar" aria-hidden="true">
+          <div class="dots"><span></span><span></span><span></span></div>
+          <div class="address" id="browserAddress">cloudbrowser.live · loading session…</div>
+        </div>
+        <div class="browser-stage">
+          <iframe
+            id="browserFrame"
+            title="Live AI browser session"
+            tabindex="-1"
+            referrerpolicy="no-referrer"
+            sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
+          ></iframe>
+          <div class="empty-browser" id="browserEmpty">Loading the live browser…</div>
+        </div>
+      </div>
+
+      <div class="intent-strip" aria-live="polite">
+        <span><strong>Agent</strong> <span id="agentIntent">picking up where it left off…</span></span>
+      </div>
+
+      <header class="topline">
+        <a class="brand" href="#what" aria-label="Cloud Browser Live">
+          <span class="mark"></span> Cloud Browser Live
+        </a>
+        <div class="headline">
+          <h1>The public AI browser.</h1>
+          <p>One agent, browsing in the open. Anyone can suggest the next move.</p>
+        </div>
+        <div class="live-pill"><span class="pulse"></span><span id="liveState">Live</span></div>
+      </header>
+
+      <section class="messages" id="messages" aria-live="polite" aria-label="Recent suggestions">
+        <div class="message-empty" id="messageEmpty">Waiting for the room to move…</div>
+      </section>
+
+      <section class="composer" aria-label="Send a suggestion">
+        <form id="messageForm">
+          <textarea
+            id="messageInput"
+            aria-label="Suggestion"
+            autocomplete="off"
+            maxlength="600"
+            placeholder="Suggest the next move…"
+            rows="1"
+          ></textarea>
+          <button id="sendButton" type="submit" aria-label="Send suggestion" disabled>
+            <svg class="send-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5 12h13"></path>
+              <path d="m13 6 6 6-6 6"></path>
+            </svg>
+          </button>
+        </form>
+      </section>
+
+      <a class="scroll-cue" href="#what" aria-label="Learn more about Cloud Browser Live">
+        About this room
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M6 9l6 6 6-6"/>
+        </svg>
+      </a>
+
+      <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    </section>
+
+    <!-- ========================== CONTENT ========================== -->
+    <main class="content">
+
+      <!-- WHAT -->
+      <section class="band" id="what">
+        <div class="wrap">
+          <span class="eyebrow">What you are watching</span>
+          <h2 class="display">One AI browser, in the open, all the time.</h2>
+          <p class="lede">
+            Cloud Browser Live is one AI browser session that runs continuously, in public.
+            Anyone can watch what the agent is doing and send a short suggestion for the next move.
+            No login, no profile — just one collective browser that anonymous visitors steer together,
+            in the open, always on.
+          </p>
+          <div class="cards">
+            <article class="card">
+              <h3 class="card-title">One shared window</h3>
+              Every visitor is watching the same browser, in the same moment, on the same page.
+              There is no per-user session — this is one room.
+            </article>
+            <article class="card">
+              <h3 class="card-title">Open to anonymous nudges</h3>
+              Anyone can suggest the next click, search, or scroll. The agent reads the room and picks
+              what to act on. There is no signup and nothing to install.
+            </article>
+            <article class="card">
+              <h3 class="card-title">Always live</h3>
+              The session runs continuously. Drop in, leave, come back tomorrow — the browser is
+              still moving, and the room is still talking.
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- HOW -->
+      <section class="band deep" id="how">
+        <div class="wrap">
+          <span class="eyebrow">How it works</span>
+          <h2 class="display">Three things, in a loop.</h2>
+          <ol class="steps">
+            <li>
+              <strong>The agent moves.</strong>
+              It loads a page, runs a search, or reads what it found, and tells the room what it
+              intends to do next.
+            </li>
+            <li>
+              <strong>The room suggests.</strong>
+              Visitors send short messages — "try arXiv", "scroll down", "go back". Every message
+              is anonymous and visible to everyone.
+            </li>
+            <li>
+              <strong>The agent picks.</strong>
+              It reads the suggestions, chooses the most relevant, and acts. The browser updates.
+              The room watches. Repeat.
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- MOMENTS -->
+      <section class="band" id="moments">
+        <div class="wrap">
+          <span class="eyebrow">Recent moments</span>
+          <h2 class="display">Selected highlights from the room.</h2>
+          <p class="lede">
+            Notable detours, dead ends, and discoveries from the public session. Pulled from the live
+            archive — updated as new ones happen.
+          </p>
+          <div id="momentsGrid" class="moments" hidden></div>
+          <div id="momentsEmpty" class="moments-empty">
+            No archived moments yet. The room is just getting started — check back soon, or watch the
+            live session above.
+          </div>
+        </div>
+      </section>
+
+      <!-- WHY -->
+      <section class="band deep" id="why">
+        <div class="wrap-narrow">
+          <span class="eyebrow">Why this exists</span>
+          <h2 class="display">Most AI agents browse in private. This one browses in public.</h2>
+          <p class="body">
+            Most AI agents work alone. Behind logins, on someone's behalf, inside an SDK call you
+            cannot see. Their decisions never reach the open web.
+          </p>
+          <p class="body">
+            Cloud Browser Live is the opposite. One agent, browsing in public, on no one's behalf in
+            particular. The window is open. The room is anonymous. The session never ends.
+          </p>
+          <p class="body">
+            We did not build this because public agents are useful. We built it because watching one
+            think — in real time, with strangers nudging it — changes how you understand what AI does
+            on the web. It is a public square for autonomous browsing. We hope it stays that way.
+          </p>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="band" id="faq">
+        <div class="wrap-narrow">
+          <span class="eyebrow">Common questions</span>
+          <h2 class="display">Frequently asked.</h2>
+
+          <details class="faq">
+            <summary>Is this a real AI or a recording?</summary>
+            <div class="answer">Real. The browser you see is a live session. What is on screen is what the agent is doing right now.</div>
+          </details>
+          <details class="faq">
+            <summary>Can the agent see my suggestion?</summary>
+            <div class="answer">Yes. Every message in the room is part of the agent's input. It reads them and picks what to act on.</div>
+          </details>
+          <details class="faq">
+            <summary>Why is the browser read-only?</summary>
+            <div class="answer">You are watching the agent's session, not driving it yourself. The agent is the only one with hands on the keyboard. You influence it by suggesting, not clicking.</div>
+          </details>
+          <details class="faq">
+            <summary>Do you store who I am?</summary>
+            <div class="answer">No login, no email. The site keeps a random anonymous ID in your browser so the agent can tell visitors apart in the room. Clear your storage and you are a new visitor.</div>
+          </details>
+          <details class="faq">
+            <summary>What model is the agent?</summary>
+            <div class="answer">A general-purpose browsing agent built on a current-generation LLM, running on a real cloud browser. The exact model changes as we upgrade it.</div>
+          </details>
+          <details class="faq">
+            <summary>Can I run my own cloud browser like this?</summary>
+            <div class="answer">Not through Cloud Browser Live — this is one shared agent. For private, scriptable cloud browsers, look at the agentic browser-as-a-service category: Browserbase, Browserless, Cloudflare Browser Run, browser-use.</div>
+          </details>
+        </div>
+      </section>
+    </main>
+
+    <footer class="foot">
+      <div class="wrap">
+        <div>
+          <span class="brand-foot"><span class="mark"></span> Cloud Browser Live</span>
+          <p>The public AI browser session. One agent, one window, always on, open to anonymous suggestions.</p>
+        </div>
+        <ul>
+          <li><a href="#what">What it is</a></li>
+          <li><a href="#how">How it works</a></li>
+          <li><a href="#why">Why</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+    </footer>
+
+    <!-- ============================ SCRIPT ============================ -->
+    <script type="module">
+      import { createClient } from 'https://esm.sh/@insforge/sdk@latest';
+
+      const CONFIG = {
+        baseUrl: 'https://wz4ktvdw.us-east.insforge.app',
+        anonKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3OC0xMjM0LTU2NzgtOTBhYi1jZGVmMTIzNDU2NzgiLCJlbWFpbCI6ImFub25AaW5zZm9yZ2UuY29tIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzk2NTc4MTF9.I-rDGoCh2IVx0pK7TXWVc0WdftjWUrAmPNeg5Bkcbho',
+      };
+
+      const insforge = createClient(CONFIG);
+
+      // ---------- Anonymous visitor identity ----------
+      function visitorId() {
+        let id = localStorage.getItem('cbl_actor');
+        if (!id) {
+          const fresh =
+            (crypto && crypto.randomUUID && crypto.randomUUID()) ||
+            `${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 10)}`;
+          id = `v:${fresh}`;
+          localStorage.setItem('cbl_actor', id);
+        }
+        return id;
+      }
+      const ACTOR = visitorId();
+
+      // ---------- DOM refs ----------
+      const browserFrame = document.getElementById('browserFrame');
+      const browserEmpty = document.getElementById('browserEmpty');
+      const browserAddress = document.getElementById('browserAddress');
+      const agentIntent = document.getElementById('agentIntent');
+      const liveState = document.getElementById('liveState');
+      const messagesEl = document.getElementById('messages');
+      const messageEmpty = document.getElementById('messageEmpty');
+      const form = document.getElementById('messageForm');
+      const input = document.getElementById('messageInput');
+      const sendButton = document.getElementById('sendButton');
+      const toast = document.getElementById('toast');
+      const momentsGrid = document.getElementById('momentsGrid');
+      const momentsEmpty = document.getElementById('momentsEmpty');
+
+      // ---------- Session state ----------
+      let SESSION = null;
+      const renderedMessages = new Map();
+      const maxVisibleMessages = 4;
+      let toastTimer = 0;
+
+      function showToast(text) {
+        toast.textContent = text;
+        toast.classList.add('show');
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => toast.classList.remove('show'), 2400);
+      }
+
+      function classifySource(msg) {
+        if (msg.source === 'operator') return 'operator';
+        if (msg.actor_id && msg.actor_id === ACTOR) return 'you';
+        return 'visitor';
+      }
+
+      function trimMessages() {
+        const nodes = [...messagesEl.querySelectorAll('.message')];
+        const extra = nodes.length - maxVisibleMessages;
+        if (extra <= 0) return;
+        nodes.slice(0, extra).forEach((node) => {
+          node.classList.add('fading');
+          node.addEventListener('animationend', () => node.remove(), { once: true });
+        });
+      }
+
+      function renderMessage(msg) {
+        if (!msg || !msg.id || !msg.content) return;
+        if (renderedMessages.has(msg.id)) return;
+        renderedMessages.set(msg.id, true);
+        if (renderedMessages.size > 200) {
+          const oldest = renderedMessages.keys().next().value;
+          renderedMessages.delete(oldest);
+        }
+
+        messageEmpty.hidden = true;
+        const kind = classifySource(msg);
+        const bubble = document.createElement('article');
+        bubble.className = `message ${kind}`;
+        bubble.dataset.id = msg.id;
+
+        const label = document.createElement('strong');
+        label.textContent = kind === 'operator' ? 'agent' : kind === 'you' ? 'you' : 'visitor';
+
+        const body = document.createElement('p');
+        body.textContent = msg.content;
+
+        bubble.append(label, body);
+        messagesEl.appendChild(bubble);
+        trimMessages();
+      }
+
+      function applySession(row) {
+        if (!row) return;
+        SESSION = row;
+        if (row.browser_live_url && browserFrame.src !== row.browser_live_url) {
+          browserFrame.src = row.browser_live_url;
+        }
+        if (row.current_url) browserAddress.textContent = row.current_url;
+        else if (row.browser_live_url) browserAddress.textContent = 'cloudbrowser.live · live session';
+        if (row.current_intent) agentIntent.textContent = row.current_intent;
+      }
+
+      // ---------- Data loading ----------
+      async function loadSession() {
+        const { data, error } = await insforge.database
+          .from('sessions')
+          .select('*')
+          .eq('status', 'live')
+          .limit(1);
+
+        if (error) {
+          console.error('sessions read failed', error);
+          browserEmpty.textContent = 'The live browser is not available yet.';
+          liveState.textContent = 'Offline';
+          return null;
+        }
+
+        const row = Array.isArray(data) && data.length ? data[0] : null;
+        if (!row) {
+          browserEmpty.textContent = 'No live session right now.';
+          liveState.textContent = 'Idle';
+          return null;
+        }
+        applySession(row);
+        browserFrame.addEventListener('load', () => { browserEmpty.hidden = true; }, { once: true });
+        return row;
+      }
+
+      async function backfillMessages() {
+        if (!SESSION) return;
+        const { data, error } = await insforge.database
+          .from('messages')
+          .select('*')
+          .eq('session_id', SESSION.id)
+          .order('created_at', { ascending: false })
+          .limit(20);
+        if (error) {
+          console.error('messages backfill failed', error);
+          return;
+        }
+        (data || []).slice().reverse().forEach(renderMessage);
+      }
+
+      async function subscribeRoom() {
+        try {
+          await insforge.realtime.connect();
+        } catch (error) {
+          console.error('realtime connect failed', error);
+          liveState.textContent = 'Reconnecting';
+          return;
+        }
+
+        const room = await insforge.realtime.subscribe('room:public');
+        const session = await insforge.realtime.subscribe('session:current');
+        if (!room.ok || !session.ok) {
+          console.error('subscribe failed', room.error || session.error);
+          liveState.textContent = 'Reconnecting';
+          return;
+        }
+
+        insforge.realtime.on('message', (payload) => renderMessage(payload));
+        insforge.realtime.on('intent', (payload) => {
+          if (payload?.current_intent) agentIntent.textContent = payload.current_intent;
+        });
+        insforge.realtime.on('session', (payload) => {
+          if (!payload) return;
+          if (payload.current_url) browserAddress.textContent = payload.current_url;
+          if (payload.browser_live_url && browserFrame.src !== payload.browser_live_url) {
+            browserFrame.src = payload.browser_live_url;
+          }
+          if (payload.current_intent) agentIntent.textContent = payload.current_intent;
+        });
+
+        insforge.realtime.on('disconnect', () => { liveState.textContent = 'Reconnecting'; });
+        insforge.realtime.on('connect', () => { liveState.textContent = 'Live'; });
+
+        liveState.textContent = 'Live';
+      }
+
+      async function loadMoments() {
+        const { data, error } = await insforge.database
+          .from('session_moments')
+          .select('*')
+          .order('created_at', { ascending: false })
+          .limit(6);
+        if (error || !data?.length) return;
+
+        momentsEmpty.hidden = true;
+        momentsGrid.hidden = false;
+        momentsGrid.innerHTML = '';
+        for (const m of data) {
+          const card = document.createElement('article');
+          card.className = 'moment';
+          const date = document.createElement('time');
+          date.dateTime = m.created_at;
+          date.textContent = new Date(m.created_at).toLocaleString(undefined, { dateStyle: 'medium', timeStyle: 'short' });
+          const heading = document.createElement('h3');
+          heading.textContent = m.title || 'Untitled moment';
+          const body = document.createElement('p');
+          body.textContent = m.body || '';
+          card.append(date, heading);
+          if (m.body) card.append(body);
+          momentsGrid.appendChild(card);
+        }
+      }
+
+      // ---------- Composer ----------
+      function autoresize() {
+        input.style.height = '48px';
+        input.style.height = `${Math.min(input.scrollHeight, 96)}px`;
+      }
+
+      input.addEventListener('input', () => {
+        sendButton.disabled = input.value.trim().length === 0;
+        autoresize();
+      });
+
+      input.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' && !event.shiftKey) {
+          event.preventDefault();
+          if (!sendButton.disabled) form.requestSubmit();
+        }
+      });
+
+      browserFrame.addEventListener('focus', () => input.focus());
+
+      form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        const content = input.value.trim();
+        if (!content || !SESSION) return;
+
+        sendButton.disabled = true;
+        input.value = '';
+        autoresize();
+
+        const { error } = await insforge.database.from('messages').insert([{
+          session_id: SESSION.id,
+          source: 'visitor',
+          actor_id: ACTOR,
+          content,
+        }]);
+
+        if (error) {
+          input.value = content;
+          sendButton.disabled = false;
+          autoresize();
+          const msg = String(error.message || '').toLowerCase().includes('row level security')
+            ? 'Slow down — too many suggestions just now.'
+            : (error.message || 'Could not send.');
+          showToast(msg);
+          return;
+        }
+
+        // Fire-and-forget bridge forwarding. The visitor message is already in the room.
+        insforge.functions
+          .invoke('openagents-bridge', { body: { mode: 'forward', content, actor_id: ACTOR } })
+          .catch((err) => console.warn('bridge forward failed', err));
+
+        showToast('Sent to the room');
+      });
+
+      // ---------- Startup ----------
+      loadSession()
+        .then(() => Promise.all([backfillMessages(), subscribeRoom(), loadMoments()]))
+        .catch((error) => {
+          console.error('startup failed', error);
+          liveState.textContent = 'Offline';
+        });
+
+      input.focus();
+    </script>
+  </body>
+</html>
