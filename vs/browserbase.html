@@ -111,8 +111,8 @@
       <p class="mt-6 text-[18px] leading-[1.6] text-white/70">
         Browserbase is the established cloud-browser-for-agents platform — $300M valuation, 50M sessions
         in 2025, Stagehand pulled 23k GitHub stars. We're the new one. This is the comparison we'd want
-        to read if we were the buyer. Pricing math, real features, what we're worse at, and a one-page
-        migration guide at the bottom.
+        to read if we were the buyer. Pricing math on a standard agent task, real features, what we're
+        worse at, and a one-page migration guide at the bottom.
       </p>
     </section>
 
@@ -121,8 +121,8 @@
       <div class="max-w-[840px] mx-auto">
         <span class="inline-block text-[12px] font-bold uppercase tracking-[0.16em] text-accent mb-3">TL;DR</span>
         <ul class="space-y-3 text-[15.5px] leading-[1.6] text-white/85">
-          <li class="flex gap-3"><span class="text-accent font-mono mt-1">▸</span> For typical Claude/OpenAI agent workloads, <strong>we are 60% cheaper</strong> because we bill per active second; Browserbase bills per browser-hour.</li>
-          <li class="flex gap-3"><span class="text-accent font-mono mt-1">▸</span> For pure CDP scraping (no model thinking), <strong>we are ~15% cheaper</strong>, not 60%. Honest about this.</li>
+          <li class="flex gap-3"><span class="text-accent font-mono mt-1">▸</span> On a standard agent task (10 min browser + 30 LLM steps + 1 CAPTCHA), <strong>we cost ~$0.01 vs Browserbase ~$0.10</strong> — roughly 10× cheaper, because we bill per active second and Browserbase bills per browser-hour.</li>
+          <li class="flex gap-3"><span class="text-accent font-mono mt-1">▸</span> For pure CDP scraping (no model thinking), <strong>we are ~15% cheaper</strong>, not 10×. Honest about this.</li>
           <li class="flex gap-3"><span class="text-accent font-mono mt-1">▸</span> We ship <strong>Computer Use as a first-class primitive</strong> (Claude / OpenAI / Gemini behind one API). Browserbase is generic browser cloud — you wire Computer Use yourself.</li>
           <li class="flex gap-3"><span class="text-accent font-mono mt-1">▸</span> Browserbase has <strong>more polish around the developer surface</strong>: Stagehand SDK, contexts API, three years of docs. We're newer.</li>
           <li class="flex gap-3"><span class="text-accent font-mono mt-1">▸</span> Migration is <strong>~30 minutes</strong> for most teams. Code at the bottom of this page.</li>
@@ -145,37 +145,39 @@
 
         <div class="rounded-2xl border border-white/10 overflow-hidden bg-ink-800">
           <div class="px-6 py-5 border-b border-white/5 bg-ink-700">
-            <h3 class="font-bold text-[17px]">Scenario: one Claude Computer Use task</h3>
-            <p class="mt-1 text-[13px] text-white/55 font-mono">8 minutes wall-clock · 35% agent active · 65% model thinking · 1 GB scratch storage</p>
+            <h3 class="font-bold text-[17px]">Standard task definition</h3>
+            <p class="mt-1 text-[13px] text-white/55 font-mono">10 minutes browser uptime · 30 LLM decision steps · 1 CAPTCHA solve · ~35% agent active</p>
           </div>
 
           <div class="grid sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-white/5">
             <div class="p-6">
               <div class="text-[11px] uppercase font-bold tracking-[0.14em] text-white/45 mb-3">Browserbase</div>
               <ul class="space-y-2 text-[14px] font-mono text-white/70">
-                <li>Browser-hour: 8 min × $0.10/hr <span class="text-white">= $0.0133</span></li>
-                <li>Storage: 1 GB × ~$0.20 <span class="text-white">= $0.20</span></li>
-                <li>Proxy: 1 GB residential <span class="text-white">= $0.05</span></li>
-                <li class="pt-2 mt-2 border-t border-white/10 text-[15px] text-warm font-bold">Total: $0.27</li>
+                <li>Browser-hour: 10 min × $0.10/hr <span class="text-white">= $0.017</span></li>
+                <li>CAPTCHA solve add-on <span class="text-white">= $0.003</span></li>
+                <li>Storage: 1 GB × ~$0.20 <span class="text-white">= $0.05</span></li>
+                <li>Residential proxy add-on <span class="text-white">= $0.03</span></li>
+                <li class="pt-2 mt-2 border-t border-white/10 text-[15px] text-warm font-bold">Total: ≈ $0.10</li>
               </ul>
             </div>
             <div class="p-6 bg-accent/[0.04]">
               <div class="text-[11px] uppercase font-bold tracking-[0.14em] text-accent mb-3">Computer Use Cloud</div>
               <ul class="space-y-2 text-[14px] font-mono text-white/70">
-                <li>Active seconds: 168s × $0.000333/s <span class="text-white">= $0.056</span></li>
+                <li>Active seconds: 210s × $0.000056 <span class="text-white">= $0.012</span></li>
+                <li>CAPTCHA solve <span class="text-white">included</span></li>
                 <li>Storage: included up to 2 GB <span class="text-white">= $0</span></li>
-                <li>Proxy: included on Pro <span class="text-white">= $0</span></li>
-                <li class="pt-2 mt-2 border-t border-white/10 text-[15px] text-accent font-extrabold">Total: $0.06</li>
+                <li>Residential proxy <span class="text-white">included</span></li>
+                <li class="pt-2 mt-2 border-t border-white/10 text-[15px] text-accent font-extrabold">Total: ≈ $0.01</li>
               </ul>
             </div>
           </div>
         </div>
 
         <p class="mt-6 text-[14px] text-white/55 leading-[1.55] max-w-[680px]">
-          That's a <strong class="text-white">4.5× cost difference per task</strong> at the scenario above.
-          At 1,000 tasks/day, Browserbase costs ~$8,100/month; we cost ~$1,800. The closer your active
-          ratio gets to 100% (heavy scraping, no model thinking), the more the gap compresses — toward
-          ~15% at full active load.
+          That's a <strong class="text-white">10× cost difference per task</strong> at the standard
+          scenario. At 1,000 tasks/day, Browserbase costs ~$3,000/month; we cost ~$300. The closer your
+          active ratio gets to 100% (heavy scraping, no model thinking), the more the gap compresses —
+          toward ~15% at full active load.
         </p>
 
         <div class="mt-10 rounded-xl border border-warm/30 bg-warm/[0.05] p-5">
@@ -394,7 +396,7 @@
       <div class="max-w-[720px] mx-auto">
         <h2 class="font-sans font-bold text-[clamp(24px,3vw,32px)] tracking-[-0.012em] mb-8">Common questions.</h2>
         <div class="divide-y divide-white/10 border-t border-b border-white/10">
-          <details class="group py-5"><summary class="flex justify-between items-start gap-4 cursor-pointer list-none"><span class="text-[16px] font-semibold">Is Computer Use Cloud really cheaper?</span><span class="text-white/40 text-[20px] leading-none mt-0.5 group-open:rotate-45 transition">+</span></summary><div class="mt-3 text-[14.5px] leading-[1.6] text-white/65">For typical AI agent workloads, yes — by 60% on average. Browserbase bills per browser-hour; we bill per active second, so model-thinking idle is free. For fully-active workloads (scraping, no model), the gap narrows to ~15%.</div></details>
+          <details class="group py-5"><summary class="flex justify-between items-start gap-4 cursor-pointer list-none"><span class="text-[16px] font-semibold">Is Computer Use Cloud really cheaper?</span><span class="text-white/40 text-[20px] leading-none mt-0.5 group-open:rotate-45 transition">+</span></summary><div class="mt-3 text-[14.5px] leading-[1.6] text-white/65">On a standard agent task (10 min browser + 30 LLM steps + 1 CAPTCHA), Browserbase costs about $0.10 and we cost about $0.01 — roughly 10× cheaper, because we bill per active second and Browserbase bills per browser-hour. For fully-active workloads (pure scraping, no model thinking), the gap narrows to ~15%.</div></details>
           <details class="group py-5"><summary class="flex justify-between items-start gap-4 cursor-pointer list-none"><span class="text-[16px] font-semibold">Can I migrate without rewriting?</span><span class="text-white/40 text-[20px] leading-none mt-0.5 group-open:rotate-45 transition">+</span></summary><div class="mt-3 text-[14.5px] leading-[1.6] text-white/65">Mostly. Same Playwright CDP endpoint, so any CDP-based code works after changing the URL. Stagehand users swap one import. Browserbase Sessions API users need a thin shim we publish.</div></details>
           <details class="group py-5"><summary class="flex justify-between items-start gap-4 cursor-pointer list-none"><span class="text-[16px] font-semibold">Do you have a live view URL?</span><span class="text-white/40 text-[20px] leading-none mt-0.5 group-open:rotate-45 transition">+</span></summary><div class="mt-3 text-[14.5px] leading-[1.6] text-white/65">Yes — every sandbox returns a public embeddable URL with the live browser view. Same use cases as Browserbase Live View.</div></details>
           <details class="group py-5"><summary class="flex justify-between items-start gap-4 cursor-pointer list-none"><span class="text-[16px] font-semibold">Residential proxies and captcha?</span><span class="text-white/40 text-[20px] leading-none mt-0.5 group-open:rotate-45 transition">+</span></summary><div class="mt-3 text-[14.5px] leading-[1.6] text-white/65">Both included on Pro. Browserbase charges as add-ons; we bundle them at no extra cost.</div></details>
