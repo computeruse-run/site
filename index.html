@@ -136,23 +136,346 @@
           </div>
         </div>
 
-        <!-- Code card stays dark for contrast (standard Series A pattern: dark code on light page) -->
-        <div class="rounded-2xl border border-code-border bg-code-bg shadow-[0_24px_60px_rgba(15,14,10,0.10)] overflow-hidden">
-          <div class="flex items-center gap-1.5 px-4 py-3 border-b border-white/5">
+        <!-- Exploded stack diagram: three floating screens (moved from second section) -->
+        <div class="relative mx-auto w-full" style="max-width:640px">
+          <svg viewBox="0 15 580 490" class="exploded-svg w-full h-auto" xmlns="http://www.w3.org/2000/svg" aria-label="Three floating layers in Computer Use Cloud: an agent code editor, a hosted browser, and a desktop">
+                      <defs>
+                        <!-- Soft directional shadow: light from upper-left, shadow falls down-right.
+                             Each upper layer's shadow lands on the layer below = real-lighting depth cue. -->
+                        <filter id="slab-shadow" x="-40%" y="-30%" width="180%" height="180%">
+                          <feDropShadow dx="3" dy="14" stdDeviation="9" flood-color="#0F0E0A" flood-opacity="0.32"/>
+                        </filter>
+                        <linearGradient id="wallpaper-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                          <stop offset="0%"   stop-color="#3a4d5f"/>
+                          <stop offset="100%" stop-color="#1d2a36"/>
+                        </linearGradient>
+                      </defs>
+
+                      <!-- ============================================================ -->
+                      <!-- Slab 3 (bottom): computer-use · realistic DESKTOP             -->
+                      <!-- ============================================================ -->
+                      <g class="iso-slab slab-3">
+                        <g filter="url(#slab-shadow)">
+                          <polygon points="140,356 348,236 244,176 36,296" fill="url(#wallpaper-grad)"/>
+                        </g>
+
+                        <!-- Top face: realistic macOS-style desktop, origin at BTL=(36,296) -->
+                        <g transform="matrix(0.866 -0.5 0.866 0.5 36 296)">
+                          <!-- Menu bar -->
+                          <rect x="4" y="4" width="232" height="9" fill="rgba(0,0,0,0.5)"/>
+                          <text x="9" y="10.5" font-family="Inter, sans-serif" font-size="5.5" font-weight="700" fill="#FFFFFF"></text>
+                          <text x="16" y="10.5" font-family="Inter, sans-serif" font-size="5.5" font-weight="700" fill="#FFFFFF">Chromium</text>
+                          <text x="51" y="10.5" font-family="Inter, sans-serif" font-size="5.5" fill="rgba(255,255,255,0.85)">File</text>
+                          <text x="65" y="10.5" font-family="Inter, sans-serif" font-size="5.5" fill="rgba(255,255,255,0.85)">Edit</text>
+                          <text x="80" y="10.5" font-family="Inter, sans-serif" font-size="5.5" fill="rgba(255,255,255,0.85)">View</text>
+                          <text x="195" y="10.5" font-family="Inter, sans-serif" font-size="5.5" fill="#FFFFFF">Tue 10:35</text>
+
+                          <!-- Window 1: browser (background) -->
+                          <rect x="14" y="22" width="132" height="68" rx="2.5" fill="#FCF9F1" stroke="rgba(0,0,0,0.35)" stroke-width="0.4"/>
+                          <rect x="14" y="22" width="132" height="9" rx="2.5" fill="#E8E2CF"/>
+                          <circle cx="20" cy="26.5" r="1.3" fill="#FF5F56"/>
+                          <circle cx="24" cy="26.5" r="1.3" fill="#FFBD2E"/>
+                          <circle cx="28" cy="26.5" r="1.3" fill="#27C93F"/>
+                          <rect x="34" y="24" width="106" height="5" rx="1" fill="#FFFFFF"/>
+                          <text x="36" y="28" font-family="Inter, sans-serif" font-size="3.5" fill="#6F6B61">google.com/flights</text>
+                          <!-- selected flight row -->
+                          <rect x="18" y="35" width="124" height="9" rx="1" fill="rgba(15,122,92,0.14)" stroke="#0F7A5C" stroke-width="0.6"/>
+                          <text x="22" y="41" font-family="Inter, sans-serif" font-size="4" font-weight="600" fill="#0F0E0A">United</text>
+                          <text x="58" y="41" font-family="Inter, sans-serif" font-size="4" fill="#3D3A33">7:00→9:35</text>
+                          <text x="128" y="41" font-family="Inter, sans-serif" font-size="4.5" font-weight="700" fill="#188038">$78</text>
+                          <rect x="18" y="46" width="124" height="8" rx="1" fill="#FFFFFF" stroke="rgba(0,0,0,0.12)" stroke-width="0.3"/>
+                          <text x="22" y="52" font-family="Inter, sans-serif" font-size="4" font-weight="600" fill="#0F0E0A">Delta</text>
+                          <text x="58" y="52" font-family="Inter, sans-serif" font-size="4" fill="#3D3A33">8:15→10:50</text>
+                          <text x="128" y="52" font-family="Inter, sans-serif" font-size="4.5" font-weight="700" fill="#188038">$92</text>
+                          <rect x="18" y="56" width="124" height="8" rx="1" fill="#FFFFFF" stroke="rgba(0,0,0,0.12)" stroke-width="0.3"/>
+                          <text x="22" y="62" font-family="Inter, sans-serif" font-size="4" font-weight="600" fill="#0F0E0A">Alaska</text>
+                          <text x="58" y="62" font-family="Inter, sans-serif" font-size="4" fill="#3D3A33">6:30→9:05</text>
+                          <text x="128" y="62" font-family="Inter, sans-serif" font-size="4.5" font-weight="700" fill="#188038">$104</text>
+                          <rect x="18" y="66" width="124" height="8" rx="1" fill="#FFFFFF" stroke="rgba(0,0,0,0.12)" stroke-width="0.3"/>
+                          <text x="22" y="72" font-family="Inter, sans-serif" font-size="4" font-weight="600" fill="#0F0E0A">JetBlue</text>
+                          <text x="58" y="72" font-family="Inter, sans-serif" font-size="4" fill="#3D3A33">11:45→2:20</text>
+                          <text x="128" y="72" font-family="Inter, sans-serif" font-size="4.5" font-weight="700" fill="#188038">$118</text>
+
+                          <!-- Window 2: terminal (foreground, overlapping) -->
+                          <rect x="104" y="48" width="120" height="54" rx="2.5" fill="#1e1e1e" stroke="rgba(0,0,0,0.55)" stroke-width="0.4"/>
+                          <rect x="104" y="48" width="120" height="9" rx="2.5" fill="#2d2d2d"/>
+                          <circle cx="110" cy="52.5" r="1.3" fill="#FF5F56"/>
+                          <circle cx="114" cy="52.5" r="1.3" fill="#FFBD2E"/>
+                          <circle cx="118" cy="52.5" r="1.3" fill="#27C93F"/>
+                          <text x="146" y="55" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="4" fill="#858585">agent.py — Terminal</text>
+                          <text x="108" y="64" font-family="JetBrains Mono, monospace" font-size="4" fill="#0F7A5C">$</text>
+                          <text x="113" y="64" font-family="JetBrains Mono, monospace" font-size="4" fill="#cccccc">python agent.py</text>
+                          <text x="108" y="71" font-family="JetBrains Mono, monospace" font-size="4" fill="#858585">→ search flights SFO→LAX</text>
+                          <text x="108" y="78" font-family="JetBrains Mono, monospace" font-size="4" fill="#858585">→ select cheapest ($78)</text>
+                          <text x="108" y="85" font-family="JetBrains Mono, monospace" font-size="4" fill="#27c93f">✓ flight selected</text>
+                          <text x="108" y="93" font-family="JetBrains Mono, monospace" font-size="4" fill="#0F7A5C">$</text>
+                          <rect x="113" y="90" width="1.4" height="3.5" fill="#cccccc"/>
+
+                          <!-- Dock at bottom -->
+                          <rect x="58" y="102" width="124" height="11" rx="5.5" fill="rgba(255,255,255,0.18)" stroke="rgba(255,255,255,0.12)" stroke-width="0.3"/>
+                          <circle cx="66" cy="107.5" r="3.3" fill="#1a73e8"/>
+                          <circle cx="76" cy="107.5" r="3.3" fill="#FF5F56"/>
+                          <circle cx="86" cy="107.5" r="3.3" fill="#0F7A5C"/>
+                          <circle cx="96" cy="107.5" r="3.3" fill="#c586c0"/>
+                          <circle cx="106" cy="107.5" r="3.3" fill="#ffbd2e"/>
+                          <circle cx="116" cy="107.5" r="3.3" fill="#1e1e1e"/>
+                          <circle cx="126" cy="107.5" r="3.3" fill="#27c93f"/>
+                          <circle cx="136" cy="107.5" r="3.3" fill="#7c381a"/>
+                          <circle cx="146" cy="107.5" r="3.3" fill="#3D3A33"/>
+                          <circle cx="156" cy="107.5" r="3.3" fill="#0c5d48"/>
+                          <circle cx="166" cy="107.5" r="3.3" fill="#C25A2A"/>
+                          <circle cx="176" cy="107.5" r="3.3" fill="#519aba"/>
+                        </g>
+
+                        <!-- Callout label -->
+                        <line x1="348" y1="236" x2="386" y2="236" stroke="rgba(15,14,10,0.45)" stroke-width="1"/>
+                        <line x1="385.5" y1="232" x2="385.5" y2="240" stroke="rgba(15,14,10,0.45)" stroke-width="1"/>
+                        <text x="394" y="233" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="700" fill="#0F0E0A">computer-use</text>
+                        <text x="394" y="248" font-family="Inter, sans-serif" font-size="11" fill="#3D3A33">the full power cloud computer</text>
+                      </g>
+
+                      <!-- ============================================================ -->
+                      <!-- Slab 2 (middle): browser-base · realistic GOOGLE FLIGHTS      -->
+                      <!-- ============================================================ -->
+                      <g class="iso-slab slab-2">
+                        <g filter="url(#slab-shadow)">
+                          <polygon points="140,332 348,212 244,152 36,272" fill="#FCF9F1"/>
+                        </g>
+
+                        <!-- Top face: realistic browser with Google Flights mockup, origin at BTL=(36,272) -->
+                        <g transform="matrix(0.866 -0.5 0.866 0.5 36 272)">
+                          <!-- Tab bar -->
+                          <rect x="4" y="4" width="232" height="11" fill="#E8E2CF"/>
+                          <circle cx="13" cy="9.5" r="2" fill="#FF5F56"/>
+                          <circle cx="19" cy="9.5" r="2" fill="#FFBD2E"/>
+                          <circle cx="25" cy="9.5" r="2" fill="#27C93F"/>
+                          <rect x="33" y="4" width="78" height="11" rx="2" fill="#FFFFFF"/>
+                          <text x="37" y="11.5" font-family="Inter, sans-serif" font-size="4.5" fill="#0F0E0A">✈ Flights · SFO → LAX</text>
+                          <rect x="113" y="4" width="46" height="11" rx="2" fill="rgba(232,226,207,0.55)"/>
+                          <text x="117" y="11.5" font-family="Inter, sans-serif" font-size="4.5" fill="#6F6B61">+ New tab</text>
+
+                          <!-- URL bar -->
+                          <rect x="4" y="17" width="232" height="11" fill="#F4EEDC"/>
+                          <rect x="8" y="19" width="224" height="7" rx="2" fill="#FFFFFF" stroke="rgba(15,14,10,0.15)" stroke-width="0.3"/>
+                          <text x="12" y="24" font-family="Inter, sans-serif" font-size="4" fill="#6F6B61">🔒 google.com/travel/flights?q=SFO+to+LAX+Nov+12</text>
+
+                          <!-- Search form -->
+                          <rect x="6" y="32" width="44" height="11" rx="2" fill="#FFFFFF" stroke="rgba(0,0,0,0.18)" stroke-width="0.4"/>
+                          <text x="10" y="36" font-family="Inter, sans-serif" font-size="3.5" fill="#6F6B61">From</text>
+                          <text x="10" y="41" font-family="Inter, sans-serif" font-size="4.5" font-weight="600" fill="#0F0E0A">SFO</text>
+
+                          <rect x="52" y="32" width="44" height="11" rx="2" fill="#FFFFFF" stroke="rgba(0,0,0,0.18)" stroke-width="0.4"/>
+                          <text x="56" y="36" font-family="Inter, sans-serif" font-size="3.5" fill="#6F6B61">To</text>
+                          <text x="56" y="41" font-family="Inter, sans-serif" font-size="4.5" font-weight="600" fill="#0F0E0A">LAX</text>
+
+                          <rect x="98" y="32" width="50" height="11" rx="2" fill="#FFFFFF" stroke="rgba(0,0,0,0.18)" stroke-width="0.4"/>
+                          <text x="102" y="36" font-family="Inter, sans-serif" font-size="3.5" fill="#6F6B61">Depart</text>
+                          <text x="102" y="41" font-family="Inter, sans-serif" font-size="4.5" font-weight="600" fill="#0F0E0A">Nov 12</text>
+
+                          <rect x="150" y="32" width="50" height="11" rx="2" fill="#FFFFFF" stroke="rgba(0,0,0,0.18)" stroke-width="0.4"/>
+                          <text x="154" y="36" font-family="Inter, sans-serif" font-size="3.5" fill="#6F6B61">Return</text>
+                          <text x="154" y="41" font-family="Inter, sans-serif" font-size="4.5" font-weight="600" fill="#0F0E0A">Nov 15</text>
+
+                          <rect x="202" y="32" width="30" height="11" rx="5.5" fill="#1a73e8"/>
+                          <text x="217" y="40" text-anchor="middle" font-family="Inter, sans-serif" font-size="4.5" font-weight="600" fill="#FFFFFF">Search</text>
+
+                          <!-- Results header -->
+                          <text x="6" y="51" font-family="Inter, sans-serif" font-size="4.5" font-weight="700" fill="#0F0E0A">Best departing flights</text>
+                          <text x="200" y="51" font-family="Inter, sans-serif" font-size="3.5" fill="#6F6B61">Sorted by price ▾</text>
+
+                          <!-- Result 1 (highlighted — agent picked this) -->
+                          <rect x="4" y="55" width="232" height="12" rx="2" fill="rgba(15,122,92,0.12)" stroke="#0F7A5C" stroke-width="0.7"/>
+                          <rect x="9" y="58" width="6" height="6" rx="1" fill="#1a73e8"/>
+                          <text x="20" y="62" font-family="Inter, sans-serif" font-size="4.5" font-weight="600" fill="#0F0E0A">United</text>
+                          <text x="56" y="62" font-family="Inter, sans-serif" font-size="4.5" fill="#3D3A33">7:00 AM → 9:35 AM</text>
+                          <text x="124" y="62" font-family="Inter, sans-serif" font-size="4" fill="#6F6B61">2h 35m · Nonstop</text>
+                          <text x="178" y="62" font-family="Inter, sans-serif" font-size="4" fill="#6F6B61">+18% CO₂</text>
+                          <text x="220" y="63" text-anchor="end" font-family="Inter, sans-serif" font-size="5.5" font-weight="700" fill="#188038">$78</text>
+                          <text x="20" y="66" font-family="Inter, sans-serif" font-size="3.5" fill="#188038">✓ Cheapest</text>
+
+                          <rect x="4" y="69" width="232" height="11" rx="2" fill="#FFFFFF" stroke="rgba(0,0,0,0.12)" stroke-width="0.3"/>
+                          <rect x="9" y="72" width="6" height="6" rx="1" fill="#FF5F56"/>
+                          <text x="20" y="76" font-family="Inter, sans-serif" font-size="4.5" font-weight="600" fill="#0F0E0A">Delta</text>
+                          <text x="56" y="76" font-family="Inter, sans-serif" font-size="4.5" fill="#3D3A33">8:15 AM → 10:50 AM</text>
+                          <text x="124" y="76" font-family="Inter, sans-serif" font-size="4" fill="#6F6B61">2h 35m · Nonstop</text>
+                          <text x="178" y="76" font-family="Inter, sans-serif" font-size="4" fill="#6F6B61">+22% CO₂</text>
+                          <text x="220" y="77" text-anchor="end" font-family="Inter, sans-serif" font-size="5.5" font-weight="700" fill="#188038">$92</text>
+
+                          <rect x="4" y="82" width="232" height="11" rx="2" fill="#FFFFFF" stroke="rgba(0,0,0,0.12)" stroke-width="0.3"/>
+                          <rect x="9" y="85" width="6" height="6" rx="1" fill="#0F7A5C"/>
+                          <text x="20" y="89" font-family="Inter, sans-serif" font-size="4.5" font-weight="600" fill="#0F0E0A">Alaska</text>
+                          <text x="56" y="89" font-family="Inter, sans-serif" font-size="4.5" fill="#3D3A33">6:30 AM → 9:05 AM</text>
+                          <text x="124" y="89" font-family="Inter, sans-serif" font-size="4" fill="#6F6B61">2h 35m · Nonstop</text>
+                          <text x="178" y="89" font-family="Inter, sans-serif" font-size="4" fill="#6F6B61">+20% CO₂</text>
+                          <text x="220" y="90" text-anchor="end" font-family="Inter, sans-serif" font-size="5.5" font-weight="700" fill="#188038">$104</text>
+
+                          <rect x="4" y="95" width="232" height="11" rx="2" fill="#FFFFFF" stroke="rgba(0,0,0,0.12)" stroke-width="0.3"/>
+                          <rect x="9" y="98" width="6" height="6" rx="1" fill="#1a73e8"/>
+                          <text x="20" y="102" font-family="Inter, sans-serif" font-size="4.5" font-weight="600" fill="#0F0E0A">JetBlue</text>
+                          <text x="56" y="102" font-family="Inter, sans-serif" font-size="4.5" fill="#3D3A33">11:45 AM → 2:20 PM</text>
+                          <text x="124" y="102" font-family="Inter, sans-serif" font-size="4" fill="#6F6B61">2h 35m · Nonstop</text>
+                          <text x="178" y="102" font-family="Inter, sans-serif" font-size="4" fill="#6F6B61">+19% CO₂</text>
+                          <text x="220" y="103" text-anchor="end" font-family="Inter, sans-serif" font-size="5.5" font-weight="700" fill="#188038">$118</text>
+
+                          <!-- Agent cursor on selected row -->
+                          <circle cx="220" cy="61" r="2.5" fill="rgba(15,122,92,0.35)" stroke="#0F7A5C" stroke-width="0.6"/>
+                        </g>
+
+                        <!-- Callout label -->
+                        <line x1="348" y1="212" x2="386" y2="212" stroke="rgba(15,14,10,0.45)" stroke-width="1"/>
+                        <line x1="385.5" y1="208" x2="385.5" y2="216" stroke="rgba(15,14,10,0.45)" stroke-width="1"/>
+                        <text x="394" y="209" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="700" fill="#0F0E0A">browser-base</text>
+                        <text x="394" y="224" font-family="Inter, sans-serif" font-size="11" fill="#3D3A33">the stateful</text>
+                      </g>
+
+                      <!-- ============================================================ -->
+                      <!-- Slab 1 (top): browser-use · realistic VS CODE EDITOR          -->
+                      <!-- ============================================================ -->
+                      <g class="iso-slab slab-1">
+                        <g filter="url(#slab-shadow)">
+                          <polygon points="140,308 348,188 244,128 36,248" fill="#1e1e1e"/>
+                        </g>
+
+                        <!-- Top face: realistic VS Code editor with Python agent code, origin at BTL=(36,248) -->
+                        <g transform="matrix(0.866 -0.5 0.866 0.5 36 248)">
+                          <!-- Tab bar -->
+                          <rect x="4" y="4" width="232" height="11" fill="#2d2d30"/>
+                          <rect x="4" y="4" width="68" height="11" fill="#1e1e1e"/>
+                          <text x="9" y="11.5" font-family="JetBrains Mono, monospace" font-size="5" fill="#519aba">●</text>
+                          <text x="15" y="11.5" font-family="JetBrains Mono, monospace" font-size="5.5" fill="#cccccc">agent.py</text>
+                          <text x="76" y="11.5" font-family="JetBrains Mono, monospace" font-size="5.5" fill="#858585">main.py</text>
+                          <text x="108" y="11.5" font-family="JetBrains Mono, monospace" font-size="5.5" fill="#858585">README.md</text>
+
+                          <!-- Sidebar (file tree) -->
+                          <rect x="4" y="15" width="38" height="91" fill="#252526"/>
+                          <text x="8" y="22" font-family="Inter, sans-serif" font-size="4" font-weight="600" fill="rgba(255,255,255,0.55)">EXPLORER</text>
+                          <text x="8" y="30" font-family="Inter, sans-serif" font-size="4.5" fill="#cccccc">▼ agent-app</text>
+                          <text x="14" y="37" font-family="Inter, sans-serif" font-size="4.5" fill="#519aba">● agent.py</text>
+                          <text x="14" y="44" font-family="Inter, sans-serif" font-size="4.5" fill="#cccccc">  main.py</text>
+                          <text x="14" y="51" font-family="Inter, sans-serif" font-size="4.5" fill="#cccccc">  config.yml</text>
+                          <text x="14" y="58" font-family="Inter, sans-serif" font-size="4.5" fill="#cccccc">  README.md</text>
+                          <text x="8" y="68" font-family="Inter, sans-serif" font-size="4.5" fill="#cccccc">▶ tests</text>
+                          <text x="8" y="75" font-family="Inter, sans-serif" font-size="4.5" fill="#cccccc">▶ .venv</text>
+                          <text x="8" y="82" font-family="Inter, sans-serif" font-size="4.5" fill="#cccccc">▶ node_modules</text>
+
+                          <!-- Line number gutter -->
+                          <text x="50" y="22" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="4.5" fill="#858585">1</text>
+                          <text x="50" y="30" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="4.5" fill="#858585">2</text>
+                          <text x="50" y="38" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="4.5" fill="#858585">3</text>
+                          <text x="50" y="46" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="4.5" fill="#cccccc">4</text>
+                          <text x="50" y="54" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="4.5" fill="#858585">5</text>
+                          <text x="50" y="62" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="4.5" fill="#858585">6</text>
+                          <text x="50" y="70" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="4.5" fill="#858585">7</text>
+                          <text x="50" y="78" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="4.5" fill="#858585">8</text>
+                          <text x="50" y="86" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="4.5" fill="#858585">9</text>
+
+                          <!-- Active line highlight (line 4) -->
+                          <rect x="42" y="41.5" width="190" height="6" fill="rgba(255,255,255,0.04)"/>
+
+                          <!-- Code -->
+                          <text x="54" y="22" font-family="JetBrains Mono, monospace" font-size="5"><tspan fill="#c586c0">from</tspan><tspan fill="#cccccc"> computeruse </tspan><tspan fill="#c586c0">import</tspan><tspan fill="#4ec9b0"> Sandbox</tspan></text>
+                          <!-- L3 -->
+                          <text x="54" y="38" font-family="JetBrains Mono, monospace" font-size="5"><tspan fill="#c586c0">with</tspan><tspan fill="#dcdcaa"> Sandbox</tspan><tspan fill="#d4d4d4">(</tspan><tspan fill="#9cdcfe">model</tspan><tspan fill="#d4d4d4">=</tspan><tspan fill="#ce9178">"claude-sonnet-4-6"</tspan><tspan fill="#d4d4d4">) </tspan><tspan fill="#c586c0">as</tspan><tspan fill="#9cdcfe"> s</tspan><tspan fill="#d4d4d4">:</tspan></text>
+                          <!-- L4 (active) -->
+                          <text x="58" y="46" font-family="JetBrains Mono, monospace" font-size="5"><tspan fill="#9cdcfe">s</tspan><tspan fill="#d4d4d4">.</tspan><tspan fill="#dcdcaa">browser</tspan><tspan fill="#d4d4d4">.</tspan><tspan fill="#dcdcaa">goto</tspan><tspan fill="#d4d4d4">(</tspan><tspan fill="#ce9178">"google.com/flights"</tspan><tspan fill="#d4d4d4">)</tspan></text>
+                          <!-- Cursor on L4 (after the closing paren) -->
+                          <rect x="158" y="42" width="0.7" height="5" fill="#aeafad"/>
+                          <!-- L5 -->
+                          <text x="58" y="54" font-family="JetBrains Mono, monospace" font-size="5"><tspan fill="#9cdcfe">flight</tspan><tspan fill="#d4d4d4"> = </tspan><tspan fill="#9cdcfe">s</tspan><tspan fill="#d4d4d4">.</tspan><tspan fill="#dcdcaa">browser</tspan><tspan fill="#d4d4d4">.</tspan><tspan fill="#dcdcaa">run</tspan><tspan fill="#d4d4d4">(</tspan></text>
+                          <!-- L6 -->
+                          <text x="62" y="62" font-family="JetBrains Mono, monospace" font-size="5" fill="#ce9178">"Cheapest SFO→LAX next Tue."</text>
+                          <!-- L7 -->
+                          <text x="58" y="70" font-family="JetBrains Mono, monospace" font-size="5" fill="#d4d4d4">)</text>
+                          <!-- L8 (blank) -->
+                          <!-- L9 -->
+                          <text x="58" y="86" font-family="JetBrains Mono, monospace" font-size="5"><tspan fill="#9cdcfe">s</tspan><tspan fill="#d4d4d4">.</tspan><tspan fill="#dcdcaa">computer</tspan><tspan fill="#d4d4d4">.</tspan><tspan fill="#dcdcaa">run</tspan><tspan fill="#d4d4d4">(</tspan><tspan fill="#ce9178">"Add flight to Calendar"</tspan><tspan fill="#d4d4d4">)</tspan></text>
+
+                          <!-- Status bar -->
+                          <rect x="4" y="106" width="232" height="8" fill="#007acc"/>
+                          <text x="9" y="112" font-family="JetBrains Mono, monospace" font-size="4.5" fill="#FFFFFF">⎇ main</text>
+                          <text x="38" y="112" font-family="JetBrains Mono, monospace" font-size="4.5" fill="#FFFFFF">↻ 0</text>
+                          <text x="58" y="112" font-family="JetBrains Mono, monospace" font-size="4.5" fill="#FFFFFF">⊘ 0</text>
+                          <text x="78" y="112" font-family="JetBrains Mono, monospace" font-size="4.5" fill="#FFFFFF">Python 3.11.6</text>
+                          <text x="230" y="112" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="4.5" fill="#FFFFFF">Ln 4, Col 32 · UTF-8</text>
+                        </g>
+
+                        <!-- Callout label -->
+                        <line x1="348" y1="188" x2="386" y2="188" stroke="rgba(15,14,10,0.45)" stroke-width="1"/>
+                        <line x1="385.5" y1="184" x2="385.5" y2="192" stroke="rgba(15,14,10,0.45)" stroke-width="1"/>
+                        <text x="394" y="185" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="700" fill="#0F0E0A">browser-use</text>
+                        <text x="394" y="200" font-family="Inter, sans-serif" font-size="11" fill="#3D3A33">the stateless</text>
+                      </g>
+                    </svg>
+
+          <!-- = Computer Use Cloud (equation result, always visible) -->
+                    <div class="flex items-center justify-center gap-3 mt-6">
+                      <span class="text-accent text-[26px] font-extralight leading-none">=</span>
+                      <span class="inline-flex items-center gap-2 bg-ink text-paper rounded-lg px-3.5 py-1.5 text-[12.5px] font-mono font-bold uppercase tracking-[0.12em] shadow-[0_8px_20px_rgba(15,14,10,0.12)]">
+                        <svg viewBox="0 0 32 32" class="w-4 h-4" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                          <rect x="1.8" y="3.1" width="28.4" height="22" rx="3" fill="#0F7A5C"/>
+                          <path d="M7.7 7.6 L7.7 18.8 L10.5 16.4 L12.7 20.6 L14.3 19.9 L12.2 15.7 L15.9 14.4 Z" fill="#FFFFFF"/>
+                          <rect x="10.7" y="26.1" width="10.6" height="2.4" rx="0.85" fill="#0F7A5C"/>
+                        </svg>
+                        Computer Use Cloud
+                      </span>
+                    </div>
+
+          <style>
+                  /* Layers always separated but tighter — each upper layer casts a real shadow on the one below. */
+                  @keyframes float-top {
+                    0%, 100% { transform: translate(0px, -48px); }
+                    50%      { transform: translate(0px, -54px); }
+                  }
+                  @keyframes float-mid {
+                    0%, 100% { transform: translate(0px, -2px); }
+                    50%      { transform: translate(0px,  2px); }
+                  }
+                  @keyframes float-bot {
+                    0%, 100% { transform: translate(0px, 48px); }
+                    50%      { transform: translate(0px, 54px); }
+                  }
+                  .exploded-svg .slab-1 { animation: float-top 6.5s ease-in-out infinite; }
+                  .exploded-svg .slab-2 { animation: float-mid 8.5s ease-in-out infinite; animation-delay: -2.2s; }
+                  .exploded-svg .slab-3 { animation: float-bot 7.5s ease-in-out infinite; animation-delay: -3.6s; }
+
+                  @media (prefers-reduced-motion: reduce) {
+                    .exploded-svg .slab-1 { animation: none; transform: translate(0px, -51px); }
+                    .exploded-svg .slab-2 { animation: none; }
+                    .exploded-svg .slab-3 { animation: none; transform: translate(0px,  51px); }
+                  }
+                </style>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION: ONE SDK (the simulated coding path, moved from hero) -->
+    <section class="px-6 py-28 bg-paper-deep border-t border-hairline" id="code">
+      <div class="max-w-[1080px] mx-auto">
+        <div class="max-w-[680px]">
+          <h2 class="font-bold text-[clamp(28px,3.6vw,44px)] leading-[1.05] tracking-[-0.018em] text-ink">
+            Six lines to start. <span class="text-ink-muted">Same Python.</span>
+          </h2>
+          <p class="mt-5 text-[15.5px] leading-[1.55] text-ink-soft max-w-[560px]">
+            One class. Two surfaces — <code class="font-mono text-[14px] bg-paper-card border border-hairline rounded px-1.5 py-0.5 text-ink">s.browser</code> for the web, <code class="font-mono text-[14px] bg-paper-card border border-hairline rounded px-1.5 py-0.5 text-ink">s.computer</code> for the desktop. Model is a kwarg.
+          </p>
+        </div>
+
+        <div class="mt-12 max-w-[880px] mx-auto rounded-2xl border border-code-border bg-code-bg shadow-[0_28px_70px_rgba(15,14,10,0.14)] overflow-hidden">
+          <div class="flex items-center gap-1.5 px-5 py-3 border-b border-white/5">
             <span class="w-2.5 h-2.5 rounded-full bg-white/15"></span>
             <span class="w-2.5 h-2.5 rounded-full bg-white/15"></span>
             <span class="w-2.5 h-2.5 rounded-full bg-white/15"></span>
             <span class="ml-3 font-mono text-[11px] text-white/40">agent.py</span>
           </div>
-          <pre class="font-mono text-[13.5px] leading-[1.7] p-6 text-white/90 overflow-x-auto whitespace-pre"><span class="text-warm">from</span> computeruse <span class="text-warm">import</span> Sandbox
+          <pre class="font-mono text-[14px] leading-[1.85] p-7 sm:p-9 text-white/90 overflow-x-auto whitespace-pre"><span class="text-warm">from</span> computeruse <span class="text-warm">import</span> Sandbox
 
 <span class="text-warm">with</span> Sandbox(model=<span class="text-accent">"claude-sonnet-4-6"</span>) <span class="text-warm">as</span> s:
     s.browser.goto(<span class="text-accent">"https://google.com/flights"</span>)
-    flight = s.browser.run(<span class="text-accent">"Cheapest SFO→LIS next Tuesday."</span>)
+    flight = s.browser.run(<span class="text-accent">"Cheapest SFO→LAX next Tuesday."</span>)
 
     s.computer.run(<span class="text-accent">"Open Calendar, add flight on departure day."</span>)</pre>
         </div>
-
       </div>
     </section>
 
